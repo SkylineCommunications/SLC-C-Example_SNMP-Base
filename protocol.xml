@@ -47,7 +47,7 @@ Any inquiries can be addressed to:
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>Skyline Example SNMP Base</Name>
 	<Description>Skyline Example - SNMP Base DataMiner connector</Description>
-	<Version>1.0.0.6</Version>
+	<Version>1.0.0.7</Version>
 	<IntegrationID>DMS-DRV-9041</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline Example</Vendor>
@@ -535,11 +535,11 @@ This value should include the full name and version identification of the system
 				<LengthType>next param</LengthType>
 			</Interprete>
 		</Param>
-		<Param id="1000" trending="false">
+		<Param id="1000">
 			<Name>ifTable</Name>
 			<Description>If Table</Description>
 			<Type>array</Type>
-			<ArrayOptions index="0">
+			<ArrayOptions index="0" options=";volatile">
 				<ColumnOption idx="0" pid="1001" type="snmp" options="" />
 				<ColumnOption idx="1" pid="1002" type="snmp" options="" />
 				<ColumnOption idx="2" pid="1003" type="snmp" options="" />
@@ -2653,11 +2653,11 @@ Currently only calculated for Ethernet interfaces.
 				<LengthType>next param</LengthType>
 			</Interprete>
 		</Param>
-		<Param id="1100" trending="false">
+		<Param id="1100">
 			<Name>ifXTable</Name>
 			<Description>If X Table</Description>
 			<Type>array</Type>
-			<ArrayOptions index="0">
+			<ArrayOptions index="0" options=";volatile">
 				<ColumnOption idx="0" pid="1101" type="snmp" options="" />
 				<ColumnOption idx="1" pid="1102" type="snmp" options="" />
 				<ColumnOption idx="2" pid="1103" type="snmp" options="" />
@@ -2676,7 +2676,7 @@ Currently only calculated for Ethernet interfaces.
 				<ColumnOption idx="15" pid="1116" type="snmp" options="" />
 				<ColumnOption idx="16" pid="1117" type="snmp" options="" />
 				<ColumnOption idx="17" pid="1118" type="snmp" options="" />
-				<ColumnOption idx="18" pid="1119" type="snmp" options=";save" />
+				<ColumnOption idx="18" pid="1119" type="snmp" options="" />
 				<ColumnOption idx="19" pid="1120" type="snmp" options="" />
 				<ColumnOption idx="20" pid="1121" type="retrieved" options="" />
 				<ColumnOption idx="21" pid="1122" type="retrieved" options="" />
@@ -6257,11 +6257,11 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			</Measurement>
 		</Param>
 
-		<Param id="1300" trending="false">
+		<Param id="1300">
 			<Name>dot3StatsTable</Name>
 			<Description>Ethernet Interfaces</Description>
 			<Type>array</Type>
-			<ArrayOptions index="0">
+			<ArrayOptions index="0" options=";volatile">
 				<ColumnOption idx="0" pid="1301" type="snmp" options="" />
 				<ColumnOption idx="1" pid="1302" type="snmp" options="" />
 			</ArrayOptions>
@@ -6845,6 +6845,19 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 										</Changes>
 										<References>
 											<TaskId>253696</TaskId>
+										</References>
+									</MinorVersion>
+									<MinorVersion id="7" basedOn="1.0.0.6">
+										<Date>2025-02-13</Date>
+										<Provider>
+											<Author>RSP</Author>
+											<Company>Skyline Communications</Company>
+										</Provider>
+										<Changes>
+											<Change>Internal tables (ifTable, ifXTable and dot3StatsTable) are now volatile to reduce database footprint as storing keys on those hidden tables has no added value.</Change>
+										</Changes>
+										<References>
+											<TaskId>259569</TaskId>
 										</References>
 									</MinorVersion>
 								</MinorVersions>
