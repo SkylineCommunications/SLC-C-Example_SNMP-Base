@@ -20,7 +20,7 @@
 #   - User-Defined API: If the Catalog item is a DataMiner Automation script designed as a user-defined API.
 #   - Visual Overview: If the Catalog item is a Microsoft Visio design.
 # 
-type: connector
+type: Learning & Sample
 # [Required]
 # The ID of the Catalog item.
 # All registered versions for the same ID are shown together in the Catalog.
