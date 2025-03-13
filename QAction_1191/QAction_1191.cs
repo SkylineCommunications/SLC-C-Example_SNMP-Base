@@ -36,8 +36,12 @@ public class QAction
 			IfTable iftable = new IfTable(protocol);
 			for (int i = 0; i < iftable.Keys.Length; i++)
 			{
-				InterfacesQActionRow interfaceTableRow = new InterfacesQActionRow();
-				MergeFromSnmpIfTable(interfaceTableRow, iftable, i);
+				InterfacesQActionRow interfaceTableRow = new InterfacesQActionRow(); // TODO: Delete
+				InterfacesstateQActionRow interfaceStatesTableRow = new InterfacesstateQActionRow();
+				InterfacesstatecountersrxQActionRow interfaceCountersRxTableRow = new InterfacesstatecountersrxQActionRow();
+				InterfacesstatecounterstxQActionRow interfaceCountersTxTableRow = new InterfacesstatecounterstxQActionRow();
+
+				MergeFromSnmpIfTable(interfaceTableRow, interfaceCountersRxTableRow, interfaceCountersTxTableRow, iftable, i);
 
 				string key = Convert.ToString(iftable.Keys[i]);
 				if (duplexStatusValues.TryGetValue(key, out int duplexState))
@@ -95,6 +99,7 @@ public class QAction
 		return duplexStatusesPerKey;
 	}
 
+	// TODO: Delete
 	private static void MergeFromSnmpIfTable(InterfacesQActionRow interfaceTableRow, IfTable iftable, int getPosition)
 	{
 		interfaceTableRow.Interfacesindex = Convert.ToString(iftable.Keys[getPosition]);
@@ -131,6 +136,52 @@ public class QAction
 
 			double dBitRateIn = Convert.ToDouble(iftable.BitRateIn[getPosition]);
 			interfaceTableRow.Interfacesinbitrate = dBitRateIn >= 0 ? dBitRateIn / Math.Pow(10, 6) : -1;	// bps -> Mbps
+
+			double dBitRateOut = Convert.ToDouble(iftable.BitRateOut[getPosition]);
+			interfaceTableRow.Interfacesoutbitrate = dBitRateOut >= 0 ? dBitRateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
+		}
+	}
+
+	// TODO: remove commented
+	private static void MergeFromSnmpIfTable(InterfacesstateQActionRow interfaceTableRow, InterfacesstatecountersrxQActionRow interfaceCountersRxTableRow, InterfacesstatecounterstxQActionRow interfaceCountersTxTableRow, IfTable iftable, int getPosition)
+	{
+		// Interface States Table
+		interfaceTableRow.Interfacesstateifindex_2007 = Convert.ToString(iftable.Keys[getPosition]);
+		interfaceTableRow.Interfacesstatedescription_2005 = Convert.ToString(iftable.Descriptions[getPosition]);
+		interfaceTableRow.Interfacesstatetype_2002 = Convert.ToDouble(iftable.Types[getPosition]);
+		interfaceTableRow.Interfacesstatemtu_2003 = Convert.ToDouble(iftable.MTUs[getPosition]);
+		//interfaceTableRow.Interfacesphysaddress = Convert.ToString(iftable.PhysAddress[getPosition]);
+		interfaceTableRow.Interfacesstateadminstatus_2008 = Convert.ToDouble(iftable.AdminStatus[getPosition]);
+		interfaceTableRow.Interfacesstateoperstatus_2009 = Convert.ToDouble(iftable.OperStatus[getPosition]);
+		interfaceTableRow.Interfacesstatelastchange_2010 = Convert.ToDouble(iftable.LastChange[getPosition]);
+
+		// Interface Counters RX Table
+		interfaceTableRow.Interfacesindiscards = Convert.ToDouble(iftable.InDiscards[getPosition]);
+		interfaceTableRow.Interfacesinerrors = Convert.ToDouble(iftable.InErrors[getPosition]);
+		interfaceTableRow.Interfacesinunknownprotos = Convert.ToDouble(iftable.InUnknownProtos[getPosition]);
+
+		// Interface Counters TX Table
+		interfaceTableRow.Interfacesoutdiscards = Convert.ToDouble(iftable.OutDiscards[getPosition]);
+		interfaceTableRow.Interfacesouterrors = Convert.ToDouble(iftable.OutErrors[getPosition]);
+
+		if (Convert.ToUInt32(iftable.Speeds[getPosition]) != MaxReportableIfSpeed)
+		{
+			// Speed in ifTable is expressed in bps, whereas speed in Interface table is expressed in Mbps.
+			interfaceTableRow.Interfacesspeed = Convert.ToDouble(iftable.Speeds[getPosition]) / Math.Pow(10, 6);
+		}
+
+		if (Convert.ToDouble(iftable.Speeds[getPosition]) <= SpeedLimitForCounters)
+		{
+			// This means we should use the 32-bit versions.
+			interfaceTableRow.Interfacesinoctets = Convert.ToDouble(iftable.InOctets[getPosition]);
+			interfaceTableRow.Interfacesinucastpkts = Convert.ToDouble(iftable.InUcastpkts[getPosition]);
+			interfaceTableRow.Interfacesoutoctets = Convert.ToDouble(iftable.OutOctets[getPosition]);
+			interfaceTableRow.Interfacesoutucastpkts = Convert.ToDouble(iftable.OutUcastpkts[getPosition]);
+
+			interfaceTableRow.Interfacesbandwidthutilization = Convert.ToDouble(iftable.BandwidthUtilization[getPosition]);
+
+			double dBitRateIn = Convert.ToDouble(iftable.BitRateIn[getPosition]);
+			interfaceTableRow.Interfacesinbitrate = dBitRateIn >= 0 ? dBitRateIn / Math.Pow(10, 6) : -1;    // bps -> Mbps
 
 			double dBitRateOut = Convert.ToDouble(iftable.BitRateOut[getPosition]);
 			interfaceTableRow.Interfacesoutbitrate = dBitRateOut >= 0 ? dBitRateOut / Math.Pow(10, 6) : -1; // bps -> Mbps

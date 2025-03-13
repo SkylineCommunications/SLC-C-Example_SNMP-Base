@@ -150,6 +150,26 @@ public static class Parameter
 		public const int interfaceslinkupdowntrapenable_1279 = 1279;
 		/// <summary>PID: 1279 | Type: write</summary>
 		public const int interfaceslinkupdowntrapenable = 1279;
+		/// <summary>PID: 2053 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int interfacesstatemtu_2053 = 2053;
+		/// <summary>PID: 2053 | Type: write</summary>
+		public const int interfacesstatemtu = 2053;
+		/// <summary>PID: 2055 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int interfacesstatedescription_2055 = 2055;
+		/// <summary>PID: 2055 | Type: write</summary>
+		public const int interfacesstatedescription = 2055;
+		/// <summary>PID: 2058 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int interfacesstateadminstatus_2058 = 2058;
+		/// <summary>PID: 2058 | Type: write</summary>
+		public const int interfacesstateadminstatus = 2058;
+		/// <summary>PID: 2059 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int interfacesstateuserdescription_2059 = 2059;
+		/// <summary>PID: 2059 | Type: write</summary>
+		public const int interfacesstateuserdescription = 2059;
 	}
 	public class Iftable
 	{
@@ -1023,6 +1043,645 @@ public static class Parameter
 			public const int dot3statsduplexstatus = 1;
 		}
 	}
+	public class Interfacesstate
+	{
+		/// <summary>PID: 2000</summary>
+		public const int tablePid = 2000;
+		/// <summary>IDX: 0</summary>
+		public const int indexColumn = 0;
+		/// <summary>PID: 2001</summary>
+		public const int indexColumnPid = 2001;
+		public class Pid
+		{
+			/// <summary>PID: 2001 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatename_2001 = 2001;
+			/// <summary>PID: 2001 | Type: read</summary>
+			public const int interfacesstatename = 2001;
+			/// <summary>PID: 2002 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatetype_2002 = 2002;
+			/// <summary>PID: 2002 | Type: read</summary>
+			public const int interfacesstatetype = 2002;
+			/// <summary>PID: 2003 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatemtu_2003 = 2003;
+			/// <summary>PID: 2003 | Type: read</summary>
+			public const int interfacesstatemtu = 2003;
+			/// <summary>PID: 2004 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateloopbackmode_2004 = 2004;
+			/// <summary>PID: 2004 | Type: read</summary>
+			public const int interfacesstateloopbackmode = 2004;
+			/// <summary>PID: 2005 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatedescription_2005 = 2005;
+			/// <summary>PID: 2005 | Type: read</summary>
+			public const int interfacesstatedescription = 2005;
+			/// <summary>PID: 2006 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatestate_2006 = 2006;
+			/// <summary>PID: 2006 | Type: read</summary>
+			public const int interfacesstatestate = 2006;
+			/// <summary>PID: 2007 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateifindex_2007 = 2007;
+			/// <summary>PID: 2007 | Type: read</summary>
+			public const int interfacesstateifindex = 2007;
+			/// <summary>PID: 2008 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateadminstatus_2008 = 2008;
+			/// <summary>PID: 2008 | Type: read</summary>
+			public const int interfacesstateadminstatus = 2008;
+			/// <summary>PID: 2009 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateoperstatus_2009 = 2009;
+			/// <summary>PID: 2009 | Type: read</summary>
+			public const int interfacesstateoperstatus = 2009;
+			/// <summary>PID: 2010 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatelastchange_2010 = 2010;
+			/// <summary>PID: 2010 | Type: read</summary>
+			public const int interfacesstatelastchange = 2010;
+			/// <summary>PID: 2011 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatelogical_2011 = 2011;
+			/// <summary>PID: 2011 | Type: read</summary>
+			public const int interfacesstatelogical = 2011;
+			/// <summary>PID: 2012 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateinoctets_2012 = 2012;
+			/// <summary>PID: 2012 | Type: read</summary>
+			public const int interfacesstateinoctets = 2012;
+			/// <summary>PID: 2013 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateoutoctets_2013 = 2013;
+			/// <summary>PID: 2013 | Type: read</summary>
+			public const int interfacesstateoutoctets = 2013;
+			/// <summary>PID: 2014 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecarriertransitions_2014 = 2014;
+			/// <summary>PID: 2014 | Type: read</summary>
+			public const int interfacesstatecarriertransitions = 2014;
+			/// <summary>PID: 2015 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatelastclear_2015 = 2015;
+			/// <summary>PID: 2015 | Type: read</summary>
+			public const int interfacesstatelastclear = 2015;
+			/// <summary>PID: 2017 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateinbitrate_2017 = 2017;
+			/// <summary>PID: 2017 | Type: read</summary>
+			public const int interfacesstateinbitrate = 2017;
+			/// <summary>PID: 2018 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateoutbitrate_2018 = 2018;
+			/// <summary>PID: 2018 | Type: read</summary>
+			public const int interfacesstateoutbitrate = 2018;
+			/// <summary>PID: 2019 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateuserdescription_2019 = 2019;
+			/// <summary>PID: 2019 | Type: read</summary>
+			public const int interfacesstateuserdescription = 2019;
+			/// <summary>PID: 2020 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstaterowstate_2020 = 2020;
+			/// <summary>PID: 2020 | Type: read</summary>
+			public const int interfacesstaterowstate = 2020;
+			/// <summary>PID: 2016 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatedisplaykey_2016 = 2016;
+			/// <summary>PID: 2016 | Type: read</summary>
+			public const int interfacesstatedisplaykey = 2016;
+			public class Write
+			{
+				/// <summary>PID: 2021 | Type: write</summary>
+				[EditorBrowsable(EditorBrowsableState.Never)]
+				public const int interfacesstateaction_2021 = 2021;
+				/// <summary>PID: 2021 | Type: write</summary>
+				public const int interfacesstateaction = 2021;
+			}
+		}
+		public class Idx
+		{
+			/// <summary>IDX: 0 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatename_2001 = 0;
+			/// <summary>IDX: 0 | Type: read</summary>
+			public const int interfacesstatename = 0;
+			/// <summary>IDX: 1 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatetype_2002 = 1;
+			/// <summary>IDX: 1 | Type: read</summary>
+			public const int interfacesstatetype = 1;
+			/// <summary>IDX: 2 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatemtu_2003 = 2;
+			/// <summary>IDX: 2 | Type: read</summary>
+			public const int interfacesstatemtu = 2;
+			/// <summary>IDX: 3 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateloopbackmode_2004 = 3;
+			/// <summary>IDX: 3 | Type: read</summary>
+			public const int interfacesstateloopbackmode = 3;
+			/// <summary>IDX: 4 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatedescription_2005 = 4;
+			/// <summary>IDX: 4 | Type: read</summary>
+			public const int interfacesstatedescription = 4;
+			/// <summary>IDX: 5 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatestate_2006 = 5;
+			/// <summary>IDX: 5 | Type: read</summary>
+			public const int interfacesstatestate = 5;
+			/// <summary>IDX: 6 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateifindex_2007 = 6;
+			/// <summary>IDX: 6 | Type: read</summary>
+			public const int interfacesstateifindex = 6;
+			/// <summary>IDX: 7 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateadminstatus_2008 = 7;
+			/// <summary>IDX: 7 | Type: read</summary>
+			public const int interfacesstateadminstatus = 7;
+			/// <summary>IDX: 8 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateoperstatus_2009 = 8;
+			/// <summary>IDX: 8 | Type: read</summary>
+			public const int interfacesstateoperstatus = 8;
+			/// <summary>IDX: 9 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatelastchange_2010 = 9;
+			/// <summary>IDX: 9 | Type: read</summary>
+			public const int interfacesstatelastchange = 9;
+			/// <summary>IDX: 10 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatelogical_2011 = 10;
+			/// <summary>IDX: 10 | Type: read</summary>
+			public const int interfacesstatelogical = 10;
+			/// <summary>IDX: 11 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateinoctets_2012 = 11;
+			/// <summary>IDX: 11 | Type: read</summary>
+			public const int interfacesstateinoctets = 11;
+			/// <summary>IDX: 12 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateoutoctets_2013 = 12;
+			/// <summary>IDX: 12 | Type: read</summary>
+			public const int interfacesstateoutoctets = 12;
+			/// <summary>IDX: 13 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecarriertransitions_2014 = 13;
+			/// <summary>IDX: 13 | Type: read</summary>
+			public const int interfacesstatecarriertransitions = 13;
+			/// <summary>IDX: 14 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatelastclear_2015 = 14;
+			/// <summary>IDX: 14 | Type: read</summary>
+			public const int interfacesstatelastclear = 14;
+			/// <summary>IDX: 15 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateinbitrate_2017 = 15;
+			/// <summary>IDX: 15 | Type: read</summary>
+			public const int interfacesstateinbitrate = 15;
+			/// <summary>IDX: 16 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateoutbitrate_2018 = 16;
+			/// <summary>IDX: 16 | Type: read</summary>
+			public const int interfacesstateoutbitrate = 16;
+			/// <summary>IDX: 17 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstateuserdescription_2019 = 17;
+			/// <summary>IDX: 17 | Type: read</summary>
+			public const int interfacesstateuserdescription = 17;
+			/// <summary>IDX: 18 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstaterowstate_2020 = 18;
+			/// <summary>IDX: 18 | Type: read</summary>
+			public const int interfacesstaterowstate = 18;
+			/// <summary>IDX: 20 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatedisplaykey_2016 = 20;
+			/// <summary>IDX: 20 | Type: read</summary>
+			public const int interfacesstatedisplaykey = 20;
+		}
+	}
+	public class Interfacesstatecountersrx
+	{
+		/// <summary>PID: 2100</summary>
+		public const int tablePid = 2100;
+		/// <summary>IDX: 0</summary>
+		public const int indexColumn = 0;
+		/// <summary>PID: 2101</summary>
+		public const int indexColumnPid = 2101;
+		public class Pid
+		{
+			/// <summary>PID: 2101 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxname_2101 = 2101;
+			/// <summary>PID: 2101 | Type: read</summary>
+			public const int interfacesstatecountersrxname = 2101;
+			/// <summary>PID: 2102 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinoctets_2102 = 2102;
+			/// <summary>PID: 2102 | Type: read</summary>
+			public const int interfacesstatecountersrxinoctets = 2102;
+			/// <summary>PID: 2103 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinpckts_2103 = 2103;
+			/// <summary>PID: 2103 | Type: read</summary>
+			public const int interfacesstatecountersrxinpckts = 2103;
+			/// <summary>PID: 2104 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinunicastpckts_2104 = 2104;
+			/// <summary>PID: 2104 | Type: read</summary>
+			public const int interfacesstatecountersrxinunicastpckts = 2104;
+			/// <summary>PID: 2105 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinbroadcastpckts_2105 = 2105;
+			/// <summary>PID: 2105 | Type: read</summary>
+			public const int interfacesstatecountersrxinbroadcastpckts = 2105;
+			/// <summary>PID: 2106 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinmulticastpckts_2106 = 2106;
+			/// <summary>PID: 2106 | Type: read</summary>
+			public const int interfacesstatecountersrxinmulticastpckts = 2106;
+			/// <summary>PID: 2107 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxindiscards_2107 = 2107;
+			/// <summary>PID: 2107 | Type: read</summary>
+			public const int interfacesstatecountersrxindiscards = 2107;
+			/// <summary>PID: 2108 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinerrors_2108 = 2108;
+			/// <summary>PID: 2108 | Type: read</summary>
+			public const int interfacesstatecountersrxinerrors = 2108;
+			/// <summary>PID: 2109 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinunknownprotos_2109 = 2109;
+			/// <summary>PID: 2109 | Type: read</summary>
+			public const int interfacesstatecountersrxinunknownprotos = 2109;
+			/// <summary>PID: 2110 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinfcserrors_2110 = 2110;
+			/// <summary>PID: 2110 | Type: read</summary>
+			public const int interfacesstatecountersrxinfcserrors = 2110;
+			/// <summary>PID: 2111 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxfktointerfaces_2111 = 2111;
+			/// <summary>PID: 2111 | Type: read</summary>
+			public const int interfacesstatecountersrxfktointerfaces = 2111;
+			/// <summary>PID: 2112 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinrate_2112 = 2112;
+			/// <summary>PID: 2112 | Type: read</summary>
+			public const int interfacesstatecountersrxinrate = 2112;
+			/// <summary>PID: 2113 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinunicastrate_2113 = 2113;
+			/// <summary>PID: 2113 | Type: read</summary>
+			public const int interfacesstatecountersrxinunicastrate = 2113;
+			/// <summary>PID: 2114 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinbroadcastrate_2114 = 2114;
+			/// <summary>PID: 2114 | Type: read</summary>
+			public const int interfacesstatecountersrxinbroadcastrate = 2114;
+			/// <summary>PID: 2115 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinmulticastrate_2115 = 2115;
+			/// <summary>PID: 2115 | Type: read</summary>
+			public const int interfacesstatecountersrxinmulticastrate = 2115;
+			/// <summary>PID: 2116 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxindiscardsrate_2116 = 2116;
+			/// <summary>PID: 2116 | Type: read</summary>
+			public const int interfacesstatecountersrxindiscardsrate = 2116;
+			/// <summary>PID: 2117 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinerrorsrate_2117 = 2117;
+			/// <summary>PID: 2117 | Type: read</summary>
+			public const int interfacesstatecountersrxinerrorsrate = 2117;
+			/// <summary>PID: 2118 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinunknownprotosrate_2118 = 2118;
+			/// <summary>PID: 2118 | Type: read</summary>
+			public const int interfacesstatecountersrxinunknownprotosrate = 2118;
+			/// <summary>PID: 2119 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinfcserrorsrate_2119 = 2119;
+			/// <summary>PID: 2119 | Type: read</summary>
+			public const int interfacesstatecountersrxinfcserrorsrate = 2119;
+			public class Write
+			{
+			}
+		}
+		public class Idx
+		{
+			/// <summary>IDX: 0 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxname_2101 = 0;
+			/// <summary>IDX: 0 | Type: read</summary>
+			public const int interfacesstatecountersrxname = 0;
+			/// <summary>IDX: 1 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinoctets_2102 = 1;
+			/// <summary>IDX: 1 | Type: read</summary>
+			public const int interfacesstatecountersrxinoctets = 1;
+			/// <summary>IDX: 2 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinpckts_2103 = 2;
+			/// <summary>IDX: 2 | Type: read</summary>
+			public const int interfacesstatecountersrxinpckts = 2;
+			/// <summary>IDX: 3 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinunicastpckts_2104 = 3;
+			/// <summary>IDX: 3 | Type: read</summary>
+			public const int interfacesstatecountersrxinunicastpckts = 3;
+			/// <summary>IDX: 4 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinbroadcastpckts_2105 = 4;
+			/// <summary>IDX: 4 | Type: read</summary>
+			public const int interfacesstatecountersrxinbroadcastpckts = 4;
+			/// <summary>IDX: 5 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinmulticastpckts_2106 = 5;
+			/// <summary>IDX: 5 | Type: read</summary>
+			public const int interfacesstatecountersrxinmulticastpckts = 5;
+			/// <summary>IDX: 6 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxindiscards_2107 = 6;
+			/// <summary>IDX: 6 | Type: read</summary>
+			public const int interfacesstatecountersrxindiscards = 6;
+			/// <summary>IDX: 7 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinerrors_2108 = 7;
+			/// <summary>IDX: 7 | Type: read</summary>
+			public const int interfacesstatecountersrxinerrors = 7;
+			/// <summary>IDX: 8 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinunknownprotos_2109 = 8;
+			/// <summary>IDX: 8 | Type: read</summary>
+			public const int interfacesstatecountersrxinunknownprotos = 8;
+			/// <summary>IDX: 9 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinfcserrors_2110 = 9;
+			/// <summary>IDX: 9 | Type: read</summary>
+			public const int interfacesstatecountersrxinfcserrors = 9;
+			/// <summary>IDX: 10 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxfktointerfaces_2111 = 10;
+			/// <summary>IDX: 10 | Type: read</summary>
+			public const int interfacesstatecountersrxfktointerfaces = 10;
+			/// <summary>IDX: 11 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinrate_2112 = 11;
+			/// <summary>IDX: 11 | Type: read</summary>
+			public const int interfacesstatecountersrxinrate = 11;
+			/// <summary>IDX: 12 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinunicastrate_2113 = 12;
+			/// <summary>IDX: 12 | Type: read</summary>
+			public const int interfacesstatecountersrxinunicastrate = 12;
+			/// <summary>IDX: 13 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinbroadcastrate_2114 = 13;
+			/// <summary>IDX: 13 | Type: read</summary>
+			public const int interfacesstatecountersrxinbroadcastrate = 13;
+			/// <summary>IDX: 14 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinmulticastrate_2115 = 14;
+			/// <summary>IDX: 14 | Type: read</summary>
+			public const int interfacesstatecountersrxinmulticastrate = 14;
+			/// <summary>IDX: 15 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxindiscardsrate_2116 = 15;
+			/// <summary>IDX: 15 | Type: read</summary>
+			public const int interfacesstatecountersrxindiscardsrate = 15;
+			/// <summary>IDX: 16 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinerrorsrate_2117 = 16;
+			/// <summary>IDX: 16 | Type: read</summary>
+			public const int interfacesstatecountersrxinerrorsrate = 16;
+			/// <summary>IDX: 17 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinunknownprotosrate_2118 = 17;
+			/// <summary>IDX: 17 | Type: read</summary>
+			public const int interfacesstatecountersrxinunknownprotosrate = 17;
+			/// <summary>IDX: 18 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecountersrxinfcserrorsrate_2119 = 18;
+			/// <summary>IDX: 18 | Type: read</summary>
+			public const int interfacesstatecountersrxinfcserrorsrate = 18;
+		}
+	}
+	public class Interfacesstatecounterstx
+	{
+		/// <summary>PID: 2200</summary>
+		public const int tablePid = 2200;
+		/// <summary>IDX: 0</summary>
+		public const int indexColumn = 0;
+		/// <summary>PID: 2201</summary>
+		public const int indexColumnPid = 2201;
+		public class Pid
+		{
+			/// <summary>PID: 2201 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxname_2201 = 2201;
+			/// <summary>PID: 2201 | Type: read</summary>
+			public const int interfacesstatecounterstxname = 2201;
+			/// <summary>PID: 2202 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutoctets_2202 = 2202;
+			/// <summary>PID: 2202 | Type: read</summary>
+			public const int interfacesstatecounterstxoutoctets = 2202;
+			/// <summary>PID: 2203 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutpckts_2203 = 2203;
+			/// <summary>PID: 2203 | Type: read</summary>
+			public const int interfacesstatecounterstxoutpckts = 2203;
+			/// <summary>PID: 2204 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutunicastpckts_2204 = 2204;
+			/// <summary>PID: 2204 | Type: read</summary>
+			public const int interfacesstatecounterstxoutunicastpckts = 2204;
+			/// <summary>PID: 2205 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutbroadcastpckts_2205 = 2205;
+			/// <summary>PID: 2205 | Type: read</summary>
+			public const int interfacesstatecounterstxoutbroadcastpckts = 2205;
+			/// <summary>PID: 2206 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutmulticastpckts_2206 = 2206;
+			/// <summary>PID: 2206 | Type: read</summary>
+			public const int interfacesstatecounterstxoutmulticastpckts = 2206;
+			/// <summary>PID: 2207 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutdiscards_2207 = 2207;
+			/// <summary>PID: 2207 | Type: read</summary>
+			public const int interfacesstatecounterstxoutdiscards = 2207;
+			/// <summary>PID: 2208 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxouterrors_2208 = 2208;
+			/// <summary>PID: 2208 | Type: read</summary>
+			public const int interfacesstatecounterstxouterrors = 2208;
+			/// <summary>PID: 2209 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutunknownprotos_2209 = 2209;
+			/// <summary>PID: 2209 | Type: read</summary>
+			public const int interfacesstatecounterstxoutunknownprotos = 2209;
+			/// <summary>PID: 2210 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutfcserrors_2210 = 2210;
+			/// <summary>PID: 2210 | Type: read</summary>
+			public const int interfacesstatecounterstxoutfcserrors = 2210;
+			/// <summary>PID: 2211 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxfktointerfaces_2211 = 2211;
+			/// <summary>PID: 2211 | Type: read</summary>
+			public const int interfacesstatecounterstxfktointerfaces = 2211;
+			/// <summary>PID: 2212 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutrate_2212 = 2212;
+			/// <summary>PID: 2212 | Type: read</summary>
+			public const int interfacesstatecounterstxoutrate = 2212;
+			/// <summary>PID: 2213 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutunicastrate_2213 = 2213;
+			/// <summary>PID: 2213 | Type: read</summary>
+			public const int interfacesstatecounterstxoutunicastrate = 2213;
+			/// <summary>PID: 2214 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutbroadcastrate_2214 = 2214;
+			/// <summary>PID: 2214 | Type: read</summary>
+			public const int interfacesstatecounterstxoutbroadcastrate = 2214;
+			/// <summary>PID: 2215 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutmulticastrate_2215 = 2215;
+			/// <summary>PID: 2215 | Type: read</summary>
+			public const int interfacesstatecounterstxoutmulticastrate = 2215;
+			/// <summary>PID: 2216 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutdiscardsrate_2216 = 2216;
+			/// <summary>PID: 2216 | Type: read</summary>
+			public const int interfacesstatecounterstxoutdiscardsrate = 2216;
+			/// <summary>PID: 2217 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxouterrorsrate_2217 = 2217;
+			/// <summary>PID: 2217 | Type: read</summary>
+			public const int interfacesstatecounterstxouterrorsrate = 2217;
+			/// <summary>PID: 2218 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutunknownprotosrate_2218 = 2218;
+			/// <summary>PID: 2218 | Type: read</summary>
+			public const int interfacesstatecounterstxoutunknownprotosrate = 2218;
+			/// <summary>PID: 2219 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutfcserrorsrate_2219 = 2219;
+			/// <summary>PID: 2219 | Type: read</summary>
+			public const int interfacesstatecounterstxoutfcserrorsrate = 2219;
+			public class Write
+			{
+			}
+		}
+		public class Idx
+		{
+			/// <summary>IDX: 0 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxname_2201 = 0;
+			/// <summary>IDX: 0 | Type: read</summary>
+			public const int interfacesstatecounterstxname = 0;
+			/// <summary>IDX: 1 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutoctets_2202 = 1;
+			/// <summary>IDX: 1 | Type: read</summary>
+			public const int interfacesstatecounterstxoutoctets = 1;
+			/// <summary>IDX: 2 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutpckts_2203 = 2;
+			/// <summary>IDX: 2 | Type: read</summary>
+			public const int interfacesstatecounterstxoutpckts = 2;
+			/// <summary>IDX: 3 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutunicastpckts_2204 = 3;
+			/// <summary>IDX: 3 | Type: read</summary>
+			public const int interfacesstatecounterstxoutunicastpckts = 3;
+			/// <summary>IDX: 4 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutbroadcastpckts_2205 = 4;
+			/// <summary>IDX: 4 | Type: read</summary>
+			public const int interfacesstatecounterstxoutbroadcastpckts = 4;
+			/// <summary>IDX: 5 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutmulticastpckts_2206 = 5;
+			/// <summary>IDX: 5 | Type: read</summary>
+			public const int interfacesstatecounterstxoutmulticastpckts = 5;
+			/// <summary>IDX: 6 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutdiscards_2207 = 6;
+			/// <summary>IDX: 6 | Type: read</summary>
+			public const int interfacesstatecounterstxoutdiscards = 6;
+			/// <summary>IDX: 7 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxouterrors_2208 = 7;
+			/// <summary>IDX: 7 | Type: read</summary>
+			public const int interfacesstatecounterstxouterrors = 7;
+			/// <summary>IDX: 8 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutunknownprotos_2209 = 8;
+			/// <summary>IDX: 8 | Type: read</summary>
+			public const int interfacesstatecounterstxoutunknownprotos = 8;
+			/// <summary>IDX: 9 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutfcserrors_2210 = 9;
+			/// <summary>IDX: 9 | Type: read</summary>
+			public const int interfacesstatecounterstxoutfcserrors = 9;
+			/// <summary>IDX: 10 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxfktointerfaces_2211 = 10;
+			/// <summary>IDX: 10 | Type: read</summary>
+			public const int interfacesstatecounterstxfktointerfaces = 10;
+			/// <summary>IDX: 11 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutrate_2212 = 11;
+			/// <summary>IDX: 11 | Type: read</summary>
+			public const int interfacesstatecounterstxoutrate = 11;
+			/// <summary>IDX: 12 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutunicastrate_2213 = 12;
+			/// <summary>IDX: 12 | Type: read</summary>
+			public const int interfacesstatecounterstxoutunicastrate = 12;
+			/// <summary>IDX: 13 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutbroadcastrate_2214 = 13;
+			/// <summary>IDX: 13 | Type: read</summary>
+			public const int interfacesstatecounterstxoutbroadcastrate = 13;
+			/// <summary>IDX: 14 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutmulticastrate_2215 = 14;
+			/// <summary>IDX: 14 | Type: read</summary>
+			public const int interfacesstatecounterstxoutmulticastrate = 14;
+			/// <summary>IDX: 15 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutdiscardsrate_2216 = 15;
+			/// <summary>IDX: 15 | Type: read</summary>
+			public const int interfacesstatecounterstxoutdiscardsrate = 15;
+			/// <summary>IDX: 16 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxouterrorsrate_2217 = 16;
+			/// <summary>IDX: 16 | Type: read</summary>
+			public const int interfacesstatecounterstxouterrorsrate = 16;
+			/// <summary>IDX: 17 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutunknownprotosrate_2218 = 17;
+			/// <summary>IDX: 17 | Type: read</summary>
+			public const int interfacesstatecounterstxoutunknownprotosrate = 17;
+			/// <summary>IDX: 18 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatecounterstxoutfcserrorsrate_2219 = 18;
+			/// <summary>IDX: 18 | Type: read</summary>
+			public const int interfacesstatecounterstxoutfcserrorsrate = 18;
+		}
+	}
 }
 public class WriteParameters
 {
@@ -1052,6 +1711,16 @@ public class WriteParameters
 	public System.Object Interfacesalias {get { return Protocol.GetParameter(1277); }set { Protocol.SetParameter(1277, value); }}
 	/// <summary>PID: 1279  | Type: write | DISCREETS: Enabled = 1, Disabled = 2</summary>
 	public System.Object Interfaceslinkupdowntrapenable {get { return Protocol.GetParameter(1279); }set { Protocol.SetParameter(1279, value); }}
+	/// <summary>PID: 2021  | Type: write | DISCREETS: Delete = 1</summary>
+	public System.Object Interfacesstateaction {get { return Protocol.GetParameter(2021); }set { Protocol.SetParameter(2021, value); }}
+	/// <summary>PID: 2053  | Type: write | DISCREETS: N/A = -1</summary>
+	public System.Object Interfacesstatemtu {get { return Protocol.GetParameter(2053); }set { Protocol.SetParameter(2053, value); }}
+	/// <summary>PID: 2055  | Type: write | DISCREETS: N/A = -1</summary>
+	public System.Object Interfacesstatedescription {get { return Protocol.GetParameter(2055); }set { Protocol.SetParameter(2055, value); }}
+	/// <summary>PID: 2058  | Type: write | DISCREETS: Up = 0, Down = 1</summary>
+	public System.Object Interfacesstateadminstatus {get { return Protocol.GetParameter(2058); }set { Protocol.SetParameter(2058, value); }}
+	/// <summary>PID: 2059  | Type: write</summary>
+	public System.Object Interfacesstateuserdescription {get { return Protocol.GetParameter(2059); }set { Protocol.SetParameter(2059, value); }}
 	public SLProtocolExt Protocol;
 	public WriteParameters(SLProtocolExt protocol)
 	{
@@ -1068,6 +1737,12 @@ public interface SLProtocolExt : SLProtocol
 	InterfacesQActionTable interfaces { get; set; }
 	/// <summary>PID: 1300</summary>
 	Dot3statstableQActionTable dot3statstable { get; set; }
+	/// <summary>PID: 2000</summary>
+	InterfacesstateQActionTable interfacesstate { get; set; }
+	/// <summary>PID: 2100</summary>
+	InterfacesstatecountersrxQActionTable interfacesstatecountersrx { get; set; }
+	/// <summary>PID: 2200</summary>
+	InterfacesstatecounterstxQActionTable interfacesstatecounterstx { get; set; }
 	object Afterstartup_dummy { get; set; }
 	object Fixed_0__fixed { get; set; }
 	object Fixed_1__fixed { get; set; }
@@ -1282,6 +1957,128 @@ public interface SLProtocolExt : SLProtocol
 	object Dot3statsindex { get; set; }
 	object Dot3statsduplexstatus_1302 { get; set; }
 	object Dot3statsduplexstatus { get; set; }
+	object Interfacesstatename_2001 { get; set; }
+	object Interfacesstatename { get; set; }
+	object Interfacesstatetype_2002 { get; set; }
+	object Interfacesstatetype { get; set; }
+	object Interfacesstatemtu_2003 { get; set; }
+	object Interfacesstatemtu { get; set; }
+	object Interfacesstateloopbackmode_2004 { get; set; }
+	object Interfacesstateloopbackmode { get; set; }
+	object Interfacesstatedescription_2005 { get; set; }
+	object Interfacesstatedescription { get; set; }
+	object Interfacesstatestate_2006 { get; set; }
+	object Interfacesstatestate { get; set; }
+	object Interfacesstateifindex_2007 { get; set; }
+	object Interfacesstateifindex { get; set; }
+	object Interfacesstateadminstatus_2008 { get; set; }
+	object Interfacesstateadminstatus { get; set; }
+	object Interfacesstateoperstatus_2009 { get; set; }
+	object Interfacesstateoperstatus { get; set; }
+	object Interfacesstatelastchange_2010 { get; set; }
+	object Interfacesstatelastchange { get; set; }
+	object Interfacesstatelogical_2011 { get; set; }
+	object Interfacesstatelogical { get; set; }
+	object Interfacesstateinoctets_2012 { get; set; }
+	object Interfacesstateinoctets { get; set; }
+	object Interfacesstateoutoctets_2013 { get; set; }
+	object Interfacesstateoutoctets { get; set; }
+	object Interfacesstatecarriertransitions_2014 { get; set; }
+	object Interfacesstatecarriertransitions { get; set; }
+	object Interfacesstatelastclear_2015 { get; set; }
+	object Interfacesstatelastclear { get; set; }
+	object Interfacesstatedisplaykey_2016 { get; set; }
+	object Interfacesstatedisplaykey { get; set; }
+	object Interfacesstateinbitrate_2017 { get; set; }
+	object Interfacesstateinbitrate { get; set; }
+	object Interfacesstateoutbitrate_2018 { get; set; }
+	object Interfacesstateoutbitrate { get; set; }
+	object Interfacesstateuserdescription_2019 { get; set; }
+	object Interfacesstateuserdescription { get; set; }
+	object Interfacesstaterowstate_2020 { get; set; }
+	object Interfacesstaterowstate { get; set; }
+	object Interfacesstateaction_2021 { get; set; }
+	object Interfacesstateaction { get; set; }
+	object Interfacesstatemtu_2053 { get; set; }
+	object Interfacesstatedescription_2055 { get; set; }
+	object Interfacesstateadminstatus_2058 { get; set; }
+	object Interfacesstateuserdescription_2059 { get; set; }
+	object Interfacesstatecountersrxname_2101 { get; set; }
+	object Interfacesstatecountersrxname { get; set; }
+	object Interfacesstatecountersrxinoctets_2102 { get; set; }
+	object Interfacesstatecountersrxinoctets { get; set; }
+	object Interfacesstatecountersrxinpckts_2103 { get; set; }
+	object Interfacesstatecountersrxinpckts { get; set; }
+	object Interfacesstatecountersrxinunicastpckts_2104 { get; set; }
+	object Interfacesstatecountersrxinunicastpckts { get; set; }
+	object Interfacesstatecountersrxinbroadcastpckts_2105 { get; set; }
+	object Interfacesstatecountersrxinbroadcastpckts { get; set; }
+	object Interfacesstatecountersrxinmulticastpckts_2106 { get; set; }
+	object Interfacesstatecountersrxinmulticastpckts { get; set; }
+	object Interfacesstatecountersrxindiscards_2107 { get; set; }
+	object Interfacesstatecountersrxindiscards { get; set; }
+	object Interfacesstatecountersrxinerrors_2108 { get; set; }
+	object Interfacesstatecountersrxinerrors { get; set; }
+	object Interfacesstatecountersrxinunknownprotos_2109 { get; set; }
+	object Interfacesstatecountersrxinunknownprotos { get; set; }
+	object Interfacesstatecountersrxinfcserrors_2110 { get; set; }
+	object Interfacesstatecountersrxinfcserrors { get; set; }
+	object Interfacesstatecountersrxfktointerfaces_2111 { get; set; }
+	object Interfacesstatecountersrxfktointerfaces { get; set; }
+	object Interfacesstatecountersrxinrate_2112 { get; set; }
+	object Interfacesstatecountersrxinrate { get; set; }
+	object Interfacesstatecountersrxinunicastrate_2113 { get; set; }
+	object Interfacesstatecountersrxinunicastrate { get; set; }
+	object Interfacesstatecountersrxinbroadcastrate_2114 { get; set; }
+	object Interfacesstatecountersrxinbroadcastrate { get; set; }
+	object Interfacesstatecountersrxinmulticastrate_2115 { get; set; }
+	object Interfacesstatecountersrxinmulticastrate { get; set; }
+	object Interfacesstatecountersrxindiscardsrate_2116 { get; set; }
+	object Interfacesstatecountersrxindiscardsrate { get; set; }
+	object Interfacesstatecountersrxinerrorsrate_2117 { get; set; }
+	object Interfacesstatecountersrxinerrorsrate { get; set; }
+	object Interfacesstatecountersrxinunknownprotosrate_2118 { get; set; }
+	object Interfacesstatecountersrxinunknownprotosrate { get; set; }
+	object Interfacesstatecountersrxinfcserrorsrate_2119 { get; set; }
+	object Interfacesstatecountersrxinfcserrorsrate { get; set; }
+	object Interfacesstatecounterstxname_2201 { get; set; }
+	object Interfacesstatecounterstxname { get; set; }
+	object Interfacesstatecounterstxoutoctets_2202 { get; set; }
+	object Interfacesstatecounterstxoutoctets { get; set; }
+	object Interfacesstatecounterstxoutpckts_2203 { get; set; }
+	object Interfacesstatecounterstxoutpckts { get; set; }
+	object Interfacesstatecounterstxoutunicastpckts_2204 { get; set; }
+	object Interfacesstatecounterstxoutunicastpckts { get; set; }
+	object Interfacesstatecounterstxoutbroadcastpckts_2205 { get; set; }
+	object Interfacesstatecounterstxoutbroadcastpckts { get; set; }
+	object Interfacesstatecounterstxoutmulticastpckts_2206 { get; set; }
+	object Interfacesstatecounterstxoutmulticastpckts { get; set; }
+	object Interfacesstatecounterstxoutdiscards_2207 { get; set; }
+	object Interfacesstatecounterstxoutdiscards { get; set; }
+	object Interfacesstatecounterstxouterrors_2208 { get; set; }
+	object Interfacesstatecounterstxouterrors { get; set; }
+	object Interfacesstatecounterstxoutunknownprotos_2209 { get; set; }
+	object Interfacesstatecounterstxoutunknownprotos { get; set; }
+	object Interfacesstatecounterstxoutfcserrors_2210 { get; set; }
+	object Interfacesstatecounterstxoutfcserrors { get; set; }
+	object Interfacesstatecounterstxfktointerfaces_2211 { get; set; }
+	object Interfacesstatecounterstxfktointerfaces { get; set; }
+	object Interfacesstatecounterstxoutrate_2212 { get; set; }
+	object Interfacesstatecounterstxoutrate { get; set; }
+	object Interfacesstatecounterstxoutunicastrate_2213 { get; set; }
+	object Interfacesstatecounterstxoutunicastrate { get; set; }
+	object Interfacesstatecounterstxoutbroadcastrate_2214 { get; set; }
+	object Interfacesstatecounterstxoutbroadcastrate { get; set; }
+	object Interfacesstatecounterstxoutmulticastrate_2215 { get; set; }
+	object Interfacesstatecounterstxoutmulticastrate { get; set; }
+	object Interfacesstatecounterstxoutdiscardsrate_2216 { get; set; }
+	object Interfacesstatecounterstxoutdiscardsrate { get; set; }
+	object Interfacesstatecounterstxouterrorsrate_2217 { get; set; }
+	object Interfacesstatecounterstxouterrorsrate { get; set; }
+	object Interfacesstatecounterstxoutunknownprotosrate_2218 { get; set; }
+	object Interfacesstatecounterstxoutunknownprotosrate { get; set; }
+	object Interfacesstatecounterstxoutfcserrorsrate_2219 { get; set; }
+	object Interfacesstatecounterstxoutfcserrorsrate { get; set; }
 	WriteParameters Write { get; set; }
 }
 public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
@@ -1294,6 +2091,12 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public InterfacesQActionTable interfaces { get; set; }
 	/// <summary>PID: 1300</summary>
 	public Dot3statstableQActionTable dot3statstable { get; set; }
+	/// <summary>PID: 2000</summary>
+	public InterfacesstateQActionTable interfacesstate { get; set; }
+	/// <summary>PID: 2100</summary>
+	public InterfacesstatecountersrxQActionTable interfacesstatecountersrx { get; set; }
+	/// <summary>PID: 2200</summary>
+	public InterfacesstatecounterstxQActionTable interfacesstatecounterstx { get; set; }
 	/// <summary>PID: 2  | Type: dummy</summary>
 	public System.Object Afterstartup_dummy {get { return GetParameter(2); }set { SetParameter(2, value); }}
 	/// <summary>PID: 10  | Type: fixed</summary>
@@ -1829,6 +2632,312 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Dot3statsduplexstatus_1302 {get { return GetParameter(1302); }set { SetParameter(1302, value); }}
 	/// <summary>PID: 1302  | Type: read | DISCREETS: Unknown = 1, Half Duplex = 2, Full Duplex = 3</summary>
 	public System.Object Dot3statsduplexstatus {get { return GetParameter(1302); }set { SetParameter(1302, value); }}
+	/// <summary>PID: 2001  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatename_2001 {get { return GetParameter(2001); }set { SetParameter(2001, value); }}
+	/// <summary>PID: 2001  | Type: read</summary>
+	public System.Object Interfacesstatename {get { return GetParameter(2001); }set { SetParameter(2001, value); }}
+	/// <summary>PID: 2002  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatetype_2002 {get { return GetParameter(2002); }set { SetParameter(2002, value); }}
+	/// <summary>PID: 2002  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatetype {get { return GetParameter(2002); }set { SetParameter(2002, value); }}
+	/// <summary>PID: 2003  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatemtu_2003 {get { return GetParameter(2003); }set { SetParameter(2003, value); }}
+	/// <summary>PID: 2003  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatemtu {get { return GetParameter(2003); }set { SetParameter(2003, value); }}
+	/// <summary>PID: 2004  | Type: read | DISCREETS: None = 0, Facility = 1, Terminal = 2 | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateloopbackmode_2004 {get { return GetParameter(2004); }set { SetParameter(2004, value); }}
+	/// <summary>PID: 2004  | Type: read | DISCREETS: None = 0, Facility = 1, Terminal = 2 | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstateloopbackmode {get { return GetParameter(2004); }set { SetParameter(2004, value); }}
+	/// <summary>PID: 2005  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatedescription_2005 {get { return GetParameter(2005); }set { SetParameter(2005, value); }}
+	/// <summary>PID: 2005  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatedescription {get { return GetParameter(2005); }set { SetParameter(2005, value); }}
+	/// <summary>PID: 2006  | Type: read | DISCREETS: Disabled = 0, Enabled = 1 | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatestate_2006 {get { return GetParameter(2006); }set { SetParameter(2006, value); }}
+	/// <summary>PID: 2006  | Type: read | DISCREETS: Disabled = 0, Enabled = 1 | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatestate {get { return GetParameter(2006); }set { SetParameter(2006, value); }}
+	/// <summary>PID: 2007  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateifindex_2007 {get { return GetParameter(2007); }set { SetParameter(2007, value); }}
+	/// <summary>PID: 2007  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstateifindex {get { return GetParameter(2007); }set { SetParameter(2007, value); }}
+	/// <summary>PID: 2008  | Type: read | DISCREETS: Up = 0, Down = 1, Testing = 2 | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateadminstatus_2008 {get { return GetParameter(2008); }set { SetParameter(2008, value); }}
+	/// <summary>PID: 2008  | Type: read | DISCREETS: Up = 0, Down = 1, Testing = 2 | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstateadminstatus {get { return GetParameter(2008); }set { SetParameter(2008, value); }}
+	/// <summary>PID: 2009  | Type: read | DISCREETS: Up = 1, Down = 2, Testing = 3, Unknown = 4, Dormant = 5, Not Present = 6, Lower Layer Down = 7 | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateoperstatus_2009 {get { return GetParameter(2009); }set { SetParameter(2009, value); }}
+	/// <summary>PID: 2009  | Type: read | DISCREETS: Up = 1, Down = 2, Testing = 3, Unknown = 4, Dormant = 5, Not Present = 6, Lower Layer Down = 7 | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstateoperstatus {get { return GetParameter(2009); }set { SetParameter(2009, value); }}
+	/// <summary>PID: 2010  | Type: read | EXCEPTIONS: N/A = 0</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatelastchange_2010 {get { return GetParameter(2010); }set { SetParameter(2010, value); }}
+	/// <summary>PID: 2010  | Type: read | EXCEPTIONS: N/A = 0</summary>
+	public System.Object Interfacesstatelastchange {get { return GetParameter(2010); }set { SetParameter(2010, value); }}
+	/// <summary>PID: 2011  | Type: read | DISCREETS: False = 0, True = 1 | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatelogical_2011 {get { return GetParameter(2011); }set { SetParameter(2011, value); }}
+	/// <summary>PID: 2011  | Type: read | DISCREETS: False = 0, True = 1 | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatelogical {get { return GetParameter(2011); }set { SetParameter(2011, value); }}
+	/// <summary>PID: 2012  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateinoctets_2012 {get { return GetParameter(2012); }set { SetParameter(2012, value); }}
+	/// <summary>PID: 2012  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstateinoctets {get { return GetParameter(2012); }set { SetParameter(2012, value); }}
+	/// <summary>PID: 2013  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateoutoctets_2013 {get { return GetParameter(2013); }set { SetParameter(2013, value); }}
+	/// <summary>PID: 2013  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstateoutoctets {get { return GetParameter(2013); }set { SetParameter(2013, value); }}
+	/// <summary>PID: 2014  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecarriertransitions_2014 {get { return GetParameter(2014); }set { SetParameter(2014, value); }}
+	/// <summary>PID: 2014  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecarriertransitions {get { return GetParameter(2014); }set { SetParameter(2014, value); }}
+	/// <summary>PID: 2015  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatelastclear_2015 {get { return GetParameter(2015); }set { SetParameter(2015, value); }}
+	/// <summary>PID: 2015  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatelastclear {get { return GetParameter(2015); }set { SetParameter(2015, value); }}
+	/// <summary>PID: 2016  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatedisplaykey_2016 {get { return GetParameter(2016); }set { SetParameter(2016, value); }}
+	/// <summary>PID: 2016  | Type: read</summary>
+	public System.Object Interfacesstatedisplaykey {get { return GetParameter(2016); }set { SetParameter(2016, value); }}
+	/// <summary>PID: 2017  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateinbitrate_2017 {get { return GetParameter(2017); }set { SetParameter(2017, value); }}
+	/// <summary>PID: 2017  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstateinbitrate {get { return GetParameter(2017); }set { SetParameter(2017, value); }}
+	/// <summary>PID: 2018  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateoutbitrate_2018 {get { return GetParameter(2018); }set { SetParameter(2018, value); }}
+	/// <summary>PID: 2018  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstateoutbitrate {get { return GetParameter(2018); }set { SetParameter(2018, value); }}
+	/// <summary>PID: 2019  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateuserdescription_2019 {get { return GetParameter(2019); }set { SetParameter(2019, value); }}
+	/// <summary>PID: 2019  | Type: read</summary>
+	public System.Object Interfacesstateuserdescription {get { return GetParameter(2019); }set { SetParameter(2019, value); }}
+	/// <summary>PID: 2020  | Type: read | DISCREETS: Updated = 1, Equal = 2, New = 3, Deleted = 4, Recreated = 5</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstaterowstate_2020 {get { return GetParameter(2020); }set { SetParameter(2020, value); }}
+	/// <summary>PID: 2020  | Type: read | DISCREETS: Updated = 1, Equal = 2, New = 3, Deleted = 4, Recreated = 5</summary>
+	public System.Object Interfacesstaterowstate {get { return GetParameter(2020); }set { SetParameter(2020, value); }}
+	/// <summary>PID: 2021  | Type: write | DISCREETS: Delete = 1</summary>
+	public System.Object Interfacesstateaction_2021 {get { return GetParameter(2021); }set { SetParameter(2021, value); }}
+	/// <summary>PID: 2021  | Type: write | DISCREETS: Delete = 1</summary>
+	public System.Object Interfacesstateaction {get { return Write.Interfacesstateaction; }set { Write.Interfacesstateaction = value; }}
+	/// <summary>PID: 2053  | Type: write | DISCREETS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatemtu_2053 {get { return GetParameter(2053); }set { SetParameter(2053, value); }}
+	/// <summary>PID: 2055  | Type: write | DISCREETS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatedescription_2055 {get { return GetParameter(2055); }set { SetParameter(2055, value); }}
+	/// <summary>PID: 2058  | Type: write | DISCREETS: Up = 0, Down = 1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateadminstatus_2058 {get { return GetParameter(2058); }set { SetParameter(2058, value); }}
+	/// <summary>PID: 2059  | Type: write</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateuserdescription_2059 {get { return GetParameter(2059); }set { SetParameter(2059, value); }}
+	/// <summary>PID: 2101  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxname_2101 {get { return GetParameter(2101); }set { SetParameter(2101, value); }}
+	/// <summary>PID: 2101  | Type: read</summary>
+	public System.Object Interfacesstatecountersrxname {get { return GetParameter(2101); }set { SetParameter(2101, value); }}
+	/// <summary>PID: 2102  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinoctets_2102 {get { return GetParameter(2102); }set { SetParameter(2102, value); }}
+	/// <summary>PID: 2102  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinoctets {get { return GetParameter(2102); }set { SetParameter(2102, value); }}
+	/// <summary>PID: 2103  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinpckts_2103 {get { return GetParameter(2103); }set { SetParameter(2103, value); }}
+	/// <summary>PID: 2103  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinpckts {get { return GetParameter(2103); }set { SetParameter(2103, value); }}
+	/// <summary>PID: 2104  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinunicastpckts_2104 {get { return GetParameter(2104); }set { SetParameter(2104, value); }}
+	/// <summary>PID: 2104  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinunicastpckts {get { return GetParameter(2104); }set { SetParameter(2104, value); }}
+	/// <summary>PID: 2105  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinbroadcastpckts_2105 {get { return GetParameter(2105); }set { SetParameter(2105, value); }}
+	/// <summary>PID: 2105  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinbroadcastpckts {get { return GetParameter(2105); }set { SetParameter(2105, value); }}
+	/// <summary>PID: 2106  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinmulticastpckts_2106 {get { return GetParameter(2106); }set { SetParameter(2106, value); }}
+	/// <summary>PID: 2106  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinmulticastpckts {get { return GetParameter(2106); }set { SetParameter(2106, value); }}
+	/// <summary>PID: 2107  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxindiscards_2107 {get { return GetParameter(2107); }set { SetParameter(2107, value); }}
+	/// <summary>PID: 2107  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxindiscards {get { return GetParameter(2107); }set { SetParameter(2107, value); }}
+	/// <summary>PID: 2108  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinerrors_2108 {get { return GetParameter(2108); }set { SetParameter(2108, value); }}
+	/// <summary>PID: 2108  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinerrors {get { return GetParameter(2108); }set { SetParameter(2108, value); }}
+	/// <summary>PID: 2109  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinunknownprotos_2109 {get { return GetParameter(2109); }set { SetParameter(2109, value); }}
+	/// <summary>PID: 2109  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinunknownprotos {get { return GetParameter(2109); }set { SetParameter(2109, value); }}
+	/// <summary>PID: 2110  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinfcserrors_2110 {get { return GetParameter(2110); }set { SetParameter(2110, value); }}
+	/// <summary>PID: 2110  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinfcserrors {get { return GetParameter(2110); }set { SetParameter(2110, value); }}
+	/// <summary>PID: 2111  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxfktointerfaces_2111 {get { return GetParameter(2111); }set { SetParameter(2111, value); }}
+	/// <summary>PID: 2111  | Type: read</summary>
+	public System.Object Interfacesstatecountersrxfktointerfaces {get { return GetParameter(2111); }set { SetParameter(2111, value); }}
+	/// <summary>PID: 2112  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinrate_2112 {get { return GetParameter(2112); }set { SetParameter(2112, value); }}
+	/// <summary>PID: 2112  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinrate {get { return GetParameter(2112); }set { SetParameter(2112, value); }}
+	/// <summary>PID: 2113  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinunicastrate_2113 {get { return GetParameter(2113); }set { SetParameter(2113, value); }}
+	/// <summary>PID: 2113  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinunicastrate {get { return GetParameter(2113); }set { SetParameter(2113, value); }}
+	/// <summary>PID: 2114  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinbroadcastrate_2114 {get { return GetParameter(2114); }set { SetParameter(2114, value); }}
+	/// <summary>PID: 2114  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinbroadcastrate {get { return GetParameter(2114); }set { SetParameter(2114, value); }}
+	/// <summary>PID: 2115  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinmulticastrate_2115 {get { return GetParameter(2115); }set { SetParameter(2115, value); }}
+	/// <summary>PID: 2115  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinmulticastrate {get { return GetParameter(2115); }set { SetParameter(2115, value); }}
+	/// <summary>PID: 2116  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxindiscardsrate_2116 {get { return GetParameter(2116); }set { SetParameter(2116, value); }}
+	/// <summary>PID: 2116  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxindiscardsrate {get { return GetParameter(2116); }set { SetParameter(2116, value); }}
+	/// <summary>PID: 2117  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinerrorsrate_2117 {get { return GetParameter(2117); }set { SetParameter(2117, value); }}
+	/// <summary>PID: 2117  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinerrorsrate {get { return GetParameter(2117); }set { SetParameter(2117, value); }}
+	/// <summary>PID: 2118  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinunknownprotosrate_2118 {get { return GetParameter(2118); }set { SetParameter(2118, value); }}
+	/// <summary>PID: 2118  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinunknownprotosrate {get { return GetParameter(2118); }set { SetParameter(2118, value); }}
+	/// <summary>PID: 2119  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinfcserrorsrate_2119 {get { return GetParameter(2119); }set { SetParameter(2119, value); }}
+	/// <summary>PID: 2119  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecountersrxinfcserrorsrate {get { return GetParameter(2119); }set { SetParameter(2119, value); }}
+	/// <summary>PID: 2201  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxname_2201 {get { return GetParameter(2201); }set { SetParameter(2201, value); }}
+	/// <summary>PID: 2201  | Type: read</summary>
+	public System.Object Interfacesstatecounterstxname {get { return GetParameter(2201); }set { SetParameter(2201, value); }}
+	/// <summary>PID: 2202  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutoctets_2202 {get { return GetParameter(2202); }set { SetParameter(2202, value); }}
+	/// <summary>PID: 2202  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutoctets {get { return GetParameter(2202); }set { SetParameter(2202, value); }}
+	/// <summary>PID: 2203  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutpckts_2203 {get { return GetParameter(2203); }set { SetParameter(2203, value); }}
+	/// <summary>PID: 2203  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutpckts {get { return GetParameter(2203); }set { SetParameter(2203, value); }}
+	/// <summary>PID: 2204  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutunicastpckts_2204 {get { return GetParameter(2204); }set { SetParameter(2204, value); }}
+	/// <summary>PID: 2204  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutunicastpckts {get { return GetParameter(2204); }set { SetParameter(2204, value); }}
+	/// <summary>PID: 2205  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutbroadcastpckts_2205 {get { return GetParameter(2205); }set { SetParameter(2205, value); }}
+	/// <summary>PID: 2205  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutbroadcastpckts {get { return GetParameter(2205); }set { SetParameter(2205, value); }}
+	/// <summary>PID: 2206  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutmulticastpckts_2206 {get { return GetParameter(2206); }set { SetParameter(2206, value); }}
+	/// <summary>PID: 2206  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutmulticastpckts {get { return GetParameter(2206); }set { SetParameter(2206, value); }}
+	/// <summary>PID: 2207  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutdiscards_2207 {get { return GetParameter(2207); }set { SetParameter(2207, value); }}
+	/// <summary>PID: 2207  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutdiscards {get { return GetParameter(2207); }set { SetParameter(2207, value); }}
+	/// <summary>PID: 2208  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxouterrors_2208 {get { return GetParameter(2208); }set { SetParameter(2208, value); }}
+	/// <summary>PID: 2208  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxouterrors {get { return GetParameter(2208); }set { SetParameter(2208, value); }}
+	/// <summary>PID: 2209  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutunknownprotos_2209 {get { return GetParameter(2209); }set { SetParameter(2209, value); }}
+	/// <summary>PID: 2209  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutunknownprotos {get { return GetParameter(2209); }set { SetParameter(2209, value); }}
+	/// <summary>PID: 2210  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutfcserrors_2210 {get { return GetParameter(2210); }set { SetParameter(2210, value); }}
+	/// <summary>PID: 2210  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutfcserrors {get { return GetParameter(2210); }set { SetParameter(2210, value); }}
+	/// <summary>PID: 2211  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxfktointerfaces_2211 {get { return GetParameter(2211); }set { SetParameter(2211, value); }}
+	/// <summary>PID: 2211  | Type: read</summary>
+	public System.Object Interfacesstatecounterstxfktointerfaces {get { return GetParameter(2211); }set { SetParameter(2211, value); }}
+	/// <summary>PID: 2212  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutrate_2212 {get { return GetParameter(2212); }set { SetParameter(2212, value); }}
+	/// <summary>PID: 2212  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutrate {get { return GetParameter(2212); }set { SetParameter(2212, value); }}
+	/// <summary>PID: 2213  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutunicastrate_2213 {get { return GetParameter(2213); }set { SetParameter(2213, value); }}
+	/// <summary>PID: 2213  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutunicastrate {get { return GetParameter(2213); }set { SetParameter(2213, value); }}
+	/// <summary>PID: 2214  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutbroadcastrate_2214 {get { return GetParameter(2214); }set { SetParameter(2214, value); }}
+	/// <summary>PID: 2214  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutbroadcastrate {get { return GetParameter(2214); }set { SetParameter(2214, value); }}
+	/// <summary>PID: 2215  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutmulticastrate_2215 {get { return GetParameter(2215); }set { SetParameter(2215, value); }}
+	/// <summary>PID: 2215  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutmulticastrate {get { return GetParameter(2215); }set { SetParameter(2215, value); }}
+	/// <summary>PID: 2216  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutdiscardsrate_2216 {get { return GetParameter(2216); }set { SetParameter(2216, value); }}
+	/// <summary>PID: 2216  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutdiscardsrate {get { return GetParameter(2216); }set { SetParameter(2216, value); }}
+	/// <summary>PID: 2217  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxouterrorsrate_2217 {get { return GetParameter(2217); }set { SetParameter(2217, value); }}
+	/// <summary>PID: 2217  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxouterrorsrate {get { return GetParameter(2217); }set { SetParameter(2217, value); }}
+	/// <summary>PID: 2218  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutunknownprotosrate_2218 {get { return GetParameter(2218); }set { SetParameter(2218, value); }}
+	/// <summary>PID: 2218  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutunknownprotosrate {get { return GetParameter(2218); }set { SetParameter(2218, value); }}
+	/// <summary>PID: 2219  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutfcserrorsrate_2219 {get { return GetParameter(2219); }set { SetParameter(2219, value); }}
+	/// <summary>PID: 2219  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Interfacesstatecounterstxoutfcserrorsrate {get { return GetParameter(2219); }set { SetParameter(2219, value); }}
 	public WriteParameters Write { get; set; }
 	public ConcreteSLProtocolExt()
 	{
@@ -1836,6 +2945,9 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 		ifxtable = new IfxtableQActionTable(this, 1100, "ifxtable");
 		interfaces = new InterfacesQActionTable(this, 1200, "interfaces");
 		dot3statstable = new Dot3statstableQActionTable(this, 1300, "dot3statstable");
+		interfacesstate = new InterfacesstateQActionTable(this, 2000, "interfacesstate");
+		interfacesstatecountersrx = new InterfacesstatecountersrxQActionTable(this, 2100, "interfacesstatecountersrx");
+		interfacesstatecounterstx = new InterfacesstatecounterstxQActionTable(this, 2200, "interfacesstatecounterstx");
 		Write = new WriteParameters(this);
 	}
 }
@@ -1866,6 +2978,27 @@ public class Dot3statstableQActionTable : QActionTable, IEnumerable<Dot3statstab
 	public Dot3statstableQActionTable(SLProtocol protocol, int tableId, string tableName) : base(protocol, tableId, tableName) { }
 	IEnumerator IEnumerable.GetEnumerator() { return (IEnumerator) GetEnumerator(); }
 	public IEnumerator<Dot3statstableQActionRow> GetEnumerator() { return new QActionTableEnumerator<Dot3statstableQActionRow>(this); }
+}
+/// <summary>IDX: 0</summary>
+public class InterfacesstateQActionTable : QActionTable, IEnumerable<InterfacesstateQActionRow>
+{
+	public InterfacesstateQActionTable(SLProtocol protocol, int tableId, string tableName) : base(protocol, tableId, tableName) { }
+	IEnumerator IEnumerable.GetEnumerator() { return (IEnumerator) GetEnumerator(); }
+	public IEnumerator<InterfacesstateQActionRow> GetEnumerator() { return new QActionTableEnumerator<InterfacesstateQActionRow>(this); }
+}
+/// <summary>IDX: 0</summary>
+public class InterfacesstatecountersrxQActionTable : QActionTable, IEnumerable<InterfacesstatecountersrxQActionRow>
+{
+	public InterfacesstatecountersrxQActionTable(SLProtocol protocol, int tableId, string tableName) : base(protocol, tableId, tableName) { }
+	IEnumerator IEnumerable.GetEnumerator() { return (IEnumerator) GetEnumerator(); }
+	public IEnumerator<InterfacesstatecountersrxQActionRow> GetEnumerator() { return new QActionTableEnumerator<InterfacesstatecountersrxQActionRow>(this); }
+}
+/// <summary>IDX: 0</summary>
+public class InterfacesstatecounterstxQActionTable : QActionTable, IEnumerable<InterfacesstatecounterstxQActionRow>
+{
+	public InterfacesstatecounterstxQActionTable(SLProtocol protocol, int tableId, string tableName) : base(protocol, tableId, tableName) { }
+	IEnumerator IEnumerable.GetEnumerator() { return (IEnumerator) GetEnumerator(); }
+	public IEnumerator<InterfacesstatecounterstxQActionRow> GetEnumerator() { return new QActionTableEnumerator<InterfacesstatecounterstxQActionRow>(this); }
 }
 /// <summary>IDX: 0</summary>
 public class IftableQActionRow : QActionTableRow
@@ -2298,5 +3431,327 @@ public class Dot3statstableQActionRow : QActionTableRow
 	public Dot3statstableQActionRow(System.Object[] oRow) : base(0, 2, oRow) { }
 	public static implicit operator Dot3statstableQActionRow(System.Object[] source) { return new Dot3statstableQActionRow(source); }
 	public static implicit operator System.Object[](Dot3statstableQActionRow source) { return source.ToObjectArray(); }
+}
+/// <summary>IDX: 0</summary>
+public class InterfacesstateQActionRow : QActionTableRow
+{
+	/// <summary>PID: 2001 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatename_2001 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 2001 | Type: read</summary>
+	public System.Object Interfacesstatename { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 2002 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatetype_2002 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 2002 | Type: read</summary>
+	public System.Object Interfacesstatetype { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 2003 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatemtu_2003 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 2003 | Type: read</summary>
+	public System.Object Interfacesstatemtu { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 2004 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateloopbackmode_2004 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 2004 | Type: read</summary>
+	public System.Object Interfacesstateloopbackmode { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 2005 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatedescription_2005 { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 2005 | Type: read</summary>
+	public System.Object Interfacesstatedescription { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 2006 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatestate_2006 { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	/// <summary>PID: 2006 | Type: read</summary>
+	public System.Object Interfacesstatestate { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	/// <summary>PID: 2007 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateifindex_2007 { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	/// <summary>PID: 2007 | Type: read</summary>
+	public System.Object Interfacesstateifindex { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	/// <summary>PID: 2008 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateadminstatus_2008 { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	/// <summary>PID: 2008 | Type: read</summary>
+	public System.Object Interfacesstateadminstatus { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	/// <summary>PID: 2009 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateoperstatus_2009 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 2009 | Type: read</summary>
+	public System.Object Interfacesstateoperstatus { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 2010 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatelastchange_2010 { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 2010 | Type: read</summary>
+	public System.Object Interfacesstatelastchange { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 2011 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatelogical_2011 { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
+	/// <summary>PID: 2011 | Type: read</summary>
+	public System.Object Interfacesstatelogical { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
+	/// <summary>PID: 2012 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateinoctets_2012 { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	/// <summary>PID: 2012 | Type: read</summary>
+	public System.Object Interfacesstateinoctets { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	/// <summary>PID: 2013 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateoutoctets_2013 { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
+	/// <summary>PID: 2013 | Type: read</summary>
+	public System.Object Interfacesstateoutoctets { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
+	/// <summary>PID: 2014 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecarriertransitions_2014 { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
+	/// <summary>PID: 2014 | Type: read</summary>
+	public System.Object Interfacesstatecarriertransitions { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
+	/// <summary>PID: 2015 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatelastclear_2015 { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
+	/// <summary>PID: 2015 | Type: read</summary>
+	public System.Object Interfacesstatelastclear { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
+	/// <summary>PID: 2017 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateinbitrate_2017 { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
+	/// <summary>PID: 2017 | Type: read</summary>
+	public System.Object Interfacesstateinbitrate { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
+	/// <summary>PID: 2018 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateoutbitrate_2018 { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	/// <summary>PID: 2018 | Type: read</summary>
+	public System.Object Interfacesstateoutbitrate { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	/// <summary>PID: 2019 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstateuserdescription_2019 { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	/// <summary>PID: 2019 | Type: read</summary>
+	public System.Object Interfacesstateuserdescription { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	/// <summary>PID: 2020 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstaterowstate_2020 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	/// <summary>PID: 2020 | Type: read</summary>
+	public System.Object Interfacesstaterowstate { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	/// <summary>PID: 2021 | Type: write</summary>
+	public System.Object Interfacesstateaction_2021 { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
+	/// <summary>PID: 2021 | Type: write</summary>
+	public System.Object Interfacesstateaction { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
+	/// <summary>PID: 2016 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatedisplaykey_2016 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	/// <summary>PID: 2016 | Type: read</summary>
+	public System.Object Interfacesstatedisplaykey { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public InterfacesstateQActionRow() : base(0, 21) { }
+	public InterfacesstateQActionRow(System.Object[] oRow) : base(0, 21, oRow) { }
+	public static implicit operator InterfacesstateQActionRow(System.Object[] source) { return new InterfacesstateQActionRow(source); }
+	public static implicit operator System.Object[](InterfacesstateQActionRow source) { return source.ToObjectArray(); }
+	public System.String[] GetChildKeysInterfacesstatecountersrxInterfacesstatecountersrxfktointerfaces(SLProtocol protocol) { return (System.String[])protocol.NotifyProtocol(196, 2111, Key); }
+	public System.String[] GetChildKeysInterfacesstatecounterstxInterfacesstatecounterstxfktointerfaces(SLProtocol protocol) { return (System.String[])protocol.NotifyProtocol(196, 2211, Key); }
+}
+/// <summary>IDX: 0</summary>
+public class InterfacesstatecountersrxQActionRow : QActionTableRow
+{
+	/// <summary>PID: 2101 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxname_2101 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 2101 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxname { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 2102 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinoctets_2102 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 2102 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinoctets { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 2103 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinpckts_2103 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 2103 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinpckts { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 2104 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinunicastpckts_2104 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 2104 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinunicastpckts { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 2105 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinbroadcastpckts_2105 { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 2105 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinbroadcastpckts { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 2106 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinmulticastpckts_2106 { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	/// <summary>PID: 2106 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinmulticastpckts { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	/// <summary>PID: 2107 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxindiscards_2107 { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	/// <summary>PID: 2107 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxindiscards { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	/// <summary>PID: 2108 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinerrors_2108 { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	/// <summary>PID: 2108 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinerrors { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	/// <summary>PID: 2109 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinunknownprotos_2109 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 2109 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinunknownprotos { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 2110 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinfcserrors_2110 { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 2110 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinfcserrors { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 2111 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxfktointerfaces_2111 { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
+	/// <summary>PID: 2111 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxfktointerfaces { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
+	/// <summary>PID: 2112 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinrate_2112 { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	/// <summary>PID: 2112 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinrate { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	/// <summary>PID: 2113 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinunicastrate_2113 { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
+	/// <summary>PID: 2113 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinunicastrate { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
+	/// <summary>PID: 2114 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinbroadcastrate_2114 { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
+	/// <summary>PID: 2114 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinbroadcastrate { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
+	/// <summary>PID: 2115 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinmulticastrate_2115 { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
+	/// <summary>PID: 2115 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinmulticastrate { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
+	/// <summary>PID: 2116 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxindiscardsrate_2116 { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
+	/// <summary>PID: 2116 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxindiscardsrate { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
+	/// <summary>PID: 2117 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinerrorsrate_2117 { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	/// <summary>PID: 2117 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinerrorsrate { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	/// <summary>PID: 2118 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinunknownprotosrate_2118 { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	/// <summary>PID: 2118 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinunknownprotosrate { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	/// <summary>PID: 2119 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecountersrxinfcserrorsrate_2119 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	/// <summary>PID: 2119 | Type: read</summary>
+	public System.Object Interfacesstatecountersrxinfcserrorsrate { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	public InterfacesstatecountersrxQActionRow() : base(0, 19) { }
+	public InterfacesstatecountersrxQActionRow(System.Object[] oRow) : base(0, 19, oRow) { }
+	public static implicit operator InterfacesstatecountersrxQActionRow(System.Object[] source) { return new InterfacesstatecountersrxQActionRow(source); }
+	public static implicit operator System.Object[](InterfacesstatecountersrxQActionRow source) { return source.ToObjectArray(); }
+	public System.Object[] GetParentRowInterfacesstateInterfacesstatecountersrxfktointerfaces(SLProtocol protocol) { return (System.Object[])protocol.GetRow(2000, (System.String)Interfacesstatecountersrxfktointerfaces); }
+}
+/// <summary>IDX: 0</summary>
+public class InterfacesstatecounterstxQActionRow : QActionTableRow
+{
+	/// <summary>PID: 2201 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxname_2201 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 2201 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxname { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 2202 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutoctets_2202 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 2202 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutoctets { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 2203 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutpckts_2203 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 2203 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutpckts { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 2204 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutunicastpckts_2204 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 2204 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutunicastpckts { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 2205 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutbroadcastpckts_2205 { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 2205 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutbroadcastpckts { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 2206 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutmulticastpckts_2206 { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	/// <summary>PID: 2206 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutmulticastpckts { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	/// <summary>PID: 2207 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutdiscards_2207 { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	/// <summary>PID: 2207 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutdiscards { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	/// <summary>PID: 2208 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxouterrors_2208 { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	/// <summary>PID: 2208 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxouterrors { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	/// <summary>PID: 2209 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutunknownprotos_2209 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 2209 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutunknownprotos { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 2210 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutfcserrors_2210 { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 2210 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutfcserrors { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 2211 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxfktointerfaces_2211 { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
+	/// <summary>PID: 2211 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxfktointerfaces { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
+	/// <summary>PID: 2212 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutrate_2212 { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	/// <summary>PID: 2212 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutrate { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	/// <summary>PID: 2213 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutunicastrate_2213 { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
+	/// <summary>PID: 2213 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutunicastrate { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
+	/// <summary>PID: 2214 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutbroadcastrate_2214 { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
+	/// <summary>PID: 2214 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutbroadcastrate { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
+	/// <summary>PID: 2215 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutmulticastrate_2215 { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
+	/// <summary>PID: 2215 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutmulticastrate { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
+	/// <summary>PID: 2216 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutdiscardsrate_2216 { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
+	/// <summary>PID: 2216 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutdiscardsrate { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
+	/// <summary>PID: 2217 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxouterrorsrate_2217 { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	/// <summary>PID: 2217 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxouterrorsrate { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	/// <summary>PID: 2218 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutunknownprotosrate_2218 { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	/// <summary>PID: 2218 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutunknownprotosrate { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	/// <summary>PID: 2219 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatecounterstxoutfcserrorsrate_2219 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	/// <summary>PID: 2219 | Type: read</summary>
+	public System.Object Interfacesstatecounterstxoutfcserrorsrate { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	public InterfacesstatecounterstxQActionRow() : base(0, 19) { }
+	public InterfacesstatecounterstxQActionRow(System.Object[] oRow) : base(0, 19, oRow) { }
+	public static implicit operator InterfacesstatecounterstxQActionRow(System.Object[] source) { return new InterfacesstatecounterstxQActionRow(source); }
+	public static implicit operator System.Object[](InterfacesstatecounterstxQActionRow source) { return source.ToObjectArray(); }
+	public System.Object[] GetParentRowInterfacesstateInterfacesstatecounterstxfktointerfaces(SLProtocol protocol) { return (System.Object[])protocol.GetRow(2000, (System.String)Interfacesstatecounterstxfktointerfaces); }
 }
 }
