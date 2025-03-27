@@ -47,7 +47,7 @@ Any inquiries can be addressed to:
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>Skyline Example SNMP Base</Name>
 	<Description>Skyline Example - SNMP Base DataMiner connector</Description>
-	<Version>1.0.0.7</Version>
+	<Version>1.0.0.7_test</Version>
 	<IntegrationID>DMS-DRV-9041</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline Example</Vendor>
@@ -562,6 +562,8 @@ This value should include the full name and version identification of the system
 				<ColumnOption idx="19" pid="1020" type="retrieved" options="" />
 				<ColumnOption idx="20" pid="1021" type="retrieved" options="" />
 				<ColumnOption idx="21" pid="1022" type="retrieved" options="" />
+				<ColumnOption idx="22" pid="1023" type="retrieved" options="" />
+				<ColumnOption idx="23" pid="1024" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A list of interface entries.</Subtext>
@@ -2577,6 +2579,65 @@ Currently only calculated for Ethernet interfaces.
 				<Type>string</Type>
 			</Measurement>
 		</Param>
+		<Param id="1023" trending="false">
+			<Name>ifTableIfInUnicastRate</Name>
+			<Description>In Unicast Rate (If Table)</Description>
+			<Information>
+				<Subtext>The input unicast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1024" trending="false">
+			<Name>ifTableIfOutUnicastRate</Name>
+			<Description>Out Unicast Rate (If Table)</Description>
+			<Information>
+				<Subtext>The output unicast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		
 		
 		<Param id="1091">
 			<Name>ifXTableTimeoutTrigger</Name>
@@ -6365,7 +6426,6 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			<!--<ArrayOptions index="0" options=";naming=/2016">-->
 			<ArrayOptions index="0">
 				<NamingFormat>,2001, - ,2005, - ,2019</NamingFormat>
-				<ColumnOption idx="0" pid="2001" type="retrieved" options="" />
 				<ColumnOption idx="1" pid="2002" type="retrieved" options="" />
 				<ColumnOption idx="2" pid="2003" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="3" pid="2004" type="retrieved" options="" />
@@ -6385,7 +6445,9 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="17" pid="2019" type="retrieved" options=";save" />
 				<ColumnOption idx="18" pid="2020" type="retrieved" options="" />
 				<ColumnOption idx="19" pid="2021" type="retrieved" options="" />
-				<ColumnOption idx="20" pid="2016" type="displaykey" options="" />
+				<ColumnOption idx="20" pid="2022" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
+				<ColumnOption idx="21" pid="2023" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
+				<ColumnOption idx="22" pid="2016" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>Interfaces state table on change subscription.</Subtext>
@@ -6409,27 +6471,8 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<!-- SuppressValidator 2.31.9 Sorting on datetime column not needed. -->
 				<!-- /SuppressValidator 2.31.9 -->
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2005|4-2016|20-2009|8-2008|7-2017|15-2012|11-2018|16-2003|2-2002|1-2004|3-2010|9-2006|5-2007|6-2011|10-2013|12-2014|13-2015|14-2019|17-2020|18-2021|19,width:0-0-131-123-100-150-0-150-100-100-109-156-0-104-100-0-121-156-100-0-125,sort:STRING-STRING-STRING-STRING-STRING-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-STRING-STRING-INT-INT-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2005|4-2016|22-2009|8-2008|7-2017|15-2012|11-2018|16-2003|2-2002|1-2004|3-2010|9-2006|5-2007|6-2011|10-2013|12-2022|20-2023|21-2014|13-2015|14-2019|17-2020|18-2021|19,width:0-0-131-123-100-150-0-150-100-100-109-156-0-104-100-0-138-141-121-156-100-0-125,sort:STRING-STRING-STRING-STRING-STRING-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
-			</Measurement>
-		</Param>
-		<Param id="2001" trending="false">
-			<Name>InterfacesStateName</Name>
-			<Description>Name (Interfaces)</Description>
-			<Information>
-				<Subtext>The name of the interface.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<LengthType>next param</LengthType>
-				<Type>string</Type>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
 			</Measurement>
 		</Param>
 		<Param id="2002" trending="false">
@@ -6530,50 +6573,6 @@ Ethernet interface.]]>
 			</Measurement>
 			<!-- SuppressValidator 2.5.1 User specific -->
 			<!-- /SuppressValidator 2.5.1 -->
-		</Param>
-		<Param id="2004" trending="true">
-			<Name>InterfacesStateLoopbackMode</Name>
-			<Description>Loopback Mode (Interfaces)</Description>
-			<Information>
-				<Subtext>Loopback mode.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>None</Display>
-						<Value>0</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Facility</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Terminal</Display>
-						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
 		</Param>
 		<Param id="2005" trending="false">
 			<Name>InterfacesStateDescription</Name>
@@ -7005,46 +7004,6 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		
-		<Param id="2014" trending="true">
-			<Name>InterfacesStateCarrierTransitions</Name>
-			<Description>Carrier Transitions (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[Number of times the interface state has transitioned
-between up and down since the time the device restarted
-or the last-clear time, whichever is most recent.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.9.7 No unit -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<!-- /SuppressValidator 2.9.7 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
 		<Param id="2015" trending="false">
 			<Name>InterfacesStateLastClear</Name>
 			<Description>Last Clear (Interfaces)</Description>
@@ -7220,54 +7179,6 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2020" trending="false">
-			<Name>InterfacesStateRowState</Name>
-			<Description>Row State (Interfaces)</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>
-					Displays the status of the row. Possible Values:Updated, Equal, New, Deleted and Recreated.
-				</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 No default thresholds -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Updated</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Equal</Display>
-						<Value>2</Value>
-					</Discreet>
-					<Discreet>
-						<Display>New</Display>
-						<Value>3</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Deleted</Display>
-						<Value>4</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Recreated</Display>
-						<Value>5</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
 		<Param id="2021" trending="false">
 			<Name>InterfacesStateAction</Name>
 			<Description>Action (Interfaces)</Description>
@@ -7296,6 +7207,77 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 						<Value>1</Value>
 					</Discreet>
 				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2022" trending="true">
+			<Name>InterfacesStateSpeed</Name>
+			<Description>Speed (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[An estimate of the interface's current bandwidth.
+For interfaces which do not vary in bandwidth or for those where no accurate estimation can be made, this object should contain the nominal bandwidth.
+For a sub-layer which has no concept of bandwidth, this object should be zero.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>Mbps</Units>
+				<Decimals>3</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>4294967295</High>
+				</Range>
+			</Display>
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2023" trending="true">
+			<Name>interfacesBandwidthUtilization</Name>
+			<Description>Bandwidth Utilization (Interfaces)</Description>
+			<Information>
+				<Subtext>The bandwidth utilization. For full duplex interfaces, this is the maximum of the input utilization and the output utilization.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<CL>0</CL>
+				<Normal>75</Normal>
+				<WaH>90</WaH>
+				<CH>95</CH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>%</Units>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="2100">
