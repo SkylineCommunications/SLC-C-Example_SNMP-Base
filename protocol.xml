@@ -55,13 +55,18 @@ Any inquiries can be addressed to:
 	<DeviceOID>18</DeviceOID>
 	<ElementType>Example</ElementType>
 	<Type relativeTimers="true">snmpv2</Type>
-	<Display defaultPage="General" pageOrder="General;----------;Interfaces;Interfaces Counters;----------;Web Interface#http://[Polling Ip]/" wideColumnPages="Interfaces;Interfaces Counters"/>
+	<Display defaultPage="General" pageOrder="General;----------;Interfaces;Interfaces Counters;----------;Web Interface#http://[Polling Ip]/;Raw Tables" wideColumnPages="Interfaces;Interfaces Counters"/>
 	<SNMP includepages="true">auto</SNMP>
 
 	<Compliancies>
 		<CassandraReady>true</CassandraReady>
-		<MinimumRequiredVersion>10.2.0.0 - 12603</MinimumRequiredVersion>
+		<MinimumRequiredVersion>10.3.0.0 - 12752</MinimumRequiredVersion>
 	</Compliancies>
+
+	<Relations>
+		<Relation name="Interfaces - CountersRx" path="2000;2100" />
+		<Relation name="Interfaces - CountersTx" path="2000;2200" />
+	</Relations>
 
 	<Params>
 		<Param id="2">
@@ -564,6 +569,12 @@ This value should include the full name and version identification of the system
 				<ColumnOption idx="21" pid="1022" type="retrieved" options="" />
 				<ColumnOption idx="22" pid="1023" type="retrieved" options="" />
 				<ColumnOption idx="23" pid="1024" type="retrieved" options="" />
+				<ColumnOption idx="24" pid="1025" type="retrieved" options="" />
+				<ColumnOption idx="25" pid="1026" type="retrieved" options="" />
+				<ColumnOption idx="26" pid="1027" type="retrieved" options="" />
+				<ColumnOption idx="27" pid="1028" type="retrieved" options="" />
+				<ColumnOption idx="28" pid="1029" type="retrieved" options="" />
+				
 			</ArrayOptions>
 			<Information>
 				<Subtext>A list of interface entries.</Subtext>
@@ -583,7 +594,7 @@ This value should include the full name and version identification of the system
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3-1005|4-1006|5-1007|6-1008|7-1009|8-1010|9-1011|10-1012|11-1013|12-1014|13-1015|14-1016|15-1017|16-1018|17-1022|21-1019|18-1020|19-1021|20,width:65-200-242-120-105-112-79-123-100-120-125-125-82-143-120-130-125-82-100-100-100-141,sort:STRING-STRING-STRING-INT-INT-STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-STRING-INT-INT-INT,lines:20,filter:true">table</Type>
+				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3-1005|4-1006|5-1007|6-1008|7-1009|8-1010|9-1011|10-1012|11-1013|12-1014|13-1015|14-1016|15-1017|16-1018|17-1022|21-1019|18-1020|19-1021|20-1023|22-1024|23-1025|24-1026|25-1027|26-1028|27-1029|28,width:65-200-242-120-105-112-79-123-128-120-125-125-82-143-120-130-125-82-100-100-100-141-103-113-104-113-100-100-156,sort:STRING-STRING-STRING-INT-INT-STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT,lines:20,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="1001" trending="false">
@@ -2637,6 +2648,151 @@ Currently only calculated for Ethernet interfaces.
 				<Type>number</Type>
 			</Measurement>
 		</Param>
+		<Param id="1025" trending="false">
+			<Name>ifTableIfinDiscardRate</Name>
+			<Description>In Discard Rate (If Table)</Description>
+			<Information>
+				<Subtext>The input discard rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1026" trending="false">
+			<Name>ifTableIfOutDiscardRate</Name>
+			<Description>Out Discard Rate (If Table)</Description>
+			<Information>
+				<Subtext>The output discard rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1027" trending="false">
+			<Name>ifTableIfInErrorRate</Name>
+			<Description>In Error Rate (If Table)</Description>
+			<Information>
+				<Subtext>The input error rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1028" trending="false">
+			<Name>ifTableIfOutErrorRate</Name>
+			<Description>Out Error Rate (If Table)</Description>
+			<Information>
+				<Subtext>The output error rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1029" trending="false">
+			<Name>ifTableIfInUnknownProtosRate</Name>
+			<Description>In Unknown Protos Rate (If Table)</Description>
+			<Information>
+				<Subtext>The input packet rate of the interface that was discarded due to unknown protocol.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
 		
 		
 		<Param id="1091">
@@ -3681,27 +3837,6 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		
-		<Param id="1190">
-			<Name>interfacesRawTablesPageButton</Name>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type width="110">pagebutton</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Raw Tables...</Display>
-						<Value>Raw Tables</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
 		<Param id="1191">
 			<Name>interfacesTableMerge</Name>
 			<Description>Interfaces Table Merge Trigger</Description>
@@ -3784,2528 +3919,6 @@ Currently only calculated for Ethernet interfaces.
 					<Discreet>
 						<Display>Accurate</Display>
 						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		
-		<Param id="1199" trending="false">
-			<Name>interfacesDisplayKey</Name>
-			<Description>Key (Interfaces)</Description>
-			<Information>
-				<Subtext>User-friendly key used to identify row.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="1200">
-			<Name>interfaces</Name>
-			<Description>Interfaces</Description>
-			<Type>array</Type>
-			<ArrayOptions index="0">
-				<NamingFormat>;1202; -;1227;- (;1201;)</NamingFormat>
-				<ColumnOption idx="0" pid="1201" type="retrieved" options="" />
-				<ColumnOption idx="1" pid="1202" type="retrieved" options=";save" />
-				<ColumnOption idx="2" pid="1203" type="retrieved" options="" />
-				<ColumnOption idx="3" pid="1204" type="retrieved" options=";enableHeaderAvg;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="4" pid="1205" type="retrieved" options=";enableHeaderAvg;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="5" pid="1206" type="retrieved" options="" />
-				<ColumnOption idx="6" pid="1207" type="retrieved" options="" />
-				<ColumnOption idx="7" pid="1208" type="retrieved" options="" />
-				<ColumnOption idx="8" pid="1209" type="retrieved" options="" />
-				<ColumnOption idx="9" pid="1210" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="10" pid="1211" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="11" pid="1212" type="retrieved" options=";enableHeaderAvg;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="12" pid="1213" type="retrieved" options=";enableHeaderAvg;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="13" pid="1214" type="retrieved" options=";enableHeaderAvg;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="14" pid="1215" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="15" pid="1216" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="16" pid="1217" type="retrieved" options=";enableHeaderAvg;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="17" pid="1218" type="retrieved" options=";enableHeaderAvg;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="18" pid="1219" type="retrieved" options=";enableHeaderAvg;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="19" pid="1220" type="retrieved" options=";enableHeaderAvg;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="20" pid="1221" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="21" pid="1222" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="22" pid="1223" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="23" pid="1224" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="24" pid="1225" type="retrieved" options="" />
-				<ColumnOption idx="25" pid="1226" type="retrieved" options="" />
-				<ColumnOption idx="26" pid="1227" type="retrieved" options=";save" />
-				<ColumnOption idx="27" pid="1228" type="retrieved" options="" />
-				<ColumnOption idx="28" pid="1229" type="retrieved" options="" />
-				<ColumnOption idx="29" pid="1230" type="retrieved" options=";enableHeaderAvg;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="30" pid="1231" type="retrieved" options="" />
-				<ColumnOption idx="31" pid="1199" type="displaykey" options="" />
-			</ArrayOptions>
-			<Information>
-				<Subtext>A list of interface entries.</Subtext>
-			</Information>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Interfaces</Page>
-						<Column>0</Column>
-						<Row>1</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="tab=columns:1201|0-1202|1-1199|31-1227|26-1203|2-1204|3-1205|4-1219|18-1220|19-1230|29-1231|30-1206|5-1207|6-1208|7-1209|8-1210|9-1211|10-1221|20-1222|21-1212|11-1213|12-1214|13-1215|14-1216|15-1223|22-1224|23-1217|16-1218|17-1225|24-1226|25-1228|27-1229|28,width:50-0-200-180-242-120-138-138-138-141-97-112-79-123-128-192-120-131-134-125-125-143-192-130-141-144-125-125-112-126-173-118,sort:STRING-STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-STRING-STRING-INT,lines:20,filter:true">table</Type>
-			</Measurement>
-		</Param>
-		<Param id="1201" trending="false">
-			<Name>interfacesIndex</Name>
-			<Description>Index (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[This is the SNMP instance of the table. Format: [ifIndex].
-- ifIndex: A unique value, greater than zero, for each interface.
-It is recommended that values are assigned contiguously starting from 1.
-The value for each interface sub-layer must remain constant at least from one re-initialization of the entity's network management system to the next re-initialization.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="1202" trending="false">
-			<Name>interfacesDescr</Name>
-			<Description>Description (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[A textual string containing information about the interface.
-This string should include the name of the manufacturer, the product name and the version of the interface hardware/software.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>255</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="1203" trending="true">
-			<Name>interfacesType</Name>
-			<Description>Type (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The type of interface.
-Additional values for Type are assigned by the Internet Assigned Numbers Authority (IANA), through updating the syntax of the IANAifType textual convention.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Other</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Regular 1822</Display>
-						<Value>2</Value>
-					</Discreet>
-					<Discreet>
-						<Display>HDH 1822</Display>
-						<Value>3</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DDN X 25</Display>
-						<Value>4</Value>
-					</Discreet>
-					<Discreet>
-						<Display>RFC 877 X.25</Display>
-						<Value>5</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Ethernet CSMACD</Display>
-						<Value>6</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISO 8802.3 CSMA/CD</Display>
-						<Value>7</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISO 8802.4 Token Bus</Display>
-						<Value>8</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISO 8802.5 Token Ring</Display>
-						<Value>9</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISO 8802.6 MAN</Display>
-						<Value>10</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Star LAN</Display>
-						<Value>11</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PROTEON 10 Mb</Display>
-						<Value>12</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PROTEON 80 Mb</Display>
-						<Value>13</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling -->
-						<Display>HYPERchannel</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>14</Value>
-					</Discreet>
-					<Discreet>
-						<Display>FDDI</Display>
-						<Value>15</Value>
-					</Discreet>
-					<Discreet>
-						<Display>LAPB</Display>
-						<Value>16</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SDLC</Display>
-						<Value>17</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DS1</Display>
-						<Value>18</Value>
-					</Discreet>
-					<Discreet>
-						<Display>E1</Display>
-						<Value>19</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Basic ISDN</Display>
-						<Value>20</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Primary ISDN</Display>
-						<Value>21</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Proprietary Point to Point Serial</Display>
-						<Value>22</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PPP</Display>
-						<Value>23</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Software Loopback</Display>
-						<Value>24</Value>
-					</Discreet>
-					<Discreet>
-						<Display>EON</Display>
-						<Value>25</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Ethernet 3 Mb</Display>
-						<Value>26</Value>
-					</Discreet>
-					<Discreet>
-						<Display>NSIP</Display>
-						<Value>27</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling -->
-						<Display>SlIP</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>28</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Ultra</Display>
-						<Value>29</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DS3</Display>
-						<Value>30</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SIP</Display>
-						<Value>31</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Frame Relay</Display>
-						<Value>32</Value>
-					</Discreet>
-					<Discreet>
-						<Display>RS-232</Display>
-						<Value>33</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Parallel Port</Display>
-						<Value>34</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ARCNET</Display>
-						<Value>35</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ARCNET Plus</Display>
-						<Value>36</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ATM</Display>
-						<Value>37</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MIOX 25</Display>
-						<Value>38</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SONET</Display>
-						<Value>39</Value>
-					</Discreet>
-					<Discreet>
-						<Display>X.25 PLE</Display>
-						<Value>40</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISO 8802.2 LLC</Display>
-						<Value>41</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Local Talk</Display>
-						<Value>42</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SMDS DXI</Display>
-						<Value>43</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Frame Relay Service</Display>
-						<Value>44</Value>
-					</Discreet>
-					<Discreet>
-						<Display>V.35</Display>
-						<Value>45</Value>
-					</Discreet>
-					<Discreet>
-						<Display>HSSI</Display>
-						<Value>46</Value>
-					</Discreet>
-					<Discreet>
-						<Display>HIPPI</Display>
-						<Value>47</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Modem</Display>
-						<Value>48</Value>
-					</Discreet>
-					<Discreet>
-						<Display>AAL5</Display>
-						<Value>49</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SONET Path</Display>
-						<Value>50</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SONET VT</Display>
-						<Value>51</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SMDS ICIP</Display>
-						<Value>52</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Proprietary Virtual</Display>
-						<Value>53</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Proprietary Multiplexor</Display>
-						<Value>54</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IEEE 802.12</Display>
-						<Value>55</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Fiber Channel</Display>
-						<Value>56</Value>
-					</Discreet>
-					<Discreet>
-						<Display>HIPPI Interface</Display>
-						<Value>57</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Frame Relay Interconnect</Display>
-						<Value>58</Value>
-					</Discreet>
-					<Discreet>
-						<Display>AFLANE 802.3</Display>
-						<Value>59</Value>
-					</Discreet>
-					<Discreet>
-						<Display>AFLANE 802.5</Display>
-						<Value>60</Value>
-					</Discreet>
-					<Discreet>
-						<Display>CCT Emulated</Display>
-						<Value>61</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Fast Ether</Display>
-						<Value>62</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISDN</Display>
-						<Value>63</Value>
-					</Discreet>
-					<Discreet>
-						<Display>V.11</Display>
-						<Value>64</Value>
-					</Discreet>
-					<Discreet>
-						<Display>V.36</Display>
-						<Value>65</Value>
-					</Discreet>
-					<Discreet>
-						<Display>G.703 at 64kbps</Display>
-						<Value>66</Value>
-					</Discreet>
-					<Discreet>
-						<Display>G.703 at 2 Mbps</Display>
-						<Value>67</Value>
-					</Discreet>
-					<Discreet>
-						<Display>QLLC</Display>
-						<Value>68</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Fast Ether FX</Display>
-						<Value>69</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Channel</Display>
-						<Value>70</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IEEE 802.11</Display>
-						<Value>71</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IBM System 360/370 Channel</Display>
-						<Value>72</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ESCON</Display>
-						<Value>73</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DLSW</Display>
-						<Value>74</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISDN S/T Interface</Display>
-						<Value>75</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISDN U Interface</Display>
-						<Value>76</Value>
-					</Discreet>
-					<Discreet>
-						<Display>LAPD</Display>
-						<Value>77</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IP Switch</Display>
-						<Value>78</Value>
-					</Discreet>
-					<Discreet>
-						<Display>RSRB</Display>
-						<Value>79</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ATM Logical</Display>
-						<Value>80</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DS0</Display>
-						<Value>81</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DS0 Bundle</Display>
-						<Value>82</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Bisynchronous Protocol</Display>
-						<Value>83</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Asynchronous Protocol</Display>
-						<Value>84</Value>
-					</Discreet>
-					<Discreet>
-						<Display>CNR</Display>
-						<Value>85</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISO 8802.5 DTR</Display>
-						<Value>86</Value>
-					</Discreet>
-					<Discreet>
-						<Display>EPLRS</Display>
-						<Value>87</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ARAP</Display>
-						<Value>88</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Proprietary CNLS</Display>
-						<Value>89</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Host PAD</Display>
-						<Value>90</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Term PAD</Display>
-						<Value>91</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Frame Relay MPI</Display>
-						<Value>92</Value>
-					</Discreet>
-					<Discreet>
-						<Display>X.213</Display>
-						<Value>93</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ADSL</Display>
-						<Value>94</Value>
-					</Discreet>
-					<Discreet>
-						<Display>RADSL</Display>
-						<Value>95</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SDSL</Display>
-						<Value>96</Value>
-					</Discreet>
-					<Discreet>
-						<Display>VDSL</Display>
-						<Value>97</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISO 8802.5 CRFP Int</Display>
-						<Value>98</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Myrinet</Display>
-						<Value>99</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice EM</Display>
-						<Value>100</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice FXO</Display>
-						<Value>101</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice FXS</Display>
-						<Value>102</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice ENCAP</Display>
-						<Value>103</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice over IP</Display>
-						<Value>104</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ATM DXI</Display>
-						<Value>105</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ATM FUNI</Display>
-						<Value>106</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ATM IMA</Display>
-						<Value>107</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PPP Multilink Bundle</Display>
-						<Value>108</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IP over CDLC</Display>
-						<Value>109</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IP over Claw</Display>
-						<Value>110</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<Display>Stack to Stack</Display>
-						<Value>111</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Virtual IP Address</Display>
-						<Value>112</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MPC</Display>
-						<Value>113</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IP over ATM</Display>
-						<Value>114</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISO 8802.5 Fiber</Display>
-						<Value>115</Value>
-					</Discreet>
-					<Discreet>
-						<Display>TDLC</Display>
-						<Value>116</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Gigabit Ethernet</Display>
-						<Value>117</Value>
-					</Discreet>
-					<Discreet>
-						<Display>HDLC</Display>
-						<Value>118</Value>
-					</Discreet>
-					<Discreet>
-						<Display>LAPF</Display>
-						<Value>119</Value>
-					</Discreet>
-					<Discreet>
-						<Display>V.37</Display>
-						<Value>120</Value>
-					</Discreet>
-					<Discreet>
-						<Display>X.25 MLP</Display>
-						<Value>121</Value>
-					</Discreet>
-					<Discreet>
-						<Display>X.25 Hunt Group</Display>
-						<Value>122</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Transparent HDLC</Display>
-						<Value>123</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Interleave Channel</Display>
-						<Value>124</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Fast Channel</Display>
-						<Value>125</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IP</Display>
-						<Value>126</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DOCS Cable MAC Layer</Display>
-						<Value>127</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DOCS Cable Downstream</Display>
-						<Value>128</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Docs Cable Upstream</Display>
-						<Value>129</Value>
-					</Discreet>
-					<Discreet>
-						<Display>A 12 MPP Switch</Display>
-						<Value>130</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Tunnel</Display>
-						<Value>131</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Coffee</Display>
-						<Value>132</Value>
-					</Discreet>
-					<Discreet>
-						<Display>CES</Display>
-						<Value>133</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ATM Sub Interface</Display>
-						<Value>134</Value>
-					</Discreet>
-					<Discreet>
-						<Display>L2 VLAN</Display>
-						<Value>135</Value>
-					</Discreet>
-					<Discreet>
-						<Display>L3 IP VLAN</Display>
-						<Value>136</Value>
-					</Discreet>
-					<Discreet>
-						<Display>L3 IPC VLAN</Display>
-						<Value>137</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Digital Powerline</Display>
-						<Value>138</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Media Mail over IP</Display>
-						<Value>139</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DTM</Display>
-						<Value>140</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DCN</Display>
-						<Value>141</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IP Forward</Display>
-						<Value>142</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MSDSL</Display>
-						<Value>143</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IEEE 1394</Display>
-						<Value>144</Value>
-					</Discreet>
-					<Discreet>
-						<Display>If GSN</Display>
-						<Value>145</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DVB-RCC MAC Layer</Display>
-						<Value>146</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DVB-RCC Downstream</Display>
-						<Value>147</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DVB-RCC Upstream</Display>
-						<Value>148</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ATM Virtual</Display>
-						<Value>149</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MPLS Tunnel</Display>
-						<Value>150</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SRP</Display>
-						<Value>151</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice over ATM</Display>
-						<Value>152</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice over Frame Relay</Display>
-						<Value>153</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IDSL</Display>
-						<Value>154</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Composite Link</Display>
-						<Value>155</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SS7 Signaling Link</Display>
-						<Value>156</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Proprietary Wireless P2P</Display>
-						<Value>157</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Frame Forward</Display>
-						<Value>158</Value>
-					</Discreet>
-					<Discreet>
-						<Display>RFC 1483</Display>
-						<Value>159</Value>
-					</Discreet>
-					<Discreet>
-						<Display>USB</Display>
-						<Value>160</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling -->
-						<Display>IEEE 802.3ad Link Aggregate</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>161</Value>
-					</Discreet>
-					<Discreet>
-						<Display>BGP Policy Accounting</Display>
-						<Value>162</Value>
-					</Discreet>
-					<Discreet>
-						<Display>FRF.16 MFR Bundle</Display>
-						<Value>163</Value>
-					</Discreet>
-					<Discreet>
-						<Display>H.323 Gatekeeper</Display>
-						<Value>164</Value>
-					</Discreet>
-					<Discreet>
-						<Display>H.323 Proxy</Display>
-						<Value>165</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MPLS</Display>
-						<Value>166</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MF Signaling Link</Display>
-						<Value>167</Value>
-					</Discreet>
-					<Discreet>
-						<Display>HDSL2</Display>
-						<Value>168</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SHDSL</Display>
-						<Value>169</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DS1 FDL</Display>
-						<Value>170</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Packet over SONET/SDH</Display>
-						<Value>171</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DVB ASI In</Display>
-						<Value>172</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DVB ASI Out</Display>
-						<Value>173</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PLC</Display>
-						<Value>174</Value>
-					</Discreet>
-					<Discreet>
-						<Display>NFAS</Display>
-						<Value>175</Value>
-					</Discreet>
-					<Discreet>
-						<Display>TR008</Display>
-						<Value>176</Value>
-					</Discreet>
-					<Discreet>
-						<Display>GR-303 RDT</Display>
-						<Value>177</Value>
-					</Discreet>
-					<Discreet>
-						<Display>GR-303 IDT</Display>
-						<Value>178</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ISUP</Display>
-						<Value>179</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Proprietary DOCs Wireless MAC Layer</Display>
-						<Value>180</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Proprietary DOCS Wireless Downstream</Display>
-						<Value>181</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Proprietary DOCS Wireless Upstream</Display>
-						<Value>182</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling -->
-						<Display>HiperLAN 2</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>183</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Proprietary BW AP 2 Mp</Display>
-						<Value>184</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SONET Overhead Channel</Display>
-						<Value>185</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Digital Wrapper Overhead Channel</Display>
-						<Value>186</Value>
-					</Discreet>
-					<Discreet>
-						<Display>AAL2</Display>
-						<Value>187</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Radio MAC</Display>
-						<Value>188</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ATM Radio</Display>
-						<Value>189</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IMT</Display>
-						<Value>190</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MVL</Display>
-						<Value>191</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Reach DSL</Display>
-						<Value>192</Value>
-					</Discreet>
-					<Discreet>
-						<Display>FR DLCI End Point</Display>
-						<Value>193</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ATM VCI End Point</Display>
-						<Value>194</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Optical Channel</Display>
-						<Value>195</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Optical Transport</Display>
-						<Value>196</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Proprietary ATM</Display>
-						<Value>197</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice over Cable</Display>
-						<Value>198</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Infiniband</Display>
-						<Value>199</Value>
-					</Discreet>
-					<Discreet>
-						<Display>TE Link</Display>
-						<Value>200</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Q.2931</Display>
-						<Value>201</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Virtual Trunk Group</Display>
-						<Value>202</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SIP Trunk Group</Display>
-						<Value>203</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SIP Signaling</Display>
-						<Value>204</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DOCS Cable Upstream Channel</Display>
-						<Value>205</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Econet</Display>
-						<Value>206</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PON 155</Display>
-						<Value>207</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PON 622</Display>
-						<Value>208</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Bridge</Display>
-						<Value>209</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Line Group</Display>
-						<Value>210</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice EMFGD</Display>
-						<Value>211</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice FGDEANA</Display>
-						<Value>212</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice DID</Display>
-						<Value>213</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MPEG Transport</Display>
-						<Value>214</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling -->
-						<Display>6to4</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>215</Value>
-					</Discreet>
-					<Discreet>
-						<Display>GTP</Display>
-						<Value>216</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PDN Ether Loop 1</Display>
-						<Value>217</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PDN Ether Loop 2</Display>
-						<Value>218</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Optical Channel Group</Display>
-						<Value>219</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling -->
-						<Display>HomePNA</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>220</Value>
-					</Discreet>
-					<Discreet>
-						<Display>GFP</Display>
-						<Value>221</Value>
-					</Discreet>
-					<Discreet>
-						<Display>CISCO IS LVLAN</Display>
-						<Value>222</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Actelis Meta LOOP</Display>
-						<Value>223</Value>
-					</Discreet>
-					<Discreet>
-						<Display>FCIP Link</Display>
-						<Value>224</Value>
-					</Discreet>
-					<Discreet>
-						<Display>RPR</Display>
-						<Value>225</Value>
-					</Discreet>
-					<Discreet>
-						<Display>QAM</Display>
-						<Value>226</Value>
-					</Discreet>
-					<Discreet>
-						<Display>LMP</Display>
-						<Value>227</Value>
-					</Discreet>
-					<Discreet>
-						<Display>CBL Vecta Star</Display>
-						<Value>228</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DOCS Cable Modular CMTS Downstream</Display>
-						<Value>229</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ADSL2</Display>
-						<Value>230</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MAC Sec Controlled IF</Display>
-						<Value>231</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MAC Sec Uncontrolled IF</Display>
-						<Value>232</Value>
-					</Discreet>
-					<Discreet>
-						<Display>AVICI Optical Ether</Display>
-						<Value>233</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling -->
-						<Display>ATMBond</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>234</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice FGD Operator Service</Display>
-						<Value>235</Value>
-					</Discreet>
-					<Discreet>
-						<Display>MoCA Version 1</Display>
-						<Value>236</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IEEE 802.16 WMAN</Display>
-						<Value>237</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ADSL2+</Display>
-						<Value>238</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DVB-RCS MAC Layer</Display>
-						<Value>239</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DVB Satellite TDM</Display>
-						<Value>240</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DVB-RCS TDMA</Display>
-						<Value>241</Value>
-					</Discreet>
-					<Discreet>
-						<Display>X.86 Laps</Display>
-						<Value>242</Value>
-					</Discreet>
-					<Discreet>
-						<Display>WWAN PP</Display>
-						<Value>243</Value>
-					</Discreet>
-					<Discreet>
-						<Display>WWAN PP2</Display>
-						<Value>244</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Voice EBS</Display>
-						<Value>245</Value>
-					</Discreet>
-					<Discreet>
-						<Display>If PW Type</Display>
-						<Value>246</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ILAN</Display>
-						<Value>247</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PIP</Display>
-						<Value>248</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ALU ELP</Display>
-						<Value>249</Value>
-					</Discreet>
-					<Discreet>
-						<Display>G-PON</Display>
-						<Value>250</Value>
-					</Discreet>
-					<Discreet>
-						<Display>VDSL2</Display>
-						<Value>251</Value>
-					</Discreet>
-					<Discreet>
-						<Display>CAPWAP Dot 11 Profile</Display>
-						<Value>252</Value>
-					</Discreet>
-					<Discreet>
-						<Display>CAPWAP Dot 11 BSS</Display>
-						<Value>253</Value>
-					</Discreet>
-					<Discreet>
-						<Display>CAPWAP WTP Virtual Radio</Display>
-						<Value>254</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Bits</Display>
-						<Value>255</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DOCSIS CATV Upstream RF Port</Display>
-						<Value>256</Value>
-					</Discreet>
-					<Discreet>
-						<Display>CATV Downstream RF Port</Display>
-						<Value>257</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling -->
-						<Display>VMWare Virtual NIC</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>258</Value>
-					</Discreet>
-					<Discreet>
-						<Display>IEEE 802.15 4 WPAN</Display>
-						<Value>259</Value>
-					</Discreet>
-					<Discreet>
-						<Display>OTN ODU</Display>
-						<Value>260</Value>
-					</Discreet>
-					<Discreet>
-						<Display>OTN OTU</Display>
-						<Value>261</Value>
-					</Discreet>
-					<Discreet>
-						<Display>If VFI Type</Display>
-						<Value>262</Value>
-					</Discreet>
-					<Discreet>
-						<Display>G.998.1</Display>
-						<Value>263</Value>
-					</Discreet>
-					<Discreet>
-						<Display>G.998.2</Display>
-						<Value>264</Value>
-					</Discreet>
-					<Discreet>
-						<Display>G.998.3</Display>
-						<Value>265</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ALU EPON</Display>
-						<Value>266</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ALU EPON ONU</Display>
-						<Value>267</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ALU EPON Physical Unit</Display>
-						<Value>268</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ALU EPON Logical Link</Display>
-						<Value>269</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ALU GPON ONU</Display>
-						<Value>270</Value>
-					</Discreet>
-					<Discreet>
-						<Display>ALU GPON Physical Unit</Display>
-						<Value>271</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling -->
-						<Display>VMWare NIC Team</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>272</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DOCS OFDM Downstream</Display>
-						<Value>277</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DOCS OFDMA Upstream</Display>
-						<Value>278</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling -->
-						<Display>G.fast Port</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>279</Value>
-					</Discreet>
-					<Discreet>
-						<Display>SDCI</Display>
-						<Value>280</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Xbox Wireless</Display>
-						<Value>281</Value>
-					</Discreet>
-					<Discreet>
-						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
-						<!-- SuppressValidator 2.13.7 Correct spelling
- -->
-						<Display>FastDSL</Display>
-						<!-- /SuppressValidator 2.13.7 -->
-						<Value>282</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Cable SCTE 55-1 OOB Forward Channel</Display>
-						<Value>283</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Cable SCTE 55-1 OOB Return Channel</Display>
-						<Value>284</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Cable SCTE 55-2 OOB Downstream Channel</Display>
-						<Value>285</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Cable SCTE 55-2 OOB Upstream Channel</Display>
-						<Value>286</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DOCS Cable NDF</Display>
-						<Value>287</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DOCS Cable NDR</Display>
-						<Value>288</Value>
-					</Discreet>
-					<Discreet>
-						<Display>PTM</Display>
-						<Value>289</Value>
-					</Discreet>
-					<Discreet>
-						<Display>GHN</Display>
-						<Value>290</Value>
-					</Discreet>
-					<Discreet>
-						<Display>OTN OTSI</Display>
-						<Value>291</Value>
-					</Discreet>
-					<Discreet>
-						<Display>OTN OTUC</Display>
-						<Value>292</Value>
-					</Discreet>
-					<Discreet>
-						<Display>OTN ODUC</Display>
-						<Value>293</Value>
-					</Discreet>
-					<Discreet>
-						<Display>OTN OTUC Signal</Display>
-						<Value>294</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="1204" trending="true">
-			<Name>interfacesMtu</Name>
-			<Description>MTU (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The size of the largest packet which can be sent/received on the interface.
-For interfaces that are used for transmitting network datagrams, this is the size of the largest network datagram that can be sent on the interface.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Octets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1205" trending="true">
-			<Name>interfacesSpeed</Name>
-			<Description>Speed (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[An estimate of the interface's current bandwidth.
-For interfaces which do not vary in bandwidth or for those where no accurate estimation can be made, this object should contain the nominal bandwidth.
-For a sub-layer which has no concept of bandwidth, this object should be zero.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Mbps</Units>
-				<Decimals>3</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1206" trending="false">
-			<Name>interfacesPhysAddress</Name>
-			<Description>Physical Address (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The interface's address at its protocol sub-layer.
-For example, for an 802.x interface, this object normally contains a MAC address.
-The interface's media-specific MIB must define the bit and byte ordering and the format of the value of this object.
-For interfaces which do not have such an address (e.g., a serial line), this object should contain an octet string of zero length.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="1207" trending="true">
-			<Name>interfacesAdminStatus</Name>
-			<Description>Admin Status (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The desired state of the interface.
-The Testing(3) state indicates that no operational packets can be passed.
-When a managed system initializes, all interfaces start with Admin Status in the Down(2) state.
-As a result of either explicit management action or per configuration information retained by the managed system, Admin Status is then changed to either the Up(1) or Testing(3) states (or remains in the Down(2) state).]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>1</Normal>
-				<WaH>3</WaH>
-				<CH>2</CH>
-			</Alarm>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Up</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Down</Display>
-						<Value>2</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Testing</Display>
-						<Value>3</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="1257">
-			<Name>interfacesAdminStatus</Name>
-			<Description>Admin Status (Interfaces)</Description>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Up</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Down</Display>
-						<Value>2</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Testing</Display>
-						<Value>3</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="1208" trending="true">
-			<Name>interfacesOperStatus</Name>
-			<Description>Operational Status (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The current operational state of the interface.
-The Testing(3) state indicates that no operational packets can be passed.
-If Admin Status is Down(2) then Operational Status should be Down(2).
-If Admin Status is changed to Up(1) then Operational Status should change to Up(1) if the interface is ready to transmit and receive network traffic;
-it should change to Dormant(5) if the interface is waiting for external actions (such as a serial line waiting for an incoming connection);
-it should remain in the Down(2) state if and only if there is a fault that prevents it from going to the Up(1) state;
-it should remain in the Not Present(6) state if the interface has missing (typically, hardware) components.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>1</Normal>
-				<WaH>3;4;5</WaH>
-				<CH>2;6;7</CH>
-			</Alarm>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Up</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Down</Display>
-						<Value>2</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Testing</Display>
-						<Value>3</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Unknown</Display>
-						<Value>4</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Dormant</Display>
-						<Value>5</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Not Present</Display>
-						<Value>6</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Lower Layer Down</Display>
-						<Value>7</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="1209" trending="false">
-			<Name>interfacesLastChange</Name>
-			<Description>Last Change (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The value of 'sysUpTime' at the time the interface entered its current operational state.
-If the current state was entered prior to the last re-initialization of the local network management subsystem, then this object contains a zero value.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="0">
-						<Display state="disabled">No Change</Display>
-						<Value>0</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type options="time">number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1210" trending="true">
-			<Name>interfacesInOctets</Name>
-			<Description>In Octets (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of octets received on the interface, including framing characters.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Octets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>18446744073709551615</High>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1211" trending="true">
-			<Name>interfacesInUcastPkts</Name>
-			<Description>In Unicast Packets (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were not addressed to a multicast or broadcast address at this sub-layer.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1212" trending="true">
-			<Name>interfacesInDiscards</Name>
-			<Description>In Discards (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of inbound packets which were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol.
-One possible reason for discarding such a packet could be to free up buffer space.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-				<Units>Packets</Units>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1213" trending="true">
-			<Name>interfacesInErrors</Name>
-			<Description>In Errors (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of inbound packets that contained errors preventing them from being deliverable to a higher-layer protocol.
-For character-oriented or fixed-length interfaces, the number of inbound transmission units that contained errors preventing them from being deliverable to a higher-layer protocol.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.9.7 Unit depends on interface type:
-- For packet-oriented interfaces, the number of inbound packets that contained errors preventing them from being deliverable to a higher-layer protocol.
-- For character-oriented or fixed-length interfaces, the number of inbound transmission units that contained errors preventing them from being deliverable to a higher-layer protocol. -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-			</Alarm>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1214" trending="true">
-			<Name>interfacesInUnknownProtos</Name>
-			<Description>In Unknown Protocols (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of packets received via the interface which were discarded because of an unknown or unsupported protocol.
-For character-oriented or fixed-length interfaces that support protocol multiplexing the number of transmission units received via the interface which were discarded because of an unknown or unsupported protocol.
-For any interface that does not support protocol multiplexing, this counter will always be 0.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-			</Alarm>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1215" trending="true">
-			<Name>interfacesOutOctets</Name>
-			<Description>Out Octets (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of octets transmitted out of the interface, including framing characters.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Octets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>18446744073709551615</High>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1216" trending="true">
-			<Name>interfacesOutUcastPkts</Name>
-			<Description>Out Unicast Packets (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and which were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1217" trending="true">
-			<Name>interfacesOutDiscards</Name>
-			<Description>Out Discards (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of outbound packets which were chosen to be discarded even though no errors had been detected to prevent their being transmitted.
-One possible reason for discarding such a packet could be to free up buffer space.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-				<Units>Packets</Units>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1218" trending="true">
-			<Name>interfacesOutErrors</Name>
-			<Description>Out Errors (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.
-For character-oriented or fixed-length interfaces, the number of outbound transmission units that could not be transmitted because of errors.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.9.7 Unit depends on interface type:
-- For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.
-- For character-oriented or fixed-length interfaces, the number of outbound transmission units that could not be transmitted because of errors. -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-			</Alarm>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1219" trending="true">
-			<Name>interfacesInBitRate</Name>
-			<Description>In Bit Rate (Interfaces)</Description>
-			<Information>
-				<Subtext>The input bit rate of the interface.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Mbps</Units>
-				<Decimals>3</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1220" trending="true">
-			<Name>interfacesOutBitRate</Name>
-			<Description>Out Bit Rate (Interfaces)</Description>
-			<Information>
-				<Subtext>The output bit rate of the interface.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Mbps</Units>
-				<Decimals>3</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1221" trending="true">
-			<Name>interfacesInMulticastPkts</Name>
-			<Description>In Multicast Packets (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a multicast address at this sub-layer.
-For a MAC layer protocol, this includes both Group and Functional addresses.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1222" trending="true">
-			<Name>interfacesInBroadcastPkts</Name>
-			<Description>In Broadcast Packets (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a broadcast address at this sub-layer.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1223" trending="true">
-			<Name>interfacesOutMulticastPkts</Name>
-			<Description>Out Multicast Packets (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a multicast address at this sub-layer, including those that were discarded or not sent.
-For a MAC layer protocol, this includes both Group and Functional addresses.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1224" trending="true">
-			<Name>interfacesOutBroadcastPkts</Name>
-			<Description>Out Broadcast Packets (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a broadcast address at this sub-layer, including those that were discarded or not sent.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1225" trending="true">
-			<Name>interfacesPromiscuousMode</Name>
-			<Description>Promiscuous Mode (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[This object has a value of False(2) if this interface only accepts packets/frames that are addressed to this station.
-This object has a value of True(1) when the station accepts all packets/frames transmitted on the media.
-The value True(1) is only legal on certain types of media.
-If legal, setting this object to a value of True(1) may require the interface to be reset before becoming effective.
-
-The value of Promiscuous Mode does not affect the reception of broadcast and multicast packets/frames by the interface.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>True</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>False</Display>
-						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="1275">
-			<Name>interfacesPromiscuousMode</Name>
-			<Description>Promiscuous Mode (Interfaces)</Description>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>togglebutton</Type>
-				<Discreets>
-					<Discreet>
-						<Display>True</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>False</Display>
-						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="1226" trending="true">
-			<Name>interfacesPhysicalConnector</Name>
-			<Description>Physical Connector (Interfaces)</Description>
-			<Information>
-				<Subtext>Indicates if the interface sublayer has a physical connector.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Present</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>None</Display>
-						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="1227" trending="false">
-			<Name>interfacesAlias</Name>
-			<Description>Alias (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[This object is an 'alias' name for the interface as specified by a network manager, and provides a non-volatile 'handle' for the interface.
-
-On the first instantiation of an interface, the value of Alias associated with that interface is the zero-length string.
-As and when a value is written into an instance of Alias through a network management set operation, then the agent must retain the supplied value in the Alias instance associated with the same interface for as long as that interface remains instantiated, including across all re-initializations/reboots of the network management system, including those which result in a change of the interface's ifIndex value.
-
-An example of the value which a network manager might store in this object for a WAN interface is the (Telco's) circuit number/identifier of the interface.
-
-Some agents may support write-access only for interfaces having particular values of Type.
-An agent which supports write access to this object is required to keep the value in non-volatile storage, but it may limit the length of new values depending on how much storage is already occupied by the current values for other interfaces.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>64</High>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="1277">
-			<Name>interfacesAlias</Name>
-			<Description>Alias (Interfaces)</Description>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>64</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="1228" trending="true">
-			<Name>interfacesCounterDiscontinuityTime</Name>
-			<Description>Counter Discontinuity Time (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The value of 'sysUpTime' on the most recent occasion at which any one or more of this interface's counters suffered a discontinuity.
-The relevant counters are the specific instances associated with this interface of any Counter32 or Counter64 object contained in the ifTable or ifXTable.
-If no such discontinuities have occurred since the last re-initialization of the local management subsystem, then this object contains a zero value.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type options="time">number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1229" trending="true">
-			<Name>interfacesLinkUpDownTrapEnable</Name>
-			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
-			<Description>Link Up/Down Traps (Interfaces)</Description>
-			<!-- /SuppressValidator 2.14.7 -->
-			<Information>
-				<Subtext>
-					<![CDATA[Indicates whether linkUp/linkDown traps should be generated for this interface.
-
-By default, this object should have the value Enabled(1) for interfaces which do not operate on 'top' of any other interface (as defined in the ifStackTable), and Disabled(2) otherwise.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Enabled</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Disabled</Display>
-						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="1279">
-			<Name>interfacesLinkUpDownTrapEnable</Name>
-			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
-			<Description>Link Up/Down Traps (Interfaces)</Description>
-			<!-- /SuppressValidator 2.14.7 -->
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>togglebutton</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Enabled</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Disabled</Display>
-						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="1230" trending="true">
-			<Name>interfacesBandwidthUtilization</Name>
-			<Description>Bandwidth Utilization (Interfaces)</Description>
-			<Information>
-				<Subtext>The bandwidth utilization. For full duplex interfaces, this is the maximum of the input utilization and the output utilization.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<CL>0</CL>
-				<Normal>75</Normal>
-				<WaH>90</WaH>
-				<CH>95</CH>
-			</Alarm>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>%</Units>
-				<Range>
-					<Low>0</Low>
-					<High>100</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1231" trending="true">
-			<Name>interfacesDuplexStatus</Name>
-			<Description>Duplex Status (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The current mode of operation of the MAC entity.
-'N/A' indicates the Duplex Status can not be known.
-The Duplex Status can currently only be known on Ethernet interfaces.
-
-'unknown' indicates that the current duplex mode could not be determined by the SNMP Agent on the Ethernet inteface.
-
-Management control of the duplex mode of Ethernet interfaces is accomplished through the MAU MIB.
-When an interface does not support autonegotiation, or when autonegotiation is not enabled, the duplex mode is controlled using ifMauDefaultType.
-When autonegotiation is supported and enabled, duplex mode is controlled using ifMauAutoNegAdvertisedBits.
-In either case, the currently operating duplex mode is reflected both in this object and in ifMauType.
-
-Note that this object provides redundant information with ifMauType.
-Normally, redundant objects are discouraged.
-However, in this instance, it allows a management application to determine the duplex status of an interface without having to know every possible value of ifMauType.
-This was felt to be sufficiently valuable to justify the redundancy.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Unknown</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Half Duplex</Display>
-						<Value>2</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Full Duplex</Display>
-						<Value>3</Value>
 					</Discreet>
 				</Discreets>
 			</Measurement>
@@ -6418,36 +4031,32 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			</Measurement>
 		</Param>
 		
-		<!--New Interfaces Tables-->
 		<Param id="2000" trending="false">
 			<Name>InterfacesState</Name>
 			<Description>Interfaces</Description>
 			<Type>array</Type>
-			<!--<ArrayOptions index="0" options=";naming=/2016">-->
 			<ArrayOptions index="0">
-				<NamingFormat>,2001, - ,2005, - ,2019</NamingFormat>
+				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
+				<ColumnOption idx="0" pid="2001" type="retrieved" options="" />
 				<ColumnOption idx="1" pid="2002" type="retrieved" options="" />
 				<ColumnOption idx="2" pid="2003" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="3" pid="2004" type="retrieved" options="" />
 				<ColumnOption idx="4" pid="2005" type="retrieved" options="" />
 				<ColumnOption idx="5" pid="2006" type="retrieved" options="" />
-				<ColumnOption idx="6" pid="2007" type="retrieved" options="" />
+				<ColumnOption idx="6" pid="2007" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="7" pid="2008" type="retrieved" options="" />
-				<ColumnOption idx="8" pid="2009" type="retrieved" options="" />
+				<ColumnOption idx="8" pid="2009" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="9" pid="2010" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="10" pid="2011" type="retrieved" options="" />
-				<ColumnOption idx="11" pid="2012" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="12" pid="2013" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="13" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="14" pid="2015" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="15" pid="2017" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="16" pid="2018" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="17" pid="2019" type="retrieved" options=";save" />
+				<ColumnOption idx="10" pid="2011" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="11" pid="2013" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="12" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="13" pid="2015" type="retrieved" options="" />
+				<ColumnOption idx="14" pid="2016" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
+				<ColumnOption idx="15" pid="2017" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
+				<ColumnOption idx="16" pid="2019" type="retrieved" options="" />
+				<ColumnOption idx="17" pid="2018" type="retrieved" options="" />
 				<ColumnOption idx="18" pid="2020" type="retrieved" options="" />
-				<ColumnOption idx="19" pid="2021" type="retrieved" options="" />
-				<ColumnOption idx="20" pid="2022" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="21" pid="2023" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="22" pid="2016" type="displaykey" options="" />
+				<ColumnOption idx="19" pid="2012" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>Interfaces state table on change subscription.</Subtext>
@@ -6463,7 +4072,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 					<Position>
 						<Page>Interfaces</Page>
 						<Column>0</Column>
-						<Row>2</Row>
+						<Row>1</Row>
 					</Position>
 				</Positions>
 			</Display>
@@ -6471,8 +4080,32 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<!-- SuppressValidator 2.31.9 Sorting on datetime column not needed. -->
 				<!-- /SuppressValidator 2.31.9 -->
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2005|4-2016|22-2009|8-2008|7-2017|15-2012|11-2018|16-2003|2-2002|1-2004|3-2010|9-2006|5-2007|6-2011|10-2013|12-2022|20-2023|21-2014|13-2015|14-2019|17-2020|18-2021|19,width:0-0-131-123-100-150-0-150-100-100-109-156-0-104-100-0-138-141-121-156-100-0-125,sort:STRING-STRING-STRING-STRING-STRING-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-2012|19-2006|5-2013|11-2009|8-2014|12-2010|9-2003|2-2002|1-2007|6-2005|4-2008|7-2016|14-2011|10-2015|13-2017|15-2019|16-2018|17-2020|18,width:0-0-200-123-150-0-150-0-100-100-156-104-100-138-156-100-141-112-100-118,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
+			</Measurement>
+		</Param>
+		<Param id="2001" trending="false">
+			<Name>InterfacesStateIndex</Name>
+			<Description>Index (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[This is the SNMP instance of the table. Format: [ifIndex].
+- ifIndex: A unique value, greater than zero, for each interface.
+It is recommended that values are assigned contiguously starting from 1.
+The value for each interface sub-layer must remain constant at least from one re-initialization of the entity's network management system to the next re-initialization.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
 			</Measurement>
 		</Param>
 		<Param id="2002" trending="false">
@@ -6545,36 +4178,7 @@ Ethernet interface.]]>
 			</Alarm>
 			<!-- /SuppressValidator 2.5.1 -->
 		</Param>
-		<Param id="2053">
-			<Name>InterfacesStateMtu</Name>
-			<Description>MTU (Interfaces)</Description>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Octets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>65535</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-				<Discreets>
-					<Discreet>
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<!-- /SuppressValidator 2.5.1 -->
-		</Param>
-		<Param id="2005" trending="false">
+		<Param id="2004" trending="false">
 			<Name>InterfacesStateDescription</Name>
 			<Description>Description (Interfaces)</Description>
 			<Information>
@@ -6594,7 +4198,7 @@ Ethernet interface.]]>
 			</Interprete>
 			<!-- SuppressValidator 2.5.1 No default thresholds -->
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<!-- /SuppressValidator 2.5.1 -->
 			<Display>
@@ -6604,99 +4208,7 @@ Ethernet interface.]]>
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2055">
-			<Name>InterfacesStateDescription</Name>
-			<Description>Description (Interfaces)</Description>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<LengthType>next param</LengthType>
-				<Type>string</Type>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-				<Discreets>
-					<Discreet>
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="2006" trending="true">
-			<Name>InterfacesStateState</Name>
-			<Description>State (Interfaces)</Description>
-			<Information>
-				<Subtext>Enabled</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Disabled</Display>
-						<Value>0</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Enabled</Display>
-						<Value>1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-		</Param>
-		<Param id="2007" trending="false">
-			<Name>InterfacesStateIfIndex</Name>
-			<Description>Interface Index (Interfaces)</Description>
-			<Information>
-				<Subtext>Index</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<LengthType>next param</LengthType>
-				<Type>string</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 No default thresholds -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="2008" trending="true">
+		<Param id="2005" trending="true">
 			<Name>InterfacesStateAdminStatus</Name>
 			<Description>Admin Status (Interfaces)</Description>
 			<Information>
@@ -6746,7 +4258,7 @@ disabling the interface.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2058">
+		<Param id="2055">
 			<Name>InterfacesStateAdminStatus</Name>
 			<Description>Admin Status (Interfaces)</Description>
 			<Type>write</Type>
@@ -6772,7 +4284,7 @@ disabling the interface.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2009" trending="true">
+		<Param id="2006" trending="true">
 			<Name>InterfacesStateOperStatus</Name>
 			<Description>Operational Status (Interfaces)</Description>
 			<Information>
@@ -6835,7 +4347,7 @@ disabling the interface.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2010" trending="false">
+		<Param id="2007" trending="false">
 			<Name>InterfacesStateLastChange</Name>
 			<Description>Last Change (Interfaces)</Description>
 			<Information>
@@ -6876,7 +4388,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type options="datetime">number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2011" trending="true">
+		<Param id="2008" trending="true">
 			<Name>InterfacesStateLogical</Name>
 			<Description>Logical (Interfaces)</Description>
 			<Information>
@@ -6920,7 +4432,7 @@ channel on the system.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2012" trending="true">
+		<Param id="2009" trending="true">
 			<Name>InterfacesStateInOctets</Name>
 			<Description>In Octets (Interfaces)</Description>
 			<Information>
@@ -6962,7 +4474,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2013" trending="true">
+		<Param id="2010" trending="true">
 			<Name>InterfacesStateOutOctets</Name>
 			<Description>Out Octets (Interfaces)</Description>
 			<Information>
@@ -7004,7 +4516,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2015" trending="false">
+		<Param id="2011" trending="false">
 			<Name>InterfacesStateLastClear</Name>
 			<Description>Last Clear (Interfaces)</Description>
 			<Information>
@@ -7042,7 +4554,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type options="datetime">number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2016" trending="false">
+		<Param id="2012" trending="false">
 			<Name>InterfacesStateDisplayKey</Name>
 			<Description>Display Key (Interfaces)</Description>
 			<Information>
@@ -7061,7 +4573,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2017" trending="true">
+		<Param id="2013" trending="true">
 			<Name>InterfacesStateInBitRate</Name>
 			<Description>In Bit Rate (Interfaces)</Description>
 			<Information>
@@ -7099,7 +4611,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2018" trending="true">
+		<Param id="2014" trending="true">
 			<Name>InterfacesStateOutBitRate</Name>
 			<Description>Out Bit Rate (Interfaces)</Description>
 			<Information>
@@ -7137,7 +4649,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2019" trending="false">
+		<Param id="2015" trending="false">
 			<Name>InterfacesStateUserDescription</Name>
 			<Description>User Description (Interfaces)</Description>
 			<Type>read</Type>
@@ -7163,7 +4675,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2059" setter="true">
+		<Param id="2065" setter="true">
 			<Name>InterfacesStateUserDescription</Name>
 			<Description>User Description (Interfaces)</Description>
 			<Type>write</Type>
@@ -7179,37 +4691,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2021" trending="false">
-			<Name>InterfacesStateAction</Name>
-			<Description>Action (Interfaces)</Description>
-			<Type>write</Type>
-			<Information>
-				<Subtext>
-					Action that can be performed on the row.
-				</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<!--<Message>Are you sure you want to remove the row?</Message>-->
-			<Measurement>
-				<Type width="110">button</Type>
-				<Discreets>
-					<Discreet options=";enabled=2020,4">
-						<!-- SuppressValidator 2.49.2 PO Request this to be removed. -->
-						<Display>Delete</Display>
-						<!-- /SuppressValidator 2.49.2 -->
-						<Value>1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="2022" trending="true">
+		<Param id="2016" trending="true">
 			<Name>InterfacesStateSpeed</Name>
 			<Description>Speed (Interfaces)</Description>
 			<Information>
@@ -7243,8 +4725,8 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2023" trending="true">
-			<Name>interfacesBandwidthUtilization</Name>
+		<Param id="2017" trending="true">
+			<Name>InterfacesStateBandwidthUtilization</Name>
 			<Description>Bandwidth Utilization (Interfaces)</Description>
 			<Information>
 				<Subtext>The bandwidth utilization. For full duplex interfaces, this is the maximum of the input utilization and the output utilization.</Subtext>
@@ -7280,30 +4762,206 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 				<Type>number</Type>
 			</Measurement>
 		</Param>
+		<Param id="2018" trending="true">
+			<Name>InterfacesStateDuplexStatus</Name>
+			<Description>Duplex Status (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The current mode of operation of the MAC entity.
+'N/A' indicates the Duplex Status can not be known.
+The Duplex Status can currently only be known on Ethernet interfaces.
+
+'unknown' indicates that the current duplex mode could not be determined by the SNMP Agent on the Ethernet inteface.
+
+Management control of the duplex mode of Ethernet interfaces is accomplished through the MAU MIB.
+When an interface does not support autonegotiation, or when autonegotiation is not enabled, the duplex mode is controlled using ifMauDefaultType.
+When autonegotiation is supported and enabled, duplex mode is controlled using ifMauAutoNegAdvertisedBits.
+In either case, the currently operating duplex mode is reflected both in this object and in ifMauType.
+
+Note that this object provides redundant information with ifMauType.
+Normally, redundant objects are discouraged.
+However, in this instance, it allows a management application to determine the duplex status of an interface without having to know every possible value of ifMauType.
+This was felt to be sufficiently valuable to justify the redundancy.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>N/A</Display>
+						<Value>-1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Unknown</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Half Duplex</Display>
+						<Value>2</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Full Duplex</Display>
+						<Value>3</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2019" trending="false">
+			<Name>InterfacesStatePromiscuousMode</Name>
+			<Description>Promiscuous Mode (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[This object has a value of False(2) if this interface only accepts packets/frames that are addressed to this station.
+This object has a value of True(1) when the station accepts all packets/frames transmitted on the media.
+The value True(1) is only legal on certain types of media.
+If legal, setting this object to a value of True(1) may require the interface to be reset before becoming effective.
+
+The value of Promiscuous Mode does not affect the reception of broadcast and multicast packets/frames by the interface.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>True</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>False</Display>
+						<Value>2</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2069">
+			<Name>InterfacesStatePromiscuousMode</Name>
+			<Description>Promiscuous Mode (Interfaces)</Description>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>togglebutton</Type>
+				<Discreets>
+					<Discreet>
+						<Display>True</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>False</Display>
+						<Value>2</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2020" trending="false">
+			<Name>InterfacesStateLinkUpDownTrap</Name>
+			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
+			<Description>Link Up/Down Traps (Interfaces)</Description>
+			<!-- /SuppressValidator 2.14.7 -->
+			<Information>
+				<Subtext>
+					<![CDATA[Indicates whether linkUp/linkDown traps should be generated for this interface.
+
+By default, this object should have the value 'Enabled' for interfaces which do not operate on 'top' of any other interface (as defined in the ifStackTable), and 'Disabled' otherwise.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Enabled</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Disabled</Display>
+						<Value>2</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2070">
+			<Name>InterfacesStateLinkUpDownTrap</Name>
+			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
+			<Description>Link Up/Down Traps (Interfaces)</Description>
+			<!-- /SuppressValidator 2.14.7 -->
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>togglebutton</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Enabled</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Disabled</Display>
+						<Value>2</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		
 		<Param id="2100">
 			<Name>InterfacesStateCountersRx</Name>
 			<Description>Interfaces Counters Rx</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
+				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
 				<ColumnOption idx="0" pid="2101" type="retrieved" options=""/>
-				<ColumnOption idx="1" pid="2102" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="2" pid="2103" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="3" pid="2104" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="4" pid="2105" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="5" pid="2106" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="6" pid="2107" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="7" pid="2108" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="8" pid="2109" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="9" pid="2110" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="10" pid="2111" type="retrieved" options=";foreignKey=2000" />
-				<ColumnOption idx="11" pid="2112" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="12" pid="2113" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="13" pid="2114" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="14" pid="2115" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="15" pid="2116" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="16" pid="2117" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="17" pid="2118" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="18" pid="2119" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="1" pid="2102" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="2" pid="2103" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="3" pid="2104" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="4" pid="2105" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="5" pid="2106" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="6" pid="2107" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="7" pid="2108" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="8" pid="2109" type="retrieved" options=";foreignKey=2000" />
+				<ColumnOption idx="9" pid="2110" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A collection of Rx interface-related statistics objects.</Subtext>
@@ -7319,15 +4977,15 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:2101|0-2102|1-2103|2-2104|3-2105|4-2106|5-2107|6-2108|7-2109|8-2110|9-2112|11-2113|12-2114|13-2115|14-2116|15-2117|16-2118|17-2119|18-2111|10,width:116-0-0-0-0-0-0-0-0-0-114-113-127-124-119-110-182-129-0,sort:STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2101|0-2110|9-2102|1-2103|2-2104|3-2105|4-2106|5-2107|6-2108|7-2109|8,width:0-200-122-113-127-124-119-110-182-0,sort:STRING-STRING-INT-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="2101" trending="false">
-			<Name>InterfacesStateCountersRxName</Name>
-			<Description>Name (Interfaces Counters Rx)</Description>
+			<Name>InterfacesStateCountersRxIndex</Name>
+			<Description>Index (Interfaces Counters Rx)</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>References the name of the interface.</Subtext>
+				<Subtext>The index of the interface.</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -7342,432 +5000,6 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 			</Measurement>
 		</Param>
 		<Param id="2102" trending="true">
-			<Name>InterfacesStateCountersRxInOctets</Name>
-			<Description>In Octets (Interfaces Counters Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of octets received on the interface,
-including framing characters.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Octets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2103" trending="true">
-			<Name>InterfacesStateCountersRxInPckts</Name>
-			<Description>In Packets (Interfaces Counters Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets received on the interface,
-including all unicast, multicast, broadcast and bad packets etc.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2104" trending="true">
-			<Name>InterfacesStateCountersRxInUnicastPckts</Name>
-			<Description>In Unicast Packets (Interfaces Counters Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a
-higher (sub-)layer, that were not addressed to a
-multicast or broadcast address at this sub-layer.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2105" trending="true">
-			<Name>InterfacesStateCountersRxInBroadcastPckts</Name>
-			<Description>In Broadcast Packets (Interfaces Counters Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a
-higher (sub-)layer, that were addressed to a broadcast
-address at this sub-layer.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2106" trending="true">
-			<Name>InterfacesStateCountersRxInMulticastPckts</Name>
-			<Description>In Multicast Packets (Interfaces Counters Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a
-higher (sub-)layer, that were addressed to a multicast
-address at this sub-layer.  For a MAC-layer protocol,
-this includes both Group and Functional addresses.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2107" trending="true">
-			<Name>InterfacesStateCountersRxInDiscards</Name>
-			<Description>In Discards (Interfaces Counters Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of inbound packets that were chosen to be
-discarded even though no errors had been detected to
-prevent their being deliverable to a higher-layer
-protocol.  One possible reason for discarding such a
-packet could be to free up buffer space.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2108" trending="true">
-			<Name>InterfacesStateCountersRxInErrors</Name>
-			<Description>In Errors (Interfaces Counters Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of inbound
-packets that contained errors preventing them from being
-deliverable to a higher-layer protocol.  For character-
-oriented or fixed-length interfaces, the number of
-inbound transmission units that contained errors
-preventing them from being deliverable to a higher-layer
-protocol.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
-			<!-- SuppressValidator 2.9.7 different units possible -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-				</Range>
-				<Units>Packets</Units>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2109" trending="true">
-			<Name>InterfacesStateCountersRxInUnknownProtos</Name>
-			<Description>In Unknown Protocols (Interfaces Counters Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of packets
-received via the interface that were discarded because
-of an unknown or unsupported protocol.  For
-character-oriented or fixed-length interfaces that
-support protocol multiplexing, the number of
-transmission units received via the interface that were
-discarded because of an unknown or unsupported protocol.
-For any interface that does not support protocol
-multiplexing, this counter is not present.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
-			<!-- SuppressValidator 2.9.7 Different units possible. -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-				</Range>
-				<Units>Packets</Units>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2110" trending="true">
-			<Name>InterfacesStateCountersRxInFcsErrors</Name>
-			<Description>In FCS Errors (Interfaces Counters Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[Number of received packets which had errors in the
-frame check sequence (FCS), i.e., framing errors.
-
-Discontinuities in the value of this counter can occur
-when the device is re-initialization as indicated by the
-value of 'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2111" trending="false">
-			<Name>InterfacesStateCountersRxFKtoInterfaces</Name>
-			<Description>FK to Interfaces (Interfaces Counters Rx)</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>This is the foreignkey to the interfaces table.</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="2112" trending="true">
 			<Name>InterfacesStateCountersRxInRate</Name>
 			<Description>In Packets Rate (Interfaces Counters Rx)</Description>
 			<Information>
@@ -7805,7 +5037,7 @@ including all unicast, multicast, broadcast and bad packets etc.]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2113" trending="true">
+		<Param id="2103" trending="true">
 			<Name>InterfacesStateCountersRxInUnicastRate</Name>
 			<Description>In Unicast Rate (Interfaces Counters Rx)</Description>
 			<Information>
@@ -7849,7 +5081,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2114" trending="true">
+		<Param id="2104" trending="true">
 			<Name>InterfacesStateCountersRxInBroadcastRate</Name>
 			<Description>In Broadcast Rate (Interfaces Counters Rx)</Description>
 			<Information>
@@ -7893,7 +5125,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2115" trending="true">
+		<Param id="2105" trending="true">
 			<Name>InterfacesStateCountersRxInMulticastRate</Name>
 			<Description>In Multicast Rate (Interfaces Counters Rx)</Description>
 			<Information>
@@ -7938,7 +5170,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2116" trending="true">
+		<Param id="2106" trending="true">
 			<Name>InterfacesStateCountersRxInDiscardsRate</Name>
 			<Description>In Discards Rate (Interfaces Counters Rx)</Description>
 			<Information>
@@ -7987,7 +5219,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2117" trending="true">
+		<Param id="2107" trending="true">
 			<Name>InterfacesStateCountersRxInErrorsRate</Name>
 			<Description>In Errors Rate (Interfaces Counters Rx)</Description>
 			<Information>
@@ -8040,7 +5272,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2118" trending="true">
+		<Param id="2108" trending="true">
 			<Name>InterfacesStateCountersRxInUnknownProtosRate</Name>
 			<Description>In Unknown Protocols Rate (Interfaces Counters Rx)</Description>
 			<Information>
@@ -8095,522 +5327,9 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2119" trending="true">
-			<Name>InterfacesStateCountersRxInFcsErrorsRate</Name>
-			<Description>In FCS Errors Rate (Interfaces Counters Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[Number of received packets which had errors in the
-frame check sequence (FCS), i.e., framing errors.
-
-Discontinuities in the value of this counter can occur
-when the device is re-initialization as indicated by the
-value of 'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Pps</Units>
-				<Decimals>3</Decimals>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2200">
-			<Name>InterfacesStateCountersTx</Name>
-			<Description>Interfaces Counters Tx</Description>
-			<Type>array</Type>
-			<ArrayOptions index="0">
-				<ColumnOption idx="0" pid="2201" type="retrieved" options=""/>
-				<ColumnOption idx="1" pid="2202" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="2" pid="2203" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="3" pid="2204" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="4" pid="2205" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="5" pid="2206" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="6" pid="2207" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="7" pid="2208" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="8" pid="2209" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="9" pid="2210" type="retrieved" options=";save;disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="10" pid="2211" type="retrieved" options=";foreignKey=2000" />
-				<ColumnOption idx="11" pid="2212" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="12" pid="2213" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="13" pid="2214" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="14" pid="2215" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="15" pid="2216" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="16" pid="2217" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="17" pid="2218" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="18" pid="2219" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-			</ArrayOptions>
-			<Information>
-				<Subtext>A collection of Tx interface-related statistics objects.</Subtext>
-			</Information>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Interfaces Counters</Page>
-						<Column>0</Column>
-						<Row>1</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="tab=columns:2201|0-2202|1-2203|2-2204|3-2205|4-2206|5-2207|6-2208|7-2209|8-2210|9-2212|11-2213|12-2214|13-2215|14-2216|15-2217|16-2218|17-2219|18-2211|10,width:116-0-0-0-0-0-0-0-0-0-114-113-127-124-119-110-182-129-0,sort:STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-STRING,lines:25,filter:true">table</Type>
-			</Measurement>
-		</Param>
-		<Param id="2201" trending="false">
-			<Name>InterfacesStateCountersTxName</Name>
-			<Description>Name (Interfaces Counters Tx)</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>References the name of the interface.</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="2202" trending="true">
-			<Name>InterfacesStateCountersTxOutOctets</Name>
-			<Description>Out Octets (Interfaces Counters Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of octets transmitted out of the
-interface, including framing characters.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Octets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2203" trending="true">
-			<Name>InterfacesStateCountersTxOutPckts</Name>
-			<Description>Out Packets (Interfaces Counters Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets transmitted out of the
-interface, including all unicast, multicast, broadcast,
-and bad packets etc.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2204" trending="true">
-			<Name>InterfacesStateCountersTxOutUnicastPckts</Name>
-			<Description>Out Unicast Packets (Interfaces Counters Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a
-higher (sub-)layer, that were not addressed to a
-multicast or broadcast address at this sub-layer.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2205" trending="true">
-			<Name>InterfacesStateCountersTxOutBroadcastPckts</Name>
-			<Description>Out Broadcast Packets (Interfaces Counters Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols
-requested be transmitted, and that were addressed to a
-broadcast address at this sub-layer, including those
-that were discarded or not sent.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2206" trending="true">
-			<Name>InterfacesStateCountersTxOutMulticastPckts</Name>
-			<Description>Out Multicast Packets (Interfaces Counters Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols
-requested be transmitted, and that were addressed to a
-multicast address at this sub-layer, including those
-that were discarded or not sent.  For a MAC-layer
-protocol, this includes both Group and Functional
-addresses.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2207" trending="true">
-			<Name>InterfacesStateCountersTxOutDiscards</Name>
-			<Description>Out Discards (Interfaces Counters Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of outbound packets that were chosen to be
-discarded even though no errors had been detected to
-prevent their being transmitted.  One possible reason
-for discarding such a packet could be to free up buffer
-space.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2208" trending="true">
-			<Name>InterfacesStateCountersTxOutErrors</Name>
-			<Description>Out Errors (Interfaces Counters Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of outbound
-packets that could not be transmitted because of errors.
-For character-oriented or fixed-length interfaces, the
-number of outbound transmission units that could not be
-transmitted because of errors.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2209" trending="true">
-			<Name>InterfacesStateCountersTxOutUnknownProtos</Name>
-			<Description>Out Unknown Protocols (Interfaces Counters Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of packets
-transmitted via the interface that were discarded because
-of an unknown or unsupported protocol.  For
-character-oriented or fixed-length interfaces that
-support protocol multiplexing, the number of
-transmission units transmitted via the interface that were
-discarded because of an unknown or unsupported protocol.
-For any interface that does not support protocol
-multiplexing, this counter is not present.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
-			<!-- SuppressValidator 2.9.7 Different units possible. -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2210" trending="true">
-			<Name>InterfacesStateCountersTxOutFcsErrors</Name>
-			<Description>Out FCS Errors (Interfaces Counters Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[Number of transmitted packets which had errors in the
-frame check sequence (FCS), i.e., framing errors.
-
-Discontinuities in the value of this counter can occur
-when the device is re-initialization as indicated by the
-value of 'last-clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2211" trending="false">
-			<Name>InterfacesStateCountersTxFKtoInterfaces</Name>
-			<Description>FK to Interfaces (Interfaces Counters Tx)</Description>
+		<Param id="2109" trending="false">
+			<Name>InterfacesStateCountersRxFKtoInterfaces</Name>
+			<Description>FK to Interfaces (Interfaces Counters Rx)</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>This is the foreignkey to the interfaces table.</Subtext>
@@ -8627,7 +5346,79 @@ value of 'last-clear'.]]>
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2212" trending="true">
+		<Param id="2110" trending="false">
+			<Name>InterfacesStateCountersRxDisplayKey</Name>
+			<Description>Display Key (Interfaces Counters Rx)</Description>
+			<Information>
+				<Subtext>Index</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		
+		<Param id="2200">
+			<Name>InterfacesStateCountersTx</Name>
+			<Description>Interfaces Counters Tx</Description>
+			<Type>array</Type>
+			<ArrayOptions index="0">
+				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
+				<ColumnOption idx="0" pid="2201" type="retrieved" options=""/>
+				<ColumnOption idx="1" pid="2202" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="2" pid="2203" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="3" pid="2204" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="4" pid="2205" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="5" pid="2206" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="6" pid="2207" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="7" pid="2208" type="retrieved" options=";foreignKey=2000" />
+				<ColumnOption idx="8" pid="2209" type="displaykey" options="" />
+			</ArrayOptions>
+			<Information>
+				<Subtext>A collection of Tx interface-related statistics objects.</Subtext>
+			</Information>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Interfaces Counters</Page>
+						<Column>0</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="tab=columns:2201|0-2209|8-2202|1-2203|2-2204|3-2205|4-2206|5-2207|6-2208|7,width:0-200-122-114-127-127-124-119-0,sort:STRING-STRING-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+			</Measurement>
+		</Param>
+		<Param id="2201" trending="false">
+			<Name>InterfacesStateCountersTxIndex</Name>
+			<Description>Index (Interfaces Counters Tx)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>The index of the interface.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2202" trending="true">
 			<Name>InterfacesStateCountersTxOutRate</Name>
 			<Description>Out Packets Rate (Interfaces Counters Tx)</Description>
 			<Information>
@@ -8666,7 +5457,7 @@ and bad packets etc.]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2213" trending="true">
+		<Param id="2203" trending="true">
 			<Name>InterfacesStateCountersTxOutUnicastRate</Name>
 			<Description>Out Unicast Rate (Interfaces Counters Tx)</Description>
 			<Information>
@@ -8710,7 +5501,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2214" trending="true">
+		<Param id="2204" trending="true">
 			<Name>InterfacesStateCountersTxOutBroadcastRate</Name>
 			<Description>Out Broadcast Rate (Interfaces Counters Tx)</Description>
 			<Information>
@@ -8755,7 +5546,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2215" trending="true">
+		<Param id="2205" trending="true">
 			<Name>InterfacesStateCountersTxOutMulticastRate</Name>
 			<Description>Out Multicast Rate (Interfaces Counters Tx)</Description>
 			<Information>
@@ -8802,7 +5593,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2216" trending="true">
+		<Param id="2206" trending="true">
 			<Name>InterfacesStateCountersTxOutDiscardsRate</Name>
 			<Description>Out Discards Rate (Interfaces Counters Tx)</Description>
 			<Information>
@@ -8851,7 +5642,7 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2217" trending="true">
+		<Param id="2207" trending="true">
 			<Name>InterfacesStateCountersTxOutErrorsRate</Name>
 			<Description>Out Errors Rate (Interfaces Counters Tx)</Description>
 			<Information>
@@ -8900,104 +5691,42 @@ other times as indicated by the value of
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2218" trending="true">
-			<Name>InterfacesStateCountersTxOutUnknownProtosRate</Name>
-			<Description>Out Unknown Protocols Rate (Interfaces Counters Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of packets
-transmitted via the interface that were discarded because
-of an unknown or unsupported protocol.  For
-character-oriented or fixed-length interfaces that
-support protocol multiplexing, the number of
-transmission units transmitted via the interface that were
-discarded because of an unknown or unsupported protocol.
-For any interface that does not support protocol
-multiplexing, this counter is not present.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
-				</Subtext>
-			</Information>
+		<Param id="2208" trending="false">
+			<Name>InterfacesStateCountersTxFKtoInterfaces</Name>
+			<Description>FK to Interfaces (Interfaces Counters Tx)</Description>
 			<Type>read</Type>
+			<Information>
+				<Subtext>This is the foreignkey to the interfaces table.</Subtext>
+			</Information>
 			<Interprete>
-				<RawType>numeric text</RawType>
+				<RawType>other</RawType>
+				<Type>string</Type>
 				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
 			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
-			<!-- SuppressValidator 2.9.7 Different units possible. -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-				</Range>
-				<Units>Pps</Units>
-				<Decimals>3</Decimals>
 			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
-				<Type>number</Type>
+				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2219" trending="true">
-			<Name>InterfacesStateCountersTxOutFcsErrorsRate</Name>
-			<Description>Out FCS Errors Rate (Interfaces Counters Tx)</Description>
+		<Param id="2209" trending="false">
+			<Name>InterfacesStateCountersTxDisplayKey</Name>
+			<Description>Display Key (Interfaces Counters Tx)</Description>
 			<Information>
-				<Subtext>
-					<![CDATA[Number of transmitted packets which had errors in the
-frame check sequence (FCS), i.e., framing errors.
-
-Discontinuities in the value of this counter can occur
-when the device is re-initialization as indicated by the
-value of 'last-clear'.]]>
-				</Subtext>
+				<Subtext>Index</Subtext>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
-				<RawType>numeric text</RawType>
+				<RawType>other</RawType>
 				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
+				<Type>string</Type>
 			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>1</WaH>
-				<MiH>10</MiH>
-				<MaH>100</MaH>
-				<CH>1000</CH>
-			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
-				<Units>Pps</Units>
-				<Decimals>3</Decimals>
-				<Range>
-					<Low>0</Low>
-				</Range>
 			</Display>
 			<Measurement>
-				<Type>number</Type>
+				<Type>string</Type>
 			</Measurement>
 		</Param>
 	</Params>
@@ -9017,7 +5746,7 @@ value of 'last-clear'.]]>
 			</Condition>
 		</QAction>
 		<QAction id="1192" name="Interface Rate Calculations Method" encoding="csharp" triggers="1192" />
-		<QAction id="1257" name="Interface Table SNMP Sets" encoding="csharp" triggers="1257;1275;1277;1279" row="true" />
+		<QAction id="2000" name="Interface Table SNMP Sets" encoding="csharp" triggers="2055;2065;2069;2070" row="true" />
 	</QActions>
 
 	<Groups>

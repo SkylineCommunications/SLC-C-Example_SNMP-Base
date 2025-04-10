@@ -6,23 +6,23 @@
     <Copyright>© Skyline Communications</Copyright>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <LangVersion>7.3</LangVersion>
+    <RootNamespace>QAction_2000</RootNamespace>
+    <AssemblyName>QAction_2000</AssemblyName>
   </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\QAction_Helper\QAction_Helper.csproj" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Skyline.DataMiner.Dev.Protocol" Version="10.2.0.25" />
     <PackageReference Include="Skyline.DataMiner.Utils.Protocol.Extension" Version="1.0.0.3" />
   </ItemGroup>
   <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties DisLinkedXmlFile="..\protocol.xml" DisProjectType="qactionProject" DisLinkId="1257" />
-    </VisualStudio>
+    <VisualStudio><UserProperties DisLinkedXmlFile="..\protocol.xml" DisLinkId="2000" DisProjectType="qactionProject" /></VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
     <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="1.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QAction_Helper\QAction_Helper.csproj" />
   </ItemGroup>
 </Project>
