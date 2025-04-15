@@ -74,7 +74,7 @@ Any inquiries can be addressed to:
 			<Description>After Startup</Description>
 			<Type>dummy</Type>
 		</Param>
-		
+
 		<Param id="10">
 			<Name>Fixed_0</Name>
 			<Description>Fixed 0</Description>
@@ -99,7 +99,7 @@ Any inquiries can be addressed to:
 				<Value>1</Value>
 			</Interprete>
 		</Param>
-		
+
 		<Param id="91">
 			<Name>sysUptimeTimeoutTrigger</Name>
 			<Type>dummy</Type>
@@ -464,7 +464,7 @@ This value should include the full name and version identification of the system
 				<Type lines="5">string</Type>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="991">
 			<Name>IfTableTimeoutTrigger</Name>
 			<Description>Interface Table Timeout Trigger</Description>
@@ -574,7 +574,7 @@ This value should include the full name and version identification of the system
 				<ColumnOption idx="26" pid="1027" type="retrieved" options="" />
 				<ColumnOption idx="27" pid="1028" type="retrieved" options="" />
 				<ColumnOption idx="28" pid="1029" type="retrieved" options="" />
-				
+
 			</ArrayOptions>
 			<Information>
 				<Subtext>A list of interface entries.</Subtext>
@@ -2786,8 +2786,8 @@ Currently only calculated for Ethernet interfaces.
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		
-		
+
+
 		<Param id="1091">
 			<Name>ifXTableTimeoutTrigger</Name>
 			<Description>InterfaceX Table Timeout Trigger</Description>
@@ -4122,7 +4122,7 @@ Currently only calculated for Ethernet interfaces.
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="1191">
 			<Name>interfacesTableMerge</Name>
 			<Description>Interfaces Table Merge Trigger</Description>
@@ -4209,7 +4209,7 @@ Currently only calculated for Ethernet interfaces.
 				</Discreets>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="1300">
 			<Name>dot3StatsTable</Name>
 			<Description>Ethernet Interfaces</Description>
@@ -4309,7 +4309,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="2000" trending="false">
 			<Name>InterfacesState</Name>
 			<Description>Interfaces</Description>
@@ -5224,7 +5224,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 				</Discreets>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="2100">
 			<Name>InterfacesStateCountersRx</Name>
 			<Description>Interfaces Counters Rx</Description>
@@ -5644,7 +5644,7 @@ other times as indicated by the value of
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="2200">
 			<Name>InterfacesStateCountersTx</Name>
 			<Description>Interfaces Counters Tx</Description>

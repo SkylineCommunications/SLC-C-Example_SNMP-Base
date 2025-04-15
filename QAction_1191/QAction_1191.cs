@@ -5,8 +5,6 @@ using System.Linq;
 using Skyline.DataMiner.Scripting;
 using Skyline.DataMiner.Utils.Protocol.Extension;
 
-using SLNetMessages = Skyline.DataMiner.Net.Messages;
-
 /// <summary>
 /// DataMiner QAction Class: Merge Interface Tables.
 /// </summary>
@@ -189,7 +187,7 @@ public class QAction
 
 	private static void MergeFromSnmpIfXTable(InterfacesstateQActionRow interfaceTableRow, InterfacesstatecountersrxQActionRow interfaceCountersRxTableRow, InterfacesstatecounterstxQActionRow interfaceCountersTxTableRow, IfXTable ifxtable, int getPosition)
 	{
-		interfaceTableRow.Interfacesstatelogical_2008 = ifxtable.ConnectorPresent[getPosition] == null? -1 : Convert.ToDouble(ifxtable.ConnectorPresent[getPosition]);
+		interfaceTableRow.Interfacesstatelogical_2008 = ifxtable.ConnectorPresent[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.ConnectorPresent[getPosition]);
 		interfaceTableRow.Interfacesstatelastclear_2011 = ifxtable.CounterDiscontinuitytime[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.CounterDiscontinuitytime[getPosition]) / 100;
 		interfaceTableRow.Interfacesstateuserdescription_2015 = Convert.ToString(ifxtable.Alias[getPosition]);
 		interfaceTableRow.Interfacesstatepromiscuousmode_2019 = ifxtable.PromiscuousMode[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.PromiscuousMode[getPosition]);
