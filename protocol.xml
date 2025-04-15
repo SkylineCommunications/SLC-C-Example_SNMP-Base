@@ -55,7 +55,7 @@ Any inquiries can be addressed to:
 	<DeviceOID>18</DeviceOID>
 	<ElementType>Example</ElementType>
 	<Type relativeTimers="true">snmpv2</Type>
-	<Display defaultPage="General" pageOrder="General;----------;Interfaces;Interfaces Counters;----------;Web Interface#http://[Polling Ip]/;Raw Tables" wideColumnPages="Interfaces;Interfaces Counters"/>
+	<Display defaultPage="General" pageOrder="General;----------;Interfaces;Interfaces Counters;----------;Web Interface#http://[Polling Ip]/" wideColumnPages="Interfaces;Interfaces Counters"/>
 	<SNMP includepages="true">auto</SNMP>
 
 	<Compliancies>
@@ -584,17 +584,10 @@ This value should include the full name and version identification of the system
 				<OID type="complete" options="instance;multipleGetNext"></OID>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Raw Tables</Page>
-						<Row>0</Row>
-						<Column>0</Column>
-					</Position>
-				</Positions>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3-1005|4-1006|5-1007|6-1008|7-1009|8-1010|9-1011|10-1012|11-1013|12-1014|13-1015|14-1016|15-1017|16-1018|17-1022|21-1019|18-1020|19-1021|20-1023|22-1024|23-1025|24-1026|25-1027|26-1028|27-1029|28,width:65-200-242-120-105-112-79-123-128-120-125-125-82-143-120-130-125-82-100-100-100-141-103-113-104-113-100-100-156,sort:STRING-STRING-STRING-INT-INT-STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT,lines:20,filter:true">table</Type>
+				<Type options="tab=lines:20,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="1001" trending="false">
@@ -616,7 +609,7 @@ The value for each interface sub-layer must remain constant at least from one re
 				<LengthType>next param</LengthType>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>string</Type>
@@ -643,7 +636,7 @@ This string should include the name of the manufacturer, the product name and th
 				<Type>octetstring</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Range>
 					<Low>0</Low>
 					<High>255</High>
@@ -674,7 +667,7 @@ Additional values for Type are assigned by the Internet Assigned Numbers Authori
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>discreet</Type>
@@ -1896,7 +1889,7 @@ For interfaces that are used for transmitting network datagrams, this is the siz
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Octets</Units>
 				<Range>
 					<Low>0</Low>
@@ -1942,7 +1935,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 				<Type>gauge32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>bps</Units>
 				<Range>
 					<Low>0</Low>
@@ -1982,7 +1975,7 @@ For interfaces which do not have such an address (e.g., a serial line), this obj
 				<Type>octetstring</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>string</Type>
@@ -2011,7 +2004,7 @@ As a result of either explicit management action or per configuration informatio
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>discreet</Type>
@@ -2046,7 +2039,7 @@ As a result of either explicit management action or per configuration informatio
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>discreet</Type>
@@ -2092,7 +2085,7 @@ it should remain in the Not Present(6) state if the interface has missing (typic
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>discreet</Type>
@@ -2156,7 +2149,7 @@ If the current state was entered prior to the last re-initialization of the loca
 				<Type>timeticks</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Range>
 					<Low>0</Low>
 					<High>42949672.95</High>
@@ -2188,7 +2181,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Octets</Units>
 				<Range>
 					<Low>0</Low>
@@ -2221,7 +2214,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -2255,7 +2248,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -2292,7 +2285,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 - For packet-oriented interfaces, the number of inbound packets that contained errors preventing them from being deliverable to a higher-layer protocol.
 - For character-oriented or fixed-length interfaces, the number of inbound transmission units that contained errors preventing them from being deliverable to a higher-layer protocol.-->
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Range>
 					<Low>0</Low>
 					<High>4294967295</High>
@@ -2330,7 +2323,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 - For packet-oriented interfaces, the number of packets received via the interface which were discarded because of an unknown or unsupported protocol.
 - For character-oriented or fixed-length interfaces that support protocol multiplexing the number of transmission units received via the interface which were discarded because of an unknown or unsupported protocol. -->
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Range>
 					<Low>0</Low>
 					<High>4294967295</High>
@@ -2363,7 +2356,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Octets</Units>
 				<Range>
 					<Low>0</Low>
@@ -2396,7 +2389,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -2430,7 +2423,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -2467,7 +2460,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 - For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.
 - For character-oriented or fixed-length interfaces, the number of outbound transmission units that could not be transmitted because of errors. -->
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Range>
 					<Low>0</Low>
 					<High>4294967295</High>
@@ -2497,7 +2490,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>bps</Units>
 				<Range>
 					<Low>0</Low>
@@ -2526,7 +2519,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>bps</Units>
 				<Range>
 					<Low>0</Low>
@@ -2560,7 +2553,7 @@ Currently only calculated for Ethernet interfaces.
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>%</Units>
 				<Range>
 					<Low>0</Low>
@@ -2584,7 +2577,7 @@ Currently only calculated for Ethernet interfaces.
 				<LengthType>next param</LengthType>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>string</Type>
@@ -2609,7 +2602,7 @@ Currently only calculated for Ethernet interfaces.
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Pps</Units>
 				<Range>
 					<Low>0</Low>
@@ -2638,7 +2631,7 @@ Currently only calculated for Ethernet interfaces.
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Pps</Units>
 				<Range>
 					<Low>0</Low>
@@ -2667,7 +2660,7 @@ Currently only calculated for Ethernet interfaces.
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Pps</Units>
 				<Range>
 					<Low>0</Low>
@@ -2696,7 +2689,7 @@ Currently only calculated for Ethernet interfaces.
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Pps</Units>
 				<Range>
 					<Low>0</Low>
@@ -2725,7 +2718,7 @@ Currently only calculated for Ethernet interfaces.
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Pps</Units>
 				<Range>
 					<Low>0</Low>
@@ -2754,7 +2747,7 @@ Currently only calculated for Ethernet interfaces.
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Pps</Units>
 				<Range>
 					<Low>0</Low>
@@ -2783,7 +2776,7 @@ Currently only calculated for Ethernet interfaces.
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Pps</Units>
 				<Range>
 					<Low>0</Low>
@@ -2899,6 +2892,16 @@ Currently only calculated for Ethernet interfaces.
 				<ColumnOption idx="21" pid="1122" type="retrieved" options="" />
 				<ColumnOption idx="22" pid="1123" type="retrieved" options="" />
 				<ColumnOption idx="23" pid="1124" type="retrieved" options="" />
+				<ColumnOption idx="24" pid="1125" type="retrieved" options="" />
+				<ColumnOption idx="25" pid="1126" type="retrieved" options="" />
+				<ColumnOption idx="26" pid="1127" type="retrieved" options="" />
+				<ColumnOption idx="27" pid="1128" type="retrieved" options="" />
+				<ColumnOption idx="28" pid="1129" type="retrieved" options="" />
+				<ColumnOption idx="29" pid="1130" type="retrieved" options="" />
+				<ColumnOption idx="30" pid="1131" type="retrieved" options="" />
+				<ColumnOption idx="31" pid="1132" type="retrieved" options="" />
+				<ColumnOption idx="32" pid="1133" type="retrieved" options="" />
+				<ColumnOption idx="33" pid="1134" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A list of interface entries. This table contains additional objects for the interface table.</Subtext>
@@ -2908,17 +2911,10 @@ Currently only calculated for Ethernet interfaces.
 				<OID type="complete" options="instance;multipleGetNext"></OID>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Raw Tables</Page>
-						<Row>1</Row>
-						<Column>0</Column>
-					</Position>
-				</Positions>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:1101|0-1102|1-1103|2-1104|3-1105|4-1106|5-1107|6-1108|7-1109|8-1110|9-1111|10-1112|11-1113|12-1114|13-1115|14-1116|15-1117|16-1118|17-1119|18-1120|19-1124|23-1121|20-1122|21-1123|22,width:65-200-131-134-141-144-192-202-213-216-192-212-223-226-156-116-112-122-100-173-100-100-100-141,sort:STRING-STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-STRING-INT-STRING-STRING-STRING-INT-INT-INT-INT-INT,lines:20,filter:true">table</Type>
+				<Type options="tab=lines:20,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="1101" trending="false">
@@ -2940,7 +2936,7 @@ The value for each interface sub-layer must remain constant at least from one re
 				<LengthType>next param</LengthType>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>string</Type>
@@ -2978,7 +2974,7 @@ Note that for an agent which responds to SNMP queries concerning an interface on
 				<Type>octetstring</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>string</Type>
@@ -3007,7 +3003,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3040,7 +3036,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3074,7 +3070,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3107,7 +3103,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3143,7 +3139,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter64String</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Octets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3179,7 +3175,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter64String</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3216,7 +3212,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter64String</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3252,7 +3248,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter64String</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3286,7 +3282,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter64String</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Octets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3320,7 +3316,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter64String</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3355,7 +3351,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter64String</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3389,7 +3385,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>counter64String</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Packets</Units>
 				<Range>
 					<Low>0</Low>
@@ -3424,7 +3420,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>discreet</Type>
@@ -3457,7 +3453,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>togglebutton</Type>
@@ -3503,7 +3499,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 				<Type>gauge32</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>Mbps</Units>
 				<Range>
 					<Low>0</Low>
@@ -3539,7 +3535,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>discreet</Type>
@@ -3570,7 +3566,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>togglebutton</Type>
@@ -3604,7 +3600,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>discreet</Type>
@@ -3648,7 +3644,7 @@ An agent which supports write access to this object is required to keep the valu
 				<Type>octetstring</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Range>
 					<Low>0</Low>
 					<High>64</High>
@@ -3673,7 +3669,7 @@ An agent which supports write access to this object is required to keep the valu
 				<Type>octetstring</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Range>
 					<Low>0</Low>
 					<High>64</High>
@@ -3713,7 +3709,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</SNMP>
 			<!-- SuppressValidator 2.9.7 No unit applicable -->
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Range>
 					<Low>0</Low>
 					<High>4294967295</High>
@@ -3743,7 +3739,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>bps</Units>
 				<Range>
 					<Low>0</Low>
@@ -3772,7 +3768,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>bps</Units>
 				<Range>
 					<Low>0</Low>
@@ -3806,7 +3802,7 @@ Currently only calculated for Ethernet interfaces.
 				</Exceptions>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 				<Units>%</Units>
 				<Range>
 					<Low>0</Low>
@@ -3830,10 +3826,300 @@ Currently only calculated for Ethernet interfaces.
 				<LengthType>next param</LengthType>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1125" trending="false">
+			<Name>ifXTableIfInMulticastRate</Name>
+			<Description>In Multicast Rate (If X Table)</Description>
+			<Information>
+				<Subtext>The input multicast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1126" trending="false">
+			<Name>ifXTableIfOutMulticastRate</Name>
+			<Description>Out Multicast Rate (If X Table)</Description>
+			<Information>
+				<Subtext>The output multicast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1127" trending="false">
+			<Name>ifXTableIfInBroadcastRate</Name>
+			<Description>In Broadcast Rate (If X Table)</Description>
+			<Information>
+				<Subtext>The input broadcast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1128" trending="false">
+			<Name>ifXTableIfOutBroadcastRate</Name>
+			<Description>Out Broadcast Rate (If X Table)</Description>
+			<Information>
+				<Subtext>The output broadcast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1129" trending="false">
+			<Name>ifXTableIfInHcUcastRate</Name>
+			<Description>In HC Unicast Rate (If X Table)</Description>
+			<Information>
+				<Subtext>The input high capacity unicast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1130" trending="false">
+			<Name>ifXTableIfOutHcUcastRate</Name>
+			<Description>Out HC Unicast Rate (If X Table)</Description>
+			<Information>
+				<Subtext>The output HC unicast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1131" trending="false">
+			<Name>ifXTableIfInHcMulticastRate</Name>
+			<Description>In HC Multicast Rate (If X Table)</Description>
+			<Information>
+				<Subtext>The input high capacity multicast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1132" trending="false">
+			<Name>ifXTableIfOutHcMulticastRate</Name>
+			<Description>Out HC Multicast Rate (If X Table)</Description>
+			<Information>
+				<Subtext>The output HC multicast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1133" trending="false">
+			<Name>ifXTableIfInHcBroadcastRate</Name>
+			<Description>In HC Broadcast Rate (If X Table)</Description>
+			<Information>
+				<Subtext>The input HC broadcast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1134" trending="false">
+			<Name>ifXTableIfOutHcBroadcastRate</Name>
+			<Description>Out HC Broadcast Rate (If X Table)</Description>
+			<Information>
+				<Subtext>The output HC broadcast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
 			</Measurement>
 		</Param>
 		
@@ -3943,17 +4229,10 @@ There will be one row in this table for each Ethernet-like interface in the syst
 				<OID type="complete" options="instance;multipleGetNext"></OID>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Raw Tables</Page>
-						<Column>0</Column>
-						<Row>2</Row>
-					</Position>
-				</Positions>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:1301|0-1302|1,width:65-100,sort:INT-STRING,lines:20,filter:true">table</Type>
+				<Type options="tab=lines:20,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="1301" trending="false">
@@ -3973,7 +4252,7 @@ There will be one row in this table for each Ethernet-like interface in the syst
 				<LengthType>next param</LengthType>
 			</Interprete>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>string</Type>
@@ -4010,7 +4289,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<Type>integer</Type>
 			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>discreet</Type>
@@ -4048,13 +4327,13 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="8" pid="2009" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="9" pid="2010" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="10" pid="2011" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="11" pid="2013" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="12" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="11" pid="2013" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="12" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="13" pid="2015" type="retrieved" options="" />
-				<ColumnOption idx="14" pid="2016" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="15" pid="2017" type="retrieved" options=";enableHeaderSum;enableHistogram;enableHeatmap" />
-				<ColumnOption idx="16" pid="2019" type="retrieved" options="" />
-				<ColumnOption idx="17" pid="2018" type="retrieved" options="" />
+				<ColumnOption idx="14" pid="2016" type="retrieved" options=";disableHeaderSum;enableHistogram;disableHeatmap" />
+				<ColumnOption idx="15" pid="2017" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="16" pid="2018" type="retrieved" options="" />
+				<ColumnOption idx="17" pid="2019" type="retrieved" options="" />
 				<ColumnOption idx="18" pid="2020" type="retrieved" options="" />
 				<ColumnOption idx="19" pid="2012" type="displaykey" options="" />
 			</ArrayOptions>
@@ -4080,7 +4359,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<!-- SuppressValidator 2.31.9 Sorting on datetime column not needed. -->
 				<!-- /SuppressValidator 2.31.9 -->
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-2012|19-2006|5-2013|11-2009|8-2014|12-2010|9-2003|2-2002|1-2007|6-2005|4-2008|7-2016|14-2011|10-2015|13-2017|15-2019|16-2018|17-2020|18,width:0-0-200-123-150-0-150-0-100-100-156-104-100-138-156-100-141-112-100-118,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-2012|19-2006|5-2013|11-2009|8-2014|12-2010|9-2003|2-2002|1-2007|6-2005|4-2008|7-2016|14-2011|10-2015|13-2017|15-2019|17-2018|16-2020|18,width:0-0-200-123-150-0-150-0-100-100-156-104-100-138-156-100-141-112-100-118,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -4953,13 +5232,13 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 			<ArrayOptions index="0">
 				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
 				<ColumnOption idx="0" pid="2101" type="retrieved" options=""/>
-				<ColumnOption idx="1" pid="2102" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="2" pid="2103" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="3" pid="2104" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="4" pid="2105" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="5" pid="2106" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="6" pid="2107" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="7" pid="2108" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="1" pid="2102" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="2" pid="2103" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="3" pid="2104" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="4" pid="2105" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="5" pid="2106" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="6" pid="2107" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="7" pid="2108" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="8" pid="2109" type="retrieved" options=";foreignKey=2000" />
 				<ColumnOption idx="9" pid="2110" type="displaykey" options="" />
 			</ArrayOptions>
@@ -5373,12 +5652,12 @@ other times as indicated by the value of
 			<ArrayOptions index="0">
 				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
 				<ColumnOption idx="0" pid="2201" type="retrieved" options=""/>
-				<ColumnOption idx="1" pid="2202" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="2" pid="2203" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="3" pid="2204" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="4" pid="2205" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="5" pid="2206" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="6" pid="2207" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="1" pid="2202" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="2" pid="2203" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="3" pid="2204" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="4" pid="2205" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="5" pid="2206" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="6" pid="2207" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="7" pid="2208" type="retrieved" options=";foreignKey=2000" />
 				<ColumnOption idx="8" pid="2209" type="displaykey" options="" />
 			</ArrayOptions>

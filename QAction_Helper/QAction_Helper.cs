@@ -584,6 +584,56 @@ public static class Parameter
 			public const int ifxtableifratedata_1124 = 1124;
 			/// <summary>PID: 1124 | Type: read</summary>
 			public const int ifxtableifratedata = 1124;
+			/// <summary>PID: 1125 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifinmulticastrate_1125 = 1125;
+			/// <summary>PID: 1125 | Type: read</summary>
+			public const int ifxtableifinmulticastrate = 1125;
+			/// <summary>PID: 1126 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifoutmulticastrate_1126 = 1126;
+			/// <summary>PID: 1126 | Type: read</summary>
+			public const int ifxtableifoutmulticastrate = 1126;
+			/// <summary>PID: 1127 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifinbroadcastrate_1127 = 1127;
+			/// <summary>PID: 1127 | Type: read</summary>
+			public const int ifxtableifinbroadcastrate = 1127;
+			/// <summary>PID: 1128 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifoutbroadcastrate_1128 = 1128;
+			/// <summary>PID: 1128 | Type: read</summary>
+			public const int ifxtableifoutbroadcastrate = 1128;
+			/// <summary>PID: 1129 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifinhcucastrate_1129 = 1129;
+			/// <summary>PID: 1129 | Type: read</summary>
+			public const int ifxtableifinhcucastrate = 1129;
+			/// <summary>PID: 1130 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifouthcucastrate_1130 = 1130;
+			/// <summary>PID: 1130 | Type: read</summary>
+			public const int ifxtableifouthcucastrate = 1130;
+			/// <summary>PID: 1131 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifinhcmulticastrate_1131 = 1131;
+			/// <summary>PID: 1131 | Type: read</summary>
+			public const int ifxtableifinhcmulticastrate = 1131;
+			/// <summary>PID: 1132 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifouthcmulticastrate_1132 = 1132;
+			/// <summary>PID: 1132 | Type: read</summary>
+			public const int ifxtableifouthcmulticastrate = 1132;
+			/// <summary>PID: 1133 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifinhcbroadcastrate_1133 = 1133;
+			/// <summary>PID: 1133 | Type: read</summary>
+			public const int ifxtableifinhcbroadcastrate = 1133;
+			/// <summary>PID: 1134 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifouthcbroadcastrate_1134 = 1134;
+			/// <summary>PID: 1134 | Type: read</summary>
+			public const int ifxtableifouthcbroadcastrate = 1134;
 			public class Write
 			{
 			}
@@ -710,6 +760,56 @@ public static class Parameter
 			public const int ifxtableifratedata_1124 = 23;
 			/// <summary>IDX: 23 | Type: read</summary>
 			public const int ifxtableifratedata = 23;
+			/// <summary>IDX: 24 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifinmulticastrate_1125 = 24;
+			/// <summary>IDX: 24 | Type: read</summary>
+			public const int ifxtableifinmulticastrate = 24;
+			/// <summary>IDX: 25 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifoutmulticastrate_1126 = 25;
+			/// <summary>IDX: 25 | Type: read</summary>
+			public const int ifxtableifoutmulticastrate = 25;
+			/// <summary>IDX: 26 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifinbroadcastrate_1127 = 26;
+			/// <summary>IDX: 26 | Type: read</summary>
+			public const int ifxtableifinbroadcastrate = 26;
+			/// <summary>IDX: 27 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifoutbroadcastrate_1128 = 27;
+			/// <summary>IDX: 27 | Type: read</summary>
+			public const int ifxtableifoutbroadcastrate = 27;
+			/// <summary>IDX: 28 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifinhcucastrate_1129 = 28;
+			/// <summary>IDX: 28 | Type: read</summary>
+			public const int ifxtableifinhcucastrate = 28;
+			/// <summary>IDX: 29 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifouthcucastrate_1130 = 29;
+			/// <summary>IDX: 29 | Type: read</summary>
+			public const int ifxtableifouthcucastrate = 29;
+			/// <summary>IDX: 30 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifinhcmulticastrate_1131 = 30;
+			/// <summary>IDX: 30 | Type: read</summary>
+			public const int ifxtableifinhcmulticastrate = 30;
+			/// <summary>IDX: 31 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifouthcmulticastrate_1132 = 31;
+			/// <summary>IDX: 31 | Type: read</summary>
+			public const int ifxtableifouthcmulticastrate = 31;
+			/// <summary>IDX: 32 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifinhcbroadcastrate_1133 = 32;
+			/// <summary>IDX: 32 | Type: read</summary>
+			public const int ifxtableifinhcbroadcastrate = 32;
+			/// <summary>IDX: 33 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int ifxtableifouthcbroadcastrate_1134 = 33;
+			/// <summary>IDX: 33 | Type: read</summary>
+			public const int ifxtableifouthcbroadcastrate = 33;
 		}
 	}
 	public class Dot3statstable
@@ -840,16 +940,16 @@ public static class Parameter
 			public const int interfacesstatebandwidthutilization_2017 = 2017;
 			/// <summary>PID: 2017 | Type: read</summary>
 			public const int interfacesstatebandwidthutilization = 2017;
-			/// <summary>PID: 2019 | Type: read</summary>
-			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfacesstatepromiscuousmode_2019 = 2019;
-			/// <summary>PID: 2019 | Type: read</summary>
-			public const int interfacesstatepromiscuousmode = 2019;
 			/// <summary>PID: 2018 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			public const int interfacesstateduplexstatus_2018 = 2018;
 			/// <summary>PID: 2018 | Type: read</summary>
 			public const int interfacesstateduplexstatus = 2018;
+			/// <summary>PID: 2019 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int interfacesstatepromiscuousmode_2019 = 2019;
+			/// <summary>PID: 2019 | Type: read</summary>
+			public const int interfacesstatepromiscuousmode = 2019;
 			/// <summary>PID: 2020 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			public const int interfacesstatelinkupdowntrap_2020 = 2020;
@@ -948,14 +1048,14 @@ public static class Parameter
 			public const int interfacesstatebandwidthutilization = 15;
 			/// <summary>IDX: 16 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfacesstatepromiscuousmode_2019 = 16;
+			public const int interfacesstateduplexstatus_2018 = 16;
 			/// <summary>IDX: 16 | Type: read</summary>
-			public const int interfacesstatepromiscuousmode = 16;
+			public const int interfacesstateduplexstatus = 16;
 			/// <summary>IDX: 17 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfacesstateduplexstatus_2018 = 17;
+			public const int interfacesstatepromiscuousmode_2019 = 17;
 			/// <summary>IDX: 17 | Type: read</summary>
-			public const int interfacesstateduplexstatus = 17;
+			public const int interfacesstatepromiscuousmode = 17;
 			/// <summary>IDX: 18 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			public const int interfacesstatelinkupdowntrap_2020 = 18;
@@ -1388,6 +1488,26 @@ public interface SLProtocolExt : SLProtocol
 	object Ifxtableifbandwidthutilization { get; set; }
 	object Ifxtableifratedata_1124 { get; set; }
 	object Ifxtableifratedata { get; set; }
+	object Ifxtableifinmulticastrate_1125 { get; set; }
+	object Ifxtableifinmulticastrate { get; set; }
+	object Ifxtableifoutmulticastrate_1126 { get; set; }
+	object Ifxtableifoutmulticastrate { get; set; }
+	object Ifxtableifinbroadcastrate_1127 { get; set; }
+	object Ifxtableifinbroadcastrate { get; set; }
+	object Ifxtableifoutbroadcastrate_1128 { get; set; }
+	object Ifxtableifoutbroadcastrate { get; set; }
+	object Ifxtableifinhcucastrate_1129 { get; set; }
+	object Ifxtableifinhcucastrate { get; set; }
+	object Ifxtableifouthcucastrate_1130 { get; set; }
+	object Ifxtableifouthcucastrate { get; set; }
+	object Ifxtableifinhcmulticastrate_1131 { get; set; }
+	object Ifxtableifinhcmulticastrate { get; set; }
+	object Ifxtableifouthcmulticastrate_1132 { get; set; }
+	object Ifxtableifouthcmulticastrate { get; set; }
+	object Ifxtableifinhcbroadcastrate_1133 { get; set; }
+	object Ifxtableifinhcbroadcastrate { get; set; }
+	object Ifxtableifouthcbroadcastrate_1134 { get; set; }
+	object Ifxtableifouthcbroadcastrate { get; set; }
 	object Ifxtableiflinkupdowntrapenable_1155 { get; set; }
 	object Ifxtableifpromiscuousmode_1157 { get; set; }
 	object Ifxtableifalias_1159 { get; set; }
@@ -1862,6 +1982,56 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Ifxtableifratedata_1124 {get { return GetParameter(1124); }set { SetParameter(1124, value); }}
 	/// <summary>PID: 1124  | Type: read</summary>
 	public System.Object Ifxtableifratedata {get { return GetParameter(1124); }set { SetParameter(1124, value); }}
+	/// <summary>PID: 1125  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifinmulticastrate_1125 {get { return GetParameter(1125); }set { SetParameter(1125, value); }}
+	/// <summary>PID: 1125  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtableifinmulticastrate {get { return GetParameter(1125); }set { SetParameter(1125, value); }}
+	/// <summary>PID: 1126  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifoutmulticastrate_1126 {get { return GetParameter(1126); }set { SetParameter(1126, value); }}
+	/// <summary>PID: 1126  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtableifoutmulticastrate {get { return GetParameter(1126); }set { SetParameter(1126, value); }}
+	/// <summary>PID: 1127  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifinbroadcastrate_1127 {get { return GetParameter(1127); }set { SetParameter(1127, value); }}
+	/// <summary>PID: 1127  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtableifinbroadcastrate {get { return GetParameter(1127); }set { SetParameter(1127, value); }}
+	/// <summary>PID: 1128  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifoutbroadcastrate_1128 {get { return GetParameter(1128); }set { SetParameter(1128, value); }}
+	/// <summary>PID: 1128  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtableifoutbroadcastrate {get { return GetParameter(1128); }set { SetParameter(1128, value); }}
+	/// <summary>PID: 1129  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifinhcucastrate_1129 {get { return GetParameter(1129); }set { SetParameter(1129, value); }}
+	/// <summary>PID: 1129  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtableifinhcucastrate {get { return GetParameter(1129); }set { SetParameter(1129, value); }}
+	/// <summary>PID: 1130  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifouthcucastrate_1130 {get { return GetParameter(1130); }set { SetParameter(1130, value); }}
+	/// <summary>PID: 1130  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtableifouthcucastrate {get { return GetParameter(1130); }set { SetParameter(1130, value); }}
+	/// <summary>PID: 1131  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifinhcmulticastrate_1131 {get { return GetParameter(1131); }set { SetParameter(1131, value); }}
+	/// <summary>PID: 1131  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtableifinhcmulticastrate {get { return GetParameter(1131); }set { SetParameter(1131, value); }}
+	/// <summary>PID: 1132  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifouthcmulticastrate_1132 {get { return GetParameter(1132); }set { SetParameter(1132, value); }}
+	/// <summary>PID: 1132  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtableifouthcmulticastrate {get { return GetParameter(1132); }set { SetParameter(1132, value); }}
+	/// <summary>PID: 1133  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifinhcbroadcastrate_1133 {get { return GetParameter(1133); }set { SetParameter(1133, value); }}
+	/// <summary>PID: 1133  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtableifinhcbroadcastrate {get { return GetParameter(1133); }set { SetParameter(1133, value); }}
+	/// <summary>PID: 1134  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifouthcbroadcastrate_1134 {get { return GetParameter(1134); }set { SetParameter(1134, value); }}
+	/// <summary>PID: 1134  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtableifouthcbroadcastrate {get { return GetParameter(1134); }set { SetParameter(1134, value); }}
 	/// <summary>PID: 1155  | Type: write | DISCREETS: Enabled = 1, Disabled = 2</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Ifxtableiflinkupdowntrapenable_1155 {get { return GetParameter(1155); }set { SetParameter(1155, value); }}
@@ -2428,8 +2598,58 @@ public class IfxtableQActionRow : QActionTableRow
 	public System.Object Ifxtableifratedata_1124 { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
 	/// <summary>PID: 1124 | Type: read</summary>
 	public System.Object Ifxtableifratedata { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
-	public IfxtableQActionRow() : base(0, 24) { }
-	public IfxtableQActionRow(System.Object[] oRow) : base(0, 24, oRow) { }
+	/// <summary>PID: 1125 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifinmulticastrate_1125 { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
+	/// <summary>PID: 1125 | Type: read</summary>
+	public System.Object Ifxtableifinmulticastrate { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
+	/// <summary>PID: 1126 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifoutmulticastrate_1126 { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
+	/// <summary>PID: 1126 | Type: read</summary>
+	public System.Object Ifxtableifoutmulticastrate { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
+	/// <summary>PID: 1127 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifinbroadcastrate_1127 { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
+	/// <summary>PID: 1127 | Type: read</summary>
+	public System.Object Ifxtableifinbroadcastrate { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
+	/// <summary>PID: 1128 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifoutbroadcastrate_1128 { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
+	/// <summary>PID: 1128 | Type: read</summary>
+	public System.Object Ifxtableifoutbroadcastrate { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
+	/// <summary>PID: 1129 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifinhcucastrate_1129 { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
+	/// <summary>PID: 1129 | Type: read</summary>
+	public System.Object Ifxtableifinhcucastrate { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
+	/// <summary>PID: 1130 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifouthcucastrate_1130 { get { if (base.Columns.ContainsKey(29)) { return base.Columns[29]; } else { return null; } } set { if (base.Columns.ContainsKey(29)) { base.Columns[29] = value; } else { base.Columns.Add(29, value); } } }
+	/// <summary>PID: 1130 | Type: read</summary>
+	public System.Object Ifxtableifouthcucastrate { get { if (base.Columns.ContainsKey(29)) { return base.Columns[29]; } else { return null; } } set { if (base.Columns.ContainsKey(29)) { base.Columns[29] = value; } else { base.Columns.Add(29, value); } } }
+	/// <summary>PID: 1131 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifinhcmulticastrate_1131 { get { if (base.Columns.ContainsKey(30)) { return base.Columns[30]; } else { return null; } } set { if (base.Columns.ContainsKey(30)) { base.Columns[30] = value; } else { base.Columns.Add(30, value); } } }
+	/// <summary>PID: 1131 | Type: read</summary>
+	public System.Object Ifxtableifinhcmulticastrate { get { if (base.Columns.ContainsKey(30)) { return base.Columns[30]; } else { return null; } } set { if (base.Columns.ContainsKey(30)) { base.Columns[30] = value; } else { base.Columns.Add(30, value); } } }
+	/// <summary>PID: 1132 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifouthcmulticastrate_1132 { get { if (base.Columns.ContainsKey(31)) { return base.Columns[31]; } else { return null; } } set { if (base.Columns.ContainsKey(31)) { base.Columns[31] = value; } else { base.Columns.Add(31, value); } } }
+	/// <summary>PID: 1132 | Type: read</summary>
+	public System.Object Ifxtableifouthcmulticastrate { get { if (base.Columns.ContainsKey(31)) { return base.Columns[31]; } else { return null; } } set { if (base.Columns.ContainsKey(31)) { base.Columns[31] = value; } else { base.Columns.Add(31, value); } } }
+	/// <summary>PID: 1133 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifinhcbroadcastrate_1133 { get { if (base.Columns.ContainsKey(32)) { return base.Columns[32]; } else { return null; } } set { if (base.Columns.ContainsKey(32)) { base.Columns[32] = value; } else { base.Columns.Add(32, value); } } }
+	/// <summary>PID: 1133 | Type: read</summary>
+	public System.Object Ifxtableifinhcbroadcastrate { get { if (base.Columns.ContainsKey(32)) { return base.Columns[32]; } else { return null; } } set { if (base.Columns.ContainsKey(32)) { base.Columns[32] = value; } else { base.Columns.Add(32, value); } } }
+	/// <summary>PID: 1134 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ifxtableifouthcbroadcastrate_1134 { get { if (base.Columns.ContainsKey(33)) { return base.Columns[33]; } else { return null; } } set { if (base.Columns.ContainsKey(33)) { base.Columns[33] = value; } else { base.Columns.Add(33, value); } } }
+	/// <summary>PID: 1134 | Type: read</summary>
+	public System.Object Ifxtableifouthcbroadcastrate { get { if (base.Columns.ContainsKey(33)) { return base.Columns[33]; } else { return null; } } set { if (base.Columns.ContainsKey(33)) { base.Columns[33] = value; } else { base.Columns.Add(33, value); } } }
+	public IfxtableQActionRow() : base(0, 34) { }
+	public IfxtableQActionRow(System.Object[] oRow) : base(0, 34, oRow) { }
 	public static implicit operator IfxtableQActionRow(System.Object[] source) { return new IfxtableQActionRow(source); }
 	public static implicit operator System.Object[](IfxtableQActionRow source) { return source.ToObjectArray(); }
 }
@@ -2534,16 +2754,16 @@ public class InterfacesstateQActionRow : QActionTableRow
 	public System.Object Interfacesstatebandwidthutilization_2017 { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
 	/// <summary>PID: 2017 | Type: read</summary>
 	public System.Object Interfacesstatebandwidthutilization { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
-	/// <summary>PID: 2019 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacesstatepromiscuousmode_2019 { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
-	/// <summary>PID: 2019 | Type: read</summary>
-	public System.Object Interfacesstatepromiscuousmode { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
 	/// <summary>PID: 2018 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacesstateduplexstatus_2018 { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	public System.Object Interfacesstateduplexstatus_2018 { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
 	/// <summary>PID: 2018 | Type: read</summary>
-	public System.Object Interfacesstateduplexstatus { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	public System.Object Interfacesstateduplexstatus { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	/// <summary>PID: 2019 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesstatepromiscuousmode_2019 { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	/// <summary>PID: 2019 | Type: read</summary>
+	public System.Object Interfacesstatepromiscuousmode { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
 	/// <summary>PID: 2020 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacesstatelinkupdowntrap_2020 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }

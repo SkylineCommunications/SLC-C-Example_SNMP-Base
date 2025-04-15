@@ -104,9 +104,6 @@ public class QAction
 				interfacesStateCountersTxArr[i] = x[i].InterfacesCountersTxTableRows;
 			}
 
-			protocol.Log(String.Join(Environment.NewLine, interfacesStateArr.Select(i => String.Join(";", ((object[])i).Select(j => Convert.ToString(j))))));
-
-			// protocol.FillArray(Parameter.Interfacesstate.tablePid, interfacesStateArr.Select(row => row.ToObjectArray()).ToList(), NotifyProtocol.SaveOption.Full);
 			protocol.interfacesstate.FillArray(interfacesStateArr);
 			protocol.interfacesstatecountersrx.FillArray(interfacesStateCountersRxArr);
 			protocol.interfacesstatecounterstx.FillArray(interfacesStateCountersTxArr);
@@ -178,22 +175,22 @@ public class QAction
 			interfaceTableRow.Interfacesstatebandwidthutilization_2017 = Convert.ToDouble(iftable.BandwidthUtilization[getPosition]);
 
 			// Interface Counters RX Table
-			interfaceCountersRxTableRow.Interfacesstatecountersrxinunicastrate_2103 = Convert.ToDouble(iftable.InUcastpkts[getPosition]);
-			interfaceCountersRxTableRow.Interfacesstatecountersrxindiscardsrate_2106 = Convert.ToDouble(iftable.InDiscards[getPosition]);
-			interfaceCountersRxTableRow.Interfacesstatecountersrxinerrorsrate_2107 = Convert.ToDouble(iftable.InErrors[getPosition]);
-			interfaceCountersRxTableRow.Interfacesstatecountersrxinunknownprotosrate_2108 = Convert.ToDouble(iftable.InUnknownProtos[getPosition]);
+			interfaceCountersRxTableRow.Interfacesstatecountersrxinunicastrate_2103 = Convert.ToDouble(iftable.UniCastRateIn[getPosition]);
+			interfaceCountersRxTableRow.Interfacesstatecountersrxindiscardsrate_2106 = Convert.ToDouble(iftable.DiscardRateIn[getPosition]);
+			interfaceCountersRxTableRow.Interfacesstatecountersrxinerrorsrate_2107 = Convert.ToDouble(iftable.ErrorRateIn[getPosition]);
+			interfaceCountersRxTableRow.Interfacesstatecountersrxinunknownprotosrate_2108 = Convert.ToDouble(iftable.UnknownProtosRateIn[getPosition]);
 
 			// Interface Counters TX Table
-			interfaceCountersTxTableRow.Interfacesstatecounterstxoutunicastrate_2203 = Convert.ToDouble(iftable.OutUcastpkts[getPosition]);
-			interfaceCountersTxTableRow.Interfacesstatecounterstxoutdiscardsrate_2206 = Convert.ToDouble(iftable.OutDiscards[getPosition]);
-			interfaceCountersTxTableRow.Interfacesstatecounterstxouterrorsrate_2207 = Convert.ToDouble(iftable.OutErrors[getPosition]);
+			interfaceCountersTxTableRow.Interfacesstatecounterstxoutunicastrate_2203 = Convert.ToDouble(iftable.UniCastRateOut[getPosition]);
+			interfaceCountersTxTableRow.Interfacesstatecounterstxoutdiscardsrate_2206 = Convert.ToDouble(iftable.DiscardRateOut[getPosition]);
+			interfaceCountersTxTableRow.Interfacesstatecounterstxouterrorsrate_2207 = Convert.ToDouble(iftable.ErrorRateOut[getPosition]);
 		}
 	}
 
 	private static void MergeFromSnmpIfXTable(InterfacesstateQActionRow interfaceTableRow, InterfacesstatecountersrxQActionRow interfaceCountersRxTableRow, InterfacesstatecounterstxQActionRow interfaceCountersTxTableRow, IfXTable ifxtable, int getPosition)
 	{
 		interfaceTableRow.Interfacesstatelogical_2008 = ifxtable.ConnectorPresent[getPosition] == null? -1 : Convert.ToDouble(ifxtable.ConnectorPresent[getPosition]);
-		interfaceTableRow.Interfacesstatelastclear_2011 = Convert.ToDouble(ifxtable.CounterDiscontinuitytime[getPosition]) / 100;
+		interfaceTableRow.Interfacesstatelastclear_2011 = ifxtable.CounterDiscontinuitytime[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.CounterDiscontinuitytime[getPosition]) / 100;
 		interfaceTableRow.Interfacesstateuserdescription_2015 = Convert.ToString(ifxtable.Alias[getPosition]);
 		interfaceTableRow.Interfacesstatepromiscuousmode_2019 = ifxtable.PromiscuousMode[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.PromiscuousMode[getPosition]);
 		interfaceTableRow.Interfacesstatelinkupdowntrap_2020 = Convert.ToDouble(ifxtable.LinkUpDownTrapEnable[getPosition]);
@@ -216,14 +213,14 @@ public class QAction
 	private static void Use32BitCounters(InterfacesstateQActionRow interfaceTableRow, InterfacesstatecountersrxQActionRow interfaceCountersRxTableRow, InterfacesstatecounterstxQActionRow interfaceCountersTxTableRow, IfXTable ifxtable, int getPosition)
 	{
 		// Interface Counters RX Table
-		interfaceCountersRxTableRow.Interfacesstatecountersrxinbroadcastrate_2104 = ifxtable.InBroadcastPkts[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.InBroadcastPkts[getPosition]);
-		interfaceCountersRxTableRow.Interfacesstatecountersrxinmulticastrate_2105 = ifxtable.InMulticastPkts[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.InMulticastPkts[getPosition]);
+		interfaceCountersRxTableRow.Interfacesstatecountersrxinbroadcastrate_2104 = ifxtable.BroadcastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.BroadcastRateIn[getPosition]);
+		interfaceCountersRxTableRow.Interfacesstatecountersrxinmulticastrate_2105 = ifxtable.MulticastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.MulticastRateIn[getPosition]);
 
 		// Interface Counters TX Table
-		interfaceCountersTxTableRow.Interfacesstatecounterstxoutbroadcastrate_2204 = ifxtable.OutBroadcastPkts[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.OutBroadcastPkts[getPosition]);
-		interfaceCountersTxTableRow.Interfacesstatecounterstxoutmulticastrate_2205 = ifxtable.OutMulticastPkts[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.OutMulticastPkts[getPosition]);
+		interfaceCountersTxTableRow.Interfacesstatecounterstxoutbroadcastrate_2204 = ifxtable.BroadcastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.BroadcastRateOut[getPosition]);
+		interfaceCountersTxTableRow.Interfacesstatecounterstxoutmulticastrate_2205 = ifxtable.MulticastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.MulticastRateOut[getPosition]);
 
-		double dBitrateIn = Convert.ToDouble(ifxtable.BitRateIn[getPosition]);
+		double dBitrateIn = Convert.ToDouble(ifxtable.HCBitRateIn[getPosition]);
 		if (dBitrateIn < -1)
 		{
 			// Indication of discontinuity times, need to set values to N/A
@@ -240,21 +237,21 @@ public class QAction
 		interfaceTableRow.Interfacesstateoutoctets_2010 = ifxtable.HcOutOctets[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HcOutOctets[getPosition]);
 		interfaceTableRow.Interfacesstatebandwidthutilization_2017 = Convert.ToDouble(ifxtable.BandwidthUtilization[getPosition]);
 
-		double bitrateIn = Convert.ToDouble(ifxtable.BitRateIn[getPosition]);
-		interfaceTableRow.Interfacesstateinbitrate_2013 = bitrateIn >= 0 ? bitrateIn / Math.Pow(10, 6) : -1;        // bps -> Mbps
+		double bitrateIn = Convert.ToDouble(ifxtable.HCBitRateIn[getPosition]);
+		interfaceTableRow.Interfacesstateinbitrate_2013 = bitrateIn >= 0 ? bitrateIn / Math.Pow(10, 6) : -1;      // bps -> Mbps
 
-		double bitrateOut = Convert.ToDouble(ifxtable.BitRateOut[getPosition]);
+		double bitrateOut = Convert.ToDouble(ifxtable.HCBitRateOut[getPosition]);
 		interfaceTableRow.Interfacesstateoutbitrate_2014 = bitrateOut >= 0 ? bitrateOut / Math.Pow(10, 6) : -1;   // bps -> Mbps
 
 		// Interface Counters RX Table
-		interfaceCountersRxTableRow.Interfacesstatecountersrxinunicastrate_2103 = ifxtable.HcInUcastPkts[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HcInUcastPkts[getPosition]);
-		interfaceCountersRxTableRow.Interfacesstatecountersrxinbroadcastrate_2104 = ifxtable.HcInBroadcastPkts[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HcInBroadcastPkts[getPosition]);
-		interfaceCountersRxTableRow.Interfacesstatecountersrxinmulticastrate_2105 = ifxtable.HcInMulticastPkts[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HcInMulticastPkts[getPosition]);
+		interfaceCountersRxTableRow.Interfacesstatecountersrxinunicastrate_2103 = ifxtable.HCUnicastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCUnicastRateIn[getPosition]);
+		interfaceCountersRxTableRow.Interfacesstatecountersrxinbroadcastrate_2104 = ifxtable.HCBroadcastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCBroadcastRateIn[getPosition]);
+		interfaceCountersRxTableRow.Interfacesstatecountersrxinmulticastrate_2105 = ifxtable.HCMulticastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCMulticastRateIn[getPosition]);
 
 		// Interface Counters TX Table
-		interfaceCountersTxTableRow.Interfacesstatecounterstxoutunicastrate_2203 = ifxtable.HcOutUcastPkts[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HcOutUcastPkts[getPosition]);
-		interfaceCountersTxTableRow.Interfacesstatecounterstxoutbroadcastrate_2204 = ifxtable.HcOutBroadcastPkts[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HcOutBroadcastPkts[getPosition]);
-		interfaceCountersTxTableRow.Interfacesstatecounterstxoutmulticastrate_2205 = ifxtable.HcOutMulticastPkts[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HcOutMulticastPkts[getPosition]);
+		interfaceCountersTxTableRow.Interfacesstatecounterstxoutunicastrate_2203 = ifxtable.HCUnicastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCUnicastRateOut[getPosition]);
+		interfaceCountersTxTableRow.Interfacesstatecounterstxoutbroadcastrate_2204 = ifxtable.HCBroadcastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCBroadcastRateOut[getPosition]);
+		interfaceCountersTxTableRow.Interfacesstatecounterstxoutmulticastrate_2205 = ifxtable.HCMulticastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCMulticastRateOut[getPosition]);
 	}
 }
 
@@ -280,27 +277,35 @@ public class IfTable
 	{
 		uint[] columnsToGet = new uint[]
 		{
-			Parameter.Iftable.Idx.iftableifindex,
-			Parameter.Iftable.Idx.iftableifdescr,
-			Parameter.Iftable.Idx.iftableiftype,
-			Parameter.Iftable.Idx.iftableifmtu,
-			Parameter.Iftable.Idx.iftableifspeed,
-			Parameter.Iftable.Idx.iftableifphysaddress,
-			Parameter.Iftable.Idx.iftableifadminstatus,
-			Parameter.Iftable.Idx.iftableifoperstatus,
-			Parameter.Iftable.Idx.iftableiflastchange,
-			Parameter.Iftable.Idx.iftableifinoctets,
-			Parameter.Iftable.Idx.iftableifinucastpkts,
-			Parameter.Iftable.Idx.iftableifindiscards,
-			Parameter.Iftable.Idx.iftableifinerrors,
-			Parameter.Iftable.Idx.iftableifinunknownprotos,
-			Parameter.Iftable.Idx.iftableifoutoctets,
-			Parameter.Iftable.Idx.iftableifoutucastpkts,
-			Parameter.Iftable.Idx.iftableifoutdiscards,
-			Parameter.Iftable.Idx.iftableifouterrors,
-			Parameter.Iftable.Idx.iftableifinbitrate,
-			Parameter.Iftable.Idx.iftableifoutbitrate,
-			Parameter.Iftable.Idx.iftableifbandwidthutilization,
+			Parameter.Iftable.Idx.iftableifindex_1001,
+			Parameter.Iftable.Idx.iftableifdescr_1002,
+			Parameter.Iftable.Idx.iftableiftype_1003,
+			Parameter.Iftable.Idx.iftableifmtu_1004,
+			Parameter.Iftable.Idx.iftableifspeed_1005,
+			Parameter.Iftable.Idx.iftableifphysaddress_1006,
+			Parameter.Iftable.Idx.iftableifadminstatus_1007,
+			Parameter.Iftable.Idx.iftableifoperstatus_1008,
+			Parameter.Iftable.Idx.iftableiflastchange_1009,
+			Parameter.Iftable.Idx.iftableifinoctets_1010,
+			Parameter.Iftable.Idx.iftableifinucastpkts_1011,
+			Parameter.Iftable.Idx.iftableifindiscards_1012,
+			Parameter.Iftable.Idx.iftableifinerrors_1013,
+			Parameter.Iftable.Idx.iftableifinunknownprotos_1014,
+			Parameter.Iftable.Idx.iftableifoutoctets_1015,
+			Parameter.Iftable.Idx.iftableifoutucastpkts_1016,
+			Parameter.Iftable.Idx.iftableifoutdiscards_1017,
+			Parameter.Iftable.Idx.iftableifouterrors_1018,
+			Parameter.Iftable.Idx.iftableifinbitrate_1019,
+			Parameter.Iftable.Idx.iftableifoutbitrate_1020,
+			Parameter.Iftable.Idx.iftableifbandwidthutilization_1021,
+			Parameter.Iftable.Idx.iftableifratedata_1022,
+			Parameter.Iftable.Idx.iftableifinunicastrate_1023,
+			Parameter.Iftable.Idx.iftableifoutunicastrate_1024,
+			Parameter.Iftable.Idx.iftableifindiscardrate_1025,
+			Parameter.Iftable.Idx.iftableifoutdiscardrate_1026,
+			Parameter.Iftable.Idx.iftableifinerrorrate_1027,
+			Parameter.Iftable.Idx.iftableifouterrorrate_1028,
+			Parameter.Iftable.Idx.iftableifinunknownprotosrate_1029,
 		};
 
 		object[] ifTableColumns = protocol.GetColumns(Parameter.Iftable.tablePid, columnsToGet);
@@ -326,6 +331,14 @@ public class IfTable
 		this.BitRateIn = (object[])ifTableColumns[18];
 		this.BitRateOut = (object[])ifTableColumns[19];
 		this.BandwidthUtilization = (object[])ifTableColumns[20];
+		this.RateData = (object[])ifTableColumns[21];
+		this.UniCastRateIn = (object[])ifTableColumns[22];
+		this.UniCastRateOut = (object[])ifTableColumns[23];
+		this.DiscardRateIn = (object[])ifTableColumns[24];
+		this.DiscardRateOut = (object[])ifTableColumns[25];
+		this.ErrorRateIn = (object[])ifTableColumns[26];
+		this.ErrorRateOut = (object[])ifTableColumns[27];
+		this.UnknownProtosRateIn = (object[])ifTableColumns[28];
 	}
 
 	public object[] AdminStatus { get; set; }
@@ -369,6 +382,22 @@ public class IfTable
 	public object[] Types { get; set; }
 
 	public object[] Keys { get; set; }
+
+	public object[] RateData { get; set; }
+
+	public object[] UniCastRateIn { get; set; }
+
+	public object[] UniCastRateOut { get; set; }
+
+	public object[] DiscardRateIn { get; set; }
+
+	public object[] DiscardRateOut { get; set; }
+
+	public object[] ErrorRateIn { get; set; }
+
+	public object[] ErrorRateOut { get; set; }
+
+	public object[] UnknownProtosRateIn { get; set; }
 }
 
 public class IfXTable
@@ -377,29 +406,40 @@ public class IfXTable
 	{
 		uint[] columnsToGet = new uint[]
 		{
-			Parameter.Ifxtable.Idx.ifxtableifindex,
-			Parameter.Ifxtable.Idx.ifxtableifname,
-			Parameter.Ifxtable.Idx.ifxtableifinmulticastpkts,
-			Parameter.Ifxtable.Idx.ifxtableifinbroadcastpkts,
-			Parameter.Ifxtable.Idx.ifxtableifoutmulticastpkts,
-			Parameter.Ifxtable.Idx.ifxtableifoutbroadcastpkts,
-			Parameter.Ifxtable.Idx.ifxtableifhcinoctets,
-			Parameter.Ifxtable.Idx.ifxtableifhcinucastpkts,
-			Parameter.Ifxtable.Idx.ifxtableifhcinmulticastpkts,
-			Parameter.Ifxtable.Idx.ifxtableifhcinbroadcastpkts,
-			Parameter.Ifxtable.Idx.ifxtableifhcoutoctets,
-			Parameter.Ifxtable.Idx.ifxtableifhcoutucastpkts,
-			Parameter.Ifxtable.Idx.ifxtableifhcoutmulticastpkts,
-			Parameter.Ifxtable.Idx.ifxtableifhcoutbroadcastpkts,
-			Parameter.Ifxtable.Idx.ifxtableiflinkupdowntrapenable,
-			Parameter.Ifxtable.Idx.ifxtableifhighspeed,
-			Parameter.Ifxtable.Idx.ifxtableifpromiscuousmode,
-			Parameter.Ifxtable.Idx.ifxtableifconnectorpresent,
-			Parameter.Ifxtable.Idx.ifxtableifalias,
-			Parameter.Ifxtable.Idx.ifxtableifcounterdiscontinuitytime,
-			Parameter.Ifxtable.Idx.ifxtableifinbitrate,
-			Parameter.Ifxtable.Idx.ifxtableifoutbitrate,
-			Parameter.Ifxtable.Idx.ifxtableifbandwidthutilization,
+			Parameter.Ifxtable.Idx.ifxtableifindex_1101,
+			Parameter.Ifxtable.Idx.ifxtableifname_1102,
+			Parameter.Ifxtable.Idx.ifxtableifinmulticastpkts_1103,
+			Parameter.Ifxtable.Idx.ifxtableifinbroadcastpkts_1104,
+			Parameter.Ifxtable.Idx.ifxtableifoutmulticastpkts_1105,
+			Parameter.Ifxtable.Idx.ifxtableifoutbroadcastpkts_1106,
+			Parameter.Ifxtable.Idx.ifxtableifhcinoctets_1107,
+			Parameter.Ifxtable.Idx.ifxtableifhcinucastpkts_1108,
+			Parameter.Ifxtable.Idx.ifxtableifhcinmulticastpkts_1109,
+			Parameter.Ifxtable.Idx.ifxtableifhcinbroadcastpkts_1110,
+			Parameter.Ifxtable.Idx.ifxtableifhcoutoctets_1111,
+			Parameter.Ifxtable.Idx.ifxtableifhcoutucastpkts_1112,
+			Parameter.Ifxtable.Idx.ifxtableifhcoutmulticastpkts_1113,
+			Parameter.Ifxtable.Idx.ifxtableifhcoutbroadcastpkts_1114,
+			Parameter.Ifxtable.Idx.ifxtableiflinkupdowntrapenable_1115,
+			Parameter.Ifxtable.Idx.ifxtableifhighspeed_1116,
+			Parameter.Ifxtable.Idx.ifxtableifpromiscuousmode_1117,
+			Parameter.Ifxtable.Idx.ifxtableifconnectorpresent_1118,
+			Parameter.Ifxtable.Idx.ifxtableifalias_1119,
+			Parameter.Ifxtable.Idx.ifxtableifcounterdiscontinuitytime_1120,
+			Parameter.Ifxtable.Idx.ifxtableifinbitrate_1121,
+			Parameter.Ifxtable.Idx.ifxtableifoutbitrate_1122,
+			Parameter.Ifxtable.Idx.ifxtableifbandwidthutilization_1123,
+			Parameter.Ifxtable.Idx.ifxtableifratedata_1124,
+			Parameter.Ifxtable.Idx.ifxtableifinmulticastrate_1125,
+			Parameter.Ifxtable.Idx.ifxtableifoutmulticastrate_1126,
+			Parameter.Ifxtable.Idx.ifxtableifinbroadcastrate_1127,
+			Parameter.Ifxtable.Idx.ifxtableifoutbroadcastrate_1128,
+			Parameter.Ifxtable.Idx.ifxtableifinhcucastrate_1129,
+			Parameter.Ifxtable.Idx.ifxtableifouthcucastrate_1130,
+			Parameter.Ifxtable.Idx.ifxtableifinhcmulticastrate_1131,
+			Parameter.Ifxtable.Idx.ifxtableifouthcmulticastrate_1132,
+			Parameter.Ifxtable.Idx.ifxtableifinhcbroadcastrate_1133,
+			Parameter.Ifxtable.Idx.ifxtableifouthcbroadcastrate_1134,
 		};
 
 		object[] ifXTableColumns = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);
@@ -424,18 +464,49 @@ public class IfXTable
 		this.ConnectorPresent = (object[])ifXTableColumns[17];
 		this.Alias = (object[])ifXTableColumns[18];
 		this.CounterDiscontinuitytime = (object[])ifXTableColumns[19];
-		this.BitRateIn = (object[])ifXTableColumns[20];
-		this.BitRateOut = (object[])ifXTableColumns[21];
+		this.HCBitRateIn = (object[])ifXTableColumns[20];
+		this.HCBitRateOut = (object[])ifXTableColumns[21];
 		this.BandwidthUtilization = (object[])ifXTableColumns[22];
+		this.RateDate = (object[])ifXTableColumns[23];
+		this.MulticastRateIn = (object[])ifXTableColumns[24];
+		this.MulticastRateOut = (object[])ifXTableColumns[25];
+		this.BroadcastRateIn = (object[])ifXTableColumns[26];
+		this.BroadcastRateOut = (object[])ifXTableColumns[27];
+		this.HCUnicastRateIn = (object[])ifXTableColumns[28];
+		this.HCUnicastRateOut = (object[])ifXTableColumns[29];
+		this.HCMulticastRateIn = (object[])ifXTableColumns[30];
+		this.HCMulticastRateOut = (object[])ifXTableColumns[31];
+		this.HCBroadcastRateIn = (object[])ifXTableColumns[32];
+		this.HCBroadcastRateOut = (object[])ifXTableColumns[33];
 	}
 
 	public object[] Alias { get; set; }
 
 	public object[] BandwidthUtilization { get; set; }
 
-	public object[] BitRateIn { get; set; }
+	public object[] MulticastRateIn { get; set; }
 
-	public object[] BitRateOut { get; set; }
+	public object[] MulticastRateOut { get; set; }
+
+	public object[] BroadcastRateIn { get; set; }
+
+	public object[] BroadcastRateOut { get; set; }
+
+	public object[] HCBitRateIn { get; set; }
+
+	public object[] HCBitRateOut { get; set; }
+
+	public object[] HCUnicastRateIn { get; set; }
+
+	public object[] HCUnicastRateOut { get; set; }
+
+	public object[] HCMulticastRateIn { get; set; }
+
+	public object[] HCMulticastRateOut { get; set; }
+
+	public object[] HCBroadcastRateIn { get; set; }
+
+	public object[] HCBroadcastRateOut { get; set; }
 
 	public object[] ConnectorPresent { get; set; }
 
@@ -474,4 +545,6 @@ public class IfXTable
 	public object[] OutMulticastPkts { get; set; }
 
 	public object[] PromiscuousMode { get; set; }
+
+	public object[] RateDate { get; set; }
 }
