@@ -248,59 +248,59 @@ public static class Parameter
 			public const int iftableifouterrors = 1018;
 			/// <summary>PID: 1019 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinbitrate_1019 = 1019;
+			public const int iftableinbitrate_1019 = 1019;
 			/// <summary>PID: 1019 | Type: read</summary>
-			public const int iftableifinbitrate = 1019;
+			public const int iftableinbitrate = 1019;
 			/// <summary>PID: 1020 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutbitrate_1020 = 1020;
+			public const int iftableoutbitrate_1020 = 1020;
 			/// <summary>PID: 1020 | Type: read</summary>
-			public const int iftableifoutbitrate = 1020;
+			public const int iftableoutbitrate = 1020;
 			/// <summary>PID: 1021 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifbandwidthutilization_1021 = 1021;
+			public const int iftablebandwidthutilization_1021 = 1021;
 			/// <summary>PID: 1021 | Type: read</summary>
-			public const int iftableifbandwidthutilization = 1021;
+			public const int iftablebandwidthutilization = 1021;
 			/// <summary>PID: 1022 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifratedata_1022 = 1022;
+			public const int iftableratesdata_1022 = 1022;
 			/// <summary>PID: 1022 | Type: read</summary>
-			public const int iftableifratedata = 1022;
+			public const int iftableratesdata = 1022;
 			/// <summary>PID: 1023 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinunicastrate_1023 = 1023;
+			public const int iftableinunicastrate_1023 = 1023;
 			/// <summary>PID: 1023 | Type: read</summary>
-			public const int iftableifinunicastrate = 1023;
+			public const int iftableinunicastrate = 1023;
 			/// <summary>PID: 1024 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutunicastrate_1024 = 1024;
+			public const int iftableoutunicastrate_1024 = 1024;
 			/// <summary>PID: 1024 | Type: read</summary>
-			public const int iftableifoutunicastrate = 1024;
+			public const int iftableoutunicastrate = 1024;
 			/// <summary>PID: 1025 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifindiscardrate_1025 = 1025;
+			public const int iftableindiscardrate_1025 = 1025;
 			/// <summary>PID: 1025 | Type: read</summary>
-			public const int iftableifindiscardrate = 1025;
+			public const int iftableindiscardrate = 1025;
 			/// <summary>PID: 1026 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutdiscardrate_1026 = 1026;
+			public const int iftableoutdiscardrate_1026 = 1026;
 			/// <summary>PID: 1026 | Type: read</summary>
-			public const int iftableifoutdiscardrate = 1026;
+			public const int iftableoutdiscardrate = 1026;
 			/// <summary>PID: 1027 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinerrorrate_1027 = 1027;
+			public const int iftableinerrorrate_1027 = 1027;
 			/// <summary>PID: 1027 | Type: read</summary>
-			public const int iftableifinerrorrate = 1027;
+			public const int iftableinerrorrate = 1027;
 			/// <summary>PID: 1028 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifouterrorrate_1028 = 1028;
+			public const int iftableouterrorrate_1028 = 1028;
 			/// <summary>PID: 1028 | Type: read</summary>
-			public const int iftableifouterrorrate = 1028;
+			public const int iftableouterrorrate = 1028;
 			/// <summary>PID: 1029 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinunknownprotosrate_1029 = 1029;
+			public const int iftableinunknownprotosrate_1029 = 1029;
 			/// <summary>PID: 1029 | Type: read</summary>
-			public const int iftableifinunknownprotosrate = 1029;
+			public const int iftableinunknownprotosrate = 1029;
 			public class Write
 			{
 			}
@@ -399,59 +399,59 @@ public static class Parameter
 			public const int iftableifouterrors = 17;
 			/// <summary>IDX: 18 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinbitrate_1019 = 18;
+			public const int iftableinbitrate_1019 = 18;
 			/// <summary>IDX: 18 | Type: read</summary>
-			public const int iftableifinbitrate = 18;
+			public const int iftableinbitrate = 18;
 			/// <summary>IDX: 19 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutbitrate_1020 = 19;
+			public const int iftableoutbitrate_1020 = 19;
 			/// <summary>IDX: 19 | Type: read</summary>
-			public const int iftableifoutbitrate = 19;
+			public const int iftableoutbitrate = 19;
 			/// <summary>IDX: 20 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifbandwidthutilization_1021 = 20;
+			public const int iftablebandwidthutilization_1021 = 20;
 			/// <summary>IDX: 20 | Type: read</summary>
-			public const int iftableifbandwidthutilization = 20;
+			public const int iftablebandwidthutilization = 20;
 			/// <summary>IDX: 21 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifratedata_1022 = 21;
+			public const int iftableratesdata_1022 = 21;
 			/// <summary>IDX: 21 | Type: read</summary>
-			public const int iftableifratedata = 21;
+			public const int iftableratesdata = 21;
 			/// <summary>IDX: 22 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinunicastrate_1023 = 22;
+			public const int iftableinunicastrate_1023 = 22;
 			/// <summary>IDX: 22 | Type: read</summary>
-			public const int iftableifinunicastrate = 22;
+			public const int iftableinunicastrate = 22;
 			/// <summary>IDX: 23 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutunicastrate_1024 = 23;
+			public const int iftableoutunicastrate_1024 = 23;
 			/// <summary>IDX: 23 | Type: read</summary>
-			public const int iftableifoutunicastrate = 23;
+			public const int iftableoutunicastrate = 23;
 			/// <summary>IDX: 24 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifindiscardrate_1025 = 24;
+			public const int iftableindiscardrate_1025 = 24;
 			/// <summary>IDX: 24 | Type: read</summary>
-			public const int iftableifindiscardrate = 24;
+			public const int iftableindiscardrate = 24;
 			/// <summary>IDX: 25 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutdiscardrate_1026 = 25;
+			public const int iftableoutdiscardrate_1026 = 25;
 			/// <summary>IDX: 25 | Type: read</summary>
-			public const int iftableifoutdiscardrate = 25;
+			public const int iftableoutdiscardrate = 25;
 			/// <summary>IDX: 26 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinerrorrate_1027 = 26;
+			public const int iftableinerrorrate_1027 = 26;
 			/// <summary>IDX: 26 | Type: read</summary>
-			public const int iftableifinerrorrate = 26;
+			public const int iftableinerrorrate = 26;
 			/// <summary>IDX: 27 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifouterrorrate_1028 = 27;
+			public const int iftableouterrorrate_1028 = 27;
 			/// <summary>IDX: 27 | Type: read</summary>
-			public const int iftableifouterrorrate = 27;
+			public const int iftableouterrorrate = 27;
 			/// <summary>IDX: 28 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinunknownprotosrate_1029 = 28;
+			public const int iftableinunknownprotosrate_1029 = 28;
 			/// <summary>IDX: 28 | Type: read</summary>
-			public const int iftableifinunknownprotosrate = 28;
+			public const int iftableinunknownprotosrate = 28;
 		}
 	}
 	public class Ifxtable
@@ -566,74 +566,74 @@ public static class Parameter
 			public const int ifxtableifcounterdiscontinuitytime = 1120;
 			/// <summary>PID: 1121 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinbitrate_1121 = 1121;
+			public const int ifxtableinbitrate_1121 = 1121;
 			/// <summary>PID: 1121 | Type: read</summary>
-			public const int ifxtableifinbitrate = 1121;
+			public const int ifxtableinbitrate = 1121;
 			/// <summary>PID: 1122 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifoutbitrate_1122 = 1122;
+			public const int ifxtableoutbitrate_1122 = 1122;
 			/// <summary>PID: 1122 | Type: read</summary>
-			public const int ifxtableifoutbitrate = 1122;
+			public const int ifxtableoutbitrate = 1122;
 			/// <summary>PID: 1123 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifbandwidthutilization_1123 = 1123;
+			public const int ifxtablebandwidthutilization_1123 = 1123;
 			/// <summary>PID: 1123 | Type: read</summary>
-			public const int ifxtableifbandwidthutilization = 1123;
+			public const int ifxtablebandwidthutilization = 1123;
 			/// <summary>PID: 1124 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifratedata_1124 = 1124;
+			public const int ifxtableratesdata_1124 = 1124;
 			/// <summary>PID: 1124 | Type: read</summary>
-			public const int ifxtableifratedata = 1124;
+			public const int ifxtableratesdata = 1124;
 			/// <summary>PID: 1125 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinmulticastrate_1125 = 1125;
+			public const int ifxtableinmulticastrate_1125 = 1125;
 			/// <summary>PID: 1125 | Type: read</summary>
-			public const int ifxtableifinmulticastrate = 1125;
+			public const int ifxtableinmulticastrate = 1125;
 			/// <summary>PID: 1126 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifoutmulticastrate_1126 = 1126;
+			public const int ifxtableoutmulticastrate_1126 = 1126;
 			/// <summary>PID: 1126 | Type: read</summary>
-			public const int ifxtableifoutmulticastrate = 1126;
+			public const int ifxtableoutmulticastrate = 1126;
 			/// <summary>PID: 1127 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinbroadcastrate_1127 = 1127;
+			public const int ifxtableinbroadcastrate_1127 = 1127;
 			/// <summary>PID: 1127 | Type: read</summary>
-			public const int ifxtableifinbroadcastrate = 1127;
+			public const int ifxtableinbroadcastrate = 1127;
 			/// <summary>PID: 1128 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifoutbroadcastrate_1128 = 1128;
+			public const int ifxtableoutbroadcastrate_1128 = 1128;
 			/// <summary>PID: 1128 | Type: read</summary>
-			public const int ifxtableifoutbroadcastrate = 1128;
+			public const int ifxtableoutbroadcastrate = 1128;
 			/// <summary>PID: 1129 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinhcucastrate_1129 = 1129;
+			public const int ifxtableinhcucastrate_1129 = 1129;
 			/// <summary>PID: 1129 | Type: read</summary>
-			public const int ifxtableifinhcucastrate = 1129;
+			public const int ifxtableinhcucastrate = 1129;
 			/// <summary>PID: 1130 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifouthcucastrate_1130 = 1130;
+			public const int ifxtableouthcucastrate_1130 = 1130;
 			/// <summary>PID: 1130 | Type: read</summary>
-			public const int ifxtableifouthcucastrate = 1130;
+			public const int ifxtableouthcucastrate = 1130;
 			/// <summary>PID: 1131 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinhcmulticastrate_1131 = 1131;
+			public const int ifxtableinhcmulticastrate_1131 = 1131;
 			/// <summary>PID: 1131 | Type: read</summary>
-			public const int ifxtableifinhcmulticastrate = 1131;
+			public const int ifxtableinhcmulticastrate = 1131;
 			/// <summary>PID: 1132 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifouthcmulticastrate_1132 = 1132;
+			public const int ifxtableouthcmulticastrate_1132 = 1132;
 			/// <summary>PID: 1132 | Type: read</summary>
-			public const int ifxtableifouthcmulticastrate = 1132;
+			public const int ifxtableouthcmulticastrate = 1132;
 			/// <summary>PID: 1133 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinhcbroadcastrate_1133 = 1133;
+			public const int ifxtableinhcbroadcastrate_1133 = 1133;
 			/// <summary>PID: 1133 | Type: read</summary>
-			public const int ifxtableifinhcbroadcastrate = 1133;
+			public const int ifxtableinhcbroadcastrate = 1133;
 			/// <summary>PID: 1134 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifouthcbroadcastrate_1134 = 1134;
+			public const int ifxtableouthcbroadcastrate_1134 = 1134;
 			/// <summary>PID: 1134 | Type: read</summary>
-			public const int ifxtableifouthcbroadcastrate = 1134;
+			public const int ifxtableouthcbroadcastrate = 1134;
 			public class Write
 			{
 			}
@@ -742,74 +742,74 @@ public static class Parameter
 			public const int ifxtableifcounterdiscontinuitytime = 19;
 			/// <summary>IDX: 20 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinbitrate_1121 = 20;
+			public const int ifxtableinbitrate_1121 = 20;
 			/// <summary>IDX: 20 | Type: read</summary>
-			public const int ifxtableifinbitrate = 20;
+			public const int ifxtableinbitrate = 20;
 			/// <summary>IDX: 21 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifoutbitrate_1122 = 21;
+			public const int ifxtableoutbitrate_1122 = 21;
 			/// <summary>IDX: 21 | Type: read</summary>
-			public const int ifxtableifoutbitrate = 21;
+			public const int ifxtableoutbitrate = 21;
 			/// <summary>IDX: 22 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifbandwidthutilization_1123 = 22;
+			public const int ifxtablebandwidthutilization_1123 = 22;
 			/// <summary>IDX: 22 | Type: read</summary>
-			public const int ifxtableifbandwidthutilization = 22;
+			public const int ifxtablebandwidthutilization = 22;
 			/// <summary>IDX: 23 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifratedata_1124 = 23;
+			public const int ifxtableratesdata_1124 = 23;
 			/// <summary>IDX: 23 | Type: read</summary>
-			public const int ifxtableifratedata = 23;
+			public const int ifxtableratesdata = 23;
 			/// <summary>IDX: 24 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinmulticastrate_1125 = 24;
+			public const int ifxtableinmulticastrate_1125 = 24;
 			/// <summary>IDX: 24 | Type: read</summary>
-			public const int ifxtableifinmulticastrate = 24;
+			public const int ifxtableinmulticastrate = 24;
 			/// <summary>IDX: 25 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifoutmulticastrate_1126 = 25;
+			public const int ifxtableoutmulticastrate_1126 = 25;
 			/// <summary>IDX: 25 | Type: read</summary>
-			public const int ifxtableifoutmulticastrate = 25;
+			public const int ifxtableoutmulticastrate = 25;
 			/// <summary>IDX: 26 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinbroadcastrate_1127 = 26;
+			public const int ifxtableinbroadcastrate_1127 = 26;
 			/// <summary>IDX: 26 | Type: read</summary>
-			public const int ifxtableifinbroadcastrate = 26;
+			public const int ifxtableinbroadcastrate = 26;
 			/// <summary>IDX: 27 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifoutbroadcastrate_1128 = 27;
+			public const int ifxtableoutbroadcastrate_1128 = 27;
 			/// <summary>IDX: 27 | Type: read</summary>
-			public const int ifxtableifoutbroadcastrate = 27;
+			public const int ifxtableoutbroadcastrate = 27;
 			/// <summary>IDX: 28 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinhcucastrate_1129 = 28;
+			public const int ifxtableinhcucastrate_1129 = 28;
 			/// <summary>IDX: 28 | Type: read</summary>
-			public const int ifxtableifinhcucastrate = 28;
+			public const int ifxtableinhcucastrate = 28;
 			/// <summary>IDX: 29 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifouthcucastrate_1130 = 29;
+			public const int ifxtableouthcucastrate_1130 = 29;
 			/// <summary>IDX: 29 | Type: read</summary>
-			public const int ifxtableifouthcucastrate = 29;
+			public const int ifxtableouthcucastrate = 29;
 			/// <summary>IDX: 30 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinhcmulticastrate_1131 = 30;
+			public const int ifxtableinhcmulticastrate_1131 = 30;
 			/// <summary>IDX: 30 | Type: read</summary>
-			public const int ifxtableifinhcmulticastrate = 30;
+			public const int ifxtableinhcmulticastrate = 30;
 			/// <summary>IDX: 31 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifouthcmulticastrate_1132 = 31;
+			public const int ifxtableouthcmulticastrate_1132 = 31;
 			/// <summary>IDX: 31 | Type: read</summary>
-			public const int ifxtableifouthcmulticastrate = 31;
+			public const int ifxtableouthcmulticastrate = 31;
 			/// <summary>IDX: 32 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifinhcbroadcastrate_1133 = 32;
+			public const int ifxtableinhcbroadcastrate_1133 = 32;
 			/// <summary>IDX: 32 | Type: read</summary>
-			public const int ifxtableifinhcbroadcastrate = 32;
+			public const int ifxtableinhcbroadcastrate = 32;
 			/// <summary>IDX: 33 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtableifouthcbroadcastrate_1134 = 33;
+			public const int ifxtableouthcbroadcastrate_1134 = 33;
 			/// <summary>IDX: 33 | Type: read</summary>
-			public const int ifxtableifouthcbroadcastrate = 33;
+			public const int ifxtableouthcbroadcastrate = 33;
 		}
 	}
 	public class Dot3statstable
@@ -1409,28 +1409,28 @@ public interface SLProtocolExt : SLProtocol
 	object Iftableifoutdiscards { get; set; }
 	object Iftableifouterrors_1018 { get; set; }
 	object Iftableifouterrors { get; set; }
-	object Iftableifinbitrate_1019 { get; set; }
-	object Iftableifinbitrate { get; set; }
-	object Iftableifoutbitrate_1020 { get; set; }
-	object Iftableifoutbitrate { get; set; }
-	object Iftableifbandwidthutilization_1021 { get; set; }
-	object Iftableifbandwidthutilization { get; set; }
-	object Iftableifratedata_1022 { get; set; }
-	object Iftableifratedata { get; set; }
-	object Iftableifinunicastrate_1023 { get; set; }
-	object Iftableifinunicastrate { get; set; }
-	object Iftableifoutunicastrate_1024 { get; set; }
-	object Iftableifoutunicastrate { get; set; }
-	object Iftableifindiscardrate_1025 { get; set; }
-	object Iftableifindiscardrate { get; set; }
-	object Iftableifoutdiscardrate_1026 { get; set; }
-	object Iftableifoutdiscardrate { get; set; }
-	object Iftableifinerrorrate_1027 { get; set; }
-	object Iftableifinerrorrate { get; set; }
-	object Iftableifouterrorrate_1028 { get; set; }
-	object Iftableifouterrorrate { get; set; }
-	object Iftableifinunknownprotosrate_1029 { get; set; }
-	object Iftableifinunknownprotosrate { get; set; }
+	object Iftableinbitrate_1019 { get; set; }
+	object Iftableinbitrate { get; set; }
+	object Iftableoutbitrate_1020 { get; set; }
+	object Iftableoutbitrate { get; set; }
+	object Iftablebandwidthutilization_1021 { get; set; }
+	object Iftablebandwidthutilization { get; set; }
+	object Iftableratesdata_1022 { get; set; }
+	object Iftableratesdata { get; set; }
+	object Iftableinunicastrate_1023 { get; set; }
+	object Iftableinunicastrate { get; set; }
+	object Iftableoutunicastrate_1024 { get; set; }
+	object Iftableoutunicastrate { get; set; }
+	object Iftableindiscardrate_1025 { get; set; }
+	object Iftableindiscardrate { get; set; }
+	object Iftableoutdiscardrate_1026 { get; set; }
+	object Iftableoutdiscardrate { get; set; }
+	object Iftableinerrorrate_1027 { get; set; }
+	object Iftableinerrorrate { get; set; }
+	object Iftableouterrorrate_1028 { get; set; }
+	object Iftableouterrorrate { get; set; }
+	object Iftableinunknownprotosrate_1029 { get; set; }
+	object Iftableinunknownprotosrate { get; set; }
 	object Iftableifadminstatus_1057 { get; set; }
 	object Ifxtabletimeouttrigger_dummy { get; set; }
 	object Ifxtablegroupresultafterretries_1092 { get; set; }
@@ -1480,34 +1480,34 @@ public interface SLProtocolExt : SLProtocol
 	object Ifxtableifalias { get; set; }
 	object Ifxtableifcounterdiscontinuitytime_1120 { get; set; }
 	object Ifxtableifcounterdiscontinuitytime { get; set; }
-	object Ifxtableifinbitrate_1121 { get; set; }
-	object Ifxtableifinbitrate { get; set; }
-	object Ifxtableifoutbitrate_1122 { get; set; }
-	object Ifxtableifoutbitrate { get; set; }
-	object Ifxtableifbandwidthutilization_1123 { get; set; }
-	object Ifxtableifbandwidthutilization { get; set; }
-	object Ifxtableifratedata_1124 { get; set; }
-	object Ifxtableifratedata { get; set; }
-	object Ifxtableifinmulticastrate_1125 { get; set; }
-	object Ifxtableifinmulticastrate { get; set; }
-	object Ifxtableifoutmulticastrate_1126 { get; set; }
-	object Ifxtableifoutmulticastrate { get; set; }
-	object Ifxtableifinbroadcastrate_1127 { get; set; }
-	object Ifxtableifinbroadcastrate { get; set; }
-	object Ifxtableifoutbroadcastrate_1128 { get; set; }
-	object Ifxtableifoutbroadcastrate { get; set; }
-	object Ifxtableifinhcucastrate_1129 { get; set; }
-	object Ifxtableifinhcucastrate { get; set; }
-	object Ifxtableifouthcucastrate_1130 { get; set; }
-	object Ifxtableifouthcucastrate { get; set; }
-	object Ifxtableifinhcmulticastrate_1131 { get; set; }
-	object Ifxtableifinhcmulticastrate { get; set; }
-	object Ifxtableifouthcmulticastrate_1132 { get; set; }
-	object Ifxtableifouthcmulticastrate { get; set; }
-	object Ifxtableifinhcbroadcastrate_1133 { get; set; }
-	object Ifxtableifinhcbroadcastrate { get; set; }
-	object Ifxtableifouthcbroadcastrate_1134 { get; set; }
-	object Ifxtableifouthcbroadcastrate { get; set; }
+	object Ifxtableinbitrate_1121 { get; set; }
+	object Ifxtableinbitrate { get; set; }
+	object Ifxtableoutbitrate_1122 { get; set; }
+	object Ifxtableoutbitrate { get; set; }
+	object Ifxtablebandwidthutilization_1123 { get; set; }
+	object Ifxtablebandwidthutilization { get; set; }
+	object Ifxtableratesdata_1124 { get; set; }
+	object Ifxtableratesdata { get; set; }
+	object Ifxtableinmulticastrate_1125 { get; set; }
+	object Ifxtableinmulticastrate { get; set; }
+	object Ifxtableoutmulticastrate_1126 { get; set; }
+	object Ifxtableoutmulticastrate { get; set; }
+	object Ifxtableinbroadcastrate_1127 { get; set; }
+	object Ifxtableinbroadcastrate { get; set; }
+	object Ifxtableoutbroadcastrate_1128 { get; set; }
+	object Ifxtableoutbroadcastrate { get; set; }
+	object Ifxtableinhcucastrate_1129 { get; set; }
+	object Ifxtableinhcucastrate { get; set; }
+	object Ifxtableouthcucastrate_1130 { get; set; }
+	object Ifxtableouthcucastrate { get; set; }
+	object Ifxtableinhcmulticastrate_1131 { get; set; }
+	object Ifxtableinhcmulticastrate { get; set; }
+	object Ifxtableouthcmulticastrate_1132 { get; set; }
+	object Ifxtableouthcmulticastrate { get; set; }
+	object Ifxtableinhcbroadcastrate_1133 { get; set; }
+	object Ifxtableinhcbroadcastrate { get; set; }
+	object Ifxtableouthcbroadcastrate_1134 { get; set; }
+	object Ifxtableouthcbroadcastrate { get; set; }
 	object Ifxtableiflinkupdowntrapenable_1155 { get; set; }
 	object Ifxtableifpromiscuousmode_1157 { get; set; }
 	object Ifxtableifalias_1159 { get; set; }
@@ -1787,59 +1787,59 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Iftableifouterrors {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
 	/// <summary>PID: 1019  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinbitrate_1019 {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
+	public System.Object Iftableinbitrate_1019 {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
 	/// <summary>PID: 1019  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifinbitrate {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
+	public System.Object Iftableinbitrate {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
 	/// <summary>PID: 1020  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutbitrate_1020 {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
+	public System.Object Iftableoutbitrate_1020 {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
 	/// <summary>PID: 1020  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifoutbitrate {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
+	public System.Object Iftableoutbitrate {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
 	/// <summary>PID: 1021  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifbandwidthutilization_1021 {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
+	public System.Object Iftablebandwidthutilization_1021 {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
 	/// <summary>PID: 1021  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifbandwidthutilization {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
+	public System.Object Iftablebandwidthutilization {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
 	/// <summary>PID: 1022  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifratedata_1022 {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
+	public System.Object Iftableratesdata_1022 {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
 	/// <summary>PID: 1022  | Type: read</summary>
-	public System.Object Iftableifratedata {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
+	public System.Object Iftableratesdata {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
 	/// <summary>PID: 1023  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinunicastrate_1023 {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
+	public System.Object Iftableinunicastrate_1023 {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
 	/// <summary>PID: 1023  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifinunicastrate {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
+	public System.Object Iftableinunicastrate {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
 	/// <summary>PID: 1024  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutunicastrate_1024 {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
+	public System.Object Iftableoutunicastrate_1024 {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
 	/// <summary>PID: 1024  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifoutunicastrate {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
+	public System.Object Iftableoutunicastrate {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
 	/// <summary>PID: 1025  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifindiscardrate_1025 {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
+	public System.Object Iftableindiscardrate_1025 {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
 	/// <summary>PID: 1025  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifindiscardrate {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
+	public System.Object Iftableindiscardrate {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
 	/// <summary>PID: 1026  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutdiscardrate_1026 {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
+	public System.Object Iftableoutdiscardrate_1026 {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
 	/// <summary>PID: 1026  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifoutdiscardrate {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
+	public System.Object Iftableoutdiscardrate {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
 	/// <summary>PID: 1027  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinerrorrate_1027 {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
+	public System.Object Iftableinerrorrate_1027 {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
 	/// <summary>PID: 1027  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifinerrorrate {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
+	public System.Object Iftableinerrorrate {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
 	/// <summary>PID: 1028  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifouterrorrate_1028 {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
+	public System.Object Iftableouterrorrate_1028 {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
 	/// <summary>PID: 1028  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifouterrorrate {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
+	public System.Object Iftableouterrorrate {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
 	/// <summary>PID: 1029  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinunknownprotosrate_1029 {get { return GetParameter(1029); }set { SetParameter(1029, value); }}
+	public System.Object Iftableinunknownprotosrate_1029 {get { return GetParameter(1029); }set { SetParameter(1029, value); }}
 	/// <summary>PID: 1029  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifinunknownprotosrate {get { return GetParameter(1029); }set { SetParameter(1029, value); }}
+	public System.Object Iftableinunknownprotosrate {get { return GetParameter(1029); }set { SetParameter(1029, value); }}
 	/// <summary>PID: 1057  | Type: write | DISCREETS: Up = 1, Down = 2, Testing = 3</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Iftableifadminstatus_1057 {get { return GetParameter(1057); }set { SetParameter(1057, value); }}
@@ -1964,74 +1964,74 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Ifxtableifcounterdiscontinuitytime {get { return GetParameter(1120); }set { SetParameter(1120, value); }}
 	/// <summary>PID: 1121  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinbitrate_1121 {get { return GetParameter(1121); }set { SetParameter(1121, value); }}
+	public System.Object Ifxtableinbitrate_1121 {get { return GetParameter(1121); }set { SetParameter(1121, value); }}
 	/// <summary>PID: 1121  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifinbitrate {get { return GetParameter(1121); }set { SetParameter(1121, value); }}
+	public System.Object Ifxtableinbitrate {get { return GetParameter(1121); }set { SetParameter(1121, value); }}
 	/// <summary>PID: 1122  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifoutbitrate_1122 {get { return GetParameter(1122); }set { SetParameter(1122, value); }}
+	public System.Object Ifxtableoutbitrate_1122 {get { return GetParameter(1122); }set { SetParameter(1122, value); }}
 	/// <summary>PID: 1122  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifoutbitrate {get { return GetParameter(1122); }set { SetParameter(1122, value); }}
+	public System.Object Ifxtableoutbitrate {get { return GetParameter(1122); }set { SetParameter(1122, value); }}
 	/// <summary>PID: 1123  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifbandwidthutilization_1123 {get { return GetParameter(1123); }set { SetParameter(1123, value); }}
+	public System.Object Ifxtablebandwidthutilization_1123 {get { return GetParameter(1123); }set { SetParameter(1123, value); }}
 	/// <summary>PID: 1123  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifbandwidthutilization {get { return GetParameter(1123); }set { SetParameter(1123, value); }}
+	public System.Object Ifxtablebandwidthutilization {get { return GetParameter(1123); }set { SetParameter(1123, value); }}
 	/// <summary>PID: 1124  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifratedata_1124 {get { return GetParameter(1124); }set { SetParameter(1124, value); }}
+	public System.Object Ifxtableratesdata_1124 {get { return GetParameter(1124); }set { SetParameter(1124, value); }}
 	/// <summary>PID: 1124  | Type: read</summary>
-	public System.Object Ifxtableifratedata {get { return GetParameter(1124); }set { SetParameter(1124, value); }}
+	public System.Object Ifxtableratesdata {get { return GetParameter(1124); }set { SetParameter(1124, value); }}
 	/// <summary>PID: 1125  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinmulticastrate_1125 {get { return GetParameter(1125); }set { SetParameter(1125, value); }}
+	public System.Object Ifxtableinmulticastrate_1125 {get { return GetParameter(1125); }set { SetParameter(1125, value); }}
 	/// <summary>PID: 1125  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifinmulticastrate {get { return GetParameter(1125); }set { SetParameter(1125, value); }}
+	public System.Object Ifxtableinmulticastrate {get { return GetParameter(1125); }set { SetParameter(1125, value); }}
 	/// <summary>PID: 1126  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifoutmulticastrate_1126 {get { return GetParameter(1126); }set { SetParameter(1126, value); }}
+	public System.Object Ifxtableoutmulticastrate_1126 {get { return GetParameter(1126); }set { SetParameter(1126, value); }}
 	/// <summary>PID: 1126  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifoutmulticastrate {get { return GetParameter(1126); }set { SetParameter(1126, value); }}
+	public System.Object Ifxtableoutmulticastrate {get { return GetParameter(1126); }set { SetParameter(1126, value); }}
 	/// <summary>PID: 1127  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinbroadcastrate_1127 {get { return GetParameter(1127); }set { SetParameter(1127, value); }}
+	public System.Object Ifxtableinbroadcastrate_1127 {get { return GetParameter(1127); }set { SetParameter(1127, value); }}
 	/// <summary>PID: 1127  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifinbroadcastrate {get { return GetParameter(1127); }set { SetParameter(1127, value); }}
+	public System.Object Ifxtableinbroadcastrate {get { return GetParameter(1127); }set { SetParameter(1127, value); }}
 	/// <summary>PID: 1128  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifoutbroadcastrate_1128 {get { return GetParameter(1128); }set { SetParameter(1128, value); }}
+	public System.Object Ifxtableoutbroadcastrate_1128 {get { return GetParameter(1128); }set { SetParameter(1128, value); }}
 	/// <summary>PID: 1128  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifoutbroadcastrate {get { return GetParameter(1128); }set { SetParameter(1128, value); }}
+	public System.Object Ifxtableoutbroadcastrate {get { return GetParameter(1128); }set { SetParameter(1128, value); }}
 	/// <summary>PID: 1129  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinhcucastrate_1129 {get { return GetParameter(1129); }set { SetParameter(1129, value); }}
+	public System.Object Ifxtableinhcucastrate_1129 {get { return GetParameter(1129); }set { SetParameter(1129, value); }}
 	/// <summary>PID: 1129  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifinhcucastrate {get { return GetParameter(1129); }set { SetParameter(1129, value); }}
+	public System.Object Ifxtableinhcucastrate {get { return GetParameter(1129); }set { SetParameter(1129, value); }}
 	/// <summary>PID: 1130  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifouthcucastrate_1130 {get { return GetParameter(1130); }set { SetParameter(1130, value); }}
+	public System.Object Ifxtableouthcucastrate_1130 {get { return GetParameter(1130); }set { SetParameter(1130, value); }}
 	/// <summary>PID: 1130  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifouthcucastrate {get { return GetParameter(1130); }set { SetParameter(1130, value); }}
+	public System.Object Ifxtableouthcucastrate {get { return GetParameter(1130); }set { SetParameter(1130, value); }}
 	/// <summary>PID: 1131  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinhcmulticastrate_1131 {get { return GetParameter(1131); }set { SetParameter(1131, value); }}
+	public System.Object Ifxtableinhcmulticastrate_1131 {get { return GetParameter(1131); }set { SetParameter(1131, value); }}
 	/// <summary>PID: 1131  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifinhcmulticastrate {get { return GetParameter(1131); }set { SetParameter(1131, value); }}
+	public System.Object Ifxtableinhcmulticastrate {get { return GetParameter(1131); }set { SetParameter(1131, value); }}
 	/// <summary>PID: 1132  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifouthcmulticastrate_1132 {get { return GetParameter(1132); }set { SetParameter(1132, value); }}
+	public System.Object Ifxtableouthcmulticastrate_1132 {get { return GetParameter(1132); }set { SetParameter(1132, value); }}
 	/// <summary>PID: 1132  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifouthcmulticastrate {get { return GetParameter(1132); }set { SetParameter(1132, value); }}
+	public System.Object Ifxtableouthcmulticastrate {get { return GetParameter(1132); }set { SetParameter(1132, value); }}
 	/// <summary>PID: 1133  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinhcbroadcastrate_1133 {get { return GetParameter(1133); }set { SetParameter(1133, value); }}
+	public System.Object Ifxtableinhcbroadcastrate_1133 {get { return GetParameter(1133); }set { SetParameter(1133, value); }}
 	/// <summary>PID: 1133  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifinhcbroadcastrate {get { return GetParameter(1133); }set { SetParameter(1133, value); }}
+	public System.Object Ifxtableinhcbroadcastrate {get { return GetParameter(1133); }set { SetParameter(1133, value); }}
 	/// <summary>PID: 1134  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifouthcbroadcastrate_1134 {get { return GetParameter(1134); }set { SetParameter(1134, value); }}
+	public System.Object Ifxtableouthcbroadcastrate_1134 {get { return GetParameter(1134); }set { SetParameter(1134, value); }}
 	/// <summary>PID: 1134  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtableifouthcbroadcastrate {get { return GetParameter(1134); }set { SetParameter(1134, value); }}
+	public System.Object Ifxtableouthcbroadcastrate {get { return GetParameter(1134); }set { SetParameter(1134, value); }}
 	/// <summary>PID: 1155  | Type: write | DISCREETS: Enabled = 1, Disabled = 2</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Ifxtableiflinkupdowntrapenable_1155 {get { return GetParameter(1155); }set { SetParameter(1155, value); }}
@@ -2417,59 +2417,59 @@ public class IftableQActionRow : QActionTableRow
 	public System.Object Iftableifouterrors { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
 	/// <summary>PID: 1019 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinbitrate_1019 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	public System.Object Iftableinbitrate_1019 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
 	/// <summary>PID: 1019 | Type: read</summary>
-	public System.Object Iftableifinbitrate { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	public System.Object Iftableinbitrate { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
 	/// <summary>PID: 1020 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutbitrate_1020 { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
+	public System.Object Iftableoutbitrate_1020 { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
 	/// <summary>PID: 1020 | Type: read</summary>
-	public System.Object Iftableifoutbitrate { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
+	public System.Object Iftableoutbitrate { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
 	/// <summary>PID: 1021 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifbandwidthutilization_1021 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public System.Object Iftablebandwidthutilization_1021 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
 	/// <summary>PID: 1021 | Type: read</summary>
-	public System.Object Iftableifbandwidthutilization { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public System.Object Iftablebandwidthutilization { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
 	/// <summary>PID: 1022 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifratedata_1022 { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
+	public System.Object Iftableratesdata_1022 { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
 	/// <summary>PID: 1022 | Type: read</summary>
-	public System.Object Iftableifratedata { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
+	public System.Object Iftableratesdata { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
 	/// <summary>PID: 1023 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinunicastrate_1023 { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
+	public System.Object Iftableinunicastrate_1023 { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
 	/// <summary>PID: 1023 | Type: read</summary>
-	public System.Object Iftableifinunicastrate { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
+	public System.Object Iftableinunicastrate { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
 	/// <summary>PID: 1024 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutunicastrate_1024 { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
+	public System.Object Iftableoutunicastrate_1024 { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
 	/// <summary>PID: 1024 | Type: read</summary>
-	public System.Object Iftableifoutunicastrate { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
+	public System.Object Iftableoutunicastrate { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
 	/// <summary>PID: 1025 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifindiscardrate_1025 { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
+	public System.Object Iftableindiscardrate_1025 { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
 	/// <summary>PID: 1025 | Type: read</summary>
-	public System.Object Iftableifindiscardrate { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
+	public System.Object Iftableindiscardrate { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
 	/// <summary>PID: 1026 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutdiscardrate_1026 { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
+	public System.Object Iftableoutdiscardrate_1026 { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
 	/// <summary>PID: 1026 | Type: read</summary>
-	public System.Object Iftableifoutdiscardrate { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
+	public System.Object Iftableoutdiscardrate { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
 	/// <summary>PID: 1027 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinerrorrate_1027 { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
+	public System.Object Iftableinerrorrate_1027 { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
 	/// <summary>PID: 1027 | Type: read</summary>
-	public System.Object Iftableifinerrorrate { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
+	public System.Object Iftableinerrorrate { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
 	/// <summary>PID: 1028 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifouterrorrate_1028 { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
+	public System.Object Iftableouterrorrate_1028 { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
 	/// <summary>PID: 1028 | Type: read</summary>
-	public System.Object Iftableifouterrorrate { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
+	public System.Object Iftableouterrorrate { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
 	/// <summary>PID: 1029 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinunknownprotosrate_1029 { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
+	public System.Object Iftableinunknownprotosrate_1029 { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
 	/// <summary>PID: 1029 | Type: read</summary>
-	public System.Object Iftableifinunknownprotosrate { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
+	public System.Object Iftableinunknownprotosrate { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
 	public IftableQActionRow() : base(0, 29) { }
 	public IftableQActionRow(System.Object[] oRow) : base(0, 29, oRow) { }
 	public static implicit operator IftableQActionRow(System.Object[] source) { return new IftableQActionRow(source); }
@@ -2580,74 +2580,74 @@ public class IfxtableQActionRow : QActionTableRow
 	public System.Object Ifxtableifcounterdiscontinuitytime { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
 	/// <summary>PID: 1121 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinbitrate_1121 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public System.Object Ifxtableinbitrate_1121 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
 	/// <summary>PID: 1121 | Type: read</summary>
-	public System.Object Ifxtableifinbitrate { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public System.Object Ifxtableinbitrate { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
 	/// <summary>PID: 1122 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifoutbitrate_1122 { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
+	public System.Object Ifxtableoutbitrate_1122 { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
 	/// <summary>PID: 1122 | Type: read</summary>
-	public System.Object Ifxtableifoutbitrate { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
+	public System.Object Ifxtableoutbitrate { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
 	/// <summary>PID: 1123 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifbandwidthutilization_1123 { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
+	public System.Object Ifxtablebandwidthutilization_1123 { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
 	/// <summary>PID: 1123 | Type: read</summary>
-	public System.Object Ifxtableifbandwidthutilization { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
+	public System.Object Ifxtablebandwidthutilization { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
 	/// <summary>PID: 1124 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifratedata_1124 { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
+	public System.Object Ifxtableratesdata_1124 { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
 	/// <summary>PID: 1124 | Type: read</summary>
-	public System.Object Ifxtableifratedata { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
+	public System.Object Ifxtableratesdata { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
 	/// <summary>PID: 1125 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinmulticastrate_1125 { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
+	public System.Object Ifxtableinmulticastrate_1125 { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
 	/// <summary>PID: 1125 | Type: read</summary>
-	public System.Object Ifxtableifinmulticastrate { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
+	public System.Object Ifxtableinmulticastrate { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
 	/// <summary>PID: 1126 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifoutmulticastrate_1126 { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
+	public System.Object Ifxtableoutmulticastrate_1126 { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
 	/// <summary>PID: 1126 | Type: read</summary>
-	public System.Object Ifxtableifoutmulticastrate { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
+	public System.Object Ifxtableoutmulticastrate { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
 	/// <summary>PID: 1127 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinbroadcastrate_1127 { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
+	public System.Object Ifxtableinbroadcastrate_1127 { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
 	/// <summary>PID: 1127 | Type: read</summary>
-	public System.Object Ifxtableifinbroadcastrate { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
+	public System.Object Ifxtableinbroadcastrate { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
 	/// <summary>PID: 1128 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifoutbroadcastrate_1128 { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
+	public System.Object Ifxtableoutbroadcastrate_1128 { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
 	/// <summary>PID: 1128 | Type: read</summary>
-	public System.Object Ifxtableifoutbroadcastrate { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
+	public System.Object Ifxtableoutbroadcastrate { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
 	/// <summary>PID: 1129 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinhcucastrate_1129 { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
+	public System.Object Ifxtableinhcucastrate_1129 { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
 	/// <summary>PID: 1129 | Type: read</summary>
-	public System.Object Ifxtableifinhcucastrate { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
+	public System.Object Ifxtableinhcucastrate { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
 	/// <summary>PID: 1130 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifouthcucastrate_1130 { get { if (base.Columns.ContainsKey(29)) { return base.Columns[29]; } else { return null; } } set { if (base.Columns.ContainsKey(29)) { base.Columns[29] = value; } else { base.Columns.Add(29, value); } } }
+	public System.Object Ifxtableouthcucastrate_1130 { get { if (base.Columns.ContainsKey(29)) { return base.Columns[29]; } else { return null; } } set { if (base.Columns.ContainsKey(29)) { base.Columns[29] = value; } else { base.Columns.Add(29, value); } } }
 	/// <summary>PID: 1130 | Type: read</summary>
-	public System.Object Ifxtableifouthcucastrate { get { if (base.Columns.ContainsKey(29)) { return base.Columns[29]; } else { return null; } } set { if (base.Columns.ContainsKey(29)) { base.Columns[29] = value; } else { base.Columns.Add(29, value); } } }
+	public System.Object Ifxtableouthcucastrate { get { if (base.Columns.ContainsKey(29)) { return base.Columns[29]; } else { return null; } } set { if (base.Columns.ContainsKey(29)) { base.Columns[29] = value; } else { base.Columns.Add(29, value); } } }
 	/// <summary>PID: 1131 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinhcmulticastrate_1131 { get { if (base.Columns.ContainsKey(30)) { return base.Columns[30]; } else { return null; } } set { if (base.Columns.ContainsKey(30)) { base.Columns[30] = value; } else { base.Columns.Add(30, value); } } }
+	public System.Object Ifxtableinhcmulticastrate_1131 { get { if (base.Columns.ContainsKey(30)) { return base.Columns[30]; } else { return null; } } set { if (base.Columns.ContainsKey(30)) { base.Columns[30] = value; } else { base.Columns.Add(30, value); } } }
 	/// <summary>PID: 1131 | Type: read</summary>
-	public System.Object Ifxtableifinhcmulticastrate { get { if (base.Columns.ContainsKey(30)) { return base.Columns[30]; } else { return null; } } set { if (base.Columns.ContainsKey(30)) { base.Columns[30] = value; } else { base.Columns.Add(30, value); } } }
+	public System.Object Ifxtableinhcmulticastrate { get { if (base.Columns.ContainsKey(30)) { return base.Columns[30]; } else { return null; } } set { if (base.Columns.ContainsKey(30)) { base.Columns[30] = value; } else { base.Columns.Add(30, value); } } }
 	/// <summary>PID: 1132 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifouthcmulticastrate_1132 { get { if (base.Columns.ContainsKey(31)) { return base.Columns[31]; } else { return null; } } set { if (base.Columns.ContainsKey(31)) { base.Columns[31] = value; } else { base.Columns.Add(31, value); } } }
+	public System.Object Ifxtableouthcmulticastrate_1132 { get { if (base.Columns.ContainsKey(31)) { return base.Columns[31]; } else { return null; } } set { if (base.Columns.ContainsKey(31)) { base.Columns[31] = value; } else { base.Columns.Add(31, value); } } }
 	/// <summary>PID: 1132 | Type: read</summary>
-	public System.Object Ifxtableifouthcmulticastrate { get { if (base.Columns.ContainsKey(31)) { return base.Columns[31]; } else { return null; } } set { if (base.Columns.ContainsKey(31)) { base.Columns[31] = value; } else { base.Columns.Add(31, value); } } }
+	public System.Object Ifxtableouthcmulticastrate { get { if (base.Columns.ContainsKey(31)) { return base.Columns[31]; } else { return null; } } set { if (base.Columns.ContainsKey(31)) { base.Columns[31] = value; } else { base.Columns.Add(31, value); } } }
 	/// <summary>PID: 1133 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifinhcbroadcastrate_1133 { get { if (base.Columns.ContainsKey(32)) { return base.Columns[32]; } else { return null; } } set { if (base.Columns.ContainsKey(32)) { base.Columns[32] = value; } else { base.Columns.Add(32, value); } } }
+	public System.Object Ifxtableinhcbroadcastrate_1133 { get { if (base.Columns.ContainsKey(32)) { return base.Columns[32]; } else { return null; } } set { if (base.Columns.ContainsKey(32)) { base.Columns[32] = value; } else { base.Columns.Add(32, value); } } }
 	/// <summary>PID: 1133 | Type: read</summary>
-	public System.Object Ifxtableifinhcbroadcastrate { get { if (base.Columns.ContainsKey(32)) { return base.Columns[32]; } else { return null; } } set { if (base.Columns.ContainsKey(32)) { base.Columns[32] = value; } else { base.Columns.Add(32, value); } } }
+	public System.Object Ifxtableinhcbroadcastrate { get { if (base.Columns.ContainsKey(32)) { return base.Columns[32]; } else { return null; } } set { if (base.Columns.ContainsKey(32)) { base.Columns[32] = value; } else { base.Columns.Add(32, value); } } }
 	/// <summary>PID: 1134 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtableifouthcbroadcastrate_1134 { get { if (base.Columns.ContainsKey(33)) { return base.Columns[33]; } else { return null; } } set { if (base.Columns.ContainsKey(33)) { base.Columns[33] = value; } else { base.Columns.Add(33, value); } } }
+	public System.Object Ifxtableouthcbroadcastrate_1134 { get { if (base.Columns.ContainsKey(33)) { return base.Columns[33]; } else { return null; } } set { if (base.Columns.ContainsKey(33)) { base.Columns[33] = value; } else { base.Columns.Add(33, value); } } }
 	/// <summary>PID: 1134 | Type: read</summary>
-	public System.Object Ifxtableifouthcbroadcastrate { get { if (base.Columns.ContainsKey(33)) { return base.Columns[33]; } else { return null; } } set { if (base.Columns.ContainsKey(33)) { base.Columns[33] = value; } else { base.Columns.Add(33, value); } } }
+	public System.Object Ifxtableouthcbroadcastrate { get { if (base.Columns.ContainsKey(33)) { return base.Columns[33]; } else { return null; } } set { if (base.Columns.ContainsKey(33)) { base.Columns[33] = value; } else { base.Columns.Add(33, value); } } }
 	public IfxtableQActionRow() : base(0, 34) { }
 	public IfxtableQActionRow(System.Object[] oRow) : base(0, 34, oRow) { }
 	public static implicit operator IfxtableQActionRow(System.Object[] source) { return new IfxtableQActionRow(source); }

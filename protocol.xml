@@ -2471,7 +2471,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1019" trending="false">
-			<Name>ifTableIfInBitRate</Name>
+			<Name>ifTableInBitRate</Name>
 			<Description>In Bit Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input bit rate of the interface.</Subtext>
@@ -2500,7 +2500,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1020" trending="false">
-			<Name>ifTableIfOutBitRate</Name>
+			<Name>ifTableOutBitRate</Name>
 			<Description>Out Bit Rate (If Table)</Description>
 			<Information>
 				<Subtext>The output bit rate of the interface.</Subtext>
@@ -2529,7 +2529,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1021" trending="false">
-			<Name>ifTableIfBandwidthUtilization</Name>
+			<Name>ifTableBandwidthUtilization</Name>
 			<Description>Bandwidth Utilization (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2564,11 +2564,11 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1022" trending="false">
-			<Name>ifTableIfRateData</Name>
-			<Description>Bit Rate Data (If Table)</Description>
+			<Name>ifTableRatesData</Name>
+			<Description>Rates Data (If Table)</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>Used as a buffer parameter containing data necessary for bit rate calculations (both in and out) based on delta time between SNMP group executions.</Subtext>
+				<Subtext>Used as a buffer parameter containing data necessary for all rate calculations based on delta time between SNMP group executions.</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -2583,7 +2583,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1023" trending="false">
-			<Name>ifTableIfInUnicastRate</Name>
+			<Name>ifTableInUnicastRate</Name>
 			<Description>In Unicast Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input unicast rate of the interface.</Subtext>
@@ -2612,7 +2612,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1024" trending="false">
-			<Name>ifTableIfOutUnicastRate</Name>
+			<Name>ifTableOutUnicastRate</Name>
 			<Description>Out Unicast Rate (If Table)</Description>
 			<Information>
 				<Subtext>The output unicast rate of the interface.</Subtext>
@@ -2641,7 +2641,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1025" trending="false">
-			<Name>ifTableIfinDiscardRate</Name>
+			<Name>ifTableInDiscardRate</Name>
 			<Description>In Discard Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input discard rate of the interface.</Subtext>
@@ -2670,7 +2670,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1026" trending="false">
-			<Name>ifTableIfOutDiscardRate</Name>
+			<Name>ifTableOutDiscardRate</Name>
 			<Description>Out Discard Rate (If Table)</Description>
 			<Information>
 				<Subtext>The output discard rate of the interface.</Subtext>
@@ -2699,7 +2699,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1027" trending="false">
-			<Name>ifTableIfInErrorRate</Name>
+			<Name>ifTableInErrorRate</Name>
 			<Description>In Error Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input error rate of the interface.</Subtext>
@@ -2728,7 +2728,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1028" trending="false">
-			<Name>ifTableIfOutErrorRate</Name>
+			<Name>ifTableOutErrorRate</Name>
 			<Description>Out Error Rate (If Table)</Description>
 			<Information>
 				<Subtext>The output error rate of the interface.</Subtext>
@@ -2757,7 +2757,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1029" trending="false">
-			<Name>ifTableIfInUnknownProtosRate</Name>
+			<Name>ifTableInUnknownProtosRate</Name>
 			<Description>In Unknown Protos Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input packet rate of the interface that was discarded due to unknown protocol.</Subtext>
@@ -3719,7 +3719,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</Measurement>
 		</Param>
 		<Param id="1121" trending="false">
-			<Name>ifXTableIfInBitRate</Name>
+			<Name>ifXTableInBitRate</Name>
 			<Description>In Bit Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input bit rate of the interface.</Subtext>
@@ -3748,7 +3748,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</Measurement>
 		</Param>
 		<Param id="1122" trending="false">
-			<Name>ifXTableIfOutBitRate</Name>
+			<Name>ifXTableOutBitRate</Name>
 			<Description>Out Bit Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output bit rate of the interface.</Subtext>
@@ -3777,7 +3777,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</Measurement>
 		</Param>
 		<Param id="1123" trending="false">
-			<Name>ifXTableIfBandwidthUtilization</Name>
+			<Name>ifXTableBandwidthUtilization</Name>
 			<Description>Bandwidth Utilization (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3812,11 +3812,11 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1124" trending="false">
-			<Name>ifXTableIfRateData</Name>
-			<Description>Bit Rate Data (If X Table)</Description>
+			<Name>ifXTableRatesData</Name>
+			<Description>Rates Data (If X Table)</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>Used as a buffer parameter containing data necessary for bit rate calculations (both in and out) based on delta time between SNMP group executions.</Subtext>
+				<Subtext>Used as a buffer parameter containing data necessary for all rate calculations based on delta time between SNMP group executions.</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -3831,7 +3831,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1125" trending="false">
-			<Name>ifXTableIfInMulticastRate</Name>
+			<Name>ifXTableInMulticastRate</Name>
 			<Description>In Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input multicast rate of the interface.</Subtext>
@@ -3860,7 +3860,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1126" trending="false">
-			<Name>ifXTableIfOutMulticastRate</Name>
+			<Name>ifXTableOutMulticastRate</Name>
 			<Description>Out Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output multicast rate of the interface.</Subtext>
@@ -3889,7 +3889,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1127" trending="false">
-			<Name>ifXTableIfInBroadcastRate</Name>
+			<Name>ifXTableInBroadcastRate</Name>
 			<Description>In Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input broadcast rate of the interface.</Subtext>
@@ -3918,7 +3918,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1128" trending="false">
-			<Name>ifXTableIfOutBroadcastRate</Name>
+			<Name>ifXTableOutBroadcastRate</Name>
 			<Description>Out Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output broadcast rate of the interface.</Subtext>
@@ -3947,7 +3947,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1129" trending="false">
-			<Name>ifXTableIfInHcUcastRate</Name>
+			<Name>ifXTableInHcUcastRate</Name>
 			<Description>In HC Unicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input high capacity unicast rate of the interface.</Subtext>
@@ -3976,7 +3976,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1130" trending="false">
-			<Name>ifXTableIfOutHcUcastRate</Name>
+			<Name>ifXTableOutHcUcastRate</Name>
 			<Description>Out HC Unicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output HC unicast rate of the interface.</Subtext>
@@ -4005,7 +4005,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1131" trending="false">
-			<Name>ifXTableIfInHcMulticastRate</Name>
+			<Name>ifXTableInHcMulticastRate</Name>
 			<Description>In HC Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input high capacity multicast rate of the interface.</Subtext>
@@ -4034,7 +4034,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1132" trending="false">
-			<Name>ifXTableIfOutHcMulticastRate</Name>
+			<Name>ifXTableOutHcMulticastRate</Name>
 			<Description>Out HC Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output HC multicast rate of the interface.</Subtext>
@@ -4063,7 +4063,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1133" trending="false">
-			<Name>ifXTableIfInHcBroadcastRate</Name>
+			<Name>ifXTableInHcBroadcastRate</Name>
 			<Description>In HC Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input HC broadcast rate of the interface.</Subtext>
@@ -4092,7 +4092,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1134" trending="false">
-			<Name>ifXTableIfOutHcBroadcastRate</Name>
+			<Name>ifXTableOutHcBroadcastRate</Name>
 			<Description>Out HC Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output HC broadcast rate of the interface.</Subtext>

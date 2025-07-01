@@ -59,7 +59,7 @@
 				rateData.Unknownprotosin.BufferDelta(snmpDeltaHelper, key);
 
 				iftableSetter.SetColumnsData[Parameter.Iftable.tablePid].Add(key);
-				iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifratedata].Add(rateData.ToJsonString());
+				iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableratesdata].Add(rateData.ToJsonString());
 			}
 		}
 
@@ -86,7 +86,7 @@
 				uint[] columnsToGet = new uint[]
 				{
 					Parameter.Iftable.Idx.iftableifindex,
-					Parameter.Iftable.Idx.iftableifratedata,
+					Parameter.Iftable.Idx.iftableratesdata,
 				};
 
 				object[] tableData = protocol.GetColumns(Parameter.Iftable.tablePid, columnsToGet);
@@ -108,7 +108,7 @@
 			public Dictionary<int, List<object>> SetColumnsData { get; } = new Dictionary<int, List<object>>
 			{
 				{ Parameter.Iftable.tablePid, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifratedata, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableratesdata, new List<object>() },
 			};
 
 			public void SetColumns()
@@ -238,21 +238,21 @@
 			uint unknownProtosIn = SafeConvert.ToUInt32(Convert.ToDouble(iftableGetter.UnknownIn[getPosition]));
 			double unknownprotosrateIn = CalculateRate(key, unknownProtosIn, snmpDeltaHelper, rateData.Unknownprotosin);
 
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifinbitrate].Add(bitrateIn);
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifoutbitrate].Add(bitrateOut);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableinbitrate].Add(bitrateIn);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableoutbitrate].Add(bitrateOut);
 
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifinunicastrate_1023].Add(unicastrateIn);
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifoutunicastrate_1024].Add(unicastrateOut);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableinunicastrate_1023].Add(unicastrateIn);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableoutunicastrate_1024].Add(unicastrateOut);
 
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifindiscardrate_1025].Add(discardrateIn);
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifoutdiscardrate_1026].Add(discardrateOut);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableindiscardrate_1025].Add(discardrateIn);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableoutdiscardrate_1026].Add(discardrateOut);
 
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifinerrorrate_1027].Add(errorrateIn);
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifouterrorrate_1028].Add(errorrateOut);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableinerrorrate_1027].Add(errorrateIn);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableouterrorrate_1028].Add(errorrateOut);
 
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifinunknownprotosrate_1029].Add(unknownprotosrateIn);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableinunknownprotosrate_1029].Add(unknownprotosrateIn);
 
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifratedata].Add(rateData.ToJsonString());
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableratesdata].Add(rateData.ToJsonString());
 		}
 
 		private void ProcessUtilization(Dictionary<string, DuplexStatus> duplexStatuses, int getPosition, string key, double bitrateIn, double bitrateOut)
@@ -265,7 +265,7 @@
 
 			double utilization = Interface.CalculateUtilization(bitrateIn, bitrateOut, speedValue, duplexStatus);
 
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableifbandwidthutilization].Add(utilization);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftablebandwidthutilization].Add(utilization);
 		}
 
 		private double GetSpeedValue(int getPosition)
@@ -370,7 +370,7 @@
 					Parameter.Iftable.Idx.iftableifinoctets_1010,
 					Parameter.Iftable.Idx.iftableifoutoctets_1015,
 					Parameter.Iftable.Idx.iftableifspeed_1005,
-					Parameter.Iftable.Idx.iftableifratedata_1022,
+					Parameter.Iftable.Idx.iftableratesdata_1022,
 					Parameter.Iftable.Idx.iftableifinucastpkts_1011,
 					Parameter.Iftable.Idx.iftableifoutucastpkts_1016,
 					Parameter.Iftable.Idx.iftableifindiscards_1012,
@@ -431,17 +431,17 @@
 			public Dictionary<int, List<object>> SetColumnsData { get; } = new Dictionary<int, List<object>>
 			{
 				{ Parameter.Iftable.tablePid, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifinbitrate_1019, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifoutbitrate_1020, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifbandwidthutilization_1021, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifratedata_1022, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifinunicastrate_1023, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifoutunicastrate_1024, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifindiscardrate_1025, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifoutdiscardrate_1026, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifinerrorrate_1027, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifouterrorrate_1028, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableifinunknownprotosrate_1029, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableinbitrate_1019, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableoutbitrate_1020, new List<object>() },
+				{ Parameter.Iftable.Pid.iftablebandwidthutilization_1021, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableratesdata_1022, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableinunicastrate_1023, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableoutunicastrate_1024, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableindiscardrate_1025, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableoutdiscardrate_1026, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableinerrorrate_1027, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableouterrorrate_1028, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableinunknownprotosrate_1029, new List<object>() },
 			};
 
 			internal Dictionary<int, object> SetParamsData { get; } = new Dictionary<int, object>();
