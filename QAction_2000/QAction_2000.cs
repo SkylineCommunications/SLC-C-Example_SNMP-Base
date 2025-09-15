@@ -25,9 +25,9 @@ public class QAction
 
 			switch (triggerPid)
 			{
-				case Parameter.Write.interfacesstateadminstatus_2055:
+				case Parameter.Write.interfacesadminstatus_2055:
 					protocol.SetParameters(
-						new[] { Parameter.iftablesetinstance, Parameter.Write.interfacesstateadminstatus_2055 },
+						new[] { Parameter.iftablesetinstance, Parameter.Write.interfacesadminstatus_2055 },
 						new[] { rowKey, value });
 
 					// Note: We poll the entire table so the bit rate calculation is triggered again using the correct values.
@@ -35,7 +35,7 @@ public class QAction
 					protocol.CheckTrigger(TriggerIfTable);
 					break;
 
-				case Parameter.Write.interfacesstatepromiscuousmode_2069:
+				case Parameter.Write.interfacespromiscuousmode_2069:
 					protocol.SetParameters(
 						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtablepromiscuousmode_1157 },
 						new[] { rowKey, value });
@@ -43,7 +43,7 @@ public class QAction
 					protocol.CheckTrigger(TriggerIfXTable);
 					break;
 
-				case Parameter.Write.interfacesstateuserdescription_2065:
+				case Parameter.Write.interfacesuserdescription_2065:
 					protocol.SetParameters(
 						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtablealias_1159 },
 						new[] { rowKey, value });
@@ -51,7 +51,7 @@ public class QAction
 					protocol.CheckTrigger(TriggerIfXTable);
 					break;
 
-				case Parameter.Write.interfacesstatelinkupdowntrap_2070:
+				case Parameter.Write.interfaceslinkupdowntrap_2070:
 					protocol.SetParameters(
 						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtablelinkupdowntrapenable_1155 },
 						new[] { rowKey, value });

@@ -4314,7 +4314,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 		</Param>
 		
 		<Param id="2000" trending="false">
-			<Name>InterfacesState</Name>
+			<Name>Interfaces</Name>
 			<Description>Interfaces</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
@@ -4338,7 +4338,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="16" pid="2018" type="retrieved" options="" />
 				<ColumnOption idx="17" pid="2019" type="retrieved" options="" />
 				<ColumnOption idx="18" pid="2020" type="retrieved" options="" />
-				<ColumnOption idx="19" pid="2012" type="displaykey" options="" />
+				<ColumnOption idx="19" pid="2050" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>Interfaces state table on change subscription.</Subtext>
@@ -4362,12 +4362,31 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<!-- SuppressValidator 2.31.9 Sorting on datetime column not needed. -->
 				<!-- /SuppressValidator 2.31.9 -->
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-2012|19-2006|5-2013|11-2009|8-2014|12-2010|9-2003|2-2002|1-2007|6-2005|4-2008|7-2016|14-2011|10-2015|13-2017|15-2019|17-2018|16-2020|18,width:0-0-200-123-150-0-150-0-100-100-156-104-100-138-156-100-141-112-100-118,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-2050|19-2006|5-2013|11-2009|8-2014|12-2010|9-2003|2-2002|1-2007|6-2005|4-2008|7-2016|14-2011|10-2015|13-2017|15-2019|17-2018|16-2020|18,width:0-0-100-123-150-0-150-0-100-100-156-104-100-138-156-100-141-112-100-118,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
+		<Param id="2050" trending="false">
+			<Name>InterfacesDisplayKey</Name>
+			<Description>Display Key (Interfaces)</Description>
+			<Information>
+				<Subtext><![CDATA[Readable description provided in the format of: {Index} - {Description} - {User Description}]]></Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
 		<Param id="2001" trending="false">
-			<Name>InterfacesStateIndex</Name>
+			<Name>InterfacesIndex</Name>
 			<Description>Index (Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -4391,7 +4410,7 @@ The value for each interface sub-layer must remain constant at least from one re
 			</Measurement>
 		</Param>
 		<Param id="2002" trending="false">
-			<Name>InterfacesStateType</Name>
+			<Name>InterfacesType</Name>
 			<Description>Type (Interfaces)</Description>
 			<Information>
 				<Subtext>The interface type.</Subtext>
@@ -4408,7 +4427,7 @@ The value for each interface sub-layer must remain constant at least from one re
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 No default thresholds -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case.-->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4421,7 +4440,7 @@ The value for each interface sub-layer must remain constant at least from one re
 			</Measurement>
 		</Param>
 		<Param id="2003" trending="true">
-			<Name>InterfacesStateMtu</Name>
+			<Name>InterfacesMtu</Name>
 			<Description>MTU (Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -4454,14 +4473,14 @@ Ethernet interface.]]>
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
 			<!-- /SuppressValidator 2.5.1 -->
 		</Param>
 		<Param id="2004" trending="false">
-			<Name>InterfacesStateDescription</Name>
+			<Name>InterfacesDescription</Name>
 			<Description>Description (Interfaces)</Description>
 			<Information>
 				<Subtext>Description</Subtext>
@@ -4478,7 +4497,7 @@ Ethernet interface.]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 No default thresholds -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>false</Monitored>
 			</Alarm>
@@ -4491,7 +4510,7 @@ Ethernet interface.]]>
 			</Measurement>
 		</Param>
 		<Param id="2005" trending="true">
-			<Name>InterfacesStateAdminStatus</Name>
+			<Name>InterfacesAdminStatus</Name>
 			<Description>Admin Status (Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -4541,7 +4560,7 @@ disabling the interface.]]>
 			</Measurement>
 		</Param>
 		<Param id="2055">
-			<Name>InterfacesStateAdminStatus</Name>
+			<Name>InterfacesAdminStatus</Name>
 			<Description>Admin Status (Interfaces)</Description>
 			<Type>write</Type>
 			<Interprete>
@@ -4567,7 +4586,7 @@ disabling the interface.]]>
 			</Measurement>
 		</Param>
 		<Param id="2006" trending="true">
-			<Name>InterfacesStateOperStatus</Name>
+			<Name>InterfacesOperStatus</Name>
 			<Description>Operational Status (Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -4630,7 +4649,7 @@ disabling the interface.]]>
 			</Measurement>
 		</Param>
 		<Param id="2007" trending="false">
-			<Name>InterfacesStateLastChange</Name>
+			<Name>InterfacesLastChange</Name>
 			<Description>Last Change (Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -4657,7 +4676,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 No default thresholds -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4671,7 +4690,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 			</Measurement>
 		</Param>
 		<Param id="2008" trending="true">
-			<Name>InterfacesStateLogical</Name>
+			<Name>InterfacesLogical</Name>
 			<Description>Logical (Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -4695,7 +4714,7 @@ channel on the system.]]>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4715,8 +4734,8 @@ channel on the system.]]>
 			</Measurement>
 		</Param>
 		<Param id="2009" trending="true">
-			<Name>InterfacesStateInOctets</Name>
-			<Description>In Octets (Interfaces)</Description>
+			<Name>InterfacesRxOctets</Name>
+			<Description>Rx Octets (Interfaces)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The total number of octets received on the interface,
@@ -4740,7 +4759,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4757,8 +4776,8 @@ other times as indicated by the value of
 			</Measurement>
 		</Param>
 		<Param id="2010" trending="true">
-			<Name>InterfacesStateOutOctets</Name>
-			<Description>Out Octets (Interfaces)</Description>
+			<Name>InterfacesTxOctets</Name>
+			<Description>Tx Octets (Interfaces)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The total number of octets transmitted out of the
@@ -4782,7 +4801,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4799,7 +4818,7 @@ other times as indicated by the value of
 			</Measurement>
 		</Param>
 		<Param id="2011" trending="false">
-			<Name>InterfacesStateLastClear</Name>
+			<Name>InterfacesLastClear</Name>
 			<Description>Last Clear (Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -4823,7 +4842,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 No default thresholds -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4836,28 +4855,9 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type options="datetime">number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2012" trending="false">
-			<Name>InterfacesStateDisplayKey</Name>
-			<Description>Display Key (Interfaces)</Description>
-			<Information>
-				<Subtext>Index</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<LengthType>next param</LengthType>
-				<Type>string</Type>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
 		<Param id="2013" trending="true">
-			<Name>InterfacesStateInBitRate</Name>
-			<Description>In Bit Rate (Interfaces)</Description>
+			<Name>InterfacesRxBitRate</Name>
+			<Description>Rx Bit Rate (Interfaces)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[Bit Rate calculated on the In Octets counter.]]>
@@ -4876,7 +4876,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4894,8 +4894,8 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 			</Measurement>
 		</Param>
 		<Param id="2014" trending="true">
-			<Name>InterfacesStateOutBitRate</Name>
-			<Description>Out Bit Rate (Interfaces)</Description>
+			<Name>InterfacesTxBitRate</Name>
+			<Description>Tx Bit Rate (Interfaces)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[Bit Rate calculated on the Out Octets counter.]]>
@@ -4914,7 +4914,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4932,7 +4932,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 			</Measurement>
 		</Param>
 		<Param id="2015" trending="false">
-			<Name>InterfacesStateUserDescription</Name>
+			<Name>InterfacesUserDescription</Name>
 			<Description>User Description (Interfaces)</Description>
 			<Type>read</Type>
 			<Information>
@@ -4945,7 +4945,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 No default thresholds -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4958,7 +4958,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 			</Measurement>
 		</Param>
 		<Param id="2065" setter="true">
-			<Name>InterfacesStateUserDescription</Name>
+			<Name>InterfacesUserDescription</Name>
 			<Description>User Description (Interfaces)</Description>
 			<Type>write</Type>
 			<Interprete>
@@ -4974,7 +4974,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 			</Measurement>
 		</Param>
 		<Param id="2016" trending="true">
-			<Name>InterfacesStateSpeed</Name>
+			<Name>InterfacesSpeed</Name>
 			<Description>Speed (Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -5008,7 +5008,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 			</Measurement>
 		</Param>
 		<Param id="2017" trending="true">
-			<Name>InterfacesStateBandwidthUtilization</Name>
+			<Name>InterfacesBandwidthUtilization</Name>
 			<Description>Bandwidth Utilization (Interfaces)</Description>
 			<Information>
 				<Subtext>The bandwidth utilization. For full duplex interfaces, this is the maximum of the input utilization and the output utilization.</Subtext>
@@ -5045,7 +5045,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 			</Measurement>
 		</Param>
 		<Param id="2018" trending="true">
-			<Name>InterfacesStateDuplexStatus</Name>
+			<Name>InterfacesDuplexStatus</Name>
 			<Description>Duplex Status (Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -5103,7 +5103,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			</Measurement>
 		</Param>
 		<Param id="2019" trending="false">
-			<Name>InterfacesStatePromiscuousMode</Name>
+			<Name>InterfacesPromiscuousMode</Name>
 			<Description>Promiscuous Mode (Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -5139,7 +5139,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 			</Measurement>
 		</Param>
 		<Param id="2069">
-			<Name>InterfacesStatePromiscuousMode</Name>
+			<Name>InterfacesPromiscuousMode</Name>
 			<Description>Promiscuous Mode (Interfaces)</Description>
 			<Type>write</Type>
 			<Interprete>
@@ -5165,7 +5165,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 			</Measurement>
 		</Param>
 		<Param id="2020" trending="false">
-			<Name>InterfacesStateLinkUpDownTrap</Name>
+			<Name>InterfacesLinkUpDownTrap</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>Link Up/Down Traps (Interfaces)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -5200,7 +5200,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 			</Measurement>
 		</Param>
 		<Param id="2070">
-			<Name>InterfacesStateLinkUpDownTrap</Name>
+			<Name>InterfacesLinkUpDownTrap</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>Link Up/Down Traps (Interfaces)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -5291,7 +5291,7 @@ including all unicast, multicast, broadcast and bad packets etc.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5335,7 +5335,7 @@ other times as indicated by the value of
 				</Subtext>
 			</Information>
 			<Type>read</Type>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5390,7 +5390,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5435,7 +5435,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5722,7 +5722,7 @@ and bad packets etc.]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5766,7 +5766,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5811,7 +5811,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5858,7 +5858,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 User specific -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
