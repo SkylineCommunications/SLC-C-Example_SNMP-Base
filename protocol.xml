@@ -55,7 +55,7 @@ Any inquiries can be addressed to:
 	<DeviceOID>18</DeviceOID>
 	<ElementType>Example</ElementType>
 	<Type relativeTimers="true">snmpv2</Type>
-	<Display defaultPage="General" pageOrder="General;----------;Interfaces;Interfaces Counters;----------;Web Interface#http://[Polling Ip]/" wideColumnPages="Interfaces;Interfaces Counters"/>
+	<Display defaultPage="General" pageOrder="General;----------;Interfaces;Interface Details;----------;Web Interface#http://[Polling Ip]/" wideColumnPages="Interfaces;Interface Details"/>
 	<SNMP includepages="true">auto</SNMP>
 
 	<Compliancies>
@@ -5202,8 +5202,8 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 		</Param>
 		
 		<Param id="2100">
-			<Name>InterfacesStateCountersRx</Name>
-			<Description>Interfaces Counters Rx</Description>
+			<Name>InterfaceDetailsRx</Name>
+			<Description>Interface Details Rx</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
 				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
@@ -5225,7 +5225,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>Interfaces Counters</Page>
+						<Page>Interface Details</Page>
 						<Column>0</Column>
 						<Row>0</Row>
 					</Position>
@@ -5236,8 +5236,8 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 			</Measurement>
 		</Param>
 		<Param id="2101" trending="false">
-			<Name>InterfacesStateCountersRxIndex</Name>
-			<Description>Index (Interfaces Counters Rx)</Description>
+			<Name>InterfaceDetailsRxIndex</Name>
+			<Description>Index (Interface Details Rx)</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>The index of the interface.</Subtext>
@@ -5255,8 +5255,8 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 			</Measurement>
 		</Param>
 		<Param id="2102" trending="true">
-			<Name>InterfacesStateCountersRxInRate</Name>
-			<Description>In Packets Rate (Interfaces Counters Rx)</Description>
+			<Name>InterfaceDetailsRxInRate</Name>
+			<Description>In Packets Rate (Interface Details Rx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The total number of packets received on the interface,
@@ -5293,8 +5293,8 @@ including all unicast, multicast, broadcast, and bad packets etc.]]>
 			</Measurement>
 		</Param>
 		<Param id="2103" trending="true">
-			<Name>InterfacesStateCountersRxInUnicastRate</Name>
-			<Description>In Unicast Rate (Interfaces Counters Rx)</Description>
+			<Name>InterfaceDetailsRxInUnicastRate</Name>
+			<Description>In Unicast Rate (Interface Details Rx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer.
@@ -5331,8 +5331,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2104" trending="true">
-			<Name>InterfacesStateCountersRxInBroadcastRate</Name>
-			<Description>In Broadcast Rate (Interfaces Counters Rx)</Description>
+			<Name>InterfaceDetailsRxInBroadcastRate</Name>
+			<Description>In Broadcast Rate (Interface Details Rx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were addressed to a broadcast address at this sub-layer.
@@ -5369,8 +5369,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2105" trending="true">
-			<Name>InterfacesStateCountersRxInMulticastRate</Name>
-			<Description>In Multicast Rate (Interfaces Counters Rx)</Description>
+			<Name>InterfaceDetailsRxInMulticastRate</Name>
+			<Description>In Multicast Rate (Interface Details Rx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were addressed to a multicast address at this sub-layer.
@@ -5408,8 +5408,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2106" trending="true">
-			<Name>InterfacesStateCountersRxInDiscardsRate</Name>
-			<Description>In Discards Rate (Interfaces Counters Rx)</Description>
+			<Name>InterfaceDetailsRxInDiscardsRate</Name>
+			<Description>In Discards Rate (Interface Details Rx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The number of inbound packets that were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol.
@@ -5450,8 +5450,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2107" trending="true">
-			<Name>InterfacesStateCountersRxInErrorsRate</Name>
-			<Description>In Errors Rate (Interfaces Counters Rx)</Description>
+			<Name>InterfaceDetailsRxInErrorsRate</Name>
+			<Description>In Errors Rate (Interface Details Rx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[For packet-oriented interfaces, the number of inbound packets that contained errors preventing them from being deliverable to a higher-layer protocol.
@@ -5494,8 +5494,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2108" trending="true">
-			<Name>InterfacesStateCountersRxInUnknownProtosRate</Name>
-			<Description>In Unknown Protocols Rate (Interfaces Counters Rx)</Description>
+			<Name>InterfaceDetailsRxInUnknownProtosRate</Name>
+			<Description>In Unknown Protocols Rate (Interface Details Rx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[For packet-oriented interfaces, the number of packets received via the interface that were discarded because of an unknown or unsupported protocol.
@@ -5539,8 +5539,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2109" trending="false">
-			<Name>InterfacesStateCountersRxFKtoInterfaces</Name>
-			<Description>FK to Interfaces (Interfaces Counters Rx)</Description>
+			<Name>InterfaceDetailsRxFKtoInterfaces</Name>
+			<Description>FK to Interfaces (Interface Details Rx)</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>This is the foreign key to the Interfaces Table.</Subtext>
@@ -5558,8 +5558,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2110" trending="false">
-			<Name>InterfacesStateCountersRxDisplayKey</Name>
-			<Description>Display Key (Interfaces Counters Rx)</Description>
+			<Name>InterfaceDetailsRxDisplayKey</Name>
+			<Description>Display Key (Interface Details Rx)</Description>
 			<Information>
 				<Subtext>Index</Subtext>
 			</Information>
@@ -5578,8 +5578,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 		</Param>
 		
 		<Param id="2200">
-			<Name>InterfacesStateCountersTx</Name>
-			<Description>Interfaces Counters Tx</Description>
+			<Name>InterfaceDetailsTx</Name>
+			<Description>Interface Details Tx</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
 				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
@@ -5600,7 +5600,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>Interfaces Counters</Page>
+						<Page>Interface Details</Page>
 						<Column>0</Column>
 						<Row>1</Row>
 					</Position>
@@ -5611,8 +5611,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2201" trending="false">
-			<Name>InterfacesStateCountersTxIndex</Name>
-			<Description>Index (Interfaces Counters Tx)</Description>
+			<Name>InterfaceDetailsTxIndex</Name>
+			<Description>Index (Interface Details Tx)</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>The index of the interface.</Subtext>
@@ -5630,8 +5630,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2202" trending="true">
-			<Name>InterfacesStateCountersTxOutRate</Name>
-			<Description>Out Packets Rate (Interfaces Counters Tx)</Description>
+			<Name>InterfaceDetailsTxOutRate</Name>
+			<Description>Out Packets Rate (Interface Details Tx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The total number of packets transmitted out of the interface, including all unicast, multicast, broadcast, and bad packets etc.]]>
@@ -5667,8 +5667,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2203" trending="true">
-			<Name>InterfacesStateCountersTxOutUnicastRate</Name>
-			<Description>Out Unicast Rate (Interfaces Counters Tx)</Description>
+			<Name>InterfaceDetailsTxOutUnicastRate</Name>
+			<Description>Out Unicast Rate (Interface Details Tx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer.
@@ -5705,8 +5705,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2204" trending="true">
-			<Name>InterfacesStateCountersTxOutBroadcastRate</Name>
-			<Description>Out Broadcast Rate (Interfaces Counters Tx)</Description>
+			<Name>InterfaceDetailsTxOutBroadcastRate</Name>
+			<Description>Out Broadcast Rate (Interface Details Tx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and that were addressed to a broadcast address at this sub-layer, including those that were discarded or not sent.
@@ -5743,8 +5743,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2205" trending="true">
-			<Name>InterfacesStateCountersTxOutMulticastRate</Name>
-			<Description>Out Multicast Rate (Interfaces Counters Tx)</Description>
+			<Name>InterfaceDetailsTxOutMulticastRate</Name>
+			<Description>Out Multicast Rate (Interface Details Tx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and that were addressed to a multicast address at this sub-layer, including those that were discarded or not sent.
@@ -5782,8 +5782,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2206" trending="true">
-			<Name>InterfacesStateCountersTxOutDiscardsRate</Name>
-			<Description>Out Discards Rate (Interfaces Counters Tx)</Description>
+			<Name>InterfaceDetailsTxOutDiscardsRate</Name>
+			<Description>Out Discards Rate (Interface Details Tx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[The number of outbound packets that were chosen to be discarded even though no errors had been detected to prevent their being transmitted.
@@ -5824,8 +5824,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2207" trending="true">
-			<Name>InterfacesStateCountersTxOutErrorsRate</Name>
-			<Description>Out Errors Rate (Interfaces Counters Tx)</Description>
+			<Name>InterfaceDetailsTxOutErrorsRate</Name>
+			<Description>Out Errors Rate (Interface Details Tx)</Description>
 			<Information>
 				<Subtext>
 					<![CDATA[For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.
@@ -5866,8 +5866,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2208" trending="false">
-			<Name>InterfacesStateCountersTxFKtoInterfaces</Name>
-			<Description>FK to Interfaces (Interfaces Counters Tx)</Description>
+			<Name>InterfaceDetailsTxFKtoInterfaces</Name>
+			<Description>FK to Interfaces (Interface Details Tx)</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>This is the foreign key to the Interfaces Table.</Subtext>
@@ -5885,8 +5885,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2209" trending="false">
-			<Name>InterfacesStateCountersTxDisplayKey</Name>
-			<Description>Display Key (Interfaces Counters Tx)</Description>
+			<Name>InterfaceDetailsTxDisplayKey</Name>
+			<Description>Display Key (Interface Details Tx)</Description>
 			<Information>
 				<Subtext>Index</Subtext>
 			</Information>
