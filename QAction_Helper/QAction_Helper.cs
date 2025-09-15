@@ -102,9 +102,9 @@ public static class Parameter
 		public const int syslocation = 106;
 		/// <summary>PID: 1057 | Type: write</summary>
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int iftableifadminstatus_1057 = 1057;
+		public const int iftableadminstatus_1057 = 1057;
 		/// <summary>PID: 1057 | Type: write</summary>
-		public const int iftableifadminstatus = 1057;
+		public const int iftableadminstatus = 1057;
 		/// <summary>PID: 1155 | Type: write</summary>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		public const int ifxtableiflinkupdowntrapenable_1155 = 1155;
@@ -158,149 +158,149 @@ public static class Parameter
 		{
 			/// <summary>PID: 1001 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifindex_1001 = 1001;
+			public const int iftableindex_1001 = 1001;
 			/// <summary>PID: 1001 | Type: read</summary>
-			public const int iftableifindex = 1001;
+			public const int iftableindex = 1001;
 			/// <summary>PID: 1002 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifdescr_1002 = 1002;
+			public const int iftabledescr_1002 = 1002;
 			/// <summary>PID: 1002 | Type: read</summary>
-			public const int iftableifdescr = 1002;
+			public const int iftabledescr = 1002;
 			/// <summary>PID: 1003 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableiftype_1003 = 1003;
+			public const int iftabletype_1003 = 1003;
 			/// <summary>PID: 1003 | Type: read</summary>
-			public const int iftableiftype = 1003;
+			public const int iftabletype = 1003;
 			/// <summary>PID: 1004 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifmtu_1004 = 1004;
+			public const int iftablemtu_1004 = 1004;
 			/// <summary>PID: 1004 | Type: read</summary>
-			public const int iftableifmtu = 1004;
+			public const int iftablemtu = 1004;
 			/// <summary>PID: 1005 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifspeed_1005 = 1005;
+			public const int iftablespeed_1005 = 1005;
 			/// <summary>PID: 1005 | Type: read</summary>
-			public const int iftableifspeed = 1005;
+			public const int iftablespeed = 1005;
 			/// <summary>PID: 1006 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifphysaddress_1006 = 1006;
+			public const int iftablephysaddress_1006 = 1006;
 			/// <summary>PID: 1006 | Type: read</summary>
-			public const int iftableifphysaddress = 1006;
+			public const int iftablephysaddress = 1006;
 			/// <summary>PID: 1007 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifadminstatus_1007 = 1007;
+			public const int iftableadminstatus_1007 = 1007;
 			/// <summary>PID: 1007 | Type: read</summary>
-			public const int iftableifadminstatus = 1007;
+			public const int iftableadminstatus = 1007;
 			/// <summary>PID: 1008 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoperstatus_1008 = 1008;
+			public const int iftableoperstatus_1008 = 1008;
 			/// <summary>PID: 1008 | Type: read</summary>
-			public const int iftableifoperstatus = 1008;
+			public const int iftableoperstatus = 1008;
 			/// <summary>PID: 1009 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableiflastchange_1009 = 1009;
+			public const int iftablelastchange_1009 = 1009;
 			/// <summary>PID: 1009 | Type: read</summary>
-			public const int iftableiflastchange = 1009;
+			public const int iftablelastchange = 1009;
 			/// <summary>PID: 1010 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinoctets_1010 = 1010;
+			public const int iftableoctetsin_1010 = 1010;
 			/// <summary>PID: 1010 | Type: read</summary>
-			public const int iftableifinoctets = 1010;
+			public const int iftableoctetsin = 1010;
 			/// <summary>PID: 1011 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinucastpkts_1011 = 1011;
+			public const int iftableoctetsout_1011 = 1011;
 			/// <summary>PID: 1011 | Type: read</summary>
-			public const int iftableifinucastpkts = 1011;
+			public const int iftableoctetsout = 1011;
 			/// <summary>PID: 1012 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifindiscards_1012 = 1012;
+			public const int iftableucastpktsin_1012 = 1012;
 			/// <summary>PID: 1012 | Type: read</summary>
-			public const int iftableifindiscards = 1012;
+			public const int iftableucastpktsin = 1012;
 			/// <summary>PID: 1013 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinerrors_1013 = 1013;
+			public const int iftableucastpktsout_1013 = 1013;
 			/// <summary>PID: 1013 | Type: read</summary>
-			public const int iftableifinerrors = 1013;
+			public const int iftableucastpktsout = 1013;
 			/// <summary>PID: 1014 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinunknownprotos_1014 = 1014;
+			public const int iftablediscardsin_1014 = 1014;
 			/// <summary>PID: 1014 | Type: read</summary>
-			public const int iftableifinunknownprotos = 1014;
+			public const int iftablediscardsin = 1014;
 			/// <summary>PID: 1015 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutoctets_1015 = 1015;
+			public const int iftablediscardsout_1015 = 1015;
 			/// <summary>PID: 1015 | Type: read</summary>
-			public const int iftableifoutoctets = 1015;
+			public const int iftablediscardsout = 1015;
 			/// <summary>PID: 1016 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutucastpkts_1016 = 1016;
+			public const int iftableerrorsin_1016 = 1016;
 			/// <summary>PID: 1016 | Type: read</summary>
-			public const int iftableifoutucastpkts = 1016;
+			public const int iftableerrorsin = 1016;
 			/// <summary>PID: 1017 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutdiscards_1017 = 1017;
+			public const int iftableerrorsout_1017 = 1017;
 			/// <summary>PID: 1017 | Type: read</summary>
-			public const int iftableifoutdiscards = 1017;
+			public const int iftableerrorsout = 1017;
 			/// <summary>PID: 1018 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifouterrors_1018 = 1018;
+			public const int iftableunknownprotosin_1018 = 1018;
 			/// <summary>PID: 1018 | Type: read</summary>
-			public const int iftableifouterrors = 1018;
+			public const int iftableunknownprotosin = 1018;
 			/// <summary>PID: 1019 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableinbitrate_1019 = 1019;
+			public const int iftablebitratein_1019 = 1019;
 			/// <summary>PID: 1019 | Type: read</summary>
-			public const int iftableinbitrate = 1019;
+			public const int iftablebitratein = 1019;
 			/// <summary>PID: 1020 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableoutbitrate_1020 = 1020;
+			public const int iftablebitrateout_1020 = 1020;
 			/// <summary>PID: 1020 | Type: read</summary>
-			public const int iftableoutbitrate = 1020;
+			public const int iftablebitrateout = 1020;
 			/// <summary>PID: 1021 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftablebandwidthutilization_1021 = 1021;
+			public const int iftableunicastratein_1021 = 1021;
 			/// <summary>PID: 1021 | Type: read</summary>
-			public const int iftablebandwidthutilization = 1021;
+			public const int iftableunicastratein = 1021;
 			/// <summary>PID: 1022 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableratesdata_1022 = 1022;
+			public const int iftableunicastrateout_1022 = 1022;
 			/// <summary>PID: 1022 | Type: read</summary>
-			public const int iftableratesdata = 1022;
+			public const int iftableunicastrateout = 1022;
 			/// <summary>PID: 1023 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableinunicastrate_1023 = 1023;
+			public const int iftablediscardratein_1023 = 1023;
 			/// <summary>PID: 1023 | Type: read</summary>
-			public const int iftableinunicastrate = 1023;
+			public const int iftablediscardratein = 1023;
 			/// <summary>PID: 1024 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableoutunicastrate_1024 = 1024;
+			public const int iftablediscardrateout_1024 = 1024;
 			/// <summary>PID: 1024 | Type: read</summary>
-			public const int iftableoutunicastrate = 1024;
+			public const int iftablediscardrateout = 1024;
 			/// <summary>PID: 1025 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableindiscardrate_1025 = 1025;
+			public const int iftableerrorratein_1025 = 1025;
 			/// <summary>PID: 1025 | Type: read</summary>
-			public const int iftableindiscardrate = 1025;
+			public const int iftableerrorratein = 1025;
 			/// <summary>PID: 1026 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableoutdiscardrate_1026 = 1026;
+			public const int iftableerrorrateout_1026 = 1026;
 			/// <summary>PID: 1026 | Type: read</summary>
-			public const int iftableoutdiscardrate = 1026;
+			public const int iftableerrorrateout = 1026;
 			/// <summary>PID: 1027 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableinerrorrate_1027 = 1027;
+			public const int iftableunknownprotosratein_1027 = 1027;
 			/// <summary>PID: 1027 | Type: read</summary>
-			public const int iftableinerrorrate = 1027;
+			public const int iftableunknownprotosratein = 1027;
 			/// <summary>PID: 1028 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableouterrorrate_1028 = 1028;
+			public const int iftablebandwidthutilization_1028 = 1028;
 			/// <summary>PID: 1028 | Type: read</summary>
-			public const int iftableouterrorrate = 1028;
+			public const int iftablebandwidthutilization = 1028;
 			/// <summary>PID: 1029 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableinunknownprotosrate_1029 = 1029;
+			public const int iftableratesdata_1029 = 1029;
 			/// <summary>PID: 1029 | Type: read</summary>
-			public const int iftableinunknownprotosrate = 1029;
+			public const int iftableratesdata = 1029;
 			public class Write
 			{
 			}
@@ -309,149 +309,149 @@ public static class Parameter
 		{
 			/// <summary>IDX: 0 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifindex_1001 = 0;
+			public const int iftableindex_1001 = 0;
 			/// <summary>IDX: 0 | Type: read</summary>
-			public const int iftableifindex = 0;
+			public const int iftableindex = 0;
 			/// <summary>IDX: 1 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifdescr_1002 = 1;
+			public const int iftabledescr_1002 = 1;
 			/// <summary>IDX: 1 | Type: read</summary>
-			public const int iftableifdescr = 1;
+			public const int iftabledescr = 1;
 			/// <summary>IDX: 2 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableiftype_1003 = 2;
+			public const int iftabletype_1003 = 2;
 			/// <summary>IDX: 2 | Type: read</summary>
-			public const int iftableiftype = 2;
+			public const int iftabletype = 2;
 			/// <summary>IDX: 3 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifmtu_1004 = 3;
+			public const int iftablemtu_1004 = 3;
 			/// <summary>IDX: 3 | Type: read</summary>
-			public const int iftableifmtu = 3;
+			public const int iftablemtu = 3;
 			/// <summary>IDX: 4 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifspeed_1005 = 4;
+			public const int iftablespeed_1005 = 4;
 			/// <summary>IDX: 4 | Type: read</summary>
-			public const int iftableifspeed = 4;
+			public const int iftablespeed = 4;
 			/// <summary>IDX: 5 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifphysaddress_1006 = 5;
+			public const int iftablephysaddress_1006 = 5;
 			/// <summary>IDX: 5 | Type: read</summary>
-			public const int iftableifphysaddress = 5;
+			public const int iftablephysaddress = 5;
 			/// <summary>IDX: 6 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifadminstatus_1007 = 6;
+			public const int iftableadminstatus_1007 = 6;
 			/// <summary>IDX: 6 | Type: read</summary>
-			public const int iftableifadminstatus = 6;
+			public const int iftableadminstatus = 6;
 			/// <summary>IDX: 7 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoperstatus_1008 = 7;
+			public const int iftableoperstatus_1008 = 7;
 			/// <summary>IDX: 7 | Type: read</summary>
-			public const int iftableifoperstatus = 7;
+			public const int iftableoperstatus = 7;
 			/// <summary>IDX: 8 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableiflastchange_1009 = 8;
+			public const int iftablelastchange_1009 = 8;
 			/// <summary>IDX: 8 | Type: read</summary>
-			public const int iftableiflastchange = 8;
+			public const int iftablelastchange = 8;
 			/// <summary>IDX: 9 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinoctets_1010 = 9;
+			public const int iftableoctetsin_1010 = 9;
 			/// <summary>IDX: 9 | Type: read</summary>
-			public const int iftableifinoctets = 9;
+			public const int iftableoctetsin = 9;
 			/// <summary>IDX: 10 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinucastpkts_1011 = 10;
+			public const int iftableoctetsout_1011 = 10;
 			/// <summary>IDX: 10 | Type: read</summary>
-			public const int iftableifinucastpkts = 10;
+			public const int iftableoctetsout = 10;
 			/// <summary>IDX: 11 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifindiscards_1012 = 11;
+			public const int iftableucastpktsin_1012 = 11;
 			/// <summary>IDX: 11 | Type: read</summary>
-			public const int iftableifindiscards = 11;
+			public const int iftableucastpktsin = 11;
 			/// <summary>IDX: 12 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinerrors_1013 = 12;
+			public const int iftableucastpktsout_1013 = 12;
 			/// <summary>IDX: 12 | Type: read</summary>
-			public const int iftableifinerrors = 12;
+			public const int iftableucastpktsout = 12;
 			/// <summary>IDX: 13 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifinunknownprotos_1014 = 13;
+			public const int iftablediscardsin_1014 = 13;
 			/// <summary>IDX: 13 | Type: read</summary>
-			public const int iftableifinunknownprotos = 13;
+			public const int iftablediscardsin = 13;
 			/// <summary>IDX: 14 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutoctets_1015 = 14;
+			public const int iftablediscardsout_1015 = 14;
 			/// <summary>IDX: 14 | Type: read</summary>
-			public const int iftableifoutoctets = 14;
+			public const int iftablediscardsout = 14;
 			/// <summary>IDX: 15 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutucastpkts_1016 = 15;
+			public const int iftableerrorsin_1016 = 15;
 			/// <summary>IDX: 15 | Type: read</summary>
-			public const int iftableifoutucastpkts = 15;
+			public const int iftableerrorsin = 15;
 			/// <summary>IDX: 16 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifoutdiscards_1017 = 16;
+			public const int iftableerrorsout_1017 = 16;
 			/// <summary>IDX: 16 | Type: read</summary>
-			public const int iftableifoutdiscards = 16;
+			public const int iftableerrorsout = 16;
 			/// <summary>IDX: 17 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableifouterrors_1018 = 17;
+			public const int iftableunknownprotosin_1018 = 17;
 			/// <summary>IDX: 17 | Type: read</summary>
-			public const int iftableifouterrors = 17;
+			public const int iftableunknownprotosin = 17;
 			/// <summary>IDX: 18 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableinbitrate_1019 = 18;
+			public const int iftablebitratein_1019 = 18;
 			/// <summary>IDX: 18 | Type: read</summary>
-			public const int iftableinbitrate = 18;
+			public const int iftablebitratein = 18;
 			/// <summary>IDX: 19 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableoutbitrate_1020 = 19;
+			public const int iftablebitrateout_1020 = 19;
 			/// <summary>IDX: 19 | Type: read</summary>
-			public const int iftableoutbitrate = 19;
+			public const int iftablebitrateout = 19;
 			/// <summary>IDX: 20 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftablebandwidthutilization_1021 = 20;
+			public const int iftableunicastratein_1021 = 20;
 			/// <summary>IDX: 20 | Type: read</summary>
-			public const int iftablebandwidthutilization = 20;
+			public const int iftableunicastratein = 20;
 			/// <summary>IDX: 21 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableratesdata_1022 = 21;
+			public const int iftableunicastrateout_1022 = 21;
 			/// <summary>IDX: 21 | Type: read</summary>
-			public const int iftableratesdata = 21;
+			public const int iftableunicastrateout = 21;
 			/// <summary>IDX: 22 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableinunicastrate_1023 = 22;
+			public const int iftablediscardratein_1023 = 22;
 			/// <summary>IDX: 22 | Type: read</summary>
-			public const int iftableinunicastrate = 22;
+			public const int iftablediscardratein = 22;
 			/// <summary>IDX: 23 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableoutunicastrate_1024 = 23;
+			public const int iftablediscardrateout_1024 = 23;
 			/// <summary>IDX: 23 | Type: read</summary>
-			public const int iftableoutunicastrate = 23;
+			public const int iftablediscardrateout = 23;
 			/// <summary>IDX: 24 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableindiscardrate_1025 = 24;
+			public const int iftableerrorratein_1025 = 24;
 			/// <summary>IDX: 24 | Type: read</summary>
-			public const int iftableindiscardrate = 24;
+			public const int iftableerrorratein = 24;
 			/// <summary>IDX: 25 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableoutdiscardrate_1026 = 25;
+			public const int iftableerrorrateout_1026 = 25;
 			/// <summary>IDX: 25 | Type: read</summary>
-			public const int iftableoutdiscardrate = 25;
+			public const int iftableerrorrateout = 25;
 			/// <summary>IDX: 26 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableinerrorrate_1027 = 26;
+			public const int iftableunknownprotosratein_1027 = 26;
 			/// <summary>IDX: 26 | Type: read</summary>
-			public const int iftableinerrorrate = 26;
+			public const int iftableunknownprotosratein = 26;
 			/// <summary>IDX: 27 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableouterrorrate_1028 = 27;
+			public const int iftablebandwidthutilization_1028 = 27;
 			/// <summary>IDX: 27 | Type: read</summary>
-			public const int iftableouterrorrate = 27;
+			public const int iftablebandwidthutilization = 27;
 			/// <summary>IDX: 28 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftableinunknownprotosrate_1029 = 28;
+			public const int iftableratesdata_1029 = 28;
 			/// <summary>IDX: 28 | Type: read</summary>
-			public const int iftableinunknownprotosrate = 28;
+			public const int iftableratesdata = 28;
 		}
 	}
 	public class Ifxtable
@@ -1304,7 +1304,7 @@ public class WriteParameters
 	/// <summary>PID: 106  | Type: write</summary>
 	public System.Object Syslocation {get { return Protocol.GetParameter(106); }set { Protocol.SetParameter(106, value); }}
 	/// <summary>PID: 1057  | Type: write | DISCREETS: Up = 1, Down = 2, Testing = 3</summary>
-	public System.Object Iftableifadminstatus {get { return Protocol.GetParameter(1057); }set { Protocol.SetParameter(1057, value); }}
+	public System.Object Iftableadminstatus {get { return Protocol.GetParameter(1057); }set { Protocol.SetParameter(1057, value); }}
 	/// <summary>PID: 1155  | Type: write | DISCREETS: Enabled = 1, Disabled = 2</summary>
 	public System.Object Ifxtableiflinkupdowntrapenable {get { return Protocol.GetParameter(1155); }set { Protocol.SetParameter(1155, value); }}
 	/// <summary>PID: 1157  | Type: write | DISCREETS: True = 1, False = 2</summary>
@@ -1373,65 +1373,65 @@ public interface SLProtocolExt : SLProtocol
 	object Iftablesnmpagentrestartflag { get; set; }
 	object Iftablesetinstance_999 { get; set; }
 	object Iftablesetinstance { get; set; }
-	object Iftableifindex_1001 { get; set; }
-	object Iftableifindex { get; set; }
-	object Iftableifdescr_1002 { get; set; }
-	object Iftableifdescr { get; set; }
-	object Iftableiftype_1003 { get; set; }
-	object Iftableiftype { get; set; }
-	object Iftableifmtu_1004 { get; set; }
-	object Iftableifmtu { get; set; }
-	object Iftableifspeed_1005 { get; set; }
-	object Iftableifspeed { get; set; }
-	object Iftableifphysaddress_1006 { get; set; }
-	object Iftableifphysaddress { get; set; }
-	object Iftableifadminstatus_1007 { get; set; }
-	object Iftableifadminstatus { get; set; }
-	object Iftableifoperstatus_1008 { get; set; }
-	object Iftableifoperstatus { get; set; }
-	object Iftableiflastchange_1009 { get; set; }
-	object Iftableiflastchange { get; set; }
-	object Iftableifinoctets_1010 { get; set; }
-	object Iftableifinoctets { get; set; }
-	object Iftableifinucastpkts_1011 { get; set; }
-	object Iftableifinucastpkts { get; set; }
-	object Iftableifindiscards_1012 { get; set; }
-	object Iftableifindiscards { get; set; }
-	object Iftableifinerrors_1013 { get; set; }
-	object Iftableifinerrors { get; set; }
-	object Iftableifinunknownprotos_1014 { get; set; }
-	object Iftableifinunknownprotos { get; set; }
-	object Iftableifoutoctets_1015 { get; set; }
-	object Iftableifoutoctets { get; set; }
-	object Iftableifoutucastpkts_1016 { get; set; }
-	object Iftableifoutucastpkts { get; set; }
-	object Iftableifoutdiscards_1017 { get; set; }
-	object Iftableifoutdiscards { get; set; }
-	object Iftableifouterrors_1018 { get; set; }
-	object Iftableifouterrors { get; set; }
-	object Iftableinbitrate_1019 { get; set; }
-	object Iftableinbitrate { get; set; }
-	object Iftableoutbitrate_1020 { get; set; }
-	object Iftableoutbitrate { get; set; }
-	object Iftablebandwidthutilization_1021 { get; set; }
+	object Iftableindex_1001 { get; set; }
+	object Iftableindex { get; set; }
+	object Iftabledescr_1002 { get; set; }
+	object Iftabledescr { get; set; }
+	object Iftabletype_1003 { get; set; }
+	object Iftabletype { get; set; }
+	object Iftablemtu_1004 { get; set; }
+	object Iftablemtu { get; set; }
+	object Iftablespeed_1005 { get; set; }
+	object Iftablespeed { get; set; }
+	object Iftablephysaddress_1006 { get; set; }
+	object Iftablephysaddress { get; set; }
+	object Iftableadminstatus_1007 { get; set; }
+	object Iftableadminstatus { get; set; }
+	object Iftableoperstatus_1008 { get; set; }
+	object Iftableoperstatus { get; set; }
+	object Iftablelastchange_1009 { get; set; }
+	object Iftablelastchange { get; set; }
+	object Iftableoctetsin_1010 { get; set; }
+	object Iftableoctetsin { get; set; }
+	object Iftableoctetsout_1011 { get; set; }
+	object Iftableoctetsout { get; set; }
+	object Iftableucastpktsin_1012 { get; set; }
+	object Iftableucastpktsin { get; set; }
+	object Iftableucastpktsout_1013 { get; set; }
+	object Iftableucastpktsout { get; set; }
+	object Iftablediscardsin_1014 { get; set; }
+	object Iftablediscardsin { get; set; }
+	object Iftablediscardsout_1015 { get; set; }
+	object Iftablediscardsout { get; set; }
+	object Iftableerrorsin_1016 { get; set; }
+	object Iftableerrorsin { get; set; }
+	object Iftableerrorsout_1017 { get; set; }
+	object Iftableerrorsout { get; set; }
+	object Iftableunknownprotosin_1018 { get; set; }
+	object Iftableunknownprotosin { get; set; }
+	object Iftablebitratein_1019 { get; set; }
+	object Iftablebitratein { get; set; }
+	object Iftablebitrateout_1020 { get; set; }
+	object Iftablebitrateout { get; set; }
+	object Iftableunicastratein_1021 { get; set; }
+	object Iftableunicastratein { get; set; }
+	object Iftableunicastrateout_1022 { get; set; }
+	object Iftableunicastrateout { get; set; }
+	object Iftablediscardratein_1023 { get; set; }
+	object Iftablediscardratein { get; set; }
+	object Iftablediscardrateout_1024 { get; set; }
+	object Iftablediscardrateout { get; set; }
+	object Iftableerrorratein_1025 { get; set; }
+	object Iftableerrorratein { get; set; }
+	object Iftableerrorrateout_1026 { get; set; }
+	object Iftableerrorrateout { get; set; }
+	object Iftableunknownprotosratein_1027 { get; set; }
+	object Iftableunknownprotosratein { get; set; }
+	object Iftablebandwidthutilization_1028 { get; set; }
 	object Iftablebandwidthutilization { get; set; }
-	object Iftableratesdata_1022 { get; set; }
+	object Iftableratesdata_1029 { get; set; }
 	object Iftableratesdata { get; set; }
-	object Iftableinunicastrate_1023 { get; set; }
-	object Iftableinunicastrate { get; set; }
-	object Iftableoutunicastrate_1024 { get; set; }
-	object Iftableoutunicastrate { get; set; }
-	object Iftableindiscardrate_1025 { get; set; }
-	object Iftableindiscardrate { get; set; }
-	object Iftableoutdiscardrate_1026 { get; set; }
-	object Iftableoutdiscardrate { get; set; }
-	object Iftableinerrorrate_1027 { get; set; }
-	object Iftableinerrorrate { get; set; }
-	object Iftableouterrorrate_1028 { get; set; }
-	object Iftableouterrorrate { get; set; }
-	object Iftableinunknownprotosrate_1029 { get; set; }
-	object Iftableinunknownprotosrate { get; set; }
-	object Iftableifadminstatus_1057 { get; set; }
+	object Iftableadminstatus_1057 { get; set; }
 	object Ifxtabletimeouttrigger_dummy { get; set; }
 	object Ifxtablegroupresultafterretries_1092 { get; set; }
 	object Ifxtablegroupresultafterretries { get; set; }
@@ -1697,152 +1697,152 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Iftablesetinstance {get { return GetParameter(999); }set { SetParameter(999, value); }}
 	/// <summary>PID: 1001  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifindex_1001 {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
+	public System.Object Iftableindex_1001 {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
 	/// <summary>PID: 1001  | Type: read</summary>
-	public System.Object Iftableifindex {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
+	public System.Object Iftableindex {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
 	/// <summary>PID: 1002  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifdescr_1002 {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
+	public System.Object Iftabledescr_1002 {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
 	/// <summary>PID: 1002  | Type: read</summary>
-	public System.Object Iftableifdescr {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
+	public System.Object Iftabledescr {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
 	/// <summary>PID: 1003  | Type: read | DISCREETS: Other = 1, Regular 1822 = 2, HDH 1822 = 3, DDN X 25 = 4, RFC 877 X.25 = 5, Ethernet CSMACD = 6, ISO 8802.3 CSMA/CD = 7, ISO 8802.4 Token Bus = 8, ISO 8802.5 Token Ring = 9, ISO 8802.6 MAN = 10, Star LAN = 11, PROTEON 10 Mb = 12, PROTEON 80 Mb = 13, HYPERchannel = 14, FDDI = 15, LAPB = 16, SDLC = 17, DS1 = 18, E1 = 19, Basic ISDN = 20, Primary ISDN = 21, Proprietary Point to Point Serial = 22, PPP = 23, Software Loopback = 24, EON = 25, Ethernet 3 Mb = 26, NSIP = 27, SlIP = 28, Ultra = 29, DS3 = 30, SIP = 31, Frame Relay = 32, RS-232 = 33, Parallel Port = 34, ARCNET = 35, ARCNET Plus = 36, ATM = 37, MIOX 25 = 38, SONET = 39, X.25 PLE = 40, ISO 8802.2 LLC = 41, Local Talk = 42, SMDS DXI = 43, Frame Relay Service = 44, V.35 = 45, HSSI = 46, HIPPI = 47, Modem = 48, AAL5 = 49, SONET Path = 50, SONET VT = 51, SMDS ICIP = 52, Proprietary Virtual = 53, Proprietary Multiplexor = 54, IEEE 802.12 = 55, Fiber Channel = 56, HIPPI Interface = 57, Frame Relay Interconnect = 58, AFLANE 802.3 = 59, AFLANE 802.5 = 60, CCT Emulated = 61, Fast Ether = 62, ISDN = 63, V.11 = 64, V.36 = 65, G.703 at 64kbps = 66, G.703 at 2 Mbps = 67, QLLC = 68, Fast Ether FX = 69, Channel = 70, IEEE 802.11 = 71, IBM System 360/370 Channel = 72, ESCON = 73, DLSW = 74, ISDN S/T Interface = 75, ISDN U Interface = 76, LAPD = 77, IP Switch = 78, RSRB = 79, ATM Logical = 80, DS0 = 81, DS0 Bundle = 82, Bisynchronous Protocol = 83, Asynchronous Protocol = 84, CNR = 85, ISO 8802.5 DTR = 86, EPLRS = 87, ARAP = 88, Proprietary CNLS = 89, Host PAD = 90, Term PAD = 91, Frame Relay MPI = 92, X.213 = 93, ADSL = 94, RADSL = 95, SDSL = 96, VDSL = 97, ISO 8802.5 CRFP Int = 98, Myrinet = 99, Voice EM = 100, Voice FXO = 101, Voice FXS = 102, Voice ENCAP = 103, Voice over IP = 104, ATM DXI = 105, ATM FUNI = 106, ATM IMA = 107, PPP Multilink Bundle = 108, IP over CDLC = 109, IP over Claw = 110, Stack to Stack = 111, Virtual IP Address = 112, MPC = 113, IP over ATM = 114, ISO 8802.5 Fiber = 115, TDLC = 116, Gigabit Ethernet = 117, HDLC = 118, LAPF = 119, V.37 = 120, X.25 MLP = 121, X.25 Hunt Group = 122, Transparent HDLC = 123, Interleave Channel = 124, Fast Channel = 125, IP = 126, DOCS Cable MAC Layer = 127, DOCS Cable Downstream = 128, Docs Cable Upstream = 129, A 12 MPP Switch = 130, Tunnel = 131, Coffee = 132, CES = 133, ATM Sub Interface = 134, L2 VLAN = 135, L3 IP VLAN = 136, L3 IPC VLAN = 137, Digital Powerline = 138, Media Mail over IP = 139, DTM = 140, DCN = 141, IP Forward = 142, MSDSL = 143, IEEE 1394 = 144, If GSN = 145, DVB-RCC MAC Layer = 146, DVB-RCC Downstream = 147, DVB-RCC Upstream = 148, ATM Virtual = 149, MPLS Tunnel = 150, SRP = 151, Voice over ATM = 152, Voice over Frame Relay = 153, IDSL = 154, Composite Link = 155, SS7 Signaling Link = 156, Proprietary Wireless P2P = 157, Frame Forward = 158, RFC 1483 = 159, USB = 160, IEEE 802.3ad Link Aggregate = 161, BGP Policy Accounting = 162, FRF.16 MFR Bundle = 163, H.323 Gatekeeper = 164, H.323 Proxy = 165, MPLS = 166, MF Signaling Link = 167, HDSL2 = 168, SHDSL = 169, DS1 FDL = 170, Packet over SONET/SDH = 171, DVB ASI In = 172, DVB ASI Out = 173, PLC = 174, NFAS = 175, TR008 = 176, GR-303 RDT = 177, GR-303 IDT = 178, ISUP = 179, Proprietary DOCs Wireless MAC Layer = 180, Proprietary DOCS Wireless Downstream = 181, Proprietary DOCS Wireless Upstream = 182, HiperLAN 2 = 183, Proprietary BW AP 2 Mp = 184, SONET Overhead Channel = 185, Digital Wrapper Overhead Channel = 186, AAL2 = 187, Radio MAC = 188, ATM Radio = 189, IMT = 190, MVL = 191, Reach DSL = 192, FR DLCI End Point = 193, ATM VCI End Point = 194, Optical Channel = 195, Optical Transport = 196, Proprietary ATM = 197, Voice over Cable = 198, Infiniband = 199, TE Link = 200, Q.2931 = 201, Virtual Trunk Group = 202, SIP Trunk Group = 203, SIP Signaling = 204, DOCS Cable Upstream Channel = 205, Econet = 206, PON 155 = 207, PON 622 = 208, Bridge = 209, Line Group = 210, Voice EMFGD = 211, Voice FGDEANA = 212, Voice DID = 213, MPEG Transport = 214, 6to4 = 215, GTP = 216, PDN Ether Loop 1 = 217, PDN Ether Loop 2 = 218, Optical Channel Group = 219, HomePNA = 220, GFP = 221, CISCO IS LVLAN = 222, Actelis Meta LOOP = 223, FCIP Link = 224, RPR = 225, QAM = 226, LMP = 227, CBL Vecta Star = 228, DOCS Cable Modular CMTS Downstream = 229, ADSL2 = 230, MAC Sec Controlled IF = 231, MAC Sec Uncontrolled IF = 232, AVICI Optical Ether = 233, ATMBond = 234, Voice FGD Operator Service = 235, MoCA Version 1 = 236, IEEE 802.16 WMAN = 237, ADSL2+ = 238, DVB-RCS MAC Layer = 239, DVB Satellite TDM = 240, DVB-RCS TDMA = 241, X.86 Laps = 242, WWAN PP = 243, WWAN PP2 = 244, Voice EBS = 245, If PW Type = 246, ILAN = 247, PIP = 248, ALU ELP = 249, G-PON = 250, VDSL2 = 251, CAPWAP Dot 11 Profile = 252, CAPWAP Dot 11 BSS = 253, CAPWAP WTP Virtual Radio = 254, Bits = 255, DOCSIS CATV Upstream RF Port = 256, CATV Downstream RF Port = 257, VMWare Virtual NIC = 258, IEEE 802.15 4 WPAN = 259, OTN ODU = 260, OTN OTU = 261, If VFI Type = 262, G.998.1 = 263, G.998.2 = 264, G.998.3 = 265, ALU EPON = 266, ALU EPON ONU = 267, ALU EPON Physical Unit = 268, ALU EPON Logical Link = 269, ALU GPON ONU = 270, ALU GPON Physical Unit = 271, VMWare NIC Team = 272, DOCS OFDM Downstream = 277, DOCS OFDMA Upstream = 278, G.fast Port = 279, SDCI = 280, Xbox Wireless = 281, FastDSL = 282, Cable SCTE 55-1 OOB Forward Channel = 283, Cable SCTE 55-1 OOB Return Channel = 284, Cable SCTE 55-2 OOB Downstream Channel = 285, Cable SCTE 55-2 OOB Upstream Channel = 286, DOCS Cable NDF = 287, DOCS Cable NDR = 288, PTM = 289, GHN = 290, OTN OTSI = 291, OTN OTUC = 292, OTN ODUC = 293, OTN OTUC Signal = 294</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableiftype_1003 {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
+	public System.Object Iftabletype_1003 {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
 	/// <summary>PID: 1003  | Type: read | DISCREETS: Other = 1, Regular 1822 = 2, HDH 1822 = 3, DDN X 25 = 4, RFC 877 X.25 = 5, Ethernet CSMACD = 6, ISO 8802.3 CSMA/CD = 7, ISO 8802.4 Token Bus = 8, ISO 8802.5 Token Ring = 9, ISO 8802.6 MAN = 10, Star LAN = 11, PROTEON 10 Mb = 12, PROTEON 80 Mb = 13, HYPERchannel = 14, FDDI = 15, LAPB = 16, SDLC = 17, DS1 = 18, E1 = 19, Basic ISDN = 20, Primary ISDN = 21, Proprietary Point to Point Serial = 22, PPP = 23, Software Loopback = 24, EON = 25, Ethernet 3 Mb = 26, NSIP = 27, SlIP = 28, Ultra = 29, DS3 = 30, SIP = 31, Frame Relay = 32, RS-232 = 33, Parallel Port = 34, ARCNET = 35, ARCNET Plus = 36, ATM = 37, MIOX 25 = 38, SONET = 39, X.25 PLE = 40, ISO 8802.2 LLC = 41, Local Talk = 42, SMDS DXI = 43, Frame Relay Service = 44, V.35 = 45, HSSI = 46, HIPPI = 47, Modem = 48, AAL5 = 49, SONET Path = 50, SONET VT = 51, SMDS ICIP = 52, Proprietary Virtual = 53, Proprietary Multiplexor = 54, IEEE 802.12 = 55, Fiber Channel = 56, HIPPI Interface = 57, Frame Relay Interconnect = 58, AFLANE 802.3 = 59, AFLANE 802.5 = 60, CCT Emulated = 61, Fast Ether = 62, ISDN = 63, V.11 = 64, V.36 = 65, G.703 at 64kbps = 66, G.703 at 2 Mbps = 67, QLLC = 68, Fast Ether FX = 69, Channel = 70, IEEE 802.11 = 71, IBM System 360/370 Channel = 72, ESCON = 73, DLSW = 74, ISDN S/T Interface = 75, ISDN U Interface = 76, LAPD = 77, IP Switch = 78, RSRB = 79, ATM Logical = 80, DS0 = 81, DS0 Bundle = 82, Bisynchronous Protocol = 83, Asynchronous Protocol = 84, CNR = 85, ISO 8802.5 DTR = 86, EPLRS = 87, ARAP = 88, Proprietary CNLS = 89, Host PAD = 90, Term PAD = 91, Frame Relay MPI = 92, X.213 = 93, ADSL = 94, RADSL = 95, SDSL = 96, VDSL = 97, ISO 8802.5 CRFP Int = 98, Myrinet = 99, Voice EM = 100, Voice FXO = 101, Voice FXS = 102, Voice ENCAP = 103, Voice over IP = 104, ATM DXI = 105, ATM FUNI = 106, ATM IMA = 107, PPP Multilink Bundle = 108, IP over CDLC = 109, IP over Claw = 110, Stack to Stack = 111, Virtual IP Address = 112, MPC = 113, IP over ATM = 114, ISO 8802.5 Fiber = 115, TDLC = 116, Gigabit Ethernet = 117, HDLC = 118, LAPF = 119, V.37 = 120, X.25 MLP = 121, X.25 Hunt Group = 122, Transparent HDLC = 123, Interleave Channel = 124, Fast Channel = 125, IP = 126, DOCS Cable MAC Layer = 127, DOCS Cable Downstream = 128, Docs Cable Upstream = 129, A 12 MPP Switch = 130, Tunnel = 131, Coffee = 132, CES = 133, ATM Sub Interface = 134, L2 VLAN = 135, L3 IP VLAN = 136, L3 IPC VLAN = 137, Digital Powerline = 138, Media Mail over IP = 139, DTM = 140, DCN = 141, IP Forward = 142, MSDSL = 143, IEEE 1394 = 144, If GSN = 145, DVB-RCC MAC Layer = 146, DVB-RCC Downstream = 147, DVB-RCC Upstream = 148, ATM Virtual = 149, MPLS Tunnel = 150, SRP = 151, Voice over ATM = 152, Voice over Frame Relay = 153, IDSL = 154, Composite Link = 155, SS7 Signaling Link = 156, Proprietary Wireless P2P = 157, Frame Forward = 158, RFC 1483 = 159, USB = 160, IEEE 802.3ad Link Aggregate = 161, BGP Policy Accounting = 162, FRF.16 MFR Bundle = 163, H.323 Gatekeeper = 164, H.323 Proxy = 165, MPLS = 166, MF Signaling Link = 167, HDSL2 = 168, SHDSL = 169, DS1 FDL = 170, Packet over SONET/SDH = 171, DVB ASI In = 172, DVB ASI Out = 173, PLC = 174, NFAS = 175, TR008 = 176, GR-303 RDT = 177, GR-303 IDT = 178, ISUP = 179, Proprietary DOCs Wireless MAC Layer = 180, Proprietary DOCS Wireless Downstream = 181, Proprietary DOCS Wireless Upstream = 182, HiperLAN 2 = 183, Proprietary BW AP 2 Mp = 184, SONET Overhead Channel = 185, Digital Wrapper Overhead Channel = 186, AAL2 = 187, Radio MAC = 188, ATM Radio = 189, IMT = 190, MVL = 191, Reach DSL = 192, FR DLCI End Point = 193, ATM VCI End Point = 194, Optical Channel = 195, Optical Transport = 196, Proprietary ATM = 197, Voice over Cable = 198, Infiniband = 199, TE Link = 200, Q.2931 = 201, Virtual Trunk Group = 202, SIP Trunk Group = 203, SIP Signaling = 204, DOCS Cable Upstream Channel = 205, Econet = 206, PON 155 = 207, PON 622 = 208, Bridge = 209, Line Group = 210, Voice EMFGD = 211, Voice FGDEANA = 212, Voice DID = 213, MPEG Transport = 214, 6to4 = 215, GTP = 216, PDN Ether Loop 1 = 217, PDN Ether Loop 2 = 218, Optical Channel Group = 219, HomePNA = 220, GFP = 221, CISCO IS LVLAN = 222, Actelis Meta LOOP = 223, FCIP Link = 224, RPR = 225, QAM = 226, LMP = 227, CBL Vecta Star = 228, DOCS Cable Modular CMTS Downstream = 229, ADSL2 = 230, MAC Sec Controlled IF = 231, MAC Sec Uncontrolled IF = 232, AVICI Optical Ether = 233, ATMBond = 234, Voice FGD Operator Service = 235, MoCA Version 1 = 236, IEEE 802.16 WMAN = 237, ADSL2+ = 238, DVB-RCS MAC Layer = 239, DVB Satellite TDM = 240, DVB-RCS TDMA = 241, X.86 Laps = 242, WWAN PP = 243, WWAN PP2 = 244, Voice EBS = 245, If PW Type = 246, ILAN = 247, PIP = 248, ALU ELP = 249, G-PON = 250, VDSL2 = 251, CAPWAP Dot 11 Profile = 252, CAPWAP Dot 11 BSS = 253, CAPWAP WTP Virtual Radio = 254, Bits = 255, DOCSIS CATV Upstream RF Port = 256, CATV Downstream RF Port = 257, VMWare Virtual NIC = 258, IEEE 802.15 4 WPAN = 259, OTN ODU = 260, OTN OTU = 261, If VFI Type = 262, G.998.1 = 263, G.998.2 = 264, G.998.3 = 265, ALU EPON = 266, ALU EPON ONU = 267, ALU EPON Physical Unit = 268, ALU EPON Logical Link = 269, ALU GPON ONU = 270, ALU GPON Physical Unit = 271, VMWare NIC Team = 272, DOCS OFDM Downstream = 277, DOCS OFDMA Upstream = 278, G.fast Port = 279, SDCI = 280, Xbox Wireless = 281, FastDSL = 282, Cable SCTE 55-1 OOB Forward Channel = 283, Cable SCTE 55-1 OOB Return Channel = 284, Cable SCTE 55-2 OOB Downstream Channel = 285, Cable SCTE 55-2 OOB Upstream Channel = 286, DOCS Cable NDF = 287, DOCS Cable NDR = 288, PTM = 289, GHN = 290, OTN OTSI = 291, OTN OTUC = 292, OTN ODUC = 293, OTN OTUC Signal = 294</summary>
-	public System.Object Iftableiftype {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
+	public System.Object Iftabletype {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
 	/// <summary>PID: 1004  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifmtu_1004 {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
+	public System.Object Iftablemtu_1004 {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
 	/// <summary>PID: 1004  | Type: read</summary>
-	public System.Object Iftableifmtu {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
+	public System.Object Iftablemtu {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
 	/// <summary>PID: 1005  | Type: read | EXCEPTIONS: N/A = 0, High Speed = 4294967295</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifspeed_1005 {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
+	public System.Object Iftablespeed_1005 {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
 	/// <summary>PID: 1005  | Type: read | EXCEPTIONS: N/A = 0, High Speed = 4294967295</summary>
-	public System.Object Iftableifspeed {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
+	public System.Object Iftablespeed {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
 	/// <summary>PID: 1006  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifphysaddress_1006 {get { return GetParameter(1006); }set { SetParameter(1006, value); }}
+	public System.Object Iftablephysaddress_1006 {get { return GetParameter(1006); }set { SetParameter(1006, value); }}
 	/// <summary>PID: 1006  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableifphysaddress {get { return GetParameter(1006); }set { SetParameter(1006, value); }}
+	public System.Object Iftablephysaddress {get { return GetParameter(1006); }set { SetParameter(1006, value); }}
 	/// <summary>PID: 1007  | Type: read | DISCREETS: Up = 1, Down = 2, Testing = 3</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifadminstatus_1007 {get { return GetParameter(1007); }set { SetParameter(1007, value); }}
+	public System.Object Iftableadminstatus_1007 {get { return GetParameter(1007); }set { SetParameter(1007, value); }}
 	/// <summary>PID: 1007  | Type: read | DISCREETS: Up = 1, Down = 2, Testing = 3</summary>
-	public System.Object Iftableifadminstatus {get { return GetParameter(1007); }set { SetParameter(1007, value); }}
+	public System.Object Iftableadminstatus {get { return GetParameter(1007); }set { SetParameter(1007, value); }}
 	/// <summary>PID: 1008  | Type: read | DISCREETS: Up = 1, Down = 2, Testing = 3, Unknown = 4, Dormant = 5, Not Present = 6, Lower Layer Down = 7</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoperstatus_1008 {get { return GetParameter(1008); }set { SetParameter(1008, value); }}
+	public System.Object Iftableoperstatus_1008 {get { return GetParameter(1008); }set { SetParameter(1008, value); }}
 	/// <summary>PID: 1008  | Type: read | DISCREETS: Up = 1, Down = 2, Testing = 3, Unknown = 4, Dormant = 5, Not Present = 6, Lower Layer Down = 7</summary>
-	public System.Object Iftableifoperstatus {get { return GetParameter(1008); }set { SetParameter(1008, value); }}
+	public System.Object Iftableoperstatus {get { return GetParameter(1008); }set { SetParameter(1008, value); }}
 	/// <summary>PID: 1009  | Type: read | EXCEPTIONS: No Change = 0</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableiflastchange_1009 {get { return GetParameter(1009); }set { SetParameter(1009, value); }}
+	public System.Object Iftablelastchange_1009 {get { return GetParameter(1009); }set { SetParameter(1009, value); }}
 	/// <summary>PID: 1009  | Type: read | EXCEPTIONS: No Change = 0</summary>
-	public System.Object Iftableiflastchange {get { return GetParameter(1009); }set { SetParameter(1009, value); }}
+	public System.Object Iftablelastchange {get { return GetParameter(1009); }set { SetParameter(1009, value); }}
 	/// <summary>PID: 1010  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinoctets_1010 {get { return GetParameter(1010); }set { SetParameter(1010, value); }}
+	public System.Object Iftableoctetsin_1010 {get { return GetParameter(1010); }set { SetParameter(1010, value); }}
 	/// <summary>PID: 1010  | Type: read</summary>
-	public System.Object Iftableifinoctets {get { return GetParameter(1010); }set { SetParameter(1010, value); }}
+	public System.Object Iftableoctetsin {get { return GetParameter(1010); }set { SetParameter(1010, value); }}
 	/// <summary>PID: 1011  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinucastpkts_1011 {get { return GetParameter(1011); }set { SetParameter(1011, value); }}
+	public System.Object Iftableoctetsout_1011 {get { return GetParameter(1011); }set { SetParameter(1011, value); }}
 	/// <summary>PID: 1011  | Type: read</summary>
-	public System.Object Iftableifinucastpkts {get { return GetParameter(1011); }set { SetParameter(1011, value); }}
+	public System.Object Iftableoctetsout {get { return GetParameter(1011); }set { SetParameter(1011, value); }}
 	/// <summary>PID: 1012  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifindiscards_1012 {get { return GetParameter(1012); }set { SetParameter(1012, value); }}
+	public System.Object Iftableucastpktsin_1012 {get { return GetParameter(1012); }set { SetParameter(1012, value); }}
 	/// <summary>PID: 1012  | Type: read</summary>
-	public System.Object Iftableifindiscards {get { return GetParameter(1012); }set { SetParameter(1012, value); }}
+	public System.Object Iftableucastpktsin {get { return GetParameter(1012); }set { SetParameter(1012, value); }}
 	/// <summary>PID: 1013  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinerrors_1013 {get { return GetParameter(1013); }set { SetParameter(1013, value); }}
+	public System.Object Iftableucastpktsout_1013 {get { return GetParameter(1013); }set { SetParameter(1013, value); }}
 	/// <summary>PID: 1013  | Type: read</summary>
-	public System.Object Iftableifinerrors {get { return GetParameter(1013); }set { SetParameter(1013, value); }}
+	public System.Object Iftableucastpktsout {get { return GetParameter(1013); }set { SetParameter(1013, value); }}
 	/// <summary>PID: 1014  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinunknownprotos_1014 {get { return GetParameter(1014); }set { SetParameter(1014, value); }}
+	public System.Object Iftablediscardsin_1014 {get { return GetParameter(1014); }set { SetParameter(1014, value); }}
 	/// <summary>PID: 1014  | Type: read</summary>
-	public System.Object Iftableifinunknownprotos {get { return GetParameter(1014); }set { SetParameter(1014, value); }}
+	public System.Object Iftablediscardsin {get { return GetParameter(1014); }set { SetParameter(1014, value); }}
 	/// <summary>PID: 1015  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutoctets_1015 {get { return GetParameter(1015); }set { SetParameter(1015, value); }}
+	public System.Object Iftablediscardsout_1015 {get { return GetParameter(1015); }set { SetParameter(1015, value); }}
 	/// <summary>PID: 1015  | Type: read</summary>
-	public System.Object Iftableifoutoctets {get { return GetParameter(1015); }set { SetParameter(1015, value); }}
+	public System.Object Iftablediscardsout {get { return GetParameter(1015); }set { SetParameter(1015, value); }}
 	/// <summary>PID: 1016  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutucastpkts_1016 {get { return GetParameter(1016); }set { SetParameter(1016, value); }}
+	public System.Object Iftableerrorsin_1016 {get { return GetParameter(1016); }set { SetParameter(1016, value); }}
 	/// <summary>PID: 1016  | Type: read</summary>
-	public System.Object Iftableifoutucastpkts {get { return GetParameter(1016); }set { SetParameter(1016, value); }}
+	public System.Object Iftableerrorsin {get { return GetParameter(1016); }set { SetParameter(1016, value); }}
 	/// <summary>PID: 1017  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutdiscards_1017 {get { return GetParameter(1017); }set { SetParameter(1017, value); }}
+	public System.Object Iftableerrorsout_1017 {get { return GetParameter(1017); }set { SetParameter(1017, value); }}
 	/// <summary>PID: 1017  | Type: read</summary>
-	public System.Object Iftableifoutdiscards {get { return GetParameter(1017); }set { SetParameter(1017, value); }}
+	public System.Object Iftableerrorsout {get { return GetParameter(1017); }set { SetParameter(1017, value); }}
 	/// <summary>PID: 1018  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifouterrors_1018 {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
+	public System.Object Iftableunknownprotosin_1018 {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
 	/// <summary>PID: 1018  | Type: read</summary>
-	public System.Object Iftableifouterrors {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
+	public System.Object Iftableunknownprotosin {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
 	/// <summary>PID: 1019  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableinbitrate_1019 {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
+	public System.Object Iftablebitratein_1019 {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
 	/// <summary>PID: 1019  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableinbitrate {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
+	public System.Object Iftablebitratein {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
 	/// <summary>PID: 1020  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableoutbitrate_1020 {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
+	public System.Object Iftablebitrateout_1020 {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
 	/// <summary>PID: 1020  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableoutbitrate {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
+	public System.Object Iftablebitrateout {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
 	/// <summary>PID: 1021  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftablebandwidthutilization_1021 {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
+	public System.Object Iftableunicastratein_1021 {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
 	/// <summary>PID: 1021  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftablebandwidthutilization {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
-	/// <summary>PID: 1022  | Type: read</summary>
+	public System.Object Iftableunicastratein {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
+	/// <summary>PID: 1022  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableratesdata_1022 {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
-	/// <summary>PID: 1022  | Type: read</summary>
-	public System.Object Iftableratesdata {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
+	public System.Object Iftableunicastrateout_1022 {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
+	/// <summary>PID: 1022  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Iftableunicastrateout {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
 	/// <summary>PID: 1023  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableinunicastrate_1023 {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
+	public System.Object Iftablediscardratein_1023 {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
 	/// <summary>PID: 1023  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableinunicastrate {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
+	public System.Object Iftablediscardratein {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
 	/// <summary>PID: 1024  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableoutunicastrate_1024 {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
+	public System.Object Iftablediscardrateout_1024 {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
 	/// <summary>PID: 1024  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableoutunicastrate {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
+	public System.Object Iftablediscardrateout {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
 	/// <summary>PID: 1025  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableindiscardrate_1025 {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
+	public System.Object Iftableerrorratein_1025 {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
 	/// <summary>PID: 1025  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableindiscardrate {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
+	public System.Object Iftableerrorratein {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
 	/// <summary>PID: 1026  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableoutdiscardrate_1026 {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
+	public System.Object Iftableerrorrateout_1026 {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
 	/// <summary>PID: 1026  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableoutdiscardrate {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
+	public System.Object Iftableerrorrateout {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
 	/// <summary>PID: 1027  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableinerrorrate_1027 {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
+	public System.Object Iftableunknownprotosratein_1027 {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
 	/// <summary>PID: 1027  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableinerrorrate {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
+	public System.Object Iftableunknownprotosratein {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
 	/// <summary>PID: 1028  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableouterrorrate_1028 {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
+	public System.Object Iftablebandwidthutilization_1028 {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
 	/// <summary>PID: 1028  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableouterrorrate {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
-	/// <summary>PID: 1029  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Iftablebandwidthutilization {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
+	/// <summary>PID: 1029  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableinunknownprotosrate_1029 {get { return GetParameter(1029); }set { SetParameter(1029, value); }}
-	/// <summary>PID: 1029  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftableinunknownprotosrate {get { return GetParameter(1029); }set { SetParameter(1029, value); }}
+	public System.Object Iftableratesdata_1029 {get { return GetParameter(1029); }set { SetParameter(1029, value); }}
+	/// <summary>PID: 1029  | Type: read</summary>
+	public System.Object Iftableratesdata {get { return GetParameter(1029); }set { SetParameter(1029, value); }}
 	/// <summary>PID: 1057  | Type: write | DISCREETS: Up = 1, Down = 2, Testing = 3</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifadminstatus_1057 {get { return GetParameter(1057); }set { SetParameter(1057, value); }}
+	public System.Object Iftableadminstatus_1057 {get { return GetParameter(1057); }set { SetParameter(1057, value); }}
 	/// <summary>PID: 1091  | Type: dummy</summary>
 	public System.Object Ifxtabletimeouttrigger_dummy {get { return GetParameter(1091); }set { SetParameter(1091, value); }}
 	/// <summary>PID: 1092  | Type: read | DISCREETS: Success = 0, Timeout = 1</summary>
@@ -2327,149 +2327,149 @@ public class IftableQActionRow : QActionTableRow
 {
 	/// <summary>PID: 1001 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifindex_1001 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	public System.Object Iftableindex_1001 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
 	/// <summary>PID: 1001 | Type: read</summary>
-	public System.Object Iftableifindex { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	public System.Object Iftableindex { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
 	/// <summary>PID: 1002 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifdescr_1002 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	public System.Object Iftabledescr_1002 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
 	/// <summary>PID: 1002 | Type: read</summary>
-	public System.Object Iftableifdescr { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	public System.Object Iftabledescr { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
 	/// <summary>PID: 1003 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableiftype_1003 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	public System.Object Iftabletype_1003 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
 	/// <summary>PID: 1003 | Type: read</summary>
-	public System.Object Iftableiftype { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	public System.Object Iftabletype { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
 	/// <summary>PID: 1004 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifmtu_1004 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	public System.Object Iftablemtu_1004 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
 	/// <summary>PID: 1004 | Type: read</summary>
-	public System.Object Iftableifmtu { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	public System.Object Iftablemtu { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
 	/// <summary>PID: 1005 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifspeed_1005 { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	public System.Object Iftablespeed_1005 { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
 	/// <summary>PID: 1005 | Type: read</summary>
-	public System.Object Iftableifspeed { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	public System.Object Iftablespeed { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
 	/// <summary>PID: 1006 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifphysaddress_1006 { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	public System.Object Iftablephysaddress_1006 { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
 	/// <summary>PID: 1006 | Type: read</summary>
-	public System.Object Iftableifphysaddress { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
+	public System.Object Iftablephysaddress { get { if (base.Columns.ContainsKey(5)) { return base.Columns[5]; } else { return null; } } set { if (base.Columns.ContainsKey(5)) { base.Columns[5] = value; } else { base.Columns.Add(5, value); } } }
 	/// <summary>PID: 1007 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifadminstatus_1007 { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	public System.Object Iftableadminstatus_1007 { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
 	/// <summary>PID: 1007 | Type: read</summary>
-	public System.Object Iftableifadminstatus { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
+	public System.Object Iftableadminstatus { get { if (base.Columns.ContainsKey(6)) { return base.Columns[6]; } else { return null; } } set { if (base.Columns.ContainsKey(6)) { base.Columns[6] = value; } else { base.Columns.Add(6, value); } } }
 	/// <summary>PID: 1008 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoperstatus_1008 { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	public System.Object Iftableoperstatus_1008 { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
 	/// <summary>PID: 1008 | Type: read</summary>
-	public System.Object Iftableifoperstatus { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
+	public System.Object Iftableoperstatus { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
 	/// <summary>PID: 1009 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableiflastchange_1009 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	public System.Object Iftablelastchange_1009 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
 	/// <summary>PID: 1009 | Type: read</summary>
-	public System.Object Iftableiflastchange { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	public System.Object Iftablelastchange { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
 	/// <summary>PID: 1010 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinoctets_1010 { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	public System.Object Iftableoctetsin_1010 { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
 	/// <summary>PID: 1010 | Type: read</summary>
-	public System.Object Iftableifinoctets { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	public System.Object Iftableoctetsin { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
 	/// <summary>PID: 1011 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinucastpkts_1011 { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
+	public System.Object Iftableoctetsout_1011 { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
 	/// <summary>PID: 1011 | Type: read</summary>
-	public System.Object Iftableifinucastpkts { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
+	public System.Object Iftableoctetsout { get { if (base.Columns.ContainsKey(10)) { return base.Columns[10]; } else { return null; } } set { if (base.Columns.ContainsKey(10)) { base.Columns[10] = value; } else { base.Columns.Add(10, value); } } }
 	/// <summary>PID: 1012 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifindiscards_1012 { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	public System.Object Iftableucastpktsin_1012 { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
 	/// <summary>PID: 1012 | Type: read</summary>
-	public System.Object Iftableifindiscards { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
+	public System.Object Iftableucastpktsin { get { if (base.Columns.ContainsKey(11)) { return base.Columns[11]; } else { return null; } } set { if (base.Columns.ContainsKey(11)) { base.Columns[11] = value; } else { base.Columns.Add(11, value); } } }
 	/// <summary>PID: 1013 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinerrors_1013 { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
+	public System.Object Iftableucastpktsout_1013 { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
 	/// <summary>PID: 1013 | Type: read</summary>
-	public System.Object Iftableifinerrors { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
+	public System.Object Iftableucastpktsout { get { if (base.Columns.ContainsKey(12)) { return base.Columns[12]; } else { return null; } } set { if (base.Columns.ContainsKey(12)) { base.Columns[12] = value; } else { base.Columns.Add(12, value); } } }
 	/// <summary>PID: 1014 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifinunknownprotos_1014 { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
+	public System.Object Iftablediscardsin_1014 { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
 	/// <summary>PID: 1014 | Type: read</summary>
-	public System.Object Iftableifinunknownprotos { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
+	public System.Object Iftablediscardsin { get { if (base.Columns.ContainsKey(13)) { return base.Columns[13]; } else { return null; } } set { if (base.Columns.ContainsKey(13)) { base.Columns[13] = value; } else { base.Columns.Add(13, value); } } }
 	/// <summary>PID: 1015 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutoctets_1015 { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
+	public System.Object Iftablediscardsout_1015 { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
 	/// <summary>PID: 1015 | Type: read</summary>
-	public System.Object Iftableifoutoctets { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
+	public System.Object Iftablediscardsout { get { if (base.Columns.ContainsKey(14)) { return base.Columns[14]; } else { return null; } } set { if (base.Columns.ContainsKey(14)) { base.Columns[14] = value; } else { base.Columns.Add(14, value); } } }
 	/// <summary>PID: 1016 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutucastpkts_1016 { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
+	public System.Object Iftableerrorsin_1016 { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
 	/// <summary>PID: 1016 | Type: read</summary>
-	public System.Object Iftableifoutucastpkts { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
+	public System.Object Iftableerrorsin { get { if (base.Columns.ContainsKey(15)) { return base.Columns[15]; } else { return null; } } set { if (base.Columns.ContainsKey(15)) { base.Columns[15] = value; } else { base.Columns.Add(15, value); } } }
 	/// <summary>PID: 1017 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifoutdiscards_1017 { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	public System.Object Iftableerrorsout_1017 { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
 	/// <summary>PID: 1017 | Type: read</summary>
-	public System.Object Iftableifoutdiscards { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
+	public System.Object Iftableerrorsout { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
 	/// <summary>PID: 1018 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableifouterrors_1018 { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	public System.Object Iftableunknownprotosin_1018 { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
 	/// <summary>PID: 1018 | Type: read</summary>
-	public System.Object Iftableifouterrors { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	public System.Object Iftableunknownprotosin { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
 	/// <summary>PID: 1019 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableinbitrate_1019 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	public System.Object Iftablebitratein_1019 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
 	/// <summary>PID: 1019 | Type: read</summary>
-	public System.Object Iftableinbitrate { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	public System.Object Iftablebitratein { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
 	/// <summary>PID: 1020 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableoutbitrate_1020 { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
+	public System.Object Iftablebitrateout_1020 { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
 	/// <summary>PID: 1020 | Type: read</summary>
-	public System.Object Iftableoutbitrate { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
+	public System.Object Iftablebitrateout { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
 	/// <summary>PID: 1021 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftablebandwidthutilization_1021 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public System.Object Iftableunicastratein_1021 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
 	/// <summary>PID: 1021 | Type: read</summary>
-	public System.Object Iftablebandwidthutilization { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public System.Object Iftableunicastratein { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
 	/// <summary>PID: 1022 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableratesdata_1022 { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
+	public System.Object Iftableunicastrateout_1022 { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
 	/// <summary>PID: 1022 | Type: read</summary>
-	public System.Object Iftableratesdata { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
+	public System.Object Iftableunicastrateout { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
 	/// <summary>PID: 1023 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableinunicastrate_1023 { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
+	public System.Object Iftablediscardratein_1023 { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
 	/// <summary>PID: 1023 | Type: read</summary>
-	public System.Object Iftableinunicastrate { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
+	public System.Object Iftablediscardratein { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
 	/// <summary>PID: 1024 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableoutunicastrate_1024 { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
+	public System.Object Iftablediscardrateout_1024 { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
 	/// <summary>PID: 1024 | Type: read</summary>
-	public System.Object Iftableoutunicastrate { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
+	public System.Object Iftablediscardrateout { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
 	/// <summary>PID: 1025 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableindiscardrate_1025 { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
+	public System.Object Iftableerrorratein_1025 { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
 	/// <summary>PID: 1025 | Type: read</summary>
-	public System.Object Iftableindiscardrate { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
+	public System.Object Iftableerrorratein { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
 	/// <summary>PID: 1026 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableoutdiscardrate_1026 { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
+	public System.Object Iftableerrorrateout_1026 { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
 	/// <summary>PID: 1026 | Type: read</summary>
-	public System.Object Iftableoutdiscardrate { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
+	public System.Object Iftableerrorrateout { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
 	/// <summary>PID: 1027 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableinerrorrate_1027 { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
+	public System.Object Iftableunknownprotosratein_1027 { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
 	/// <summary>PID: 1027 | Type: read</summary>
-	public System.Object Iftableinerrorrate { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
+	public System.Object Iftableunknownprotosratein { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
 	/// <summary>PID: 1028 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableouterrorrate_1028 { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
+	public System.Object Iftablebandwidthutilization_1028 { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
 	/// <summary>PID: 1028 | Type: read</summary>
-	public System.Object Iftableouterrorrate { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
+	public System.Object Iftablebandwidthutilization { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
 	/// <summary>PID: 1029 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftableinunknownprotosrate_1029 { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
+	public System.Object Iftableratesdata_1029 { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
 	/// <summary>PID: 1029 | Type: read</summary>
-	public System.Object Iftableinunknownprotosrate { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
+	public System.Object Iftableratesdata { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
 	public IftableQActionRow() : base(0, 29) { }
 	public IftableQActionRow(System.Object[] oRow) : base(0, 29, oRow) { }
 	public static implicit operator IftableQActionRow(System.Object[] source) { return new IftableQActionRow(source); }

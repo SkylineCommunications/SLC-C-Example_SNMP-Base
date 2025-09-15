@@ -74,7 +74,7 @@ Any inquiries can be addressed to:
 			<Description>After Startup</Description>
 			<Type>dummy</Type>
 		</Param>
-
+		
 		<Param id="10">
 			<Name>Fixed_0</Name>
 			<Description>Fixed 0</Description>
@@ -99,7 +99,7 @@ Any inquiries can be addressed to:
 				<Value>1</Value>
 			</Interprete>
 		</Param>
-
+		
 		<Param id="91">
 			<Name>sysUptimeTimeoutTrigger</Name>
 			<Type>dummy</Type>
@@ -464,7 +464,7 @@ This value should include the full name and version identification of the system
 				<Type lines="5">string</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="991">
 			<Name>IfTableTimeoutTrigger</Name>
 			<Description>Interface Table Timeout Trigger</Description>
@@ -590,7 +590,7 @@ This value should include the full name and version identification of the system
 			</Measurement>
 		</Param>
 		<Param id="1001" trending="false">
-			<Name>ifTableIfIndex</Name>
+			<Name>ifTableIndex</Name>
 			<Description>Index (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -615,7 +615,7 @@ The value for each interface sub-layer must remain constant at least from one re
 			</Measurement>
 		</Param>
 		<Param id="1002" trending="false">
-			<Name>ifTableIfDescr</Name>
+			<Name>ifTableDescr</Name>
 			<Description>Description (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -646,7 +646,7 @@ This string should include the name of the manufacturer, the product name and th
 			</Measurement>
 		</Param>
 		<Param id="1003" trending="false">
-			<Name>ifTableIfType</Name>
+			<Name>ifTableType</Name>
 			<Description>Type (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -1868,7 +1868,7 @@ Additional values for Type are assigned by the Internet Assigned Numbers Authori
 			</Measurement>
 		</Param>
 		<Param id="1004" trending="false">
-			<Name>ifTableIfMtu</Name>
+			<Name>ifTableMtu</Name>
 			<Description>MTU (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -1900,7 +1900,7 @@ For interfaces that are used for transmitting network datagrams, this is the siz
 			</Measurement>
 		</Param>
 		<Param id="1005" trending="false">
-			<Name>ifTableIfSpeed</Name>
+			<Name>ifTableSpeed</Name>
 			<Description>Speed (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -1946,7 +1946,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 			</Measurement>
 		</Param>
 		<Param id="1006" trending="false">
-			<Name>ifTableIfPhysAddress</Name>
+			<Name>ifTablePhysAddress</Name>
 			<Description>Physical Address (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -1981,7 +1981,7 @@ For interfaces which do not have such an address (e.g., a serial line), this obj
 			</Measurement>
 		</Param>
 		<Param id="1007" trending="false">
-			<Name>ifTableIfAdminStatus</Name>
+			<Name>ifTableAdminStatus</Name>
 			<Description>Admin Status (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2024,7 +2024,7 @@ As a result of either explicit management action or per configuration informatio
 			</Measurement>
 		</Param>
 		<Param id="1057" snmpSetAndGet="true">
-			<Name>ifTableIfAdminStatus</Name>
+			<Name>ifTableAdminStatus</Name>
 			<Description>Admin Status (If Table)</Description>
 			<Type>write</Type>
 			<Interprete>
@@ -2059,7 +2059,7 @@ As a result of either explicit management action or per configuration informatio
 			</Measurement>
 		</Param>
 		<Param id="1008" trending="false">
-			<Name>ifTableIfOperStatus</Name>
+			<Name>ifTableOperStatus</Name>
 			<Description>Operational Status (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2121,7 +2121,7 @@ it should remain in the Not Present(6) state if the interface has missing (typic
 			</Measurement>
 		</Param>
 		<Param id="1009" trending="false">
-			<Name>ifTableIfLastChange</Name>
+			<Name>ifTableLastChange</Name>
 			<Description>Last Change (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2159,7 +2159,7 @@ If the current state was entered prior to the last re-initialization of the loca
 			</Measurement>
 		</Param>
 		<Param id="1010" trending="false">
-			<Name>ifTableIfInOctets</Name>
+			<Name>ifTableOctetsIn</Name>
 			<Description>In Octets (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2192,7 +2192,40 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1011" trending="false">
-			<Name>ifTableIfInUcastPkts</Name>
+			<Name>ifTableOctetsOut</Name>
+			<Description>Out Octets (If Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The total number of octets transmitted out of the interface, including framing characters.
+
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.2.1.2.2.1.16</OID>
+				<Type>counter32</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Octets</Units>
+				<Range>
+					<Low>0</Low>
+					<High>4294967295</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1012" trending="false">
+			<Name>ifTableUcastPktsIn</Name>
 			<Description>In Unicast Packets (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2224,8 +2257,41 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1012" trending="false">
-			<Name>ifTableIfInDiscards</Name>
+		<Param id="1013" trending="false">
+			<Name>ifTableUcastPktsOut</Name>
+			<Description>Out Unicast Packets (If Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and which were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent.
+
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.2.1.2.2.1.17</OID>
+				<Type>counter32</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Packets</Units>
+				<Range>
+					<Low>0</Low>
+					<High>4294967295</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1014" trending="false">
+			<Name>ifTableDiscardsIn</Name>
 			<Description>In Discards (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2258,8 +2324,42 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1013" trending="false">
-			<Name>ifTableIfInErrors</Name>
+		<Param id="1015" trending="false">
+			<Name>ifTableDiscardsOut</Name>
+			<Description>Out Discards (If Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The number of outbound packets which were chosen to be discarded even though no errors had been detected to prevent their being transmitted.
+One possible reason for discarding such a packet could be to free up buffer space.
+
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.2.1.2.2.1.19</OID>
+				<Type>counter32</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Packets</Units>
+				<Range>
+					<Low>0</Low>
+					<High>4294967295</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1016" trending="false">
+			<Name>ifTableErrorsIn</Name>
 			<Description>In Errors (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2295,8 +2395,45 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1014" trending="false">
-			<Name>ifTableIfInUnknownProtos</Name>
+		<Param id="1017" trending="false">
+			<Name>ifTableErrorsOut</Name>
+			<Description>Out Errors (If Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.
+For character-oriented or fixed-length interfaces, the number of outbound transmission units that could not be transmitted because of errors.
+
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.2.1.2.2.1.20</OID>
+				<Type>counter32</Type>
+			</SNMP>
+			<!-- SuppressValidator 2.9.7 Unit depends on interface type:
+- For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.
+- For character-oriented or fixed-length interfaces, the number of outbound transmission units that could not be transmitted because of errors. -->
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Range>
+					<Low>0</Low>
+					<High>4294967295</High>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1018" trending="false">
+			<Name>ifTableUnknownProtosIn</Name>
 			<Description>In Unknown Protocols (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2333,145 +2470,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1015" trending="false">
-			<Name>ifTableIfOutOctets</Name>
-			<Description>Out Octets (If Table)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of octets transmitted out of the interface, including framing characters.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.2.1.2.2.1.16</OID>
-				<Type>counter32</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Octets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1016" trending="false">
-			<Name>ifTableIfOutUcastPkts</Name>
-			<Description>Out Unicast Packets (If Table)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and which were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.2.1.2.2.1.17</OID>
-				<Type>counter32</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1017" trending="false">
-			<Name>ifTableIfOutDiscards</Name>
-			<Description>Out Discards (If Table)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of outbound packets which were chosen to be discarded even though no errors had been detected to prevent their being transmitted.
-One possible reason for discarding such a packet could be to free up buffer space.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.2.1.2.2.1.19</OID>
-				<Type>counter32</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1018" trending="false">
-			<Name>ifTableIfOutErrors</Name>
-			<Description>Out Errors (If Table)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.
-For character-oriented or fixed-length interfaces, the number of outbound transmission units that could not be transmitted because of errors.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.2.1.2.2.1.20</OID>
-				<Type>counter32</Type>
-			</SNMP>
-			<!-- SuppressValidator 2.9.7 Unit depends on interface type:
-- For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.
-- For character-oriented or fixed-length interfaces, the number of outbound transmission units that could not be transmitted because of errors. -->
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
 		<Param id="1019" trending="false">
-			<Name>ifTableInBitRate</Name>
+			<Name>ifTableBitRateIn</Name>
 			<Description>In Bit Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input bit rate of the interface.</Subtext>
@@ -2500,7 +2500,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1020" trending="false">
-			<Name>ifTableOutBitRate</Name>
+			<Name>ifTableBitRateOut</Name>
 			<Description>Out Bit Rate (If Table)</Description>
 			<Information>
 				<Subtext>The output bit rate of the interface.</Subtext>
@@ -2529,6 +2529,209 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1021" trending="false">
+			<Name>ifTableUnicastRateIn</Name>
+			<Description>In Unicast Rate (If Table)</Description>
+			<Information>
+				<Subtext>The input unicast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1022" trending="false">
+			<Name>ifTableUnicastRateOut</Name>
+			<Description>Out Unicast Rate (If Table)</Description>
+			<Information>
+				<Subtext>The output unicast rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1023" trending="false">
+			<Name>ifTableDiscardRateIn</Name>
+			<Description>In Discard Rate (If Table)</Description>
+			<Information>
+				<Subtext>The input discard rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1024" trending="false">
+			<Name>ifTableDiscardRateOut</Name>
+			<Description>Out Discard Rate (If Table)</Description>
+			<Information>
+				<Subtext>The output discard rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1025" trending="false">
+			<Name>ifTableErrorRateIn</Name>
+			<Description>In Error Rate (If Table)</Description>
+			<Information>
+				<Subtext>The input error rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1026" trending="false">
+			<Name>ifTableErrorRateOut</Name>
+			<Description>Out Error Rate (If Table)</Description>
+			<Information>
+				<Subtext>The output error rate of the interface.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1027" trending="false">
+			<Name>ifTableUnknownProtosRateIn</Name>
+			<Description>In Unknown Protos Rate (If Table)</Description>
+			<Information>
+				<Subtext>The input packet rate of the interface that was discarded due to unknown protocol.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Pps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1028" trending="false">
 			<Name>ifTableBandwidthUtilization</Name>
 			<Description>Bandwidth Utilization (If Table)</Description>
 			<Information>
@@ -2563,7 +2766,7 @@ Currently only calculated for Ethernet interfaces.
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1022" trending="false">
+		<Param id="1029" trending="false">
 			<Name>ifTableRatesData</Name>
 			<Description>Rates Data (If Table)</Description>
 			<Type>read</Type>
@@ -2582,210 +2785,9 @@ Currently only calculated for Ethernet interfaces.
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1023" trending="false">
-			<Name>ifTableInUnicastRate</Name>
-			<Description>In Unicast Rate (If Table)</Description>
-			<Information>
-				<Subtext>The input unicast rate of the interface.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Pps</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1024" trending="false">
-			<Name>ifTableOutUnicastRate</Name>
-			<Description>Out Unicast Rate (If Table)</Description>
-			<Information>
-				<Subtext>The output unicast rate of the interface.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Pps</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1025" trending="false">
-			<Name>ifTableInDiscardRate</Name>
-			<Description>In Discard Rate (If Table)</Description>
-			<Information>
-				<Subtext>The input discard rate of the interface.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Pps</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1026" trending="false">
-			<Name>ifTableOutDiscardRate</Name>
-			<Description>Out Discard Rate (If Table)</Description>
-			<Information>
-				<Subtext>The output discard rate of the interface.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Pps</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1027" trending="false">
-			<Name>ifTableInErrorRate</Name>
-			<Description>In Error Rate (If Table)</Description>
-			<Information>
-				<Subtext>The input error rate of the interface.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Pps</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1028" trending="false">
-			<Name>ifTableOutErrorRate</Name>
-			<Description>Out Error Rate (If Table)</Description>
-			<Information>
-				<Subtext>The output error rate of the interface.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Pps</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1029" trending="false">
-			<Name>ifTableInUnknownProtosRate</Name>
-			<Description>In Unknown Protos Rate (If Table)</Description>
-			<Information>
-				<Subtext>The input packet rate of the interface that was discarded due to unknown protocol.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Pps</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-
+		
+		
+		
 		<Param id="1091">
 			<Name>ifXTableTimeoutTrigger</Name>
 			<Description>InterfaceX Table Timeout Trigger</Description>
@@ -4120,7 +4122,7 @@ Currently only calculated for Ethernet interfaces.
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="1191">
 			<Name>interfacesTableMerge</Name>
 			<Description>Interfaces Table Merge Trigger</Description>
@@ -4207,7 +4209,7 @@ Currently only calculated for Ethernet interfaces.
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="1300">
 			<Name>dot3StatsTable</Name>
 			<Description>Ethernet Interfaces</Description>
@@ -4307,7 +4309,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="2000" trending="false">
 			<Name>InterfacesState</Name>
 			<Description>Interfaces</Description>
@@ -5222,7 +5224,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="2100">
 			<Name>InterfacesStateCountersRx</Name>
 			<Description>Interfaces Counters Rx</Description>
@@ -5642,7 +5644,7 @@ other times as indicated by the value of
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="2200">
 			<Name>InterfacesStateCountersTx</Name>
 			<Description>Interfaces Counters Tx</Description>
