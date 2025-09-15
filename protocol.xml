@@ -4444,10 +4444,8 @@ The value for each interface sub-layer must remain constant at least from one re
 			<Description>MTU (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Set the max transmission unit size in octets
-for the physical interface.  If this is not set, the mtu is
-set to the operational default -- e.g., 1514 bytes on an
-Ethernet interface.]]>
+					<![CDATA[Set the max transmission unit size in octets for the physical interface.
+If this is not set, the MTU is set to the operational default -- e.g., 1514 bytes on an Ethernet interface.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4514,10 +4512,9 @@ Ethernet interface.]]>
 			<Description>Admin Status (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The desired state of the interface.  In RFC 7223 this leaf
-has the same read semantics as ifAdminStatus.  Here, it
-reflects the administrative state as set by enabling or
-disabling the interface.]]>
+					<![CDATA[The desired state of the interface.
+In RFC 7223 this leaf has the same read semantics as ifAdminStatus.
+Here, it reflects the administrative state as set by enabling or disabling the interface.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4688,9 +4685,7 @@ If the state change happened before the last re-initialization of the local mana
 			<Description>Logical (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[When set to true, the interface is a logical interface
-which does not have an associated physical port or
-channel on the system.]]>
+					<![CDATA[When set to true, the interface is a logical interface which does not have an associated physical port or channel on the system.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4732,13 +4727,8 @@ channel on the system.]]>
 			<Description>Rx Octets (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The total number of octets received on the interface,
-including framing characters.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[The total number of octets received on the interface, including framing characters.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4774,13 +4764,8 @@ other times as indicated by the value of
 			<Description>Tx Octets (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The total number of octets transmitted out of the
-interface, including framing characters.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[The total number of octets transmitted out of the interface, including framing characters.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4926,9 +4911,7 @@ other times as indicated by the value of
 			<Description>User Description (Interfaces)</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>
-					Custome description for the interface.
-				</Subtext>
+				<Subtext>Custom description for the interface.</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -5040,7 +5023,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 			<Information>
 				<Subtext>
 					<![CDATA[The current mode of operation of the MAC entity.
-'N/A' indicates the Duplex Status can not be known.
+'N/A' indicates the Duplex Status cannot be known.
 The Duplex Status can currently only be known on Ethernet interfaces.
 
 'unknown' indicates that the current duplex mode could not be determined by the SNMP Agent on the Ethernet inteface.
@@ -5277,7 +5260,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 			<Information>
 				<Subtext>
 					<![CDATA[The total number of packets received on the interface,
-including all unicast, multicast, broadcast and bad packets etc.]]>
+including all unicast, multicast, broadcast, and bad packets etc.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5314,14 +5297,8 @@ including all unicast, multicast, broadcast and bad packets etc.]]>
 			<Description>In Unicast Rate (Interfaces Counters Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a
-higher (sub-)layer, that were not addressed to a
-multicast or broadcast address at this sub-layer.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5358,14 +5335,8 @@ other times as indicated by the value of
 			<Description>In Broadcast Rate (Interfaces Counters Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a
-higher (sub-)layer, that were addressed to a broadcast
-address at this sub-layer.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were addressed to a broadcast address at this sub-layer.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5402,15 +5373,9 @@ other times as indicated by the value of
 			<Description>In Multicast Rate (Interfaces Counters Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a
-higher (sub-)layer, that were addressed to a multicast
-address at this sub-layer.  For a MAC-layer protocol,
-this includes both Group and Functional addresses.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were addressed to a multicast address at this sub-layer.
+For a MAC-layer protocol, this includes both Group and Functional addresses.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5447,16 +5412,9 @@ other times as indicated by the value of
 			<Description>In Discards Rate (Interfaces Counters Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of inbound packets that were chosen to be
-discarded even though no errors had been detected to
-prevent their being deliverable to a higher-layer
-protocol.  One possible reason for discarding such a
-packet could be to free up buffer space.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[The number of inbound packets that were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol.
+One possible reason for discarding such a packet could be to free up buffer space.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5496,18 +5454,9 @@ other times as indicated by the value of
 			<Description>In Errors Rate (Interfaces Counters Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of inbound
-packets that contained errors preventing them from being
-deliverable to a higher-layer protocol.  For character-
-oriented or fixed-length interfaces, the number of
-inbound transmission units that contained errors
-preventing them from being deliverable to a higher-layer
-protocol.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[For packet-oriented interfaces, the number of inbound packets that contained errors preventing them from being deliverable to a higher-layer protocol.
+For character-oriented or fixed-length interfaces, the number of inbound transmission units that contained errors preventing them from being deliverable to a higher-layer protocol.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5549,20 +5498,10 @@ other times as indicated by the value of
 			<Description>In Unknown Protocols Rate (Interfaces Counters Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of packets
-received via the interface that were discarded because
-of an unknown or unsupported protocol.  For
-character-oriented or fixed-length interfaces that
-support protocol multiplexing, the number of
-transmission units received via the interface that were
-discarded because of an unknown or unsupported protocol.
-For any interface that does not support protocol
-multiplexing, this counter is not present.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[For packet-oriented interfaces, the number of packets received via the interface that were discarded because of an unknown or unsupported protocol.
+For character-oriented or fixed-length interfaces that support protocol multiplexing, the number of transmission units received via the interface that were discarded because of an unknown or unsupported protocol.
+For any interface that does not support protocol multiplexing, this counter is not present.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5604,7 +5543,7 @@ other times as indicated by the value of
 			<Description>FK to Interfaces (Interfaces Counters Rx)</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>This is the foreignkey to the interfaces table.</Subtext>
+				<Subtext>This is the foreign key to the Interfaces Table.</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -5695,9 +5634,7 @@ other times as indicated by the value of
 			<Description>Out Packets Rate (Interfaces Counters Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The total number of packets transmitted out of the
-interface, including all unicast, multicast, broadcast,
-and bad packets etc.]]>
+					<![CDATA[The total number of packets transmitted out of the interface, including all unicast, multicast, broadcast, and bad packets etc.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5734,14 +5671,8 @@ and bad packets etc.]]>
 			<Description>Out Unicast Rate (Interfaces Counters Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a
-higher (sub-)layer, that were not addressed to a
-multicast or broadcast address at this sub-layer.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5778,15 +5709,8 @@ other times as indicated by the value of
 			<Description>Out Broadcast Rate (Interfaces Counters Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols
-requested be transmitted, and that were addressed to a
-broadcast address at this sub-layer, including those
-that were discarded or not sent.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and that were addressed to a broadcast address at this sub-layer, including those that were discarded or not sent.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5823,17 +5747,9 @@ other times as indicated by the value of
 			<Description>Out Multicast Rate (Interfaces Counters Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols
-requested be transmitted, and that were addressed to a
-multicast address at this sub-layer, including those
-that were discarded or not sent.  For a MAC-layer
-protocol, this includes both Group and Functional
-addresses.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and that were addressed to a multicast address at this sub-layer, including those that were discarded or not sent.
+For a MAC-layer protocol, this includes both Group and Functional addresses.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5870,16 +5786,9 @@ other times as indicated by the value of
 			<Description>Out Discards Rate (Interfaces Counters Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of outbound packets that were chosen to be
-discarded even though no errors had been detected to
-prevent their being transmitted.  One possible reason
-for discarding such a packet could be to free up buffer
-space.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[The number of outbound packets that were chosen to be discarded even though no errors had been detected to prevent their being transmitted.
+One possible reason for discarding such a packet could be to free up buffer space.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5919,16 +5828,9 @@ other times as indicated by the value of
 			<Description>Out Errors Rate (Interfaces Counters Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of outbound
-packets that could not be transmitted because of errors.
-For character-oriented or fixed-length interfaces, the
-number of outbound transmission units that could not be
-transmitted because of errors.
-
-Discontinuities in the value of this counter can occur
-at re-initialization of the management system, and at
-other times as indicated by the value of
-'last-clear'.]]>
+					<![CDATA[For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.
+For character-oriented or fixed-length interfaces, the number of outbound transmission units that could not be transmitted because of errors.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'last-clear'.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -5968,7 +5870,7 @@ other times as indicated by the value of
 			<Description>FK to Interfaces (Interfaces Counters Tx)</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>This is the foreignkey to the interfaces table.</Subtext>
+				<Subtext>This is the foreign key to the Interfaces Table.</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
