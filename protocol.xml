@@ -6510,6 +6510,21 @@ other times as indicated by the value of
 									</MinorVersion>
 								</MinorVersions>
 							</MajorVersion>
+							<MajorVersion id="1">
+								<MinorVersions>
+									<MinorVersion id="1" basedOn="1.0.0.7">
+										<Date>2025-09-15</Date>
+										<Provider>
+											<Author>CYK</Author>
+											<Company>Skyline Communications</Company>
+										</Provider>
+										<Changes>
+											<NewFeature>Add rates for all interface counters</NewFeature>
+											<NewFeature>Split interface table into three displayed tables</NewFeature>
+										</Changes>
+									</MinorVersion>
+								</MinorVersions>
+							</MajorVersion>
 						</MajorVersions>
 					</SystemVersion>
 				</SystemVersions>
