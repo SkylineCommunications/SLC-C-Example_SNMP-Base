@@ -1,5 +1,4 @@
 using System;
-
 using Skyline.DataMiner.Scripting;
 using Skyline.Protocol.IfTable;
 
@@ -16,7 +15,7 @@ public class IfTable
 	{
 		try
 		{
-			IfTableProcessor interfaceTableProcessor = new IfTableProcessor(protocol);
+			var interfaceTableProcessor = new IfTableProcessor(protocol);
 			interfaceTableProcessor.ProcessData();
 			interfaceTableProcessor.UpdateProtocol();
 		}
@@ -35,7 +34,7 @@ public class IfTable
 	{
 		try
 		{
-			IfTableTimeoutProcessor interfaceTableProcessor = new IfTableTimeoutProcessor(protocol);
+			var interfaceTableProcessor = new IfTableTimeoutProcessor(protocol);
 			interfaceTableProcessor.ProcessTimeout();
 			interfaceTableProcessor.UpdateProtocol();
 		}
