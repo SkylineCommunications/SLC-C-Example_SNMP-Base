@@ -37,7 +37,7 @@ public class QAction
 
 				case Parameter.Write.interfacesstatepromiscuousmode_2069:
 					protocol.SetParameters(
-						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtableifpromiscuousmode_1157 },
+						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtablepromiscuousmode_1157 },
 						new[] { rowKey, value });
 
 					protocol.CheckTrigger(TriggerIfXTable);
@@ -45,7 +45,7 @@ public class QAction
 
 				case Parameter.Write.interfacesstateuserdescription_2065:
 					protocol.SetParameters(
-						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtableifalias_1159 },
+						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtablealias_1159 },
 						new[] { rowKey, value });
 
 					protocol.CheckTrigger(TriggerIfXTable);
@@ -53,7 +53,7 @@ public class QAction
 
 				case Parameter.Write.interfacesstatelinkupdowntrap_2070:
 					protocol.SetParameters(
-						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtableiflinkupdowntrapenable_1155 },
+						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtablelinkupdowntrapenable_1155 },
 						new[] { rowKey, value });
 
 					protocol.CheckTrigger(TriggerIfXTable);

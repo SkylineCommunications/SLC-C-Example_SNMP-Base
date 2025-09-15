@@ -88,7 +88,7 @@
 			{
 				uint[] columnsToGet = new uint[]
 				{
-					Parameter.Ifxtable.Idx.ifxtableifindex,
+					Parameter.Ifxtable.Idx.ifxtableindex_1101,
 					Parameter.Ifxtable.Idx.ifxtableratesdata,
 				};
 
@@ -253,23 +253,23 @@
 			ulong hcBroadcastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.HCBroadcastPktsOut[getPosition]));
 			double hcBroadcastRateOut = CalculateRate(key, hcBroadcastPktsOut, snmpDeltaHelper, rateData.HCBroadcastRateOut);
 
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableinmulticastrate_1125].Add(multicastRateIn);
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableoutmulticastrate_1126].Add(multicastRateOut);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablemulticastratein_1125].Add(multicastRateIn);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablemulticastrateout_1126].Add(multicastRateOut);
 
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableinbroadcastrate_1127].Add(broadcastRateIn);
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableoutbroadcastrate_1128].Add(broadcastRateOut);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablebroadcastratein_1127].Add(broadcastRateIn);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablebroadcastrateout_1128].Add(broadcastRateOut);
 
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableinbitrate_1121].Add(bitrateIn);
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableoutbitrate_1122].Add(bitrateOut);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablebitratein_1121].Add(bitrateIn);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablebitrateout_1122].Add(bitrateOut);
 
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableinhcucastrate_1129].Add(hcUnicastRateIn);
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableouthcucastrate_1130].Add(hcUnicastRateOut);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablehcucastratein_1129].Add(hcUnicastRateIn);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablehcucastrateout_1130].Add(hcUnicastRateOut);
 
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableinhcmulticastrate_1131].Add(hcMulticastRateIn);
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableouthcmulticastrate_1132].Add(hcMulticastRateOut);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablehcmulticastratein_1131].Add(hcMulticastRateIn);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablehcmulticastrateout_1132].Add(hcMulticastRateOut);
 
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableinhcbroadcastrate_1133].Add(hcBroadcastRateIn);
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableouthcbroadcastrate_1134].Add(hcBroadcastRateOut);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablehcbroadcastratein_1133].Add(hcBroadcastRateIn);
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtablehcbroadcastrateout_1134].Add(hcBroadcastRateOut);
 
 			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableratesdata].Add(rateData.ToJsonString());
 		}
@@ -385,21 +385,21 @@
 
 				uint[] columnsToGet = new uint[]
 				{
-					Parameter.Ifxtable.Idx.ifxtableifindex_1101,
-					Parameter.Ifxtable.Idx.ifxtableifinmulticastpkts_1103,
-					Parameter.Ifxtable.Idx.ifxtableifoutmulticastpkts_1105,
-					Parameter.Ifxtable.Idx.ifxtableifinbroadcastpkts_1104,
-					Parameter.Ifxtable.Idx.ifxtableifoutbroadcastpkts_1106,
-					Parameter.Ifxtable.Idx.ifxtableifhcinoctets_1107,
-					Parameter.Ifxtable.Idx.ifxtableifhcoutoctets_1111,
-					Parameter.Ifxtable.Idx.ifxtableifhcinucastpkts_1108,
-					Parameter.Ifxtable.Idx.ifxtableifhcoutucastpkts_1112,
-					Parameter.Ifxtable.Idx.ifxtableifhcinmulticastpkts_1109,
-					Parameter.Ifxtable.Idx.ifxtableifhcoutmulticastpkts_1113,
-					Parameter.Ifxtable.Idx.ifxtableifhcinbroadcastpkts_1110,
-					Parameter.Ifxtable.Idx.ifxtableifhcoutbroadcastpkts_1114,
-					Parameter.Ifxtable.Idx.ifxtableifhighspeed_1116,
-					Parameter.Ifxtable.Idx.ifxtableifcounterdiscontinuitytime_1120,
+					Parameter.Ifxtable.Idx.ifxtableindex_1101,
+					Parameter.Ifxtable.Idx.ifxtablemulticastpktsin_1103,
+					Parameter.Ifxtable.Idx.ifxtablemulticastpktsout_1104,
+					Parameter.Ifxtable.Idx.ifxtablebroadcastpktsin_1105,
+					Parameter.Ifxtable.Idx.ifxtablebroadcastpktsout_1106,
+					Parameter.Ifxtable.Idx.ifxtablehcoctetsin_1107,
+					Parameter.Ifxtable.Idx.ifxtablehcoctetsout_1108,
+					Parameter.Ifxtable.Idx.ifxtablehcucastpktsin_1109,
+					Parameter.Ifxtable.Idx.ifxtablehcucastpktsout_1110,
+					Parameter.Ifxtable.Idx.ifxtablehcmulticastpktsin_1111,
+					Parameter.Ifxtable.Idx.ifxtablehcmulticastpktsout_1112,
+					Parameter.Ifxtable.Idx.ifxtablehcbroadcastpktsin_1113,
+					Parameter.Ifxtable.Idx.ifxtablehcbroadcastpktsout_1114,
+					Parameter.Ifxtable.Idx.ifxtablehighspeed_1116,
+					Parameter.Ifxtable.Idx.ifxtablecounterdiscontinuitytime_1120,
 					Parameter.Ifxtable.Idx.ifxtableratesdata_1124,
 				};
 
@@ -436,18 +436,18 @@
 			public Dictionary<int, List<object>> SetColumnsData { get; } = new Dictionary<int, List<object>>
 			{
 				{ Parameter.Ifxtable.tablePid, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableinmulticastrate_1125, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableoutmulticastrate_1126, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableinbroadcastrate_1127, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableoutbroadcastrate_1128, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableinbitrate_1121, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableoutbitrate_1122, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableinhcucastrate_1129, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableouthcucastrate_1130, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableinhcmulticastrate_1131, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableouthcmulticastrate_1132, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableinhcbroadcastrate_1133, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableouthcbroadcastrate_1134, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablemulticastratein_1125, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablemulticastrateout_1126, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablebroadcastratein_1127, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablebroadcastrateout_1128, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablebitratein_1121, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablebitrateout_1122, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablehcucastratein_1129, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablehcucastrateout_1130, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablehcmulticastratein_1131, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablehcmulticastrateout_1132, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablehcbroadcastratein_1133, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablehcbroadcastrateout_1134, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtablebandwidthutilization, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtableratesdata, new List<object>() },
 			};

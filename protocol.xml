@@ -2918,7 +2918,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1101" trending="false">
-			<Name>ifXTableIfIndex</Name>
+			<Name>ifXTableIndex</Name>
 			<Description>Index (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -2943,7 +2943,7 @@ The value for each interface sub-layer must remain constant at least from one re
 			</Measurement>
 		</Param>
 		<Param id="1102" trending="false">
-			<Name>ifXTableIfName</Name>
+			<Name>ifXTableName</Name>
 			<Description>Name (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -2981,7 +2981,7 @@ Note that for an agent which responds to SNMP queries concerning an interface on
 			</Measurement>
 		</Param>
 		<Param id="1103" trending="false">
-			<Name>ifXTableIfInMulticastPkts</Name>
+			<Name>ifXTableMulticastPktsIn</Name>
 			<Description>In Multicast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3015,40 +3015,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1104" trending="false">
-			<Name>ifXTableIfInBroadcastPkts</Name>
-			<Description>In Broadcast Packets (If X Table)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a broadcast address at this sub-layer.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.2.1.31.1.1.1.3</OID>
-				<Type>counter32</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1105" trending="false">
-			<Name>ifXTableIfOutMulticastPkts</Name>
+			<Name>ifXTableMulticastPktsOut</Name>
 			<Description>Out Multicast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3081,8 +3048,42 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
+		<Param id="1105" trending="false">
+			<Name>ifXTableBroadcastPktsIn</Name>
+			<Description>In Broadcast Packets (If X Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a broadcast address at this sub-layer.
+
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.2.1.31.1.1.1.3</OID>
+				<Type>counter32</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Packets</Units>
+				<Range>
+					<Low>0</Low>
+					<High>4294967295</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		
 		<Param id="1106" trending="false">
-			<Name>ifXTableIfOutBroadcastPkts</Name>
+			<Name>ifXTableBroadcastPktsOut</Name>
 			<Description>Out Broadcast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3115,7 +3116,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1107" trending="false">
-			<Name>ifXTableIfHCInOctets</Name>
+			<Name>ifXTableHCOctetsIn</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>High Capacity In Octets (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3151,7 +3152,41 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1108" trending="false">
-			<Name>ifXTableIfHCInUcastPkts</Name>
+			<Name>ifXTableHCOctetsOut</Name>
+			<Description>High Capacity Out Octets (If X Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The total number of octets transmitted out of the interface, including framing characters.
+This object is a 64-bit version of Out Octets.
+
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.2.1.31.1.1.1.10</OID>
+				<Type>counter64String</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Octets</Units>
+				<Range>
+					<Low>0</Low>
+					<High>18446744073709551615</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1109" trending="false">
+			<Name>ifXTableHCUcastPktsIn</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>High Capacity In Unicast Packets (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3186,8 +3221,42 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1109" trending="false">
-			<Name>ifXTableIfHCInMulticastPkts</Name>
+		<Param id="1110" trending="false">
+			<Name>ifXTableHCUcastPktsOut</Name>
+			<Description>High Capacity Out Unicast Packets (If X Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and which were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent.
+This object is a 64-bit version of Out Unicast Packets.
+
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.2.1.31.1.1.1.11</OID>
+				<Type>counter64String</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Packets</Units>
+				<Range>
+					<Low>0</Low>
+					<High>18446744073709551615</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1111" trending="false">
+			<Name>ifXTableHCMulticastPktsIn</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>High Capacity In Multicast Packets (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3223,8 +3292,43 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1110" trending="false">
-			<Name>ifXTableIfHCInBroadcastPkts</Name>
+		<Param id="1112" trending="false">
+			<Name>ifXTableHCMulticastPktsOut</Name>
+			<Description>High Capacity Out Multicast Packets (If X Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a multicast address at this sub-layer, including those that were discarded or not sent.
+For a MAC layer protocol, this includes both Group and Functional addresses.
+This object is a 64-bit version of Out Multicast Packets.
+
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.2.1.31.1.1.1.12</OID>
+				<Type>counter64String</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>Packets</Units>
+				<Range>
+					<Low>0</Low>
+					<High>18446744073709551615</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1113" trending="false">
+			<Name>ifXTableHCBroadcastPktsIn</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>High Capacity In Broadcast Packets (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3259,111 +3363,10 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1111" trending="false">
-			<Name>ifXTableIfHCOutOctets</Name>
-			<Description>High Capacity Out Octets (If X Table)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of octets transmitted out of the interface, including framing characters.
-This object is a 64-bit version of Out Octets.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.2.1.31.1.1.1.10</OID>
-				<Type>counter64String</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Octets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>18446744073709551615</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1112" trending="false">
-			<Name>ifXTableIfHCOutUcastPkts</Name>
-			<Description>High Capacity Out Unicast Packets (If X Table)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and which were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent.
-This object is a 64-bit version of Out Unicast Packets.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.2.1.31.1.1.1.11</OID>
-				<Type>counter64String</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>18446744073709551615</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1113" trending="false">
-			<Name>ifXTableIfHCOutMulticastPkts</Name>
-			<Description>High Capacity Out Multicast Packets (If X Table)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a multicast address at this sub-layer, including those that were discarded or not sent.
-For a MAC layer protocol, this includes both Group and Functional addresses.
-This object is a 64-bit version of Out Multicast Packets.
-
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of Counter Discontinuity Time.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.2.1.31.1.1.1.12</OID>
-				<Type>counter64String</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>Packets</Units>
-				<Range>
-					<Low>0</Low>
-					<High>18446744073709551615</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
+		
+		
 		<Param id="1114" trending="false">
-			<Name>ifXTableIfHCOutBroadcastPkts</Name>
+			<Name>ifXTableHCBroadcastPktsOut</Name>
 			<Description>High Capacity Out Broadcast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3397,7 +3400,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1115" trending="false">
-			<Name>ifXTableIfLinkUpDownTrapEnable</Name>
+			<Name>ifXTableLinkUpDownTrapEnable</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>Link Up/Down Traps (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3437,7 +3440,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 			</Measurement>
 		</Param>
 		<Param id="1155" snmpSetAndGet="true">
-			<Name>ifXTableIfLinkUpDownTrapEnable</Name>
+			<Name>ifXTableLinkUpDownTrapEnable</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>Link Up/Down Traps (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3470,7 +3473,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 			</Measurement>
 		</Param>
 		<Param id="1116" trending="false">
-			<Name>ifXTableIfHighSpeed</Name>
+			<Name>ifXTableHighSpeed</Name>
 			<Description>High Speed (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3511,7 +3514,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 			</Measurement>
 		</Param>
 		<Param id="1117" trending="false">
-			<Name>ifXTableIfPromiscuousMode</Name>
+			<Name>ifXTablePromiscuousMode</Name>
 			<Description>Promiscuous Mode (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3552,7 +3555,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 			</Measurement>
 		</Param>
 		<Param id="1157" snmpSetAndGet="true">
-			<Name>ifXTableIfPromiscuousMode</Name>
+			<Name>ifXTablePromiscuousMode</Name>
 			<Description>Promiscuous Mode (If X Table)</Description>
 			<Type>write</Type>
 			<Interprete>
@@ -3583,7 +3586,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 			</Measurement>
 		</Param>
 		<Param id="1118" trending="false">
-			<Name>ifXTableIfConnectorPresent</Name>
+			<Name>ifXTableConnectorPresent</Name>
 			<Description>Connector Present (If X Table)</Description>
 			<Information>
 				<Subtext>This object has the value 'True(1)' if the interface sublayer has a physical connector and the value 'False(2)' otherwise.</Subtext>
@@ -3617,7 +3620,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 			</Measurement>
 		</Param>
 		<Param id="1119" trending="false">
-			<Name>ifXTableIfAlias</Name>
+			<Name>ifXTableAlias</Name>
 			<Description>Alias (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3655,7 +3658,7 @@ An agent which supports write access to this object is required to keep the valu
 			</Measurement>
 		</Param>
 		<Param id="1159" snmpSetAndGet="true">
-			<Name>ifXTableIfAlias</Name>
+			<Name>ifXTableAlias</Name>
 			<Description>Alias (If X Table)</Description>
 			<Type>write</Type>
 			<Interprete>
@@ -3680,7 +3683,7 @@ An agent which supports write access to this object is required to keep the valu
 			</Measurement>
 		</Param>
 		<Param id="1120" trending="false">
-			<Name>ifXTableIfCounterDiscontinuityTime</Name>
+			<Name>ifXTableCounterDiscontinuityTime</Name>
 			<Description>Counter Discontinuity Time (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3721,7 +3724,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</Measurement>
 		</Param>
 		<Param id="1121" trending="false">
-			<Name>ifXTableInBitRate</Name>
+			<Name>ifXTableBitRateIn</Name>
 			<Description>In Bit Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input bit rate of the interface.</Subtext>
@@ -3750,7 +3753,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</Measurement>
 		</Param>
 		<Param id="1122" trending="false">
-			<Name>ifXTableOutBitRate</Name>
+			<Name>ifXTableBitRateOut</Name>
 			<Description>Out Bit Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output bit rate of the interface.</Subtext>
@@ -3833,7 +3836,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1125" trending="false">
-			<Name>ifXTableInMulticastRate</Name>
+			<Name>ifXTableMulticastRateIn</Name>
 			<Description>In Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input multicast rate of the interface.</Subtext>
@@ -3862,7 +3865,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1126" trending="false">
-			<Name>ifXTableOutMulticastRate</Name>
+			<Name>ifXTableMulticastRateOut</Name>
 			<Description>Out Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output multicast rate of the interface.</Subtext>
@@ -3891,7 +3894,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1127" trending="false">
-			<Name>ifXTableInBroadcastRate</Name>
+			<Name>ifXTableBroadcastRateIn</Name>
 			<Description>In Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input broadcast rate of the interface.</Subtext>
@@ -3920,7 +3923,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1128" trending="false">
-			<Name>ifXTableOutBroadcastRate</Name>
+			<Name>ifXTableBroadcastRateOut</Name>
 			<Description>Out Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output broadcast rate of the interface.</Subtext>
@@ -3949,7 +3952,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1129" trending="false">
-			<Name>ifXTableInHcUcastRate</Name>
+			<Name>ifXTableHcUcastRateIn</Name>
 			<Description>In HC Unicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input high capacity unicast rate of the interface.</Subtext>
@@ -3978,7 +3981,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1130" trending="false">
-			<Name>ifXTableOutHcUcastRate</Name>
+			<Name>ifXTableHcUcastRateOut</Name>
 			<Description>Out HC Unicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output HC unicast rate of the interface.</Subtext>
@@ -4007,7 +4010,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1131" trending="false">
-			<Name>ifXTableInHcMulticastRate</Name>
+			<Name>ifXTableHcMulticastRateIn</Name>
 			<Description>In HC Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input high capacity multicast rate of the interface.</Subtext>
@@ -4036,7 +4039,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1132" trending="false">
-			<Name>ifXTableOutHcMulticastRate</Name>
+			<Name>ifXTableHcMulticastRateOut</Name>
 			<Description>Out HC Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output HC multicast rate of the interface.</Subtext>
@@ -4065,7 +4068,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1133" trending="false">
-			<Name>ifXTableInHcBroadcastRate</Name>
+			<Name>ifXTableHcBroadcastRateIn</Name>
 			<Description>In HC Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input HC broadcast rate of the interface.</Subtext>
@@ -4094,7 +4097,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1134" trending="false">
-			<Name>ifXTableOutHcBroadcastRate</Name>
+			<Name>ifXTableHcBroadcastRateOut</Name>
 			<Description>Out HC Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output HC broadcast rate of the interface.</Subtext>

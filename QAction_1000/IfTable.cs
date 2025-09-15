@@ -400,8 +400,8 @@
 			{
 				uint[] columnsToGet = new uint[]
 				{
-					Parameter.Ifxtable.Idx.ifxtableifindex,
-					Parameter.Ifxtable.Idx.ifxtableifcounterdiscontinuitytime,
+					Parameter.Ifxtable.Idx.ifxtableindex_1101,
+					Parameter.Ifxtable.Idx.ifxtablecounterdiscontinuitytime_1120,
 				};
 
 				object[] ifXTableData = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);
