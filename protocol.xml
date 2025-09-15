@@ -4160,7 +4160,7 @@ Currently only calculated for Ethernet interfaces.
 					</Position>
 				</Positions>
 			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4427,7 +4427,7 @@ The value for each interface sub-layer must remain constant at least from one re
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case.-->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case.-->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4473,7 +4473,7 @@ Ethernet interface.]]>
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4497,7 +4497,7 @@ Ethernet interface.]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>false</Monitored>
 			</Alarm>
@@ -4653,14 +4653,8 @@ disabling the interface.]]>
 			<Description>Last Change (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[This timestamp indicates the absolute time of the last
-state change of the interface (e.g., up-to-down transition).
-This is different than the SNMP ifLastChange object in the
-standard interface MIB in that it is not relative to the
-system boot time (i.e,. sysUpTime).
-
-The value is the timestamp in nanoseconds relative to
-the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
+					<![CDATA[Uptime value of the system when the interface entered its current operational state.
+If the state change happened before the last re-initialization of the local management subsystem, this will be N/A.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4676,7 +4670,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4686,7 +4680,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Decimals>8</Decimals>
 			</Display>
 			<Measurement>
-				<Type options="datetime">number</Type>
+				<Type options="time">number</Type>
 			</Measurement>
 		</Param>
 		<Param id="2008" trending="true">
@@ -4714,7 +4708,7 @@ channel on the system.]]>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4759,7 +4753,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4801,7 +4795,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4822,11 +4816,7 @@ other times as indicated by the value of
 			<Description>Last Clear (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Timestamp of the last time the interface counters were
-cleared.
-
-The value is the timestamp in nanoseconds relative to
-the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
+					<![CDATA[Timestamp of the last time the interface counters were cleared.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4836,13 +4826,13 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<LengthType>next param</LengthType>
 				<Decimals>8</Decimals>
 				<Exceptions>
-					<Exception id="1" value="-1">
+					<Exception id="1" value="0">
 						<Display state="disabled">N/A</Display>
 						<Value>-1</Value>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4852,7 +4842,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Decimals>8</Decimals>
 			</Display>
 			<Measurement>
-				<Type options="datetime">number</Type>
+				<Type options="time">number</Type>
 			</Measurement>
 		</Param>
 		<Param id="2013" trending="true">
@@ -4876,7 +4866,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4914,7 +4904,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -4945,7 +4935,7 @@ the Unix Epoch (Jan 1, 1970 00:00:00 UTC).]]>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5072,7 +5062,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5291,7 +5281,7 @@ including all unicast, multicast, broadcast and bad packets etc.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5335,7 +5325,7 @@ other times as indicated by the value of
 				</Subtext>
 			</Information>
 			<Type>read</Type>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5390,7 +5380,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5435,7 +5425,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5722,7 +5712,7 @@ and bad packets etc.]]>
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5766,7 +5756,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5811,7 +5801,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
@@ -5858,7 +5848,7 @@ other times as indicated by the value of
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case. -->
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
 				<Monitored>true</Monitored>
 			</Alarm>
