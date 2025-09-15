@@ -7,7 +7,7 @@ using Skyline.DataMiner.Utils.Protocol.Extension;
 /// <summary>
 /// DataMiner QAction Class: Merge Interface Tables.
 /// </summary>
-public class QAction
+public static class QAction
 {
 	private const uint MaxReportableIfSpeed = uint.MaxValue;
 
@@ -66,24 +66,24 @@ public class QAction
 					MergeFromSnmpIfXTable(interfaceStatesTableRow, interfaceCountersRxTableRow, interfaceCountersTxTableRow, ifxtable, i);
 
 					// Interface Counters RX Table
-					interfaceCountersRxTableRow.Interfacedetailsrxinrate_2102 = new[]
+					interfaceCountersRxTableRow.Interfacedetailsrxrate_2102 = new[]
 					{
-						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxinunicastrate_2103),
-						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxinbroadcastrate_2104),
-						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxinmulticastrate_2105),
-						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxindiscardsrate_2106),
-						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxinerrorsrate_2107),
-						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxinunknownprotosrate_2108),
+						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxunicastrate_2103),
+						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxbroadcastrate_2104),
+						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxmulticastrate_2105),
+						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxdiscardrate_2106),
+						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxerrorrate_2107),
+						Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxunknownprotocolrate_2108),
 					}.Sum();
 
 					// Interface Counters TX Table
-					interfaceCountersTxTableRow.Interfacedetailstxoutrate_2202 = new[]
+					interfaceCountersTxTableRow.Interfacedetailstxrate_2202 = new[]
 					{
-						Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxoutunicastrate_2203),
-						Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxoutbroadcastrate_2204),
-						Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxoutmulticastrate_2205),
-						Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxoutdiscardsrate_2206),
-						Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxouterrorsrate_2207),
+						Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxunicastrate_2203),
+						Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxbroadcastrate_2204),
+						Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxmulticastrate_2205),
+						Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxdiscardrate_2206),
+						Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxerrorrate_2207),
 					}.Sum();
 				}
 			}
@@ -139,7 +139,7 @@ public class QAction
 		// Keys
 		var key = Convert.ToString(iftable.Keys[getPosition]);
 		interfaceTableRow.Interfacesindex_2001 = key;
-		interfaceCountersRxTableRow.Interfacedetailsrxindex_2101 = interfaceCountersRxTableRow.Interfacedetailsrxfktointerfaces_2109 = key;
+		interfaceCountersRxTableRow.Interfacedetailsrxdex_2101 = interfaceCountersRxTableRow.Interfacedetailsrxfktointerfaces_2109 = key;
 		interfaceCountersTxTableRow.Interfacedetailstxindex_2201 = interfaceCountersTxTableRow.Interfacedetailstxfktointerfaces_2208 = key;
 
 		// Interface States Table
@@ -156,14 +156,13 @@ public class QAction
 			interfaceTableRow.Interfacesspeed_2016 = Convert.ToDouble(iftable.Speeds[getPosition]) / Math.Pow(10, 6);
 		}
 
-
 		// Discards, Errors, Unknown Protocols only have 32-bit counters.
-		interfaceCountersRxTableRow.Interfacedetailsrxindiscardsrate_2106 = Convert.ToDouble(iftable.DiscardRateIn[getPosition]);
-		interfaceCountersRxTableRow.Interfacedetailsrxinerrorsrate_2107 = Convert.ToDouble(iftable.ErrorRateIn[getPosition]);
-		interfaceCountersRxTableRow.Interfacedetailsrxinunknownprotosrate_2108 = Convert.ToDouble(iftable.UnknownProtosRateIn[getPosition]);
+		interfaceCountersRxTableRow.Interfacedetailsrxdiscardrate_2106 = Convert.ToDouble(iftable.DiscardRateIn[getPosition]);
+		interfaceCountersRxTableRow.Interfacedetailsrxerrorrate_2107 = Convert.ToDouble(iftable.ErrorRateIn[getPosition]);
+		interfaceCountersRxTableRow.Interfacedetailsrxunknownprotocolrate_2108 = Convert.ToDouble(iftable.UnknownProtosRateIn[getPosition]);
 
-		interfaceCountersTxTableRow.Interfacedetailstxoutdiscardsrate_2206 = Convert.ToDouble(iftable.DiscardRateOut[getPosition]);
-		interfaceCountersTxTableRow.Interfacedetailstxouterrorsrate_2207 = Convert.ToDouble(iftable.ErrorRateOut[getPosition]);
+		interfaceCountersTxTableRow.Interfacedetailstxdiscardrate_2206 = Convert.ToDouble(iftable.DiscardRateOut[getPosition]);
+		interfaceCountersTxTableRow.Interfacedetailstxerrorrate_2207 = Convert.ToDouble(iftable.ErrorRateOut[getPosition]);
 
 		if (Convert.ToDouble(iftable.Speeds[getPosition]) <= SpeedLimitForCounters)
 		{
@@ -182,10 +181,10 @@ public class QAction
 			interfaceTableRow.Interfacesbandwidthutilization_2017 = Convert.ToDouble(iftable.BandwidthUtilization[getPosition]);
 
 			// Interface Counters RX Table
-			interfaceCountersRxTableRow.Interfacedetailsrxinunicastrate_2103 = Convert.ToDouble(iftable.UniCastRateIn[getPosition]);
+			interfaceCountersRxTableRow.Interfacedetailsrxunicastrate_2103 = Convert.ToDouble(iftable.UniCastRateIn[getPosition]);
 
 			// Interface Counters TX Table
-			interfaceCountersTxTableRow.Interfacedetailstxoutunicastrate_2203 = Convert.ToDouble(iftable.UniCastRateOut[getPosition]);
+			interfaceCountersTxTableRow.Interfacedetailstxunicastrate_2203 = Convert.ToDouble(iftable.UniCastRateOut[getPosition]);
 		}
 	}
 
@@ -226,15 +225,15 @@ public class QAction
 		int getPosition)
 	{
 		// Interface Counters RX Table
-		interfaceCountersRxTableRow.Interfacedetailsrxinbroadcastrate_2104 =
+		interfaceCountersRxTableRow.Interfacedetailsrxbroadcastrate_2104 =
 			ifxtable.BroadcastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.BroadcastRateIn[getPosition]);
-		interfaceCountersRxTableRow.Interfacedetailsrxinmulticastrate_2105 =
+		interfaceCountersRxTableRow.Interfacedetailsrxmulticastrate_2105 =
 			ifxtable.MulticastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.MulticastRateIn[getPosition]);
 
 		// Interface Counters TX Table
-		interfaceCountersTxTableRow.Interfacedetailstxoutbroadcastrate_2204 =
+		interfaceCountersTxTableRow.Interfacedetailstxbroadcastrate_2204 =
 			ifxtable.BroadcastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.BroadcastRateOut[getPosition]);
-		interfaceCountersTxTableRow.Interfacedetailstxoutmulticastrate_2205 =
+		interfaceCountersTxTableRow.Interfacedetailstxmulticastrate_2205 =
 			ifxtable.MulticastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.MulticastRateOut[getPosition]);
 
 		var dBitrateIn = Convert.ToDouble(ifxtable.HCBitRateIn[getPosition]);
@@ -266,19 +265,19 @@ public class QAction
 		interfaceTableRow.Interfacestxbitrate_2014 = bitrateOut >= 0 ? bitrateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
 
 		// Interface Counters RX Table
-		interfaceCountersRxTableRow.Interfacedetailsrxinunicastrate_2103 =
+		interfaceCountersRxTableRow.Interfacedetailsrxunicastrate_2103 =
 			ifxtable.HCUnicastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCUnicastRateIn[getPosition]);
-		interfaceCountersRxTableRow.Interfacedetailsrxinbroadcastrate_2104 =
+		interfaceCountersRxTableRow.Interfacedetailsrxbroadcastrate_2104 =
 			ifxtable.HCBroadcastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCBroadcastRateIn[getPosition]);
-		interfaceCountersRxTableRow.Interfacedetailsrxinmulticastrate_2105 =
+		interfaceCountersRxTableRow.Interfacedetailsrxmulticastrate_2105 =
 			ifxtable.HCMulticastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCMulticastRateIn[getPosition]);
 
 		// Interface Counters TX Table
-		interfaceCountersTxTableRow.Interfacedetailstxoutunicastrate_2203 =
+		interfaceCountersTxTableRow.Interfacedetailstxunicastrate_2203 =
 			ifxtable.HCUnicastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCUnicastRateOut[getPosition]);
-		interfaceCountersTxTableRow.Interfacedetailstxoutbroadcastrate_2204 =
+		interfaceCountersTxTableRow.Interfacedetailstxbroadcastrate_2204 =
 			ifxtable.HCBroadcastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCBroadcastRateOut[getPosition]);
-		interfaceCountersTxTableRow.Interfacedetailstxoutmulticastrate_2205 =
+		interfaceCountersTxTableRow.Interfacedetailstxmulticastrate_2205 =
 			ifxtable.HCMulticastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifxtable.HCMulticastRateOut[getPosition]);
 	}
 }
@@ -336,7 +335,7 @@ public class IfTable
 			Parameter.Iftable.Idx.iftablediscardrateout_1024,
 			Parameter.Iftable.Idx.iftableerrorratein_1025,
 			Parameter.Iftable.Idx.iftableerrorrateout_1026,
-			Parameter.Iftable.Idx.iftableunknownprotosratein_1027,
+			Parameter.Iftable.Idx.iftableunknownprotocolratein_1027,
 		};
 
 		var ifTableColumns = protocol.GetColumns(Parameter.Iftable.tablePid, columnsToGet);

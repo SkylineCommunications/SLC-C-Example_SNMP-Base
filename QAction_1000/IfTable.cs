@@ -250,7 +250,7 @@
 			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableerrorratein_1025].Add(errorrateIn);
 			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableerrorrateout_1026].Add(errorrateOut);
 
-			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableunknownprotosratein_1027].Add(unknownprotosrateIn);
+			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableunknownprotocolratein_1027].Add(unknownprotosrateIn);
 
 			iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableratesdata].Add(rateData.ToJsonString());
 		}
@@ -441,7 +441,7 @@
 				{ Parameter.Iftable.Pid.iftablediscardrateout_1024, new List<object>() },
 				{ Parameter.Iftable.Pid.iftableerrorratein_1025, new List<object>() },
 				{ Parameter.Iftable.Pid.iftableerrorrateout_1026, new List<object>() },
-				{ Parameter.Iftable.Pid.iftableunknownprotosratein_1027, new List<object>() },
+				{ Parameter.Iftable.Pid.iftableunknownprotocolratein_1027, new List<object>() },
 			};
 
 			internal Dictionary<int, object> SetParamsData { get; } = new Dictionary<int, object>();
