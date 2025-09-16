@@ -70,26 +70,8 @@ public static class QAction
 
 				PopulateDataFromInterfaceExtendedTable(interfaceStatesTableRow, interfaceCountersRxTableRow, interfaceCountersTxTableRow, interfaceExtendedTable, i);
 
-				// Interface Counters RX Table
-				interfaceCountersRxTableRow.Interfacedetailsrxrate_2102 = new[]
-				{
-					Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxunicastrate_2103),
-					Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxbroadcastrate_2104),
-					Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxmulticastrate_2105),
-					Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxdiscardrate_2106),
-					Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxerrorrate_2107),
-					Convert.ToDouble(interfaceCountersRxTableRow.Interfacedetailsrxunknownprotocolrate_2108),
-				}.Sum();
-
-				// Interface Counters TX Table
-				interfaceCountersTxTableRow.Interfacedetailstxrate_2202 = new[]
-				{
-					Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxunicastrate_2203),
-					Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxbroadcastrate_2204),
-					Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxmulticastrate_2205),
-					Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxdiscardrate_2206),
-					Convert.ToDouble(interfaceCountersTxTableRow.Interfacedetailstxerrorrate_2207),
-				}.Sum();
+				interfaceCountersRxTableRow.Interfacedetailsrxrate_2102 = GetSummablePacketRates(interfaceCountersRxTableRow).Sum();
+				interfaceCountersTxTableRow.Interfacedetailstxrate_2202 = GetSummablePacketRates(interfaceCountersTxTableRow).Sum();
 			}
 
 			var rowCount = interfaceTablesRowData.Count;
@@ -113,6 +95,25 @@ public static class QAction
 		{
 			protocol.Log($"QA{protocol.QActionID}|Run|Error: {ex}", LogType.Error, LogLevel.NoLogging);
 		}
+	}
+
+	private static IEnumerable<double> GetSummablePacketRates(InterfacedetailsrxQActionRow row)
+	{
+		yield return Convert.ToDouble(row.Interfacedetailsrxunicastrate_2103).ZeroIfException(-1);
+		yield return Convert.ToDouble(row.Interfacedetailsrxbroadcastrate_2104).ZeroIfException(-1);
+		yield return Convert.ToDouble(row.Interfacedetailsrxmulticastrate_2105).ZeroIfException(-1);
+		yield return Convert.ToDouble(row.Interfacedetailsrxdiscardrate_2106).ZeroIfException(-1);
+		yield return Convert.ToDouble(row.Interfacedetailsrxerrorrate_2107).ZeroIfException(-1);
+		yield return Convert.ToDouble(row.Interfacedetailsrxunknownprotocolrate_2108).ZeroIfException(-1);
+	}
+
+	private static IEnumerable<double> GetSummablePacketRates(InterfacedetailstxQActionRow row)
+	{
+		yield return Convert.ToDouble(row.Interfacedetailstxunicastrate_2203).ZeroIfException(-1);
+		yield return Convert.ToDouble(row.Interfacedetailstxbroadcastrate_2204).ZeroIfException(-1);
+		yield return Convert.ToDouble(row.Interfacedetailstxmulticastrate_2205).ZeroIfException(-1);
+		yield return Convert.ToDouble(row.Interfacedetailstxdiscardrate_2206).ZeroIfException(-1);
+		yield return Convert.ToDouble(row.Interfacedetailstxerrorrate_2207).ZeroIfException(-1);
 	}
 
 	private static Dictionary<string, int> GetDuplexStatus(SLProtocol protocol)
@@ -289,5 +290,14 @@ public static class QAction
 			interfaceExtendedTable.HcBroadcastRateOut[getPosition] == null ? -1 : Convert.ToDouble(interfaceExtendedTable.HcBroadcastRateOut[getPosition]);
 		interfaceCountersTxTableRow.Interfacedetailstxmulticastrate_2205 =
 			interfaceExtendedTable.HcMulticastRateOut[getPosition] == null ? -1 : Convert.ToDouble(interfaceExtendedTable.HcMulticastRateOut[getPosition]);
+	}
+}
+
+internal static class RateDoubleExtensions
+{
+	public static double ZeroIfException(this double value, double exception, double tolerance = 1e-6)
+	{
+		var isException = Math.Abs(value - exception) < tolerance;
+		return isException ? 0 : value;
 	}
 }
