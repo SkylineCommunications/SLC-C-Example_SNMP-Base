@@ -2786,8 +2786,6 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		
-		
-		
 		<Param id="1091">
 			<Name>ifXTableTimeoutTrigger</Name>
 			<Description>InterfaceX Table Timeout Trigger</Description>
@@ -3081,7 +3079,6 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		
 		<Param id="1106" trending="false">
 			<Name>ifXTableBroadcastPktsOut</Name>
 			<Description>Out Broadcast Packets (If X Table)</Description>
@@ -3363,8 +3360,6 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		
-		
 		<Param id="1114" trending="false">
 			<Name>ifXTableHCBroadcastPktsOut</Name>
 			<Description>High Capacity Out Broadcast Packets (If X Table)</Description>
@@ -4370,7 +4365,9 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			<Name>InterfacesDisplayKey</Name>
 			<Description>Display Key (Interfaces)</Description>
 			<Information>
-				<Subtext><![CDATA[Readable description provided in the format of: {Index} - {Description} - {User Description}]]></Subtext>
+				<Subtext>
+					<![CDATA[Readable description provided in the format of: {Index} - {Description} - {User Description}]]>
+				</Subtext>
 			</Information>
 			<Type>read</Type>
 			<Interprete>

@@ -183,7 +183,7 @@
 			return bitRate;
 		}
 
-		private void ProcessRates(SnmpDeltaHelper snmpDeltaHelper, int getPosition, out double bitrateIn, out double bitrateOut)
+		private void ProcessRates(SnmpDeltaHelper snmpDeltaHelper, int getPosition, out double bitRateIn, out double bitRateOut)
 		{
 			var key = Convert.ToString(interfaceTableGetter.Keys[getPosition]);
 
@@ -207,10 +207,10 @@
 			}
 
 			var octetsIn = SafeConvert.ToUInt32(Convert.ToDouble(interfaceTableGetter.OctetsIn[getPosition]));
-			bitrateIn = CalculateBitRate(key, octetsIn, snmpDeltaHelper, rateData.BitRateIn);
+			bitRateIn = CalculateBitRate(key, octetsIn, snmpDeltaHelper, rateData.BitRateIn);
 
 			var octetsOut = SafeConvert.ToUInt32(Convert.ToDouble(interfaceTableGetter.OctetsOut[getPosition]));
-			bitrateOut = CalculateBitRate(key, octetsOut, snmpDeltaHelper, rateData.BitRateOut);
+			bitRateOut = CalculateBitRate(key, octetsOut, snmpDeltaHelper, rateData.BitRateOut);
 
 			var unicastIn = SafeConvert.ToUInt32(Convert.ToDouble(interfaceTableGetter.UnicastPacketsIn[getPosition]));
 			var unicastRateIn = CalculateRate(key, unicastIn, snmpDeltaHelper, rateData.UnicastRateIn);
@@ -233,8 +233,8 @@
 			var unknownProtocolsIn = SafeConvert.ToUInt32(Convert.ToDouble(interfaceTableGetter.UnknownIn[getPosition]));
 			var unknownProtocolRateIn = CalculateRate(key, unknownProtocolsIn, snmpDeltaHelper, rateData.UnknownProtocolsRateIn);
 
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftablebitratein_1019].Add(bitrateIn);
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftablebitrateout_1020].Add(bitrateOut);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftablebitratein_1019].Add(bitRateIn);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftablebitrateout_1020].Add(bitRateOut);
 
 			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableunicastratein_1021].Add(unicastRateIn);
 			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableunicastrateout_1022].Add(unicastRateOut);
