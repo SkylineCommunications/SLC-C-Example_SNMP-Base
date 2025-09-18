@@ -4414,9 +4414,9 @@ The value for each interface sub-layer must remain constant at least from one re
 			</Information>
 			<Type>read</Type>
 			<Interprete>
-				<RawType>other</RawType>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
 				<LengthType>next param</LengthType>
-				<Type>string</Type>
 				<Exceptions>
 					<Exception id="1" value="-1">
 						<Display state="disabled">N/A</Display>
@@ -4433,7 +4433,1202 @@ The value for each interface sub-layer must remain constant at least from one re
 				<RTDisplay>true</RTDisplay>
 			</Display>
 			<Measurement>
-				<Type>string</Type>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Other</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Regular 1822</Display>
+						<Value>2</Value>
+					</Discreet>
+					<Discreet>
+						<Display>HDH 1822</Display>
+						<Value>3</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DDN X 25</Display>
+						<Value>4</Value>
+					</Discreet>
+					<Discreet>
+						<Display>RFC 877 X.25</Display>
+						<Value>5</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Ethernet CSMACD</Display>
+						<Value>6</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISO 8802.3 CSMA/CD</Display>
+						<Value>7</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISO 8802.4 Token Bus</Display>
+						<Value>8</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISO 8802.5 Token Ring</Display>
+						<Value>9</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISO 8802.6 MAN</Display>
+						<Value>10</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Star LAN</Display>
+						<Value>11</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PROTEON 10 Mb</Display>
+						<Value>12</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PROTEON 80 Mb</Display>
+						<Value>13</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>HYPERchannel</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>14</Value>
+					</Discreet>
+					<Discreet>
+						<Display>FDDI</Display>
+						<Value>15</Value>
+					</Discreet>
+					<Discreet>
+						<Display>LAPB</Display>
+						<Value>16</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SDLC</Display>
+						<Value>17</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DS1</Display>
+						<Value>18</Value>
+					</Discreet>
+					<Discreet>
+						<Display>E1</Display>
+						<Value>19</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Basic ISDN</Display>
+						<Value>20</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Primary ISDN</Display>
+						<Value>21</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Proprietary Point to Point Serial</Display>
+						<Value>22</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PPP</Display>
+						<Value>23</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Software Loopback</Display>
+						<Value>24</Value>
+					</Discreet>
+					<Discreet>
+						<Display>EON</Display>
+						<Value>25</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Ethernet 3 Mb</Display>
+						<Value>26</Value>
+					</Discreet>
+					<Discreet>
+						<Display>NSIP</Display>
+						<Value>27</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>SlIP</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>28</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Ultra</Display>
+						<Value>29</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DS3</Display>
+						<Value>30</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SIP</Display>
+						<Value>31</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Frame Relay</Display>
+						<Value>32</Value>
+					</Discreet>
+					<Discreet>
+						<Display>RS-232</Display>
+						<Value>33</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Parallel Port</Display>
+						<Value>34</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ARCNET</Display>
+						<Value>35</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ARCNET Plus</Display>
+						<Value>36</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ATM</Display>
+						<Value>37</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MIOX 25</Display>
+						<Value>38</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SONET</Display>
+						<Value>39</Value>
+					</Discreet>
+					<Discreet>
+						<Display>X.25 PLE</Display>
+						<Value>40</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISO 8802.2 LLC</Display>
+						<Value>41</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Local Talk</Display>
+						<Value>42</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SMDS DXI</Display>
+						<Value>43</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Frame Relay Service</Display>
+						<Value>44</Value>
+					</Discreet>
+					<Discreet>
+						<Display>V.35</Display>
+						<Value>45</Value>
+					</Discreet>
+					<Discreet>
+						<Display>HSSI</Display>
+						<Value>46</Value>
+					</Discreet>
+					<Discreet>
+						<Display>HIPPI</Display>
+						<Value>47</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Modem</Display>
+						<Value>48</Value>
+					</Discreet>
+					<Discreet>
+						<Display>AAL5</Display>
+						<Value>49</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SONET Path</Display>
+						<Value>50</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SONET VT</Display>
+						<Value>51</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SMDS ICIP</Display>
+						<Value>52</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Proprietary Virtual</Display>
+						<Value>53</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Proprietary Multiplexor</Display>
+						<Value>54</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IEEE 802.12</Display>
+						<Value>55</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Fiber Channel</Display>
+						<Value>56</Value>
+					</Discreet>
+					<Discreet>
+						<Display>HIPPI Interface</Display>
+						<Value>57</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Frame Relay Interconnect</Display>
+						<Value>58</Value>
+					</Discreet>
+					<Discreet>
+						<Display>AFLANE 802.3</Display>
+						<Value>59</Value>
+					</Discreet>
+					<Discreet>
+						<Display>AFLANE 802.5</Display>
+						<Value>60</Value>
+					</Discreet>
+					<Discreet>
+						<Display>CCT Emulated</Display>
+						<Value>61</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Fast Ether</Display>
+						<Value>62</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISDN</Display>
+						<Value>63</Value>
+					</Discreet>
+					<Discreet>
+						<Display>V.11</Display>
+						<Value>64</Value>
+					</Discreet>
+					<Discreet>
+						<Display>V.36</Display>
+						<Value>65</Value>
+					</Discreet>
+					<Discreet>
+						<Display>G.703 at 64kbps</Display>
+						<Value>66</Value>
+					</Discreet>
+					<Discreet>
+						<Display>G.703 at 2 Mbps</Display>
+						<Value>67</Value>
+					</Discreet>
+					<Discreet>
+						<Display>QLLC</Display>
+						<Value>68</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Fast Ether FX</Display>
+						<Value>69</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Channel</Display>
+						<Value>70</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IEEE 802.11</Display>
+						<Value>71</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IBM System 360/370 Channel</Display>
+						<Value>72</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ESCON</Display>
+						<Value>73</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DLSW</Display>
+						<Value>74</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISDN S/T Interface</Display>
+						<Value>75</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISDN U Interface</Display>
+						<Value>76</Value>
+					</Discreet>
+					<Discreet>
+						<Display>LAPD</Display>
+						<Value>77</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IP Switch</Display>
+						<Value>78</Value>
+					</Discreet>
+					<Discreet>
+						<Display>RSRB</Display>
+						<Value>79</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ATM Logical</Display>
+						<Value>80</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DS0</Display>
+						<Value>81</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DS0 Bundle</Display>
+						<Value>82</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Bisynchronous Protocol</Display>
+						<Value>83</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Asynchronous Protocol</Display>
+						<Value>84</Value>
+					</Discreet>
+					<Discreet>
+						<Display>CNR</Display>
+						<Value>85</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISO 8802.5 DTR</Display>
+						<Value>86</Value>
+					</Discreet>
+					<Discreet>
+						<Display>EPLRS</Display>
+						<Value>87</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ARAP</Display>
+						<Value>88</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Proprietary CNLS</Display>
+						<Value>89</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Host PAD</Display>
+						<Value>90</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Term PAD</Display>
+						<Value>91</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Frame Relay MPI</Display>
+						<Value>92</Value>
+					</Discreet>
+					<Discreet>
+						<Display>X.213</Display>
+						<Value>93</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ADSL</Display>
+						<Value>94</Value>
+					</Discreet>
+					<Discreet>
+						<Display>RADSL</Display>
+						<Value>95</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SDSL</Display>
+						<Value>96</Value>
+					</Discreet>
+					<Discreet>
+						<Display>VDSL</Display>
+						<Value>97</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISO 8802.5 CRFP Int</Display>
+						<Value>98</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Myrinet</Display>
+						<Value>99</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice EM</Display>
+						<Value>100</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice FXO</Display>
+						<Value>101</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice FXS</Display>
+						<Value>102</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice ENCAP</Display>
+						<Value>103</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice over IP</Display>
+						<Value>104</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ATM DXI</Display>
+						<Value>105</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ATM FUNI</Display>
+						<Value>106</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ATM IMA</Display>
+						<Value>107</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PPP Multilink Bundle</Display>
+						<Value>108</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IP over CDLC</Display>
+						<Value>109</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IP over Claw</Display>
+						<Value>110</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Stack to Stack</Display>
+						<Value>111</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Virtual IP Address</Display>
+						<Value>112</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MPC</Display>
+						<Value>113</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IP over ATM</Display>
+						<Value>114</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISO 8802.5 Fiber</Display>
+						<Value>115</Value>
+					</Discreet>
+					<Discreet>
+						<Display>TDLC</Display>
+						<Value>116</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Gigabit Ethernet</Display>
+						<Value>117</Value>
+					</Discreet>
+					<Discreet>
+						<Display>HDLC</Display>
+						<Value>118</Value>
+					</Discreet>
+					<Discreet>
+						<Display>LAPF</Display>
+						<Value>119</Value>
+					</Discreet>
+					<Discreet>
+						<Display>V.37</Display>
+						<Value>120</Value>
+					</Discreet>
+					<Discreet>
+						<Display>X.25 MLP</Display>
+						<Value>121</Value>
+					</Discreet>
+					<Discreet>
+						<Display>X.25 Hunt Group</Display>
+						<Value>122</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Transparent HDLC</Display>
+						<Value>123</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Interleave Channel</Display>
+						<Value>124</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Fast Channel</Display>
+						<Value>125</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IP</Display>
+						<Value>126</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DOCS Cable MAC Layer</Display>
+						<Value>127</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DOCS Cable Downstream</Display>
+						<Value>128</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Docs Cable Upstream</Display>
+						<Value>129</Value>
+					</Discreet>
+					<Discreet>
+						<Display>A 12 MPP Switch</Display>
+						<Value>130</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Tunnel</Display>
+						<Value>131</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Coffee</Display>
+						<Value>132</Value>
+					</Discreet>
+					<Discreet>
+						<Display>CES</Display>
+						<Value>133</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ATM Sub Interface</Display>
+						<Value>134</Value>
+					</Discreet>
+					<Discreet>
+						<Display>L2 VLAN</Display>
+						<Value>135</Value>
+					</Discreet>
+					<Discreet>
+						<Display>L3 IP VLAN</Display>
+						<Value>136</Value>
+					</Discreet>
+					<Discreet>
+						<Display>L3 IPC VLAN</Display>
+						<Value>137</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Digital Powerline</Display>
+						<Value>138</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Media Mail over IP</Display>
+						<Value>139</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DTM</Display>
+						<Value>140</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DCN</Display>
+						<Value>141</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IP Forward</Display>
+						<Value>142</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MSDSL</Display>
+						<Value>143</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IEEE 1394</Display>
+						<Value>144</Value>
+					</Discreet>
+					<Discreet>
+						<Display>If GSN</Display>
+						<Value>145</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DVB-RCC MAC Layer</Display>
+						<Value>146</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DVB-RCC Downstream</Display>
+						<Value>147</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DVB-RCC Upstream</Display>
+						<Value>148</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ATM Virtual</Display>
+						<Value>149</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MPLS Tunnel</Display>
+						<Value>150</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SRP</Display>
+						<Value>151</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice over ATM</Display>
+						<Value>152</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice over Frame Relay</Display>
+						<Value>153</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IDSL</Display>
+						<Value>154</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Composite Link</Display>
+						<Value>155</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SS7 Signaling Link</Display>
+						<Value>156</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Proprietary Wireless P2P</Display>
+						<Value>157</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Frame Forward</Display>
+						<Value>158</Value>
+					</Discreet>
+					<Discreet>
+						<Display>RFC 1483</Display>
+						<Value>159</Value>
+					</Discreet>
+					<Discreet>
+						<Display>USB</Display>
+						<Value>160</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>IEEE 802.3ad Link Aggregate</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>161</Value>
+					</Discreet>
+					<Discreet>
+						<Display>BGP Policy Accounting</Display>
+						<Value>162</Value>
+					</Discreet>
+					<Discreet>
+						<Display>FRF.16 MFR Bundle</Display>
+						<Value>163</Value>
+					</Discreet>
+					<Discreet>
+						<Display>H.323 Gatekeeper</Display>
+						<Value>164</Value>
+					</Discreet>
+					<Discreet>
+						<Display>H.323 Proxy</Display>
+						<Value>165</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MPLS</Display>
+						<Value>166</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MF Signaling Link</Display>
+						<Value>167</Value>
+					</Discreet>
+					<Discreet>
+						<Display>HDSL2</Display>
+						<Value>168</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SHDSL</Display>
+						<Value>169</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DS1 FDL</Display>
+						<Value>170</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Packet over SONET/SDH</Display>
+						<Value>171</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DVB ASI In</Display>
+						<Value>172</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DVB ASI Out</Display>
+						<Value>173</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PLC</Display>
+						<Value>174</Value>
+					</Discreet>
+					<Discreet>
+						<Display>NFAS</Display>
+						<Value>175</Value>
+					</Discreet>
+					<Discreet>
+						<Display>TR008</Display>
+						<Value>176</Value>
+					</Discreet>
+					<Discreet>
+						<Display>GR-303 RDT</Display>
+						<Value>177</Value>
+					</Discreet>
+					<Discreet>
+						<Display>GR-303 IDT</Display>
+						<Value>178</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ISUP</Display>
+						<Value>179</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Proprietary DOCs Wireless MAC Layer</Display>
+						<Value>180</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Proprietary DOCS Wireless Downstream</Display>
+						<Value>181</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Proprietary DOCS Wireless Upstream</Display>
+						<Value>182</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>HiperLAN 2</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>183</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Proprietary BW AP 2 Mp</Display>
+						<Value>184</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SONET Overhead Channel</Display>
+						<Value>185</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Digital Wrapper Overhead Channel</Display>
+						<Value>186</Value>
+					</Discreet>
+					<Discreet>
+						<Display>AAL2</Display>
+						<Value>187</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Radio MAC</Display>
+						<Value>188</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ATM Radio</Display>
+						<Value>189</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IMT</Display>
+						<Value>190</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MVL</Display>
+						<Value>191</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Reach DSL</Display>
+						<Value>192</Value>
+					</Discreet>
+					<Discreet>
+						<Display>FR DLCI End Point</Display>
+						<Value>193</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ATM VCI End Point</Display>
+						<Value>194</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Optical Channel</Display>
+						<Value>195</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Optical Transport</Display>
+						<Value>196</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Proprietary ATM</Display>
+						<Value>197</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice over Cable</Display>
+						<Value>198</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Infiniband</Display>
+						<Value>199</Value>
+					</Discreet>
+					<Discreet>
+						<Display>TE Link</Display>
+						<Value>200</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Q.2931</Display>
+						<Value>201</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Virtual Trunk Group</Display>
+						<Value>202</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SIP Trunk Group</Display>
+						<Value>203</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SIP Signaling</Display>
+						<Value>204</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DOCS Cable Upstream Channel</Display>
+						<Value>205</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Econet</Display>
+						<Value>206</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PON 155</Display>
+						<Value>207</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PON 622</Display>
+						<Value>208</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Bridge</Display>
+						<Value>209</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Line Group</Display>
+						<Value>210</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice EMFGD</Display>
+						<Value>211</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice FGDEANA</Display>
+						<Value>212</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice DID</Display>
+						<Value>213</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MPEG Transport</Display>
+						<Value>214</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>6to4</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>215</Value>
+					</Discreet>
+					<Discreet>
+						<Display>GTP</Display>
+						<Value>216</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PDN Ether Loop 1</Display>
+						<Value>217</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PDN Ether Loop 2</Display>
+						<Value>218</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Optical Channel Group</Display>
+						<Value>219</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>HomePNA</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>220</Value>
+					</Discreet>
+					<Discreet>
+						<Display>GFP</Display>
+						<Value>221</Value>
+					</Discreet>
+					<Discreet>
+						<Display>CISCO IS LVLAN</Display>
+						<Value>222</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Actelis Meta LOOP</Display>
+						<Value>223</Value>
+					</Discreet>
+					<Discreet>
+						<Display>FCIP Link</Display>
+						<Value>224</Value>
+					</Discreet>
+					<Discreet>
+						<Display>RPR</Display>
+						<Value>225</Value>
+					</Discreet>
+					<Discreet>
+						<Display>QAM</Display>
+						<Value>226</Value>
+					</Discreet>
+					<Discreet>
+						<Display>LMP</Display>
+						<Value>227</Value>
+					</Discreet>
+					<Discreet>
+						<Display>CBL Vecta Star</Display>
+						<Value>228</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DOCS Cable Modular CMTS Downstream</Display>
+						<Value>229</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ADSL2</Display>
+						<Value>230</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MAC Sec Controlled IF</Display>
+						<Value>231</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MAC Sec Uncontrolled IF</Display>
+						<Value>232</Value>
+					</Discreet>
+					<Discreet>
+						<Display>AVICI Optical Ether</Display>
+						<Value>233</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>ATMBond</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>234</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice FGD Operator Service</Display>
+						<Value>235</Value>
+					</Discreet>
+					<Discreet>
+						<Display>MoCA Version 1</Display>
+						<Value>236</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IEEE 802.16 WMAN</Display>
+						<Value>237</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ADSL2+</Display>
+						<Value>238</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DVB-RCS MAC Layer</Display>
+						<Value>239</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DVB Satellite TDM</Display>
+						<Value>240</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DVB-RCS TDMA</Display>
+						<Value>241</Value>
+					</Discreet>
+					<Discreet>
+						<Display>X.86 Laps</Display>
+						<Value>242</Value>
+					</Discreet>
+					<Discreet>
+						<Display>WWAN PP</Display>
+						<Value>243</Value>
+					</Discreet>
+					<Discreet>
+						<Display>WWAN PP2</Display>
+						<Value>244</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Voice EBS</Display>
+						<Value>245</Value>
+					</Discreet>
+					<Discreet>
+						<Display>If PW Type</Display>
+						<Value>246</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ILAN</Display>
+						<Value>247</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PIP</Display>
+						<Value>248</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ALU ELP</Display>
+						<Value>249</Value>
+					</Discreet>
+					<Discreet>
+						<Display>G-PON</Display>
+						<Value>250</Value>
+					</Discreet>
+					<Discreet>
+						<Display>VDSL2</Display>
+						<Value>251</Value>
+					</Discreet>
+					<Discreet>
+						<Display>CAPWAP Dot 11 Profile</Display>
+						<Value>252</Value>
+					</Discreet>
+					<Discreet>
+						<Display>CAPWAP Dot 11 BSS</Display>
+						<Value>253</Value>
+					</Discreet>
+					<Discreet>
+						<Display>CAPWAP WTP Virtual Radio</Display>
+						<Value>254</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Bits</Display>
+						<Value>255</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DOCSIS CATV Upstream RF Port</Display>
+						<Value>256</Value>
+					</Discreet>
+					<Discreet>
+						<Display>CATV Downstream RF Port</Display>
+						<Value>257</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>VMWare Virtual NIC</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>258</Value>
+					</Discreet>
+					<Discreet>
+						<Display>IEEE 802.15 4 WPAN</Display>
+						<Value>259</Value>
+					</Discreet>
+					<Discreet>
+						<Display>OTN ODU</Display>
+						<Value>260</Value>
+					</Discreet>
+					<Discreet>
+						<Display>OTN OTU</Display>
+						<Value>261</Value>
+					</Discreet>
+					<Discreet>
+						<Display>If VFI Type</Display>
+						<Value>262</Value>
+					</Discreet>
+					<Discreet>
+						<Display>G.998.1</Display>
+						<Value>263</Value>
+					</Discreet>
+					<Discreet>
+						<Display>G.998.2</Display>
+						<Value>264</Value>
+					</Discreet>
+					<Discreet>
+						<Display>G.998.3</Display>
+						<Value>265</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ALU EPON</Display>
+						<Value>266</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ALU EPON ONU</Display>
+						<Value>267</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ALU EPON Physical Unit</Display>
+						<Value>268</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ALU EPON Logical Link</Display>
+						<Value>269</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ALU GPON ONU</Display>
+						<Value>270</Value>
+					</Discreet>
+					<Discreet>
+						<Display>ALU GPON Physical Unit</Display>
+						<Value>271</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>VMWare NIC Team</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>272</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DOCS OFDM Downstream</Display>
+						<Value>277</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DOCS OFDMA Upstream</Display>
+						<Value>278</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>G.fast Port</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>279</Value>
+					</Discreet>
+					<Discreet>
+						<Display>SDCI</Display>
+						<Value>280</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Xbox Wireless</Display>
+						<Value>281</Value>
+					</Discreet>
+					<Discreet>
+						<!-- Apparently spelling is correct. If so, this word should be added as an exception to the validator check instead of suppressing -->
+						<!-- SuppressValidator 2.13.7 Correct spelling -->
+						<Display>FastDSL</Display>
+						<!-- /SuppressValidator 2.13.7 -->
+						<Value>282</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Cable SCTE 55-1 OOB Forward Channel</Display>
+						<Value>283</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Cable SCTE 55-1 OOB Return Channel</Display>
+						<Value>284</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Cable SCTE 55-2 OOB Downstream Channel</Display>
+						<Value>285</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Cable SCTE 55-2 OOB Upstream Channel</Display>
+						<Value>286</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DOCS Cable NDF</Display>
+						<Value>287</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DOCS Cable NDR</Display>
+						<Value>288</Value>
+					</Discreet>
+					<Discreet>
+						<Display>PTM</Display>
+						<Value>289</Value>
+					</Discreet>
+					<Discreet>
+						<Display>GHN</Display>
+						<Value>290</Value>
+					</Discreet>
+					<Discreet>
+						<Display>OTN OTSI</Display>
+						<Value>291</Value>
+					</Discreet>
+					<Discreet>
+						<Display>OTN OTUC</Display>
+						<Value>292</Value>
+					</Discreet>
+					<Discreet>
+						<Display>OTN ODUC</Display>
+						<Value>293</Value>
+					</Discreet>
+					<Discreet>
+						<Display>OTN OTUC Signal</Display>
+						<Value>294</Value>
+					</Discreet>
+				</Discreets>
 			</Measurement>
 		</Param>
 		<Param id="2003" trending="true">
@@ -4528,9 +5723,9 @@ Here, it reflects the administrative state as set by enabling or disabling the i
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
-				<Normal>0</Normal>
-				<WaH>2</WaH>
-				<CH>1</CH>
+				<Normal>1</Normal>
+				<WaH>3</WaH>
+				<CH>2</CH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -4540,15 +5735,15 @@ Here, it reflects the administrative state as set by enabling or disabling the i
 				<Discreets>
 					<Discreet>
 						<Display>Up</Display>
-						<Value>0</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Down</Display>
 						<Value>1</Value>
 					</Discreet>
 					<Discreet>
-						<Display>Testing</Display>
+						<Display>Down</Display>
 						<Value>2</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Testing</Display>
+						<Value>3</Value>
 					</Discreet>
 				</Discreets>
 			</Measurement>
@@ -4570,11 +5765,11 @@ Here, it reflects the administrative state as set by enabling or disabling the i
 				<Discreets>
 					<Discreet>
 						<Display>Up</Display>
-						<Value>0</Value>
+						<Value>1</Value>
 					</Discreet>
 					<Discreet>
 						<Display>Down</Display>
-						<Value>1</Value>
+						<Value>2</Value>
 					</Discreet>
 				</Discreets>
 			</Measurement>
@@ -4709,12 +5904,12 @@ If the state change happened before the last re-initialization of the local mana
 				<Type>discreet</Type>
 				<Discreets>
 					<Discreet>
-						<Display>False</Display>
-						<Value>0</Value>
-					</Discreet>
-					<Discreet>
 						<Display>True</Display>
 						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>False</Display>
+						<Value>2</Value>
 					</Discreet>
 				</Discreets>
 			</Measurement>
