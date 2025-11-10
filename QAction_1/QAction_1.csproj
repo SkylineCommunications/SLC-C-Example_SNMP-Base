@@ -13,16 +13,15 @@
   <ItemGroup>
     <PackageReference Include="Skyline.DataMiner.Dev.Protocol" Version="10.2.0.25" />
     <PackageReference Include="Skyline.DataMiner.Utils.Rates.Protocol" Version="1.0.0.4" />
+    <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.2.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Skyline.DataMiner.Utils.Protocol.Extension" Version="1.0.0.4" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
       <UserProperties DisLinkId="1" DisProjectType="qactionProject" DisLinkedXmlFile="..\protocol.xml" />
     </VisualStudio>
   </ProjectExtensions>
-  <ItemGroup>
-    <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
 </Project>
