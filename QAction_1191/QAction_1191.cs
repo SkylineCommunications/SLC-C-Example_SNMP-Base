@@ -52,7 +52,7 @@ public class QAction
 				interfacesStateRows.Add(key, new InterfacesStateQActionRows(interfaceStatesTableRow, interfaceCountersRxTableRow, interfaceCountersTxTableRow));
 			}
 
-			// ifXTable.
+			// ifXTable
 			IfXTable ifxtable = new IfXTable(protocol);
 			for (int i = 0; i < ifxtable.Keys.Length; i++)
 			{
@@ -89,6 +89,7 @@ public class QAction
 				}
 			}
 
+			// Interfaces tables
 			int count = interfacesStateRows.Count;
 			InterfacesStateQActionRows[] x = interfacesStateRows.Values.ToArray();
 			InterfacesstateQActionRow[] interfacesStateArr = new InterfacesstateQActionRow[count];
@@ -108,13 +109,13 @@ public class QAction
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|Run|Error: {ex}", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Run|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 		}
 	}
 
 	private static Dictionary<string, int> GetDuplexStatus(SLProtocol protocol)
 	{
-		Dictionary<string, int> duplexStatusesPerKey = new Dictionary<string, int>();
+		var duplexStatusesPerKey = new Dictionary<string, int>();
 
 		uint[] columnsToGet = new uint[]
 		{
@@ -164,11 +165,11 @@ public class QAction
 			interfaceTableRow.Interfacesstateoutoctets_2010 = Convert.ToDouble(iftable.OutOctets[getPosition]);
 
 			//// Interface States Table - Calculated Values
-			double dBitRateIn = Convert.ToDouble(iftable.BitRateIn[getPosition]);
-			interfaceTableRow.Interfacesstateinbitrate_2013 = dBitRateIn >= 0 ? dBitRateIn / Math.Pow(10, 6) : -1;    // bps -> Mbps
+			double bitRateIn = Convert.ToDouble(iftable.BitRateIn[getPosition]);
+			interfaceTableRow.Interfacesstateinbitrate_2013 = bitRateIn >= 0 ? bitRateIn / Math.Pow(10, 6) : -1;    // bps -> Mbps
 
-			double dBitRateOut = Convert.ToDouble(iftable.BitRateOut[getPosition]);
-			interfaceTableRow.Interfacesstateoutbitrate_2014 = dBitRateOut >= 0 ? dBitRateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
+			double bitRateOut = Convert.ToDouble(iftable.BitRateOut[getPosition]);
+			interfaceTableRow.Interfacesstateoutbitrate_2014 = bitRateOut >= 0 ? bitRateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
 
 			interfaceTableRow.Interfacesstatebandwidthutilization_2017 = Convert.ToDouble(iftable.BandwidthUtilization[getPosition]);
 
@@ -198,6 +199,7 @@ public class QAction
 			interfaceTableRow.Interfacesstatespeed_2016 = Convert.ToDouble(ifxtable.HighSpeed[getPosition]);
 		}
 
+		// For some of the data the ifXTable contains both 32-bit and 64-bit counters (ex: InMulticastPkts vs HCInMulticastPkts)
 		if (interfaceTableRow.Interfacesstateinoctets_2009 == null)
 		{
 			Use64BitCounters(interfaceTableRow, interfaceCountersRxTableRow, interfaceCountersTxTableRow, ifxtable, getPosition);

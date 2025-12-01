@@ -39,30 +39,30 @@
 			for (int i = 0; i < ifxtableGetter.Keys.Length; i++)
 			{
 				string key = Convert.ToString(ifxtableGetter.Keys[i]);
-				string serializedIfxRateData = Convert.ToString(ifxtableGetter.IfRateData[i]);
+				string serializedIfxRateData = Convert.ToString(ifxtableGetter.IfRatesData[i]);
 
-				InterfaceData64 rateData = InterfaceData64.FromJsonString(serializedIfxRateData, MinDelta, MaxDelta);
+				InterfaceData64 ratesData = InterfaceData64.FromJsonString(serializedIfxRateData, MinDelta, MaxDelta);
 
-				rateData.MulticastRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.MulticastRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.MulticastRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.MulticastRateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.BroadcastRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.BroadcastRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.BroadcastRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.BroadcastRateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.HCBitrateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.HCBitrateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HCBitrateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HCBitrateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.HCUcastRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.HCUcastRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HCUcastRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HCUcastRateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.HCMulticastRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.HCMulticastRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HCMulticastRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HCMulticastRateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.HCBroadcastRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.HCBroadcastRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HCBroadcastRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HCBroadcastRateOut.BufferDelta(snmpDeltaHelper, key);
 
 				ifxtableSetter.SetColumnsData[Parameter.Ifxtable.tablePid].Add(key);
-				ifxtableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableratesdata].Add(rateData.ToJsonString());
+				ifxtableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtableratesdata].Add(ratesData.ToJsonString());
 			}
 		}
 
@@ -82,7 +82,7 @@
 
 			public object[] Keys { get; private set; }
 
-			public object[] IfRateData { get; private set; }
+			public object[] IfRatesData { get; private set; }
 
 			public void Load()
 			{
@@ -95,7 +95,7 @@
 				object[] tableData = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);
 
 				Keys = (object[])tableData[0];
-				IfRateData = (object[])tableData[1];
+				IfRatesData = (object[])tableData[1];
 			}
 		}
 
@@ -176,9 +176,9 @@
 			ifxTableSetter.SetParams();
 		}
 
-		private static double CalculateRate(string key, ulong count, SnmpDeltaHelper snmpDeltaHelper, SnmpRate64 snmpRateHelper)
+		private static double CalculateRate(string key, ulong newCount, SnmpDeltaHelper snmpDeltaHelper, SnmpRate64 snmpRateHelper)
 		{
-			double rate = snmpRateHelper.Calculate(snmpDeltaHelper, count, key);
+			double rate = snmpRateHelper.Calculate(snmpDeltaHelper, newCount, key);
 
 			return rate;
 		}
@@ -448,8 +448,8 @@
 				{ Parameter.Ifxtable.Pid.ifxtableouthcmulticastrate_1132, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtableinhcbroadcastrate_1133, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtableouthcbroadcastrate_1134, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtablebandwidthutilization, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtableratesdata, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtablebandwidthutilization_1123, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtableratesdata_1124, new List<object>() },
 			};
 
 			internal Dictionary<int, object> SetParamsData { get; } = new Dictionary<int, object>();

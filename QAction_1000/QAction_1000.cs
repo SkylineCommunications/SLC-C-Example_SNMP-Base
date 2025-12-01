@@ -22,7 +22,7 @@ public class IfTable
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|ProcessSuccess|Error: {ex}", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|ProcessSuccess|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 			ProcessTimeout(protocol);
 		}
 	}
@@ -41,7 +41,7 @@ public class IfTable
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|ProcessTimeout|Error: {ex}", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|ProcessTimeout|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 		}
 	}
 }

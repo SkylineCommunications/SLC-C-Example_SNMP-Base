@@ -42,24 +42,24 @@
 				string key = Convert.ToString(iftableGetter.Keys[i]);
 				string serializedIfRateData = Convert.ToString(iftableGetter.IfRateData[i]);
 
-				InterfaceData32 rateData = InterfaceData32.FromJsonString(serializedIfRateData, MinDelta, MaxDelta);
+				InterfaceData32 ratesData = InterfaceData32.FromJsonString(serializedIfRateData, MinDelta, MaxDelta);
 
-				rateData.BitrateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.BitrateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.BitrateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.BitrateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.UnicastrateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.UnicastrateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.UnicastrateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.UnicastrateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.Discardratein.BufferDelta(snmpDeltaHelper, key);
-				rateData.Discardrateout.BufferDelta(snmpDeltaHelper, key);
+				ratesData.Discardratein.BufferDelta(snmpDeltaHelper, key);
+				ratesData.Discardrateout.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.Errorratein.BufferDelta(snmpDeltaHelper, key);
-				rateData.Errorrateout.BufferDelta(snmpDeltaHelper, key);
+				ratesData.Errorratein.BufferDelta(snmpDeltaHelper, key);
+				ratesData.Errorrateout.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.Unknownprotosin.BufferDelta(snmpDeltaHelper, key);
+				ratesData.Unknownprotosin.BufferDelta(snmpDeltaHelper, key);
 
 				iftableSetter.SetColumnsData[Parameter.Iftable.tablePid].Add(key);
-				iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableratesdata].Add(rateData.ToJsonString());
+				iftableSetter.SetColumnsData[Parameter.Iftable.Pid.iftableratesdata].Add(ratesData.ToJsonString());
 			}
 		}
 
@@ -173,9 +173,9 @@
 			iftableSetter.SetParams();
 		}
 
-		private static double CalculateRate(string key, uint count, SnmpDeltaHelper snmpDeltaHelper, SnmpRate32 snmpRateHelper)
+		private static double CalculateRate(string key, uint newCount, SnmpDeltaHelper snmpDeltaHelper, SnmpRate32 snmpRateHelper)
 		{
-			double rate = snmpRateHelper.Calculate(snmpDeltaHelper, count, key);
+			double rate = snmpRateHelper.Calculate(snmpDeltaHelper, newCount, key);
 
 			return rate;
 		}
