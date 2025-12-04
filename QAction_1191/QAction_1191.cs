@@ -120,9 +120,9 @@ public static class QAction
 	{
 		var duplexStatusesPerKey = new Dictionary<string, int>();
 
-		var columnsToGet = new uint[] { Parameter.Dot3statstable.Idx.dot3statsindex_1301, Parameter.Dot3statstable.Idx.dot3statsduplexstatus_1302 };
+		var columnsToGet = new uint[] { Parameter.Dot3stats.Idx.dot3stats_index_1301, Parameter.Dot3stats.Idx.dot3stats_duplexstatus_1302 };
 
-		var columns = protocol.GetColumns(Parameter.Dot3statstable.tablePid, columnsToGet);
+		var columns = protocol.GetColumns(Parameter.Dot3stats.tablePid, columnsToGet);
 		var keys = (object[])columns[0];
 		var duplexStatuses = (object[])columns[1];
 

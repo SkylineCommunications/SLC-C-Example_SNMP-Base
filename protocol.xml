@@ -543,15 +543,22 @@ This value should include the full name and version identification of the system
 				<Enabled>true</Enabled>
 				<OID type="complete" options="instance;multipleGetNext"></OID>
 			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
+			<!--<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Raw Tables</Page>
+						<Row>0</Row>
+						<Column>0</Column>
+					</Position>
+				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=lines:20,filter:true">table</Type>
-			</Measurement>
+				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3-1005|4-1006|5-1007|6-1008|7-1009|8-1010|9-1011|10-1012|11-1013|12-1014|13-1015|14-1016|15-1017|16-1018|17-1022|21-1019|18-1020|19-1021|20,width:65-200-242-120-105-112-79-123-100-120-125-125-82-143-120-130-125-82-100-100-100-141,sort:STRING-STRING-STRING-INT-INT-STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-STRING-INT-INT-INT,lines:20,filter:true">table</Type>
+			</Measurement>-->
 		</Param>
 		<Param id="1001" trending="false">
-			<Name>ifTableIndex</Name>
+			<Name>ifTable_IfIndex</Name>
 			<Description>Index (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -576,7 +583,7 @@ The value for each interface sub-layer must remain constant at least from one re
 			</Measurement>
 		</Param>
 		<Param id="1002" trending="false">
-			<Name>ifTableDescr</Name>
+			<Name>IfTable_IfDescr</Name>
 			<Description>Description (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -607,7 +614,7 @@ This string should include the name of the manufacturer, the product name and th
 			</Measurement>
 		</Param>
 		<Param id="1003" trending="false">
-			<Name>ifTableType</Name>
+			<Name>IfTable_IfType</Name>
 			<Description>Type (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -1829,7 +1836,7 @@ Additional values for Type are assigned by the Internet Assigned Numbers Authori
 			</Measurement>
 		</Param>
 		<Param id="1004" trending="false">
-			<Name>ifTableMtu</Name>
+			<Name>IfTable_IfMtu</Name>
 			<Description>MTU (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -1861,7 +1868,7 @@ For interfaces that are used for transmitting network datagrams, this is the siz
 			</Measurement>
 		</Param>
 		<Param id="1005" trending="false">
-			<Name>ifTableSpeed</Name>
+			<Name>IfTable_IfSpeed</Name>
 			<Description>Speed (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -1907,7 +1914,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 			</Measurement>
 		</Param>
 		<Param id="1006" trending="false">
-			<Name>ifTablePhysAddress</Name>
+			<Name>IfTable_IfPhysAddress</Name>
 			<Description>Physical Address (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -1942,7 +1949,7 @@ For interfaces which do not have such an address (e.g., a serial line), this obj
 			</Measurement>
 		</Param>
 		<Param id="1007" trending="false">
-			<Name>ifTableAdminStatus</Name>
+			<Name>IfTable_IfAdminStatus</Name>
 			<Description>Admin Status (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -1985,7 +1992,7 @@ As a result of either explicit management action or per configuration informatio
 			</Measurement>
 		</Param>
 		<Param id="1057" snmpSetAndGet="true">
-			<Name>ifTableAdminStatus</Name>
+			<Name>IfTable_IfAdminStatus</Name>
 			<Description>Admin Status (If Table)</Description>
 			<Type>write</Type>
 			<Interprete>
@@ -2020,7 +2027,7 @@ As a result of either explicit management action or per configuration informatio
 			</Measurement>
 		</Param>
 		<Param id="1008" trending="false">
-			<Name>ifTableOperStatus</Name>
+			<Name>IfTable_IfOperStatus</Name>
 			<Description>Operational Status (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2082,7 +2089,7 @@ it should remain in the Not Present(6) state if the interface has missing (typic
 			</Measurement>
 		</Param>
 		<Param id="1009" trending="false">
-			<Name>ifTableLastChange</Name>
+			<Name>IfTable_IfLastChange</Name>
 			<Description>Last Change (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2120,7 +2127,7 @@ If the current state was entered prior to the last re-initialization of the loca
 			</Measurement>
 		</Param>
 		<Param id="1010" trending="false">
-			<Name>ifTableOctetsIn</Name>
+			<Name>IfTable_IfOctetsIn</Name>
 			<Description>In Octets (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2153,7 +2160,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1011" trending="false">
-			<Name>ifTableOctetsOut</Name>
+			<Name>IfTable_IfOctetsOut</Name>
 			<Description>Out Octets (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2186,7 +2193,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1012" trending="false">
-			<Name>ifTableUcastPktsIn</Name>
+			<Name>IfTable_IfUcastPktsIn</Name>
 			<Description>In Unicast Packets (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2219,7 +2226,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1013" trending="false">
-			<Name>ifTableUcastPktsOut</Name>
+			<Name>IfTable_IfUcastPktsOut</Name>
 			<Description>Out Unicast Packets (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2252,7 +2259,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1014" trending="false">
-			<Name>ifTableDiscardsIn</Name>
+			<Name>IfTable_IfDiscardsIn</Name>
 			<Description>In Discards (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2286,7 +2293,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1015" trending="false">
-			<Name>ifTableDiscardsOut</Name>
+			<Name>IfTable_IfDiscardsOut</Name>
 			<Description>Out Discards (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2320,7 +2327,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1016" trending="false">
-			<Name>ifTableErrorsIn</Name>
+			<Name>IfTable_IfErrorsIn</Name>
 			<Description>In Errors (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2357,7 +2364,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1017" trending="false">
-			<Name>ifTableErrorsOut</Name>
+			<Name>IfTable_IfErrorsOut</Name>
 			<Description>Out Errors (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2394,7 +2401,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1018" trending="false">
-			<Name>ifTableUnknownProtosIn</Name>
+			<Name>IfTable_IfUnknownProtosIn</Name>
 			<Description>In Unknown Protocols (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2432,7 +2439,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1019" trending="false">
-			<Name>ifTableBitRateIn</Name>
+			<Name>IfTable_BitRateIn</Name>
 			<Description>In Bit Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input bit rate of the interface.</Subtext>
@@ -2461,7 +2468,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1020" trending="false">
-			<Name>ifTableBitRateOut</Name>
+			<Name>IfTable_BitRateOut</Name>
 			<Description>Out Bit Rate (If Table)</Description>
 			<Information>
 				<Subtext>The output bit rate of the interface.</Subtext>
@@ -2490,7 +2497,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1021" trending="false">
-			<Name>ifTableUnicastRateIn</Name>
+			<Name>IfTable_UnicastRateIn</Name>
 			<Description>In Unicast Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input unicast rate of the interface.</Subtext>
@@ -2519,7 +2526,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1022" trending="false">
-			<Name>ifTableUnicastRateOut</Name>
+			<Name>IfTable_UnicastRateOut</Name>
 			<Description>Out Unicast Rate (If Table)</Description>
 			<Information>
 				<Subtext>The output unicast rate of the interface.</Subtext>
@@ -2548,7 +2555,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1023" trending="false">
-			<Name>ifTableDiscardRateIn</Name>
+			<Name>IfTable_DiscardRateIn</Name>
 			<Description>In Discard Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input discard rate of the interface.</Subtext>
@@ -2577,7 +2584,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1024" trending="false">
-			<Name>ifTableDiscardRateOut</Name>
+			<Name>IfTable_DiscardRateOut</Name>
 			<Description>Out Discard Rate (If Table)</Description>
 			<Information>
 				<Subtext>The output discard rate of the interface.</Subtext>
@@ -2606,7 +2613,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1025" trending="false">
-			<Name>ifTableErrorRateIn</Name>
+			<Name>IfTable_ErrorRateIn</Name>
 			<Description>In Error Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input error rate of the interface.</Subtext>
@@ -2635,7 +2642,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1026" trending="false">
-			<Name>ifTableErrorRateOut</Name>
+			<Name>IfTable_ErrorRateOut</Name>
 			<Description>Out Error Rate (If Table)</Description>
 			<Information>
 				<Subtext>The output error rate of the interface.</Subtext>
@@ -2664,7 +2671,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1027" trending="false">
-			<Name>ifTableUnknownProtocolRateIn</Name>
+			<Name>IfTable_UnknownProtocolRateIn</Name>
 			<Description>In Unknown Protos Rate (If Table)</Description>
 			<Information>
 				<Subtext>The input packet rate of the interface that was discarded due to unknown protocol.</Subtext>
@@ -2693,7 +2700,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1028" trending="false">
-			<Name>ifTableBandwidthUtilization</Name>
+			<Name>IfTable_BandwidthUtilization</Name>
 			<Description>Bandwidth Utilization (If Table)</Description>
 			<Information>
 				<Subtext>
@@ -2728,7 +2735,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1029" trending="false">
-			<Name>ifTableRatesData</Name>
+			<Name>IfTable_RatesData</Name>
 			<Description>Rates Data (If Table)</Description>
 			<Type>read</Type>
 			<Information>
@@ -2877,7 +2884,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1101" trending="false">
-			<Name>ifXTableIndex</Name>
+			<Name>IfXTable_IfIndex</Name>
 			<Description>Index (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -2902,7 +2909,7 @@ The value for each interface sub-layer must remain constant at least from one re
 			</Measurement>
 		</Param>
 		<Param id="1102" trending="false">
-			<Name>ifXTableName</Name>
+			<Name>IfXTable_IfName</Name>
 			<Description>Name (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -2940,7 +2947,7 @@ Note that for an agent which responds to SNMP queries concerning an interface on
 			</Measurement>
 		</Param>
 		<Param id="1103" trending="false">
-			<Name>ifXTableMulticastPktsIn</Name>
+			<Name>IfXTable_IfMulticastPktsIn</Name>
 			<Description>In Multicast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -2974,7 +2981,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1104" trending="false">
-			<Name>ifXTableMulticastPktsOut</Name>
+			<Name>IfXTable_IfMulticastPktsOut</Name>
 			<Description>Out Multicast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3008,7 +3015,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1105" trending="false">
-			<Name>ifXTableBroadcastPktsIn</Name>
+			<Name>IfXTable_IfBroadcastPktsIn</Name>
 			<Description>In Broadcast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3041,7 +3048,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1106" trending="false">
-			<Name>ifXTableBroadcastPktsOut</Name>
+			<Name>IfXTable_IfBroadcastPktsOut</Name>
 			<Description>Out Broadcast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3074,7 +3081,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1107" trending="false">
-			<Name>ifXTableHCOctetsIn</Name>
+			<Name>IfXTable_IfHCOctetsIn</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>High Capacity In Octets (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3110,7 +3117,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1108" trending="false">
-			<Name>ifXTableHCOctetsOut</Name>
+			<Name>IfXTable_IfHCOctetsOut</Name>
 			<Description>High Capacity Out Octets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3144,7 +3151,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1109" trending="false">
-			<Name>ifXTableHCUcastPktsIn</Name>
+			<Name>IfXTable_IfHCUcastPktsIn</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>High Capacity In Unicast Packets (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3180,7 +3187,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1110" trending="false">
-			<Name>ifXTableHCUcastPktsOut</Name>
+			<Name>IfXTable_IfHCUcastPktsOut</Name>
 			<Description>High Capacity Out Unicast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3214,7 +3221,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1111" trending="false">
-			<Name>ifXTableHCMulticastPktsIn</Name>
+			<Name>IfXTable_IfHCMulticastPktsIn</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>High Capacity In Multicast Packets (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3251,7 +3258,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1112" trending="false">
-			<Name>ifXTableHCMulticastPktsOut</Name>
+			<Name>IfXTable_IfHCMulticastPktsOut</Name>
 			<Description>High Capacity Out Multicast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3286,7 +3293,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1113" trending="false">
-			<Name>ifXTableHCBroadcastPktsIn</Name>
+			<Name>IfXTable_IfHCBroadcastPktsIn</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>High Capacity In Broadcast Packets (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3322,7 +3329,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1114" trending="false">
-			<Name>ifXTableHCBroadcastPktsOut</Name>
+			<Name>IfXTable_IfHCBroadcastPktsOut</Name>
 			<Description>High Capacity Out Broadcast Packets (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3356,7 +3363,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1115" trending="false">
-			<Name>ifXTableLinkUpDownTrapEnable</Name>
+			<Name>IfXTable_IfLinkUpDownTrapEnable</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>Link Up/Down Traps (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3396,7 +3403,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 			</Measurement>
 		</Param>
 		<Param id="1155" snmpSetAndGet="true">
-			<Name>ifXTableLinkUpDownTrapEnable</Name>
+			<Name>IfXTable_IfLinkUpDownTrapEnable</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>Link Up/Down Traps (If X Table)</Description>
 			<!-- /SuppressValidator 2.14.7 -->
@@ -3429,7 +3436,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 			</Measurement>
 		</Param>
 		<Param id="1116" trending="false">
-			<Name>ifXTableHighSpeed</Name>
+			<Name>IfXTable_IfHighSpeed</Name>
 			<Description>High Speed (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3470,7 +3477,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 			</Measurement>
 		</Param>
 		<Param id="1117" trending="false">
-			<Name>ifXTablePromiscuousMode</Name>
+			<Name>IfXTable_IfPromiscuousMode</Name>
 			<Description>Promiscuous Mode (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3511,7 +3518,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 			</Measurement>
 		</Param>
 		<Param id="1157" snmpSetAndGet="true">
-			<Name>ifXTablePromiscuousMode</Name>
+			<Name>IfXTable_IfPromiscuousMode</Name>
 			<Description>Promiscuous Mode (If X Table)</Description>
 			<Type>write</Type>
 			<Interprete>
@@ -3542,7 +3549,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 			</Measurement>
 		</Param>
 		<Param id="1118" trending="false">
-			<Name>ifXTableConnectorPresent</Name>
+			<Name>IfXTable_IfConnectorPresent</Name>
 			<Description>Connector Present (If X Table)</Description>
 			<Information>
 				<Subtext>This object has the value 'True(1)' if the interface sublayer has a physical connector and the value 'False(2)' otherwise.</Subtext>
@@ -3576,7 +3583,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 			</Measurement>
 		</Param>
 		<Param id="1119" trending="false">
-			<Name>ifXTableAlias</Name>
+			<Name>IfXTable_IfAlias</Name>
 			<Description>Alias (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3614,7 +3621,7 @@ An agent which supports write access to this object is required to keep the valu
 			</Measurement>
 		</Param>
 		<Param id="1159" snmpSetAndGet="true">
-			<Name>ifXTableAlias</Name>
+			<Name>IfXTable_IfAlias</Name>
 			<Description>Alias (If X Table)</Description>
 			<Type>write</Type>
 			<Interprete>
@@ -3639,7 +3646,7 @@ An agent which supports write access to this object is required to keep the valu
 			</Measurement>
 		</Param>
 		<Param id="1120" trending="false">
-			<Name>ifXTableCounterDiscontinuityTime</Name>
+			<Name>IfXTable_IfCounterDiscontinuityTime</Name>
 			<Description>Counter Discontinuity Time (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3680,7 +3687,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</Measurement>
 		</Param>
 		<Param id="1121" trending="false">
-			<Name>ifXTableBitRateIn</Name>
+			<Name>IfXTable_BitRateIn</Name>
 			<Description>In Bit Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input bit rate of the interface.</Subtext>
@@ -3709,7 +3716,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</Measurement>
 		</Param>
 		<Param id="1122" trending="false">
-			<Name>ifXTableBitRateOut</Name>
+			<Name>IfXTable_BitRateOut</Name>
 			<Description>Out Bit Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output bit rate of the interface.</Subtext>
@@ -3738,7 +3745,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</Measurement>
 		</Param>
 		<Param id="1123" trending="false">
-			<Name>ifXTableBandwidthUtilization</Name>
+			<Name>IfXTable_BandwidthUtilization</Name>
 			<Description>Bandwidth Utilization (If X Table)</Description>
 			<Information>
 				<Subtext>
@@ -3773,7 +3780,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1124" trending="false">
-			<Name>ifXTableRatesData</Name>
+			<Name>IfXTable_RatesData</Name>
 			<Description>Rates Data (If X Table)</Description>
 			<Type>read</Type>
 			<Information>
@@ -3792,7 +3799,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1125" trending="false">
-			<Name>ifXTableMulticastRateIn</Name>
+			<Name>IfXTable_MulticastRateIn</Name>
 			<Description>In Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input multicast rate of the interface.</Subtext>
@@ -3821,7 +3828,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1126" trending="false">
-			<Name>ifXTableMulticastRateOut</Name>
+			<Name>IfXTable_MulticastRateOut</Name>
 			<Description>Out Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output multicast rate of the interface.</Subtext>
@@ -3850,7 +3857,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1127" trending="false">
-			<Name>ifXTableBroadcastRateIn</Name>
+			<Name>IfXTable_BroadcastRateIn</Name>
 			<Description>In Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input broadcast rate of the interface.</Subtext>
@@ -3879,7 +3886,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1128" trending="false">
-			<Name>ifXTableBroadcastRateOut</Name>
+			<Name>IfXTable_BroadcastRateOut</Name>
 			<Description>Out Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output broadcast rate of the interface.</Subtext>
@@ -3908,7 +3915,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1129" trending="false">
-			<Name>ifXTableHcUcastRateIn</Name>
+			<Name>IfXTable_HcUcastRateIn</Name>
 			<Description>In HC Unicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input high capacity unicast rate of the interface.</Subtext>
@@ -3937,7 +3944,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1130" trending="false">
-			<Name>ifXTableHcUcastRateOut</Name>
+			<Name>IfXTable_HcUcastRateOut</Name>
 			<Description>Out HC Unicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output HC unicast rate of the interface.</Subtext>
@@ -3966,7 +3973,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1131" trending="false">
-			<Name>ifXTableHcMulticastRateIn</Name>
+			<Name>IfXTable_HcMulticastRateIn</Name>
 			<Description>In HC Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input high capacity multicast rate of the interface.</Subtext>
@@ -3995,7 +4002,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1132" trending="false">
-			<Name>ifXTableHcMulticastRateOut</Name>
+			<Name>IfXTable_HcMulticastRateOut</Name>
 			<Description>Out HC Multicast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output HC multicast rate of the interface.</Subtext>
@@ -4024,7 +4031,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1133" trending="false">
-			<Name>ifXTableHcBroadcastRateIn</Name>
+			<Name>IfXTable_HcBroadcastRateIn</Name>
 			<Description>In HC Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The input HC broadcast rate of the interface.</Subtext>
@@ -4053,7 +4060,7 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		<Param id="1134" trending="false">
-			<Name>ifXTableHcBroadcastRateOut</Name>
+			<Name>IfXTable_HcBroadcastRateOut</Name>
 			<Description>Out HC Broadcast Rate (If X Table)</Description>
 			<Information>
 				<Subtext>The output HC broadcast rate of the interface.</Subtext>
@@ -4170,7 +4177,7 @@ Currently only calculated for Ethernet interfaces.
 		</Param>
 		
 		<Param id="1300">
-			<Name>dot3StatsTable</Name>
+			<Name>dot3Stats</Name>
 			<Description>Ethernet Interfaces</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0" options=";volatile">
@@ -4195,7 +4202,7 @@ There will be one row in this table for each Ethernet-like interface in the syst
 			</Measurement>
 		</Param>
 		<Param id="1301" trending="false">
-			<Name>dot3StatsIndex</Name>
+			<Name>dot3Stats_Index</Name>
 			<Description>Index (Ethernet Interfaces)</Description>
 			<Information>
 				<Subtext>
@@ -4218,7 +4225,7 @@ There will be one row in this table for each Ethernet-like interface in the syst
 			</Measurement>
 		</Param>
 		<Param id="1302" trending="false">
-			<Name>dot3StatsDuplexStatus</Name>
+			<Name>dot3Stats_DuplexStatus</Name>
 			<Description>Duplex Status (Ethernet Interfaces)</Description>
 			<Information>
 				<Subtext>
