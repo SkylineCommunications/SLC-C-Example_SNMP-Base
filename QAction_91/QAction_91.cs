@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Skyline.DataMiner.Scripting;
+using Skyline.DataMiner.Utils.Protocol.Extension;
 using Skyline.DataMiner.Utils.SNMP;
 
 /// <summary>
@@ -21,7 +22,7 @@ public static class SysUptime
 			object[] getParams = (object[])protocol.GetParameters(new uint[] { Parameter.sysuptimebuffer });
 			string sysUptimeBuffer = Convert.ToString(getParams[0]);
 
-			Dictionary<int, object> paramsToSet = new Dictionary<int, object>();
+			var paramsToSet = new Dictionary<int, object>();
 
 			SnmpDeltaHelper snmpDeltaHelper = new SnmpDeltaHelper(protocol, 1);
 			SnmpHelper snmpHelper = SnmpHelper.FromJsonString(sysUptimeBuffer, snmpDeltaHelper);
@@ -29,7 +30,7 @@ public static class SysUptime
 
 			paramsToSet.Add(Parameter.sysuptimebuffer, snmpHelper.ToJsonString());
 
-			protocol.SetParameters(paramsToSet.Keys.ToArray(), paramsToSet.Values.ToArray());
+			protocol.SetParameters(paramsToSet);
 		}
 		catch (Exception ex)
 		{
@@ -49,7 +50,7 @@ public static class SysUptime
 			string sysUptimeBuffer = Convert.ToString(getParams[0]);
 			double sysUptime = Convert.ToDouble(getParams[1]);
 
-			Dictionary<int, object> paramsToSet = new Dictionary<int, object>();
+			var paramsToSet = new Dictionary<int, object>();
 
 			SnmpDeltaHelper snmpDeltaHelper = new SnmpDeltaHelper(protocol, 1);
 			SnmpHelper snmpHelper = SnmpHelper.FromJsonString(sysUptimeBuffer, snmpDeltaHelper);
@@ -61,7 +62,7 @@ public static class SysUptime
 
 			paramsToSet.Add(Parameter.sysuptimebuffer, snmpHelper.ToJsonString());
 
-			protocol.SetParameters(paramsToSet.Keys.ToArray(), paramsToSet.Values.ToArray());
+			protocol.SetParameters(paramsToSet);
 		}
 		catch (Exception ex)
 		{

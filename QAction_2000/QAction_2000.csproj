@@ -6,6 +6,8 @@
     <Copyright>© Skyline Communications</Copyright>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <LangVersion>7.3</LangVersion>
+    <RootNamespace>QAction_2000</RootNamespace>
+    <AssemblyName>QAction_2000</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\QAction_Helper\QAction_Helper.csproj" />
@@ -20,7 +22,10 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties DisLinkedXmlFile="..\protocol.xml" DisProjectType="qactionProject" DisLinkId="1257" />
+      <UserProperties DisLinkedXmlFile="..\protocol.xml" DisLinkId="2000" DisProjectType="qactionProject" />
     </VisualStudio>
   </ProjectExtensions>
+  <ItemGroup>
+    <ProjectReference Include="..\QAction_Helper\QAction_Helper.csproj" />
+  </ItemGroup>
 </Project>
