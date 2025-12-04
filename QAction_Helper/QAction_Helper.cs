@@ -78,11 +78,11 @@ public static class Parameter
 	public const int ifxtablesetinstance_1099 = 1099;
 	/// <summary>PID: 1099 | Type: read</summary>
 	public const int ifxtablesetinstance = 1099;
-	/// <summary>PID: 1192 | Type: read</summary>
+	/// <summary>PID: 1992 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int interfacesratecalculationsmethod_1192 = 1192;
-	/// <summary>PID: 1192 | Type: read</summary>
-	public const int interfacesratecalculationsmethod = 1192;
+	public const int interfacesratescalculationsmethod_1992 = 1992;
+	/// <summary>PID: 1992 | Type: read</summary>
+	public const int interfacesratescalculationsmethod = 1992;
 	public class Write
 	{
 		/// <summary>PID: 102 | Type: write</summary>
@@ -120,11 +120,11 @@ public static class Parameter
 		public const int ifxtable_ifalias_1159 = 1159;
 		/// <summary>PID: 1159 | Type: write</summary>
 		public const int ifxtable_ifalias = 1159;
-		/// <summary>PID: 1193 | Type: write</summary>
+		/// <summary>PID: 1993 | Type: write</summary>
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int interfacesratecalculationsmethod_1193 = 1193;
-		/// <summary>PID: 1193 | Type: write</summary>
-		public const int interfacesratecalculationsmethod = 1193;
+		public const int interfacesratescalculationsmethod_1993 = 1993;
+		/// <summary>PID: 1993 | Type: write</summary>
+		public const int interfacesratescalculationsmethod = 1993;
 		/// <summary>PID: 2055 | Type: write</summary>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		public const int interfacesadminstatus_2055 = 2055;
@@ -955,11 +955,11 @@ public static class Parameter
 			public const int interfaceslinkupdowntrap_2020 = 2020;
 			/// <summary>PID: 2020 | Type: read</summary>
 			public const int interfaceslinkupdowntrap = 2020;
-			/// <summary>PID: 2050 | Type: read</summary>
+			/// <summary>PID: 1999 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfacesdisplaykey_2050 = 2050;
-			/// <summary>PID: 2050 | Type: read</summary>
-			public const int interfacesdisplaykey = 2050;
+			public const int interfacesdisplaykey_1999 = 1999;
+			/// <summary>PID: 1999 | Type: read</summary>
+			public const int interfacesdisplaykey = 1999;
 			public class Write
 			{
 			}
@@ -1063,7 +1063,7 @@ public static class Parameter
 			public const int interfaceslinkupdowntrap = 18;
 			/// <summary>IDX: 19 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfacesdisplaykey_2050 = 19;
+			public const int interfacesdisplaykey_1999 = 19;
 			/// <summary>IDX: 19 | Type: read</summary>
 			public const int interfacesdisplaykey = 19;
 		}
@@ -1123,11 +1123,11 @@ public static class Parameter
 			public const int interfacedetailsrxfktointerfaces_2109 = 2109;
 			/// <summary>PID: 2109 | Type: read</summary>
 			public const int interfacedetailsrxfktointerfaces = 2109;
-			/// <summary>PID: 2110 | Type: read</summary>
+			/// <summary>PID: 2099 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfacedetailsrxdisplaykey_2110 = 2110;
-			/// <summary>PID: 2110 | Type: read</summary>
-			public const int interfacedetailsrxdisplaykey = 2110;
+			public const int interfacedetailsrxdisplaykey_2099 = 2099;
+			/// <summary>PID: 2099 | Type: read</summary>
+			public const int interfacedetailsrxdisplaykey = 2099;
 			public class Write
 			{
 			}
@@ -1181,7 +1181,7 @@ public static class Parameter
 			public const int interfacedetailsrxfktointerfaces = 8;
 			/// <summary>IDX: 9 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfacedetailsrxdisplaykey_2110 = 9;
+			public const int interfacedetailsrxdisplaykey_2099 = 9;
 			/// <summary>IDX: 9 | Type: read</summary>
 			public const int interfacedetailsrxdisplaykey = 9;
 		}
@@ -1236,11 +1236,11 @@ public static class Parameter
 			public const int interfacedetailstxfktointerfaces_2208 = 2208;
 			/// <summary>PID: 2208 | Type: read</summary>
 			public const int interfacedetailstxfktointerfaces = 2208;
-			/// <summary>PID: 2209 | Type: read</summary>
+			/// <summary>PID: 2199 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfacedetailstxdisplaykey_2209 = 2209;
-			/// <summary>PID: 2209 | Type: read</summary>
-			public const int interfacedetailstxdisplaykey = 2209;
+			public const int interfacedetailstxdisplaykey_2199 = 2199;
+			/// <summary>PID: 2199 | Type: read</summary>
+			public const int interfacedetailstxdisplaykey = 2199;
 			public class Write
 			{
 			}
@@ -1289,7 +1289,7 @@ public static class Parameter
 			public const int interfacedetailstxfktointerfaces = 7;
 			/// <summary>IDX: 8 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfacedetailstxdisplaykey_2209 = 8;
+			public const int interfacedetailstxdisplaykey_2199 = 8;
 			/// <summary>IDX: 8 | Type: read</summary>
 			public const int interfacedetailstxdisplaykey = 8;
 		}
@@ -1311,8 +1311,8 @@ public class WriteParameters
 	public System.Object Ifxtable_ifpromiscuousmode {get { return Protocol.GetParameter(1157); }set { Protocol.SetParameter(1157, value); }}
 	/// <summary>PID: 1159  | Type: write</summary>
 	public System.Object Ifxtable_ifalias {get { return Protocol.GetParameter(1159); }set { Protocol.SetParameter(1159, value); }}
-	/// <summary>PID: 1193  | Type: write | DISCREETS: Fast = 1, Accurate = 2</summary>
-	public System.Object Interfacesratecalculationsmethod {get { return Protocol.GetParameter(1193); }set { Protocol.SetParameter(1193, value); }}
+	/// <summary>PID: 1993  | Type: write | DISCREETS: Fast = 1, Accurate = 2</summary>
+	public System.Object Interfacesratescalculationsmethod {get { return Protocol.GetParameter(1993); }set { Protocol.SetParameter(1993, value); }}
 	/// <summary>PID: 2055  | Type: write | DISCREETS: Up = 1, Down = 2</summary>
 	public System.Object Interfacesadminstatus {get { return Protocol.GetParameter(2055); }set { Protocol.SetParameter(2055, value); }}
 	/// <summary>PID: 2065  | Type: write</summary>
@@ -1511,14 +1511,16 @@ public interface SLProtocolExt : SLProtocol
 	object Ifxtable_iflinkupdowntrapenable_1155 { get; set; }
 	object Ifxtable_ifpromiscuousmode_1157 { get; set; }
 	object Ifxtable_ifalias_1159 { get; set; }
-	object Interfacestablemerge_dummy { get; set; }
-	object Interfacesratecalculationsmethod_1192 { get; set; }
-	object Interfacesratecalculationsmethod { get; set; }
-	object Interfacesratecalculationsmethod_1193 { get; set; }
 	object Dot3stats_index_1301 { get; set; }
 	object Dot3stats_index { get; set; }
 	object Dot3stats_duplexstatus_1302 { get; set; }
 	object Dot3stats_duplexstatus { get; set; }
+	object Interfacestablesmerge_dummy { get; set; }
+	object Interfacesratescalculationsmethod_1992 { get; set; }
+	object Interfacesratescalculationsmethod { get; set; }
+	object Interfacesratescalculationsmethod_1993 { get; set; }
+	object Interfacesdisplaykey_1999 { get; set; }
+	object Interfacesdisplaykey { get; set; }
 	object Interfacesindex_2001 { get; set; }
 	object Interfacesindex { get; set; }
 	object Interfacestype_2002 { get; set; }
@@ -1557,12 +1559,12 @@ public interface SLProtocolExt : SLProtocol
 	object Interfacespromiscuousmode { get; set; }
 	object Interfaceslinkupdowntrap_2020 { get; set; }
 	object Interfaceslinkupdowntrap { get; set; }
-	object Interfacesdisplaykey_2050 { get; set; }
-	object Interfacesdisplaykey { get; set; }
 	object Interfacesadminstatus_2055 { get; set; }
 	object Interfacesuserdescription_2065 { get; set; }
 	object Interfacespromiscuousmode_2069 { get; set; }
 	object Interfaceslinkupdowntrap_2070 { get; set; }
+	object Interfacedetailsrxdisplaykey_2099 { get; set; }
+	object Interfacedetailsrxdisplaykey { get; set; }
 	object Interfacedetailsrxdex_2101 { get; set; }
 	object Interfacedetailsrxdex { get; set; }
 	object Interfacedetailsrxrate_2102 { get; set; }
@@ -1581,8 +1583,8 @@ public interface SLProtocolExt : SLProtocol
 	object Interfacedetailsrxunknownprotocolrate { get; set; }
 	object Interfacedetailsrxfktointerfaces_2109 { get; set; }
 	object Interfacedetailsrxfktointerfaces { get; set; }
-	object Interfacedetailsrxdisplaykey_2110 { get; set; }
-	object Interfacedetailsrxdisplaykey { get; set; }
+	object Interfacedetailstxdisplaykey_2199 { get; set; }
+	object Interfacedetailstxdisplaykey { get; set; }
 	object Interfacedetailstxindex_2201 { get; set; }
 	object Interfacedetailstxindex { get; set; }
 	object Interfacedetailstxrate_2202 { get; set; }
@@ -1599,8 +1601,6 @@ public interface SLProtocolExt : SLProtocol
 	object Interfacedetailstxerrorrate { get; set; }
 	object Interfacedetailstxfktointerfaces_2208 { get; set; }
 	object Interfacedetailstxfktointerfaces { get; set; }
-	object Interfacedetailstxdisplaykey_2209 { get; set; }
-	object Interfacedetailstxdisplaykey { get; set; }
 	WriteParameters Write { get; set; }
 }
 public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
@@ -2041,16 +2041,6 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	/// <summary>PID: 1159  | Type: write</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Ifxtable_ifalias_1159 {get { return GetParameter(1159); }set { SetParameter(1159, value); }}
-	/// <summary>PID: 1191  | Type: dummy</summary>
-	public System.Object Interfacestablemerge_dummy {get { return GetParameter(1191); }set { SetParameter(1191, value); }}
-	/// <summary>PID: 1192  | Type: read | DISCREETS: Fast = 1, Accurate = 2</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacesratecalculationsmethod_1192 {get { return GetParameter(1192); }set { SetParameter(1192, value); }}
-	/// <summary>PID: 1192  | Type: read | DISCREETS: Fast = 1, Accurate = 2</summary>
-	public System.Object Interfacesratecalculationsmethod {get { return GetParameter(1192); }set { SetParameter(1192, value); }}
-	/// <summary>PID: 1193  | Type: write | DISCREETS: Fast = 1, Accurate = 2</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacesratecalculationsmethod_1193 {get { return GetParameter(1193); }set { SetParameter(1193, value); }}
 	/// <summary>PID: 1301  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Dot3stats_index_1301 {get { return GetParameter(1301); }set { SetParameter(1301, value); }}
@@ -2061,6 +2051,21 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Dot3stats_duplexstatus_1302 {get { return GetParameter(1302); }set { SetParameter(1302, value); }}
 	/// <summary>PID: 1302  | Type: read | DISCREETS: Unknown = 1, Half Duplex = 2, Full Duplex = 3</summary>
 	public System.Object Dot3stats_duplexstatus {get { return GetParameter(1302); }set { SetParameter(1302, value); }}
+	/// <summary>PID: 1991  | Type: dummy</summary>
+	public System.Object Interfacestablesmerge_dummy {get { return GetParameter(1991); }set { SetParameter(1991, value); }}
+	/// <summary>PID: 1992  | Type: read | DISCREETS: Fast = 1, Accurate = 2</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesratescalculationsmethod_1992 {get { return GetParameter(1992); }set { SetParameter(1992, value); }}
+	/// <summary>PID: 1992  | Type: read | DISCREETS: Fast = 1, Accurate = 2</summary>
+	public System.Object Interfacesratescalculationsmethod {get { return GetParameter(1992); }set { SetParameter(1992, value); }}
+	/// <summary>PID: 1993  | Type: write | DISCREETS: Fast = 1, Accurate = 2</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesratescalculationsmethod_1993 {get { return GetParameter(1993); }set { SetParameter(1993, value); }}
+	/// <summary>PID: 1999  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacesdisplaykey_1999 {get { return GetParameter(1999); }set { SetParameter(1999, value); }}
+	/// <summary>PID: 1999  | Type: read</summary>
+	public System.Object Interfacesdisplaykey {get { return GetParameter(1999); }set { SetParameter(1999, value); }}
 	/// <summary>PID: 2001  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacesindex_2001 {get { return GetParameter(2001); }set { SetParameter(2001, value); }}
@@ -2156,11 +2161,6 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Interfaceslinkupdowntrap_2020 {get { return GetParameter(2020); }set { SetParameter(2020, value); }}
 	/// <summary>PID: 2020  | Type: read | DISCREETS: Enabled = 1, Disabled = 2</summary>
 	public System.Object Interfaceslinkupdowntrap {get { return GetParameter(2020); }set { SetParameter(2020, value); }}
-	/// <summary>PID: 2050  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacesdisplaykey_2050 {get { return GetParameter(2050); }set { SetParameter(2050, value); }}
-	/// <summary>PID: 2050  | Type: read</summary>
-	public System.Object Interfacesdisplaykey {get { return GetParameter(2050); }set { SetParameter(2050, value); }}
 	/// <summary>PID: 2055  | Type: write | DISCREETS: Up = 1, Down = 2</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacesadminstatus_2055 {get { return GetParameter(2055); }set { SetParameter(2055, value); }}
@@ -2173,6 +2173,11 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	/// <summary>PID: 2070  | Type: write | DISCREETS: Enabled = 1, Disabled = 2</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfaceslinkupdowntrap_2070 {get { return GetParameter(2070); }set { SetParameter(2070, value); }}
+	/// <summary>PID: 2099  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Interfacedetailsrxdisplaykey_2099 {get { return GetParameter(2099); }set { SetParameter(2099, value); }}
+	/// <summary>PID: 2099  | Type: read</summary>
+	public System.Object Interfacedetailsrxdisplaykey {get { return GetParameter(2099); }set { SetParameter(2099, value); }}
 	/// <summary>PID: 2101  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacedetailsrxdex_2101 {get { return GetParameter(2101); }set { SetParameter(2101, value); }}
@@ -2218,11 +2223,11 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Interfacedetailsrxfktointerfaces_2109 {get { return GetParameter(2109); }set { SetParameter(2109, value); }}
 	/// <summary>PID: 2109  | Type: read</summary>
 	public System.Object Interfacedetailsrxfktointerfaces {get { return GetParameter(2109); }set { SetParameter(2109, value); }}
-	/// <summary>PID: 2110  | Type: read</summary>
+	/// <summary>PID: 2199  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacedetailsrxdisplaykey_2110 {get { return GetParameter(2110); }set { SetParameter(2110, value); }}
-	/// <summary>PID: 2110  | Type: read</summary>
-	public System.Object Interfacedetailsrxdisplaykey {get { return GetParameter(2110); }set { SetParameter(2110, value); }}
+	public System.Object Interfacedetailstxdisplaykey_2199 {get { return GetParameter(2199); }set { SetParameter(2199, value); }}
+	/// <summary>PID: 2199  | Type: read</summary>
+	public System.Object Interfacedetailstxdisplaykey {get { return GetParameter(2199); }set { SetParameter(2199, value); }}
 	/// <summary>PID: 2201  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacedetailstxindex_2201 {get { return GetParameter(2201); }set { SetParameter(2201, value); }}
@@ -2263,11 +2268,6 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Interfacedetailstxfktointerfaces_2208 {get { return GetParameter(2208); }set { SetParameter(2208, value); }}
 	/// <summary>PID: 2208  | Type: read</summary>
 	public System.Object Interfacedetailstxfktointerfaces {get { return GetParameter(2208); }set { SetParameter(2208, value); }}
-	/// <summary>PID: 2209  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacedetailstxdisplaykey_2209 {get { return GetParameter(2209); }set { SetParameter(2209, value); }}
-	/// <summary>PID: 2209  | Type: read</summary>
-	public System.Object Interfacedetailstxdisplaykey {get { return GetParameter(2209); }set { SetParameter(2209, value); }}
 	public WriteParameters Write { get; set; }
 	public ConcreteSLProtocolExt()
 	{
@@ -2769,10 +2769,10 @@ public class InterfacesQActionRow : QActionTableRow
 	public System.Object Interfaceslinkupdowntrap_2020 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
 	/// <summary>PID: 2020 | Type: read</summary>
 	public System.Object Interfaceslinkupdowntrap { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
-	/// <summary>PID: 2050 | Type: read</summary>
+	/// <summary>PID: 1999 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacesdisplaykey_2050 { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
-	/// <summary>PID: 2050 | Type: read</summary>
+	public System.Object Interfacesdisplaykey_1999 { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
+	/// <summary>PID: 1999 | Type: read</summary>
 	public System.Object Interfacesdisplaykey { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
 	public InterfacesQActionRow() : base(0, 20) { }
 	public InterfacesQActionRow(System.Object[] oRow) : base(0, 20, oRow) { }
@@ -2829,10 +2829,10 @@ public class InterfacedetailsrxQActionRow : QActionTableRow
 	public System.Object Interfacedetailsrxfktointerfaces_2109 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
 	/// <summary>PID: 2109 | Type: read</summary>
 	public System.Object Interfacedetailsrxfktointerfaces { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
-	/// <summary>PID: 2110 | Type: read</summary>
+	/// <summary>PID: 2099 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacedetailsrxdisplaykey_2110 { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
-	/// <summary>PID: 2110 | Type: read</summary>
+	public System.Object Interfacedetailsrxdisplaykey_2099 { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 2099 | Type: read</summary>
 	public System.Object Interfacedetailsrxdisplaykey { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
 	public InterfacedetailsrxQActionRow() : base(0, 10) { }
 	public InterfacedetailsrxQActionRow(System.Object[] oRow) : base(0, 10, oRow) { }
@@ -2883,10 +2883,10 @@ public class InterfacedetailstxQActionRow : QActionTableRow
 	public System.Object Interfacedetailstxfktointerfaces_2208 { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
 	/// <summary>PID: 2208 | Type: read</summary>
 	public System.Object Interfacedetailstxfktointerfaces { get { if (base.Columns.ContainsKey(7)) { return base.Columns[7]; } else { return null; } } set { if (base.Columns.ContainsKey(7)) { base.Columns[7] = value; } else { base.Columns.Add(7, value); } } }
-	/// <summary>PID: 2209 | Type: read</summary>
+	/// <summary>PID: 2199 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacedetailstxdisplaykey_2209 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
-	/// <summary>PID: 2209 | Type: read</summary>
+	public System.Object Interfacedetailstxdisplaykey_2199 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
+	/// <summary>PID: 2199 | Type: read</summary>
 	public System.Object Interfacedetailstxdisplaykey { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
 	public InterfacedetailstxQActionRow() : base(0, 9) { }
 	public InterfacedetailstxQActionRow(System.Object[] oRow) : base(0, 9, oRow) { }

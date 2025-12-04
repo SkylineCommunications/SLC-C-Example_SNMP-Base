@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using Skyline.DataMiner.Scripting;
 using Skyline.DataMiner.Utils.Protocol.Extension;
 
@@ -11,12 +12,15 @@ public static class QAction
 {
 	private const uint MaxReportableIfSpeed = uint.MaxValue;
 
-	// RFC 2863: For interfaces that operate at 20,000,000 (20 million) bits per second or less, 32-bit byte and packet counters MUST be supported.
-	// For interfaces that operate faster than 20,000,000 bits/second, and slower than 650,000,000 bits/second, 32-bit packet counters MUST be
-	// supported and 64-bit octet counters MUST be supported.
-	// 
-	// For interfaces that operate at 650,000,000 bits/second or faster, 64-bit packet counters AND 64-bit octet counters MUST be supported.
-	// We choose to use 64-bit counters if the speed is higher than 20Mbps as this will result in fewer wraparounds.
+	/* RFC 2863:
+	 * - For interfaces that operate at 20,000,000 (20 million) bits per second or less, 32-bit byte and packet counters MUST be supported.
+	 *
+	 * - For interfaces that operate faster than 20,000,000 bits/second, and slower than 650,000,000 bits/second, 32-bit packet counters MUST be
+	 * supported and 64-bit octet counters MUST be supported.
+	 *
+	 * - For interfaces that operate at 650,000,000 bits/second or faster, 64-bit packet counters AND 64-bit octet counters MUST be supported.
+	 * We choose to use 64-bit counters if the speed is higher than 20Mbps as this will result in fewer wraparounds.
+	 */
 	private const double SpeedLimitForCounters = 20000000;
 
 	/// <summary>
@@ -93,7 +97,7 @@ public static class QAction
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|Run|Error: {ex}", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Run|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 		}
 	}
 

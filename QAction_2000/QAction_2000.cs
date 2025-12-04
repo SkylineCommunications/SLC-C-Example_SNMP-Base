@@ -9,7 +9,7 @@ public class QAction
 {
 	private const int TriggerIfTable = 1000;
 	private const int TriggerIfXTable = 1100;
-	private const int TriggerInterfaceMerge = 1191;
+	private const int TriggerInterfaceMerge = 1991;
 
 	/// <summary>
 	/// The QAction entry point.
@@ -71,7 +71,7 @@ public class QAction
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|Run|Error: {ex}", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Run|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 		}
 	}
 }

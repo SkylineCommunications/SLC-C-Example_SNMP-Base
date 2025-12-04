@@ -36,7 +36,7 @@
 
 		public void ProcessTimeout()
 		{
-			var snmpDeltaHelper = new SnmpDeltaHelper(protocol, GroupId, Parameter.interfacesratecalculationsmethod);
+			var snmpDeltaHelper = new SnmpDeltaHelper(protocol, GroupId, Parameter.interfacesratescalculationsmethod);
 
 			for (var i = 0; i < interfaceTableGetter.Keys.Length; i++)
 			{
@@ -141,7 +141,7 @@
 
 		public void ProcessData()
 		{
-			var snmpDeltaHelper = new SnmpDeltaHelper(protocol, GroupId, Parameter.interfacesratecalculationsmethod);
+			var snmpDeltaHelper = new SnmpDeltaHelper(protocol, GroupId, Parameter.interfacesratescalculationsmethod);
 
 			var duplexStatuses = ConvertDuplexColumnToDictionary();
 

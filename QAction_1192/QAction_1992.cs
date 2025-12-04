@@ -17,7 +17,7 @@ public static class QAction
 		try
 		{
 			CalculationMethod rateCalculationsMethod =
-				(CalculationMethod)Convert.ToInt32(protocol.GetParameter(Parameter.interfacesratecalculationsmethod));
+				(CalculationMethod)Convert.ToInt32(protocol.GetParameter(Parameter.interfacesratescalculationsmethod));
 
 			SnmpDeltaHelper.UpdateRateDeltaTracking(
 				protocol,

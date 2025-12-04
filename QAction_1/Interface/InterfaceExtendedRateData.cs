@@ -1,13 +1,14 @@
 ﻿namespace Skyline.Protocol.Interface
 {
 	using System;
+
 	using Newtonsoft.Json;
+
 	using Skyline.DataMiner.Utils.Rates.Common;
 	using Skyline.DataMiner.Utils.Rates.Protocol;
 	using Skyline.DataMiner.Utils.SecureCoding.SecureSerialization.Json.Newtonsoft;
 
-
-    public class InterfaceExtendedRateData
+	public class InterfaceExtendedRateData
 	{
 		public SnmpRate64 MulticastRateIn { get; set; }
 
