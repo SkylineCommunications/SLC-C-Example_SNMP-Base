@@ -7597,14 +7597,14 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 							<MajorVersion id="1">
 								<MinorVersions>
 									<MinorVersion id="1" basedOn="1.0.0.7">
-										<Date>2025-09-15</Date>
+										<Date>2025-12-04</Date>
 										<Provider>
 											<Author>CYK</Author>
 											<Company>Skyline Communications</Company>
 										</Provider>
 										<Changes>
 											<NewFeature>Add rates for all interface counters</NewFeature>
-											<NewFeature>Split interface table into three displayed tables</NewFeature>
+											<Change>UI Improvement: split too wide &quot;Interfaces&quot; table into three more digestible ones (&quot;Interfaces&quot;, &quot;Interface Details Rx&quot; and &quot;Interface Details Tx&quot;)</Change>
 										</Changes>
 									</MinorVersion>
 								</MinorVersions>
