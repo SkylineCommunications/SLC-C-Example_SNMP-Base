@@ -2876,12 +2876,19 @@ Currently only calculated for Ethernet interfaces.
 				<Enabled>true</Enabled>
 				<OID type="complete" options="instance;multipleGetNext"></OID>
 			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
+			<!--<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Raw Tables</Page>
+						<Row>1</Row>
+						<Column>0</Column>
+					</Position>
+				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=lines:20,filter:true">table</Type>
-			</Measurement>
+				<Type options="tab=columns:1101|0-1102|1-1103|2-1104|3-1105|4-1106|5-1107|6-1108|7-1109|8-1110|9-1111|10-1112|11-1113|12-1114|13-1115|14-1116|15-1117|16-1118|17-1119|18-1120|19-1124|23-1121|20-1122|21-1123|22,width:65-200-131-134-141-144-192-202-213-216-192-212-223-226-156-116-112-122-100-173-100-100-100-141,sort:STRING-STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-STRING-INT-STRING-STRING-STRING-INT-INT-INT-INT-INT,lines:20,filter:true">table</Type>
+			</Measurement>-->
 		</Param>
 		<Param id="1101" trending="false">
 			<Name>ifXTable_IfIndex</Name>
@@ -4089,8 +4096,6 @@ Currently only calculated for Ethernet interfaces.
 			</Measurement>
 		</Param>
 		
-		
-		
 		<Param id="1300">
 			<Name>dot3Stats</Name>
 			<Description>Ethernet Interfaces</Description>
@@ -4109,12 +4114,19 @@ There will be one row in this table for each Ethernet-like interface in the syst
 				<Enabled>true</Enabled>
 				<OID type="complete" options="instance;multipleGetNext"></OID>
 			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
+			<!--<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Raw Tables</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=lines:20,filter:true">table</Type>
-			</Measurement>
+				<Type options="tab=columns:1301|0-1302|1,width:65-100,sort:INT-STRING,lines:20,filter:true">table</Type>
+			</Measurement>-->
 		</Param>
 		<Param id="1301" trending="false">
 			<Name>dot3Stats_Index</Name>
