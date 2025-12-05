@@ -35,7 +35,7 @@
 			<Description>After Startup</Description>
 			<Type>dummy</Type>
 		</Param>
-
+		
 		<Param id="10">
 			<Name>Fixed_0</Name>
 			<Description>Fixed 0</Description>
@@ -60,7 +60,7 @@
 				<Value>1</Value>
 			</Interprete>
 		</Param>
-
+		
 		<Param id="91">
 			<Name>sysUptimeTimeoutTrigger</Name>
 			<Type>dummy</Type>
@@ -425,9 +425,9 @@ This value should include the full name and version identification of the system
 				<Type lines="5">string</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="991">
-			<Name>IfTableTimeoutTrigger</Name>
+			<Name>ifTableTimeoutTrigger</Name>
 			<Description>Interface Table Timeout Trigger</Description>
 			<Type>dummy</Type>
 		</Param>
@@ -2753,7 +2753,7 @@ Currently only calculated for Ethernet interfaces.
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="1091">
 			<Name>ifXTableTimeoutTrigger</Name>
 			<Description>InterfaceX Table Timeout Trigger</Description>
@@ -4088,9 +4088,9 @@ Currently only calculated for Ethernet interfaces.
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-
-
-
+		
+		
+		
 		<Param id="1300">
 			<Name>dot3Stats</Name>
 			<Description>Ethernet Interfaces</Description>
@@ -4276,7 +4276,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="1999" trending="false">
 			<Name>InterfacesDisplayKey</Name>
 			<Description>Display Key (Interfaces)</Description>
@@ -4347,7 +4347,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<!-- SuppressValidator 2.31.9 Sorting on datetime column not needed. -->
 				<!-- /SuppressValidator 2.31.9 -->
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-1999|19-2006|5-2013|11-2009|8-2014|12-2010|9-2003|2-2002|1-2007|6-2005|4-2008|7-2016|14-2011|10-2015|13-2017|15-2019|17-2018|16-2020|18,width:0-0-100-123-150-0-150-0-100-100-156-104-100-138-156-100-141-112-100-118,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-1999|19-2006|5-2013|11-2009|8-2014|12-2010|9-2003|2-2002|1-2007|6-2005|4-2008|7-2016|14-2011|10-2015|13-2017|15-2019|17-2018|16-2020|18,width:0-0-200-123-115-0-115-0-83-100-128-79-58-138-128-97-141-112-97-118,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -6361,7 +6361,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="2099" trending="false">
 			<Name>InterfaceDetailsRxDisplayKey</Name>
 			<Description>Display Key (Interface Details Rx)</Description>
@@ -6412,7 +6412,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:2101|0-2099|9-2102|1-2103|2-2104|3-2105|4-2106|5-2107|6-2108|7-2109|8,width:0-200-122-113-127-124-119-110-182-0,sort:STRING-STRING-INT-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2101|0-2109|8-2099|9-2102|1-2103|2-2104|3-2105|4-2106|5-2107|6-2108|7,width:0-0-200-115-115-115-115-115-115-153,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="2101" trending="false">
@@ -6737,7 +6737,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="2199" trending="false">
 			<Name>InterfaceDetailsTxDisplayKey</Name>
 			<Description>Display Key (Interface Details Tx)</Description>
@@ -6787,7 +6787,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:2201|0-2199|8-2202|1-2203|2-2204|3-2205|4-2206|5-2207|6-2208|7,width:0-200-122-114-127-127-124-119-0,sort:STRING-STRING-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2201|0-2208|7-2199|8-2202|1-2203|2-2204|3-2205|4-2206|5-2207|6,width:0-0-200-115-115-115-115-115-115,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="2201" trending="false">
