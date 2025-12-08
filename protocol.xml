@@ -4339,7 +4339,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="11" pid="2013" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="12" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="13" pid="2015" type="retrieved" options="" />
-				<ColumnOption idx="14" pid="2016" type="retrieved" options=";disableHeaderSum;enableHistogram;disableHeatmap" />
+				<ColumnOption idx="14" pid="2016" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="15" pid="2017" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="16" pid="2018" type="retrieved" options="" />
 				<ColumnOption idx="17" pid="2019" type="retrieved" options="" />
