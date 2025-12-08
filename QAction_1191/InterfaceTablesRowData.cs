@@ -4,17 +4,17 @@ public class InterfaceTablesRowData
 {
 	public InterfaceTablesRowData(
 		InterfacesQActionRow interfacesStateTableRow,
-		InterfacedetailsrxQActionRow interfaceDetailsRxRow,
-		InterfacedetailstxQActionRow interfaceDetailsTxRow)
+		InterfacesdetailsrxQActionRow interfaceDetailsRxRow,
+		InterfacesdetailstxQActionRow interfaceDetailsTxRow)
 	{
 		InterfacesRow = interfacesStateTableRow;
-		InterfaceDetailsRxRow = interfaceDetailsRxRow;
-		InterfaceDetailsTxRow = interfaceDetailsTxRow;
+		InterfacesRxRow = interfaceDetailsRxRow;
+		InterfacesTxRow = interfaceDetailsTxRow;
 	}
 
 	public InterfacesQActionRow InterfacesRow { get; set; }
 
-	public InterfacedetailsrxQActionRow InterfaceDetailsRxRow { get; set; }
+	public InterfacesdetailsrxQActionRow InterfacesRxRow { get; set; }
 
-	public InterfacedetailstxQActionRow InterfaceDetailsTxRow { get; set; }
+	public InterfacesdetailstxQActionRow InterfacesTxRow { get; set; }
 }
