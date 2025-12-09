@@ -4365,8 +4365,6 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				</Positions>
 			</Display>
 			<Measurement>
-				<!-- SuppressValidator 2.31.9 Sorting on datetime column not needed. -->
-				<!-- /SuppressValidator 2.31.9 -->
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
 				<Type options="tab=columns:2001|0-2004|3-1999|19-2006|5-2013|11-2009|8-2014|12-2010|9-2003|2-2002|1-2007|6-2005|4-2008|7-2016|14-2011|10-2015|13-2017|15-2019|17-2018|16-2020|18,width:0-0-200-123-115-0-115-0-100-130-128-94-58-138-128-112-141-127-97-133,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
