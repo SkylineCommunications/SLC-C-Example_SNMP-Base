@@ -281,7 +281,7 @@
 		private Dictionary<string, DuplexStatus> ConvertDuplexColumnToDictionary()
 		{
 			var duplexStatuses = new Dictionary<string, DuplexStatus>();
-			for (var i = 0; i < duplexGetter.Keys.Length; i++)
+			for (int i = 0; i < duplexGetter.Keys.Length; i++)
 			{
 				string key = Convert.ToString(duplexGetter.Keys[i]);
 				var duplexStatus = (DuplexStatus)Convert.ToInt32(duplexGetter.DuplexStatuses[i]);
@@ -407,16 +407,16 @@
 					Parameter.Ifxtable.Idx.ifxtable_ifcounterdiscontinuitytime,
 				};
 
-				var interfacesExtendedColumns = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);
-				var interfacesExtendedKeys = (object[])interfacesExtendedColumns[0];
-				var interfacesExtendedDiscontinuities = (object[])interfacesExtendedColumns[1];
+				var ifXTableColumns = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);
+				var ifXTableKeys = (object[])ifXTableColumns[0];
+				var ifXTableDiscontinuities = (object[])ifXTableColumns[1];
 
-				for (int i = 0; i < interfacesExtendedKeys.Length; i++)
+				for (int i = 0; i < ifXTableKeys.Length; i++)
 				{
-					int position = Array.IndexOf(Keys, interfacesExtendedKeys[i]);
+					int position = Array.IndexOf(Keys, ifXTableKeys[i]);
 					if (position > -1)
 					{
-						Discontinuity[position] = interfacesExtendedDiscontinuities[i];
+						Discontinuity[position] = ifXTableDiscontinuities[i];
 					}
 				}
 			}

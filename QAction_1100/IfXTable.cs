@@ -159,7 +159,7 @@
 				ifXTableSetter.SetColumnsData[Parameter.Ifxtable.tablePid].Add(key);
 
 				// Rates
-				ProcessRates(snmpDeltaHelper, i, out var bitrateIn, out var bitrateOut);
+				ProcessRates(snmpDeltaHelper, i, out double bitrateIn, out double bitrateOut);
 
 				// Utilization
 				ProcessUtilization(duplexStatuses, i, key, bitrateIn, bitrateOut);
@@ -179,15 +179,15 @@
 
 		private static double CalculateRate(string key, ulong count, SnmpDeltaHelper snmpDeltaHelper, SnmpRate64 snmpRateHelper)
 		{
-			var rate = snmpRateHelper.Calculate(snmpDeltaHelper, count, key);
+			double rate = snmpRateHelper.Calculate(snmpDeltaHelper, count, key);
 
 			return rate;
 		}
 
 		private static double CalculateBitRate(string key, ulong octectCount, SnmpDeltaHelper snmpDeltaHelper, SnmpRate64 snmpRateHelper)
 		{
-			var octetRate = CalculateRate(key, octectCount, snmpDeltaHelper, snmpRateHelper);
-			var bitRate = octetRate > 0 ? octetRate * 8 : octetRate;
+			double octetRate = CalculateRate(key, octectCount, snmpDeltaHelper, snmpRateHelper);
+			double bitRate = octetRate > 0 ? octetRate * 8 : octetRate;
 
 			return bitRate;
 		}
@@ -230,10 +230,10 @@
 			ulong broadcastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.BroadcastPktsOut[getPosition]));
 			double broadcastRateOut = CalculateRate(key, broadcastPktsOut, snmpDeltaHelper, ratesData.BroadcastRateOut);
 
-			double octetsIn = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCOctetsIn[getPosition]));
+			ulong octetsIn = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCOctetsIn[getPosition]));
 			bitrateIn = CalculateBitRate(key, octetsIn, snmpDeltaHelper, ratesData.HcBitRateIn);
 
-			double octetsOut = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCOctetsOut[getPosition]));
+			ulong octetsOut = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCOctetsOut[getPosition]));
 			bitrateOut = CalculateBitRate(key, octetsOut, snmpDeltaHelper, ratesData.HcBitRateOut);
 
 			ulong hcUnicastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.HCUcastPktsIn[getPosition]));
