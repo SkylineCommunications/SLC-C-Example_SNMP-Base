@@ -127,7 +127,7 @@ public static class QAction
 		var columnsToGet = new uint[]
 		{
 			Parameter.Dot3stats.Idx.dot3stats_index,
-			Parameter.Dot3stats.Idx.dot3stats_duplexstatus
+			Parameter.Dot3stats.Idx.dot3stats_duplexstatus,
 		};
 
 		var columns = protocol.GetColumns(Parameter.Dot3stats.tablePid, columnsToGet);
