@@ -34,9 +34,9 @@ public static class QAction
 			var interfacesRowsPerKey = new Dictionary<string, InterfaceTablesRowData>();
 			var duplexStatusesPerKey = GetDuplexStatuses(protocol);
 
-			// ifTable
+			// ifTable.
 			var ifTableGetter = new IfTableGetter(protocol);
-			for (var i = 0; i < ifTableGetter.Keys.Length; i++)
+			for (int i = 0; i < ifTableGetter.Keys.Length; i++)
 			{
 				var interfacesRow = new InterfacesQActionRow();
 				var interfacesDetailsRxRow = new InterfacesdetailsrxQActionRow();
@@ -44,8 +44,8 @@ public static class QAction
 
 				PopulateDataFromIfTable(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow, ifTableGetter, i);
 
-				var key = Convert.ToString(ifTableGetter.Keys[i]);
-				if (duplexStatusesPerKey.TryGetValue(key, out var duplexState))
+				string key = Convert.ToString(ifTableGetter.Keys[i]);
+				if (duplexStatusesPerKey.TryGetValue(key, out int duplexState))
 				{
 					interfacesRow.Interfacesduplexstatus = duplexState;
 				}
@@ -59,9 +59,9 @@ public static class QAction
 
 			// ifXTable.
 			var ifXTableGetter = new IfXTableGetter(protocol);
-			for (var i = 0; i < ifXTableGetter.Keys.Length; i++)
+			for (int i = 0; i < ifXTableGetter.Keys.Length; i++)
 			{
-				var key = Convert.ToString(ifXTableGetter.Keys[i]);
+				string key = Convert.ToString(ifXTableGetter.Keys[i]);
 
 				if (!interfacesRowsPerKey.TryGetValue(key, out var tablesRowData))
 				{
@@ -84,7 +84,7 @@ public static class QAction
 			var interfaceDetailsRxRows = new QActionTableRow[rows.Length];
 			var interfaceDetailsTxRows = new QActionTableRow[rows.Length];
 
-			for (var i = 0; i < rows.Length; i++)
+			for (int i = 0; i < rows.Length; i++)
 			{
 				interfaceRows[i] = rows[i].InterfacesRow;
 				interfaceDetailsRxRows[i] = rows[i].InterfacesRxRow;
@@ -124,7 +124,11 @@ public static class QAction
 	{
 		var duplexStatusesPerKey = new Dictionary<string, int>();
 
-		var columnsToGet = new uint[] { Parameter.Dot3stats.Idx.dot3stats_index, Parameter.Dot3stats.Idx.dot3stats_duplexstatus };
+		var columnsToGet = new uint[]
+		{
+			Parameter.Dot3stats.Idx.dot3stats_index,
+			Parameter.Dot3stats.Idx.dot3stats_duplexstatus
+		};
 
 		var columns = protocol.GetColumns(Parameter.Dot3stats.tablePid, columnsToGet);
 		var keys = (object[])columns[0];
@@ -146,7 +150,7 @@ public static class QAction
 		int getPosition)
 	{
 		// Keys
-		var key = Convert.ToString(ifTableGetter.Keys[getPosition]);
+		string key = Convert.ToString(ifTableGetter.Keys[getPosition]);
 		interfacesRow.Interfacesindex = key;
 		interfacesRxRow.Interfacesdetailsrxdindex = interfacesRxRow.Interfacesdetailsrxfktointerfaces = key;
 		interfacesTxRow.Interfacesdetailstxindex = interfacesTxRow.Interfacesdetailstxfktointerfaces = key;
@@ -173,7 +177,7 @@ public static class QAction
 		interfacesTxRow.Interfacesdetailstxdiscardrate = Convert.ToDouble(ifTableGetter.DiscardRateOut[getPosition]);
 		interfacesTxRow.Interfacesdetailstxerrorrate = Convert.ToDouble(ifTableGetter.ErrorRateOut[getPosition]);
 
-		var useHighCapacityCounters = ShouldUseHighCapacityCounters(Convert.ToDouble(ifTableGetter.Speeds[getPosition]));
+		bool useHighCapacityCounters = ShouldUseHighCapacityCounters(Convert.ToDouble(ifTableGetter.Speeds[getPosition]));
 		if (useHighCapacityCounters)
 		{
 			return;
@@ -182,10 +186,10 @@ public static class QAction
 		interfacesRow.Interfacesrxoctets = Convert.ToDouble(ifTableGetter.InOctets[getPosition]);
 		interfacesRow.Interfacestxoctets = Convert.ToDouble(ifTableGetter.OutOctets[getPosition]);
 
-		var dBitRateIn = Convert.ToDouble(ifTableGetter.BitRateIn[getPosition]);
+		double dBitRateIn = Convert.ToDouble(ifTableGetter.BitRateIn[getPosition]);
 		interfacesRow.Interfacesrxbitrate = dBitRateIn >= 0 ? dBitRateIn / Math.Pow(10, 6) : -1; // bps -> Mbps
 
-		var dBitRateOut = Convert.ToDouble(ifTableGetter.BitRateOut[getPosition]);
+		double dBitRateOut = Convert.ToDouble(ifTableGetter.BitRateOut[getPosition]);
 		interfacesRow.Interfacestxbitrate = dBitRateOut >= 0 ? dBitRateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
 
 		interfacesRow.Interfacesbandwidthutilization = Convert.ToDouble(ifTableGetter.BandwidthUtilization[getPosition]);
@@ -227,7 +231,7 @@ public static class QAction
 			interfacesRow.Interfacesspeed = Convert.ToDouble(ifXTableGetter.HighSpeed[getPosition]);
 		}
 
-		var isUsingHighCapacityCounters = interfacesRow.Interfacesrxoctets == null;
+		bool isUsingHighCapacityCounters = interfacesRow.Interfacesrxoctets == null;
 		if (isUsingHighCapacityCounters)
 		{
 			PopulateHighCapacityDataFromIfXTable(interfacesRow, interfacesRxRow, interfacesTxRow, ifXTableGetter, getPosition);
@@ -263,7 +267,7 @@ public static class QAction
 			? -1
 			: Convert.ToDouble(ifXTableGetter.MulticastRateOut[getPosition]);
 
-		var bitrateIn = Convert.ToDouble(ifXTableGetter.HcBitRateIn[getPosition]);
+		double bitrateIn = Convert.ToDouble(ifXTableGetter.HcBitRateIn[getPosition]);
 		if (bitrateIn < -1)
 		{
 			// Indication of discontinuity times, need to set values to N/A
@@ -289,10 +293,10 @@ public static class QAction
 
 		interfacesRow.Interfacesbandwidthutilization = Convert.ToDouble(ifXTableGetter.BandwidthUtilization[getPosition]);
 
-		var bitrateIn = Convert.ToDouble(ifXTableGetter.HcBitRateIn[getPosition]);
+		double bitrateIn = Convert.ToDouble(ifXTableGetter.HcBitRateIn[getPosition]);
 		interfacesRow.Interfacesrxbitrate = bitrateIn >= 0 ? bitrateIn / Math.Pow(10, 6) : -1; // bps -> Mbps
 
-		var bitrateOut = Convert.ToDouble(ifXTableGetter.HcBitRateOut[getPosition]);
+		double bitrateOut = Convert.ToDouble(ifXTableGetter.HcBitRateOut[getPosition]);
 		interfacesRow.Interfacestxbitrate = bitrateOut >= 0 ? bitrateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
 
 		// Interface Counters RX Table
