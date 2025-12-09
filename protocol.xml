@@ -6407,14 +6407,14 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 			<ArrayOptions index="0">
 				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
 				<ColumnOption idx="0" pid="2101" type="retrieved" options=""/>
-				<ColumnOption idx="1" pid="2102" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="1" pid="2102" type="retrieved" options=";foreignKey=2000" />
 				<ColumnOption idx="2" pid="2103" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="3" pid="2104" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="4" pid="2105" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="5" pid="2106" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="6" pid="2107" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="7" pid="2108" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="8" pid="2109" type="retrieved" options=";foreignKey=2000" />
+				<ColumnOption idx="8" pid="2109" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="9" pid="2099" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
@@ -6431,11 +6431,11 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:2101|0-2109|8-2099|9-2102|1-2103|2-2104|3-2105|4-2106|5-2107|6-2108|7,width:0-0-200-115-115-115-115-115-115-153,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2101|0-2102|1-2099|9-2103|2-2104|3-2105|4-2106|5-2107|6-2108|7-2109|8,width:0-0-200-115-115-115-115-115-115-153,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="2101" trending="false">
-			<Name>InterfacesDetailsRxdex</Name>
+			<Name>InterfacesDetailsRxdIndex</Name>
 			<Description>Index (Interfaces Details Rx)</Description>
 			<Type>read</Type>
 			<Information>
@@ -6453,13 +6453,31 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2102" trending="true">
+		<Param id="2102" trending="false">
+			<Name>InterfacesDetailsRxFKtoInterfaces</Name>
+			<Description>FK to Interfaces (Interfaces Details Rx)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>This is the foreign key to the Interfaces Table.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2103" trending="true">
 			<Name>InterfacesDetailsRxRate</Name>
 			<Description>Packet Rate (Interfaces Details Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The total number of packets received on the interface,
-including all unicast, multicast, broadcast, and bad packets etc.]]>
+					<![CDATA[The total number of packets received on the interface, including all unicast, multicast, broadcast, and bad packets etc.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -6491,7 +6509,7 @@ including all unicast, multicast, broadcast, and bad packets etc.]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2103" trending="true">
+		<Param id="2104" trending="true">
 			<Name>InterfacesDetailsRxUnicastRate</Name>
 			<Description>Unicast Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6529,7 +6547,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2104" trending="true">
+		<Param id="2105" trending="true">
 			<Name>InterfacesDetailsRxBroadcastRate</Name>
 			<Description>Broadcast Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6567,7 +6585,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2105" trending="true">
+		<Param id="2106" trending="true">
 			<Name>InterfacesDetailsRxMulticastRate</Name>
 			<Description>Multicast Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6606,7 +6624,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2106" trending="true">
+		<Param id="2107" trending="true">
 			<Name>InterfacesDetailsRxDiscardRate</Name>
 			<Description>Discard Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6648,7 +6666,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2107" trending="true">
+		<Param id="2108" trending="true">
 			<Name>InterfacesDetailsRxErrorRate</Name>
 			<Description>Error Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6692,7 +6710,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2108" trending="true">
+		<Param id="2109" trending="true">
 			<Name>InterfacesDetailsRxUnknownProtocolRate</Name>
 			<Description>Unknown Protocol Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6737,25 +6755,6 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2109" trending="false">
-			<Name>InterfacesDetailsRxFKtoInterfaces</Name>
-			<Description>FK to Interfaces (Interfaces Details Rx)</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>This is the foreign key to the Interfaces Table.</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
 		
 		<Param id="2199" trending="false">
 			<Name>InterfacesDetailsTxDisplayKey</Name>
@@ -6783,13 +6782,13 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<ArrayOptions index="0">
 				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
 				<ColumnOption idx="0" pid="2201" type="retrieved" options=""/>
-				<ColumnOption idx="1" pid="2202" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="1" pid="2202" type="retrieved" options=";foreignKey=2000" />
 				<ColumnOption idx="2" pid="2203" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="3" pid="2204" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="4" pid="2205" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="5" pid="2206" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="6" pid="2207" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="7" pid="2208" type="retrieved" options=";foreignKey=2000" />
+				<ColumnOption idx="7" pid="2208" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="8" pid="2199" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
@@ -6806,7 +6805,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:2201|0-2208|7-2199|8-2202|1-2203|2-2204|3-2205|4-2206|5-2207|6,width:0-0-200-115-115-115-115-115-115,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2201|0-2202|1-2199|8-2203|2-2204|3-2205|4-2206|5-2207|6-2208|7,width:0-0-200-115-115-115-115-115-115,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="2201" trending="false">
@@ -6828,7 +6827,26 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2202" trending="true">
+		<Param id="2202" trending="false">
+			<Name>InterfacesDetailsTxFKtoInterfaces</Name>
+			<Description>FK to Interfaces (Interfaces Details Tx)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>This is the foreign key to the Interfaces Table.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2203" trending="true">
 			<Name>InterfacesDetailsTxRate</Name>
 			<Description>Packet Rate (Interfaces Details Tx)</Description>
 			<Information>
@@ -6865,7 +6883,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2203" trending="true">
+		<Param id="2204" trending="true">
 			<Name>InterfacesDetailsTxUnicastRate</Name>
 			<Description>Unicast Rate (Interfaces Details Tx)</Description>
 			<Information>
@@ -6903,7 +6921,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2204" trending="true">
+		<Param id="2205" trending="true">
 			<Name>InterfacesDetailsTxBroadcastRate</Name>
 			<Description>Broadcast Rate (Interfaces Details Tx)</Description>
 			<Information>
@@ -6941,7 +6959,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2205" trending="true">
+		<Param id="2206" trending="true">
 			<Name>InterfacesDetailsTxMulticastRate</Name>
 			<Description>Multicast Rate (Interfaces Details Tx)</Description>
 			<Information>
@@ -6980,7 +6998,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2206" trending="true">
+		<Param id="2207" trending="true">
 			<Name>InterfacesDetailsTxDiscardRate</Name>
 			<Description>Discard Rate (Interfaces Details Tx)</Description>
 			<Information>
@@ -7022,7 +7040,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2207" trending="true">
+		<Param id="2208" trending="true">
 			<Name>InterfacesDetailsTxErrorRate</Name>
 			<Description>Error Rate (Interfaces Details Tx)</Description>
 			<Information>
@@ -7062,25 +7080,6 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Display>
 			<Measurement>
 				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2208" trending="false">
-			<Name>InterfacesDetailsTxFKtoInterfaces</Name>
-			<Description>FK to Interfaces (Interfaces Details Tx)</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>This is the foreign key to the Interfaces Table.</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
 			</Measurement>
 		</Param>
 	</Params>
