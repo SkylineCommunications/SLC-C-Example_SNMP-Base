@@ -18,8 +18,8 @@
 		private static readonly TimeSpan MinDelta = new TimeSpan(0, 0, 5);
 		private static readonly TimeSpan MaxDelta = new TimeSpan(0, 10, 0);
 
-		private readonly IfTableGetter interfacesTableGetter;
-		private readonly IfTableSetter interfacesTableSetter;
+		private readonly IfTableGetter ifTableGetter;
+		private readonly IfTableSetter ifTableSetter;
 
 		private readonly SLProtocol protocol;
 
@@ -27,20 +27,20 @@
 		{
 			this.protocol = protocol;
 
-			interfacesTableGetter = new IfTableGetter(protocol);
-			interfacesTableGetter.Load();
+			ifTableGetter = new IfTableGetter(protocol);
+			ifTableGetter.Load();
 
-			interfacesTableSetter = new IfTableSetter(protocol);
+			ifTableSetter = new IfTableSetter(protocol);
 		}
 
 		public void ProcessTimeout()
 		{
 			var snmpDeltaHelper = new SnmpDeltaHelper(protocol, GroupId, Parameter.interfacesratescalculationsmethod);
 
-			for (var i = 0; i < interfacesTableGetter.Keys.Length; i++)
+			for (var i = 0; i < ifTableGetter.Keys.Length; i++)
 			{
-				var key = Convert.ToString(interfacesTableGetter.Keys[i]);
-				var ratesDataSerialized = Convert.ToString(interfacesTableGetter.RatesData[i]);
+				var key = Convert.ToString(ifTableGetter.Keys[i]);
+				var ratesDataSerialized = Convert.ToString(ifTableGetter.RatesData[i]);
 
 				var ratesData = IfTableRatesData.FromJsonString(ratesDataSerialized, MinDelta, MaxDelta);
 
@@ -58,14 +58,14 @@
 
 				ratesData.UnknownProtocolsRateIn.BufferDelta(snmpDeltaHelper, key);
 
-				interfacesTableSetter.SetColumnsData[Parameter.Iftable.tablePid].Add(key);
-				interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_ratesdata].Add(ratesData.ToJsonString());
+				ifTableSetter.SetColumnsData[Parameter.Iftable.tablePid].Add(key);
+				ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_ratesdata].Add(ratesData.ToJsonString());
 			}
 		}
 
 		public void UpdateProtocol()
 		{
-			interfacesTableSetter.SetColumns();
+			ifTableSetter.SetColumns();
 		}
 
 		private sealed class IfTableGetter
