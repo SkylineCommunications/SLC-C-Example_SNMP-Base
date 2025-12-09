@@ -3,6 +3,7 @@
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
+
 	using Skyline.DataMiner.Scripting;
 	using Skyline.DataMiner.Utils.Interfaces;
 	using Skyline.DataMiner.Utils.Protocol.Extension;
@@ -10,8 +11,6 @@
 	using Skyline.DataMiner.Utils.SafeConverters;
 	using Skyline.DataMiner.Utils.SNMP;
 	using Skyline.Protocol.Interface;
-
-	using SLNetMessages = Skyline.DataMiner.Net.Messages;
 
 	public class IfTableTimeoutProcessor
 	{
@@ -235,19 +234,19 @@
 			var unknownProtocolsIn = SafeConvert.ToUInt32(Convert.ToDouble(interfaceTableGetter.UnknownIn[getPosition]));
 			var unknownProtocolRateIn = CalculateRate(key, unknownProtocolsIn, snmpDeltaHelper, rateData.UnknownProtocolsRateIn);
 
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bitratein_1019].Add(bitRateIn);
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bitrateout_1020].Add(bitRateOut);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bitratein].Add(bitRateIn);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bitrateout].Add(bitRateOut);
 
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unicastratein_1021].Add(unicastRateIn);
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unicastrateout_1022].Add(unicastRateOut);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unicastratein].Add(unicastRateIn);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unicastrateout].Add(unicastRateOut);
 
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_discardratein_1023].Add(discardRateIn);
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_discardrateout_1024].Add(discardRateOut);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_discardratein].Add(discardRateIn);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_discardrateout].Add(discardRateOut);
 
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_errorratein_1025].Add(errorRateIn);
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_errorrateout_1026].Add(errorRateOut);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_errorratein].Add(errorRateIn);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_errorrateout].Add(errorRateOut);
 
-			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unknownprotocolratein_1027].Add(unknownProtocolRateIn);
+			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unknownprotocolratein].Add(unknownProtocolRateIn);
 
 			interfaceTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_ratesdata].Add(rateData.ToJsonString());
 		}
@@ -360,17 +359,17 @@
 				var ifTableColumnsToGetIDXs = new uint[]
 				{
 					Parameter.Iftable.Idx.iftable_ifindex,
-					Parameter.Iftable.Idx.iftable_ifoctetsin_1010,
-					Parameter.Iftable.Idx.iftable_ifoctetsout_1011,
-					Parameter.Iftable.Idx.iftable_ifspeed_1005,
-					Parameter.Iftable.Idx.iftable_ifucastpktsin_1012,
-					Parameter.Iftable.Idx.iftable_ifucastpktsout_1013,
-					Parameter.Iftable.Idx.iftable_ifdiscardsin_1014,
-					Parameter.Iftable.Idx.iftable_ifdiscardsout_1015,
-					Parameter.Iftable.Idx.iftable_iferrorsin_1016,
-					Parameter.Iftable.Idx.iftable_iferrorsout_1017,
-					Parameter.Iftable.Idx.iftable_ifunknownprotosin_1018,
-					Parameter.Iftable.Idx.iftable_ratesdata_1029,
+					Parameter.Iftable.Idx.iftable_ifoctetsin,
+					Parameter.Iftable.Idx.iftable_ifoctetsout,
+					Parameter.Iftable.Idx.iftable_ifspeed,
+					Parameter.Iftable.Idx.iftable_ifucastpktsin,
+					Parameter.Iftable.Idx.iftable_ifucastpktsout,
+					Parameter.Iftable.Idx.iftable_ifdiscardsin,
+					Parameter.Iftable.Idx.iftable_ifdiscardsout,
+					Parameter.Iftable.Idx.iftable_iferrorsin,
+					Parameter.Iftable.Idx.iftable_iferrorsout,
+					Parameter.Iftable.Idx.iftable_ifunknownprotosin,
+					Parameter.Iftable.Idx.iftable_ratesdata,
 				};
 
 				var ifTableColumns = protocol.GetColumns(Parameter.Iftable.tablePid, ifTableColumnsToGetIDXs);
@@ -392,7 +391,7 @@
 
 			private void LoadIfXTable()
 			{
-				var columnsToGet = new uint[] { Parameter.Ifxtable.Idx.ifxtable_ifindex_1101, Parameter.Ifxtable.Idx.ifxtable_ifcounterdiscontinuitytime_1120 };
+				var columnsToGet = new uint[] { Parameter.Ifxtable.Idx.ifxtable_ifindex, Parameter.Ifxtable.Idx.ifxtable_ifcounterdiscontinuitytime };
 
 				var interfaceExtendedTableData = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);
 				var interfaceExtendedTableKeys = (object[])interfaceExtendedTableData[0];
@@ -421,17 +420,17 @@
 			public Dictionary<int, List<object>> SetColumnsData { get; } = new Dictionary<int, List<object>>
 			{
 				{ Parameter.Iftable.tablePid, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_bitratein_1019, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_bitrateout_1020, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_bandwidthutilization_1028, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_ratesdata_1029, new List<object>() },
+				{ Parameter.Iftable.Pid.iftable_bitratein, new List<object>() },
+				{ Parameter.Iftable.Pid.iftable_bitrateout, new List<object>() },
+				{ Parameter.Iftable.Pid.iftable_bandwidthutilization, new List<object>() },
+				{ Parameter.Iftable.Pid.iftable_ratesdata, new List<object>() },
 				{ Parameter.Iftable.Pid.iftable_unicastratein, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_unicastrateout_1022, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_discardratein_1023, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_discardrateout_1024, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_errorratein_1025, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_errorrateout_1026, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_unknownprotocolratein_1027, new List<object>() },
+				{ Parameter.Iftable.Pid.iftable_unicastrateout, new List<object>() },
+				{ Parameter.Iftable.Pid.iftable_discardratein, new List<object>() },
+				{ Parameter.Iftable.Pid.iftable_discardrateout, new List<object>() },
+				{ Parameter.Iftable.Pid.iftable_errorratein, new List<object>() },
+				{ Parameter.Iftable.Pid.iftable_errorrateout, new List<object>() },
+				{ Parameter.Iftable.Pid.iftable_unknownprotocolratein, new List<object>() },
 			};
 
 			internal Dictionary<int, object> SetParamsData { get; } = new Dictionary<int, object>();
