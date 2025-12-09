@@ -21,6 +21,7 @@ public class IfTable
             Parameter.Iftable.Idx.iftable_ifdiscardsin_1014,
             Parameter.Iftable.Idx.iftable_iferrorsin_1016,
             Parameter.Iftable.Idx.iftable_ifunknownprotosin_1018,
+
             Parameter.Iftable.Idx.iftable_ifoctetsout_1011,
             Parameter.Iftable.Idx.iftable_ifucastpktsout_1013,
             Parameter.Iftable.Idx.iftable_ifdiscardsout_1015,

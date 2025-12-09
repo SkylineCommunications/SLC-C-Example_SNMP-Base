@@ -21,7 +21,7 @@ public static class QAction
 
 			SnmpDeltaHelper.UpdateRateDeltaTracking(
 				protocol,
-				tablePids: new[] { 1000, 1100 },
+				tablePids: new[] { Parameter.Iftable.tablePid, Parameter.Ifxtable.tablePid },
 				rateCalculationsMethod);
 		}
 		catch (Exception ex)
