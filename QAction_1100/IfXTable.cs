@@ -9,7 +9,7 @@
 	using Skyline.DataMiner.Utils.Rates.Protocol;
 	using Skyline.DataMiner.Utils.SafeConverters;
 	using Skyline.DataMiner.Utils.SNMP;
-	using Skyline.Protocol.Interface;
+	using Skyline.Protocol.Interfaces;
 
 	public class IfxTableTimeoutProcessor
 	{

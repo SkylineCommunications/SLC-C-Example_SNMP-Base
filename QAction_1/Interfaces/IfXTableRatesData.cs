@@ -1,4 +1,4 @@
-﻿namespace Skyline.Protocol.Interface
+﻿namespace Skyline.Protocol.Interfaces
 {
 	using System;
 
