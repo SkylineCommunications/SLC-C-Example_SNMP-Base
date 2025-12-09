@@ -4218,15 +4218,15 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 		</Param>
 		<Param id="1992" trending="true" save="true">
 			<Name>InterfacesRatesCalculationsMethod</Name>
-			<Description>Rates Calculation Method for Interface Table.</Description>
+			<Description>Rates Calculation Method for Interfaces Tables</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>
 					<![CDATA[Allows to chose between 2 methods of rate calculations for the Interface tables:
 - Fast: This method will be faster and less resources eager but the results might be less accurate in some circumstances.
-		It will use a delta (time elapsed between current & previous polling cycle) on group level.
+	It will use a delta (time elapsed between current & previous polling cycle) on group level.
 - Accurate: This method will be more accurate but will be more resources eager.
-		It will use a delta (time elapsed between current & previous polling cycle) on table row level.]]>
+	It will use a delta (time elapsed between current & previous polling cycle) on table row level.]]>
 				</Subtext>
 			</Information>
 			<Interprete>
@@ -4266,7 +4266,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 		</Param>
 		<Param id="1993" setter="true">
 			<Name>InterfacesRatesCalculationsMethod</Name>
-			<Description>Rates Calculation Method for Interface Table.</Description>
+			<Description>Rates Calculation Method for Interfaces Tables</Description>
 			<Type>write</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
