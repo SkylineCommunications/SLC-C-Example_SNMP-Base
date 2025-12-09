@@ -1,24 +1,24 @@
 ﻿namespace Skyline.Protocol.IfxTable
 {
-    using System;
-    using System.Collections.Generic;
+	using System;
+	using System.Collections.Generic;
 
-    using Skyline.DataMiner.Scripting;
-    using Skyline.DataMiner.Utils.Interfaces;
-    using Skyline.DataMiner.Utils.Protocol.Extension;
-    using Skyline.DataMiner.Utils.Rates.Protocol;
-    using Skyline.DataMiner.Utils.SafeConverters;
-    using Skyline.DataMiner.Utils.SNMP;
-    using Skyline.Protocol.Interface;
+	using Skyline.DataMiner.Scripting;
+	using Skyline.DataMiner.Utils.Interfaces;
+	using Skyline.DataMiner.Utils.Protocol.Extension;
+	using Skyline.DataMiner.Utils.Rates.Protocol;
+	using Skyline.DataMiner.Utils.SafeConverters;
+	using Skyline.DataMiner.Utils.SNMP;
+	using Skyline.Protocol.Interface;
 
-    public class IfxTableTimeoutProcessor
+	public class IfxTableTimeoutProcessor
 	{
 		private const int GroupId = 1100;
 		private static readonly TimeSpan MinDelta = new TimeSpan(0, 0, 5);
 		private static readonly TimeSpan MaxDelta = new TimeSpan(0, 10, 0);
 
-		private readonly IfxTableGetter ifxtableGetter;
-		private readonly IfxTableSetter ifxtableSetter;
+		private readonly IfxTableGetter ifxTableGetter;
+		private readonly IfxTableSetter ifxTableSetter;
 
 		private readonly SLProtocol protocol;
 
@@ -26,49 +26,49 @@
 		{
 			this.protocol = protocol;
 
-			ifxtableGetter = new IfxTableGetter(protocol);
-			ifxtableGetter.Load();
+			ifxTableGetter = new IfxTableGetter(protocol);
+			ifxTableGetter.Load();
 
-			ifxtableSetter = new IfxTableSetter(protocol);
+			ifxTableSetter = new IfxTableSetter(protocol);
 		}
 
 		public void ProcessTimeout()
 		{
 			var snmpDeltaHelper = new SnmpDeltaHelper(protocol, GroupId, Parameter.interfacesratescalculationsmethod);
 
-			for (var i = 0; i < ifxtableGetter.Keys.Length; i++)
+			for (var i = 0; i < ifxTableGetter.Keys.Length; i++)
 			{
-				var key = Convert.ToString(ifxtableGetter.Keys[i]);
-				var serializedIfxRateData = Convert.ToString(ifxtableGetter.IfRateData[i]);
+				var key = Convert.ToString(ifxTableGetter.Keys[i]);
+				var ratesDataSerialized = Convert.ToString(ifxTableGetter.RatesData[i]);
 
-				var rateData = InterfaceExtendedRateData.FromJsonString(serializedIfxRateData, MinDelta, MaxDelta);
+				var ratesData = InterfaceExtendedRateData.FromJsonString(ratesDataSerialized, MinDelta, MaxDelta);
 
-				rateData.MulticastRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.MulticastRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.MulticastRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.MulticastRateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.BroadcastRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.BroadcastRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.BroadcastRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.BroadcastRateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.HcBitRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.HcBitRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HcBitRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HcBitRateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.HcUnicastRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.HcUnicastRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HcUnicastRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HcUnicastRateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.HcMulticastRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.HcMulticastRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HcMulticastRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HcMulticastRateOut.BufferDelta(snmpDeltaHelper, key);
 
-				rateData.HcBroadcastRateIn.BufferDelta(snmpDeltaHelper, key);
-				rateData.HcBroadcastRateOut.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HcBroadcastRateIn.BufferDelta(snmpDeltaHelper, key);
+				ratesData.HcBroadcastRateOut.BufferDelta(snmpDeltaHelper, key);
 
-				ifxtableSetter.SetColumnsData[Parameter.Ifxtable.tablePid].Add(key);
-				ifxtableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_ratesdata].Add(rateData.ToJsonString());
+				ifxTableSetter.SetColumnsData[Parameter.Ifxtable.tablePid].Add(key);
+				ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_ratesdata].Add(ratesData.ToJsonString());
 			}
 		}
 
 		public void UpdateProtocol()
 		{
-			ifxtableSetter.SetColumns();
+			ifxTableSetter.SetColumns();
 		}
 
 		private class IfxTableGetter
@@ -82,7 +82,7 @@
 
 			public object[] Keys { get; private set; }
 
-			public object[] IfRateData { get; private set; }
+			public object[] RatesData { get; private set; }
 
 			public void Load()
 			{
@@ -91,7 +91,7 @@
 				var tableData = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);
 
 				Keys = (object[])tableData[0];
-				IfRateData = (object[])tableData[1];
+				RatesData = (object[])tableData[1];
 			}
 		}
 
@@ -135,6 +135,7 @@
 
 			ifxTableGetter = new IfXTableGetter(protocol);
 			ifxTableGetter.Load();
+
 			duplexGetter = new DuplexGetter(protocol);
 			duplexGetter.Load();
 
@@ -191,63 +192,63 @@
 		{
 			var key = Convert.ToString(ifxTableGetter.Keys[getPosition]);
 
-			var serializedIfxRateData = Convert.ToString(ifxTableGetter.RateData[getPosition]);
-			var rateData = InterfaceExtendedRateData.FromJsonString(serializedIfxRateData, MinDelta, MaxDelta);
+			var ratesDataSerialized = Convert.ToString(ifxTableGetter.RateData[getPosition]);
+			var ratesData = InterfaceExtendedRateData.FromJsonString(ratesDataSerialized, MinDelta, MaxDelta);
 
 			var discontinuityTime = Convert.ToString(ifxTableGetter.Discontinuity[getPosition]);
-			var discontinuity = Interface.HasDiscontinuity(discontinuityTime, rateData.DiscontinuityTime);
+			var hasDiscontinuity = Interface.HasDiscontinuity(discontinuityTime, ratesData.DiscontinuityTime);
 
-			if (ifxTableGetter.IsSnmpAgentRestarted || discontinuity)
+			if (ifxTableGetter.IsSnmpAgentRestarted || hasDiscontinuity)
 			{
-				rateData.MulticastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.MulticastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.BroadcastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.BroadcastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.HcBitRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.HcBitRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.HcUnicastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.HcUnicastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.HcMulticastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.HcMulticastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.HcBroadcastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				rateData.HcBroadcastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.MulticastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.MulticastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.BroadcastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.BroadcastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.HcBitRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.HcBitRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.HcUnicastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.HcUnicastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.HcMulticastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.HcMulticastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.HcBroadcastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.HcBroadcastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
 			}
 
 			ulong multicastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.MulticastPktsIn[getPosition]));
-			var multicastRateIn = CalculateRate(key, multicastPktsIn, snmpDeltaHelper, rateData.MulticastRateIn);
+			var multicastRateIn = CalculateRate(key, multicastPktsIn, snmpDeltaHelper, ratesData.MulticastRateIn);
 
 			ulong multicastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.MulticastPktsOut[getPosition]));
-			var multicastRateOut = CalculateRate(key, multicastPktsOut, snmpDeltaHelper, rateData.MulticastRateOut);
+			var multicastRateOut = CalculateRate(key, multicastPktsOut, snmpDeltaHelper, ratesData.MulticastRateOut);
 
 			ulong broadcastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.BroadcastPktsIn[getPosition]));
-			var broadcastRateIn = CalculateRate(key, broadcastPktsIn, snmpDeltaHelper, rateData.BroadcastRateIn);
+			var broadcastRateIn = CalculateRate(key, broadcastPktsIn, snmpDeltaHelper, ratesData.BroadcastRateIn);
 
 			ulong broadcastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.BroadcastPktsOut[getPosition]));
-			var broadcastRateOut = CalculateRate(key, broadcastPktsOut, snmpDeltaHelper, rateData.BroadcastRateOut);
+			var broadcastRateOut = CalculateRate(key, broadcastPktsOut, snmpDeltaHelper, ratesData.BroadcastRateOut);
 
 			var octetsIn = SafeConvert.ToUInt64(Convert.ToDouble(ifxTableGetter.HCOctetsIn[getPosition]));
-			bitrateIn = CalculateBitRate(key, octetsIn, snmpDeltaHelper, rateData.HcBitRateIn);
+			bitrateIn = CalculateBitRate(key, octetsIn, snmpDeltaHelper, ratesData.HcBitRateIn);
 
 			var octetsOut = SafeConvert.ToUInt64(Convert.ToDouble(ifxTableGetter.HCOctetsOut[getPosition]));
-			bitrateOut = CalculateBitRate(key, octetsOut, snmpDeltaHelper, rateData.HcBitRateOut);
+			bitrateOut = CalculateBitRate(key, octetsOut, snmpDeltaHelper, ratesData.HcBitRateOut);
 
 			ulong hcUnicastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.HCUcastPktsIn[getPosition]));
-			var hcUnicastRateIn = CalculateRate(key, hcUnicastPktsIn, snmpDeltaHelper, rateData.HcUnicastRateIn);
+			var hcUnicastRateIn = CalculateRate(key, hcUnicastPktsIn, snmpDeltaHelper, ratesData.HcUnicastRateIn);
 
 			ulong hcUnicastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.HCUcastPktsOut[getPosition]));
-			var hcUnicastRateOut = CalculateRate(key, hcUnicastPktsOut, snmpDeltaHelper, rateData.HcUnicastRateOut);
+			var hcUnicastRateOut = CalculateRate(key, hcUnicastPktsOut, snmpDeltaHelper, ratesData.HcUnicastRateOut);
 
 			ulong hcMulticastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.HCMulticastPktsIn[getPosition]));
-			var hcMulticastRateIn = CalculateRate(key, hcMulticastPktsIn, snmpDeltaHelper, rateData.HcMulticastRateIn);
+			var hcMulticastRateIn = CalculateRate(key, hcMulticastPktsIn, snmpDeltaHelper, ratesData.HcMulticastRateIn);
 
 			ulong hcMulticastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.HCMulticastPktsOut[getPosition]));
-			var hcMulticastRateOut = CalculateRate(key, hcMulticastPktsOut, snmpDeltaHelper, rateData.HcMulticastRateOut);
+			var hcMulticastRateOut = CalculateRate(key, hcMulticastPktsOut, snmpDeltaHelper, ratesData.HcMulticastRateOut);
 
 			ulong hcBroadcastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.HCBroadcastPktsIn[getPosition]));
-			var hcBroadcastRateIn = CalculateRate(key, hcBroadcastPktsIn, snmpDeltaHelper, rateData.HcBroadcastRateIn);
+			var hcBroadcastRateIn = CalculateRate(key, hcBroadcastPktsIn, snmpDeltaHelper, ratesData.HcBroadcastRateIn);
 
 			ulong hcBroadcastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.HCBroadcastPktsOut[getPosition]));
-			var hcBroadcastRateOut = CalculateRate(key, hcBroadcastPktsOut, snmpDeltaHelper, rateData.HcBroadcastRateOut);
+			var hcBroadcastRateOut = CalculateRate(key, hcBroadcastPktsOut, snmpDeltaHelper, ratesData.HcBroadcastRateOut);
 
 			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_multicastratein].Add(multicastRateIn);
 			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_multicastrateout].Add(multicastRateOut);
@@ -267,7 +268,7 @@
 			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_hcbroadcastratein].Add(hcBroadcastRateIn);
 			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_hcbroadcastrateout].Add(hcBroadcastRateOut);
 
-			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_ratesdata].Add(rateData.ToJsonString());
+			ifxTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_ratesdata].Add(ratesData.ToJsonString());
 		}
 
 		private void ProcessUtilization(Dictionary<string, DuplexStatus> duplexStatuses, int getPosition, string key, double bitrateIn, double bitrateOut)
@@ -285,9 +286,9 @@
 
 		private double GetSpeedValue(int getPosition)
 		{
-			var speedInTable = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.Speed[getPosition]));
+			var speedTableValue = SafeConvert.ToUInt32(Convert.ToDouble(ifxTableGetter.Speed[getPosition]));
 
-			var speedValueToUse = Convert.ToDouble(speedInTable) * Math.Pow(10, 6);
+			var speedValueToUse = Convert.ToDouble(speedTableValue) * Math.Pow(10, 6);
 			return speedValueToUse;
 		}
 
@@ -298,13 +299,14 @@
 			{
 				var key = Convert.ToString(duplexGetter.Keys[i]);
 				var duplexStatus = (DuplexStatus)Convert.ToInt32(duplexGetter.DuplexStatuses[i]);
+
 				duplexStatuses[key] = duplexStatus;
 			}
 
 			return duplexStatuses;
 		}
 
-		private class DuplexGetter
+		private sealed class DuplexGetter
 		{
 			private readonly SLProtocol protocol;
 

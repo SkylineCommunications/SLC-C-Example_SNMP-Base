@@ -16,9 +16,9 @@ public class IfxTable
 	{
 		try
 		{
-			IfxTableProcessor interfacexTableProcessor = new IfxTableProcessor(protocol);
-			interfacexTableProcessor.ProcessData();
-			interfacexTableProcessor.UpdateProtocol();
+			IfxTableProcessor interfacesExtTableProcessor = new IfxTableProcessor(protocol);
+			interfacesExtTableProcessor.ProcessData();
+			interfacesExtTableProcessor.UpdateProtocol();
 		}
 		catch (Exception ex)
 		{
@@ -35,9 +35,9 @@ public class IfxTable
 	{
 		try
 		{
-			IfxTableTimeoutProcessor interfacexTableProcessor = new IfxTableTimeoutProcessor(protocol);
-			interfacexTableProcessor.ProcessTimeout();
-			interfacexTableProcessor.UpdateProtocol();
+			IfxTableTimeoutProcessor interfacesExtTableProcessor = new IfxTableTimeoutProcessor(protocol);
+			interfacesExtTableProcessor.ProcessTimeout();
+			interfacesExtTableProcessor.UpdateProtocol();
 		}
 		catch (Exception ex)
 		{

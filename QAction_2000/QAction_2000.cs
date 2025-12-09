@@ -30,8 +30,8 @@ public class QAction
 						new[] { Parameter.iftablesetinstance, Parameter.Write.interfacesadminstatus },
 						new[] { rowKey, value });
 
-					// Note: We poll the entire table so the bit rate calculation is triggered again using the correct values.
-					// Polling just the cell or row could lead to wrong calculations.
+					/* Note: We poll the entire table so the bit rate calculation is triggered again using the correct values.
+					 * Polling just the cell or row could lead to wrong calculations. */
 					protocol.CheckTrigger(TriggerIfTable);
 					break;
 

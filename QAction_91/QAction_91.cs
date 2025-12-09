@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 using Skyline.DataMiner.Scripting;
 using Skyline.DataMiner.Utils.Protocol.Extension;
@@ -24,7 +23,7 @@ public static class SysUptime
 
 			var paramsToSet = new Dictionary<int, object>();
 
-			SnmpDeltaHelper snmpDeltaHelper = new SnmpDeltaHelper(protocol, 1);
+			SnmpDeltaHelper snmpDeltaHelper = new SnmpDeltaHelper(protocol, groupId: 1);
 			SnmpHelper snmpHelper = SnmpHelper.FromJsonString(sysUptimeBuffer, snmpDeltaHelper);
 			snmpHelper.BufferDelta();
 
@@ -52,7 +51,7 @@ public static class SysUptime
 
 			var paramsToSet = new Dictionary<int, object>();
 
-			SnmpDeltaHelper snmpDeltaHelper = new SnmpDeltaHelper(protocol, 1);
+			SnmpDeltaHelper snmpDeltaHelper = new SnmpDeltaHelper(protocol, groupId: 1);
 			SnmpHelper snmpHelper = SnmpHelper.FromJsonString(sysUptimeBuffer, snmpDeltaHelper);
 			if (snmpHelper.IsSnmpAgentRestarted(sysUptime))
 			{

@@ -1,9 +1,9 @@
 ﻿using Skyline.DataMiner.Scripting;
 using Skyline.DataMiner.Utils.Protocol.Extension;
 
-public class IfTable
+public class IfTableGetter
 {
-    public IfTable(SLProtocol protocol)
+    public IfTableGetter(SLProtocol protocol)
     {
         var columnsToGet = new uint[]
         {
