@@ -7091,7 +7091,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 		<QAction id="91" name="Process SysUptime" encoding="csharp" triggers="91;93" entryPoint="SysUptime.ProcessTimeout;SysUptime.ProcessNewValue" />
 
 		<QAction id="1000" name="If Table Rates" encoding="csharp" triggers="991;993" entryPoint="IfTable.ProcessTimeout;IfTable.ProcessTable" />
-		<QAction id="1100" name="IfX Table Rates" encoding="csharp" triggers="1091;1093" entryPoint="IfxTable.ProcessTimeout;IfxTable.ProcessTable" />
+		<QAction id="1100" name="IfX Table Rates" encoding="csharp" triggers="1091;1093" entryPoint="IfXTable.ProcessTimeout;IfXTable.ProcessTable" />
 
 		<QAction id="1991" name="Interface Table Merge" encoding="csharp" triggers="1991">
 			<Condition>

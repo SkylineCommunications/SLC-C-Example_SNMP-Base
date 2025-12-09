@@ -15,9 +15,9 @@ public class IfTable
 	{
 		try
 		{
-			var interfaceTableProcessor = new IfTableProcessor(protocol);
-			interfaceTableProcessor.ProcessData();
-			interfaceTableProcessor.UpdateProtocol();
+			var ifTableProcessor = new IfTableProcessor(protocol);
+			ifTableProcessor.ProcessData();
+			ifTableProcessor.UpdateProtocol();
 		}
 		catch (Exception ex)
 		{
@@ -34,9 +34,9 @@ public class IfTable
 	{
 		try
 		{
-			var interfaceTableProcessor = new IfTableTimeoutProcessor(protocol);
-			interfaceTableProcessor.ProcessTimeout();
-			interfaceTableProcessor.UpdateProtocol();
+			var ifTableTimeoutProcessor = new IfTableTimeoutProcessor(protocol);
+			ifTableTimeoutProcessor.ProcessTimeout();
+			ifTableTimeoutProcessor.UpdateProtocol();
 		}
 		catch (Exception ex)
 		{

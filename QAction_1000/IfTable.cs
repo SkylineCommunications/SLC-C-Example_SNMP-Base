@@ -37,10 +37,10 @@
 		{
 			var snmpDeltaHelper = new SnmpDeltaHelper(protocol, GroupId, Parameter.interfacesratescalculationsmethod);
 
-			for (var i = 0; i < ifTableGetter.Keys.Length; i++)
+			for (int i = 0; i < ifTableGetter.Keys.Length; i++)
 			{
-				var key = Convert.ToString(ifTableGetter.Keys[i]);
-				var ratesDataSerialized = Convert.ToString(ifTableGetter.RatesData[i]);
+				string key = Convert.ToString(ifTableGetter.Keys[i]);
+				string ratesDataSerialized = Convert.ToString(ifTableGetter.RatesData[i]);
 
 				var ratesData = IfTableRatesData.FromJsonString(ratesDataSerialized, MinDelta, MaxDelta);
 
@@ -83,7 +83,11 @@
 
 			public void Load()
 			{
-				var columnsToGet = new uint[] { Parameter.Iftable.Idx.iftable_ifindex, Parameter.Iftable.Idx.iftable_ratesdata };
+				var columnsToGet = new uint[]
+				{
+					Parameter.Iftable.Idx.iftable_ifindex,
+					Parameter.Iftable.Idx.iftable_ratesdata,
+				};
 
 				var tableData = protocol.GetColumns(Parameter.Iftable.tablePid, columnsToGet);
 
@@ -119,10 +123,10 @@
 		private const int GroupId = 1000;
 		private static readonly TimeSpan MinDelta = new TimeSpan(0, 0, 5);
 		private static readonly TimeSpan MaxDelta = new TimeSpan(0, 10, 0);
-		private readonly DuplexGetter duplexGetter;
 
-		private readonly IfTableGetter interfacesTableGetter;
-		private readonly IfTableSetter interfacesTableSetter;
+		private readonly DuplexGetter duplexGetter;
+		private readonly IfTableGetter ifTableGetter;
+		private readonly IfTableSetter ifTableSetter;
 
 		private readonly SLProtocol protocol;
 
@@ -130,13 +134,13 @@
 		{
 			this.protocol = protocol;
 
-			interfacesTableGetter = new IfTableGetter(protocol);
-			interfacesTableGetter.Load();
+			ifTableGetter = new IfTableGetter(protocol);
+			ifTableGetter.Load();
 
 			duplexGetter = new DuplexGetter(protocol);
 			duplexGetter.Load();
 
-			interfacesTableSetter = new IfTableSetter(protocol);
+			ifTableSetter = new IfTableSetter(protocol);
 		}
 
 		public void ProcessData()
@@ -145,57 +149,57 @@
 
 			var duplexStatuses = ConvertDuplexColumnToDictionary();
 
-			for (var i = 0; i < interfacesTableGetter.Keys.Length; i++)
+			for (int i = 0; i < ifTableGetter.Keys.Length; i++)
 			{
 				// Key
-				var key = Convert.ToString(interfacesTableGetter.Keys[i]);
-				interfacesTableSetter.SetColumnsData[Parameter.Iftable.tablePid].Add(key);
+				string key = Convert.ToString(ifTableGetter.Keys[i]);
+				ifTableSetter.SetColumnsData[Parameter.Iftable.tablePid].Add(key);
 
 				// Rates
-				ProcessRates(snmpDeltaHelper, i, out var bitrateIn, out var bitrateOut);
+				ProcessRates(snmpDeltaHelper, i, out double bitrateIn, out double bitrateOut);
 
 				// Utilization
 				ProcessUtilization(duplexStatuses, i, key, bitrateIn, bitrateOut);
 			}
 
-			if (interfacesTableGetter.IsSnmpAgentRestarted)
+			if (ifTableGetter.IsSnmpAgentRestarted)
 			{
-				interfacesTableSetter.SetParamsData[Parameter.iftablesnmpagentrestartflag] = 0;
+				ifTableSetter.SetParamsData[Parameter.iftablesnmpagentrestartflag] = 0;
 			}
 		}
 
 		public void UpdateProtocol()
 		{
-			interfacesTableSetter.SetColumns();
-			interfacesTableSetter.SetParams();
+			ifTableSetter.SetColumns();
+			ifTableSetter.SetParams();
 		}
 
 		private static double CalculateRate(string key, uint count, SnmpDeltaHelper snmpDeltaHelper, SnmpRate32 snmpRateHelper)
 		{
-			var rate = snmpRateHelper.Calculate(snmpDeltaHelper, count, key);
+			double rate = snmpRateHelper.Calculate(snmpDeltaHelper, count, key);
 
 			return rate;
 		}
 
 		private static double CalculateBitRate(string key, uint octetCount, SnmpDeltaHelper snmpDeltaHelper, SnmpRate32 snmpRateHelper)
 		{
-			var octetRate = CalculateRate(key, octetCount, snmpDeltaHelper, snmpRateHelper);
-			var bitRate = octetRate > 0 ? octetRate * 8 : octetRate;
+			double octetRate = CalculateRate(key, octetCount, snmpDeltaHelper, snmpRateHelper);
+			double bitRate = octetRate > 0 ? octetRate * 8 : octetRate;
 
 			return bitRate;
 		}
 
 		private void ProcessRates(SnmpDeltaHelper snmpDeltaHelper, int getPosition, out double bitRateIn, out double bitRateOut)
 		{
-			var key = Convert.ToString(interfacesTableGetter.Keys[getPosition]);
+			string key = Convert.ToString(ifTableGetter.Keys[getPosition]);
 
-			var ratesDataSerialized = Convert.ToString(interfacesTableGetter.RatesData[getPosition]);
+			string ratesDataSerialized = Convert.ToString(ifTableGetter.RatesData[getPosition]);
 			var ratesData = IfTableRatesData.FromJsonString(ratesDataSerialized, MinDelta, MaxDelta);
 
-			var discontinuityTime = Convert.ToString(interfacesTableGetter.Discontinuity[getPosition]);
-			var hasDiscontinuity = Interface.HasDiscontinuity(discontinuityTime, ratesData.DiscontinuityTime);
+			string discontinuityTime = Convert.ToString(ifTableGetter.Discontinuity[getPosition]);
+			bool hasDiscontinuity = Interface.HasDiscontinuity(discontinuityTime, ratesData.DiscontinuityTime);
 
-			if (interfacesTableGetter.IsSnmpAgentRestarted || hasDiscontinuity)
+			if (ifTableGetter.IsSnmpAgentRestarted || hasDiscontinuity)
 			{
 				ratesData.BitRateIn = SnmpRate32.FromJsonString(string.Empty, MinDelta, MaxDelta);
 				ratesData.BitRateOut = SnmpRate32.FromJsonString(string.Empty, MinDelta, MaxDelta);
@@ -208,66 +212,66 @@
 				ratesData.UnknownProtocolsRateIn = SnmpRate32.FromJsonString(string.Empty, MinDelta, MaxDelta);
 			}
 
-			var octetsIn = SafeConvert.ToUInt32(Convert.ToDouble(interfacesTableGetter.OctetsIn[getPosition]));
+			uint octetsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifTableGetter.OctetsIn[getPosition]));
 			bitRateIn = CalculateBitRate(key, octetsIn, snmpDeltaHelper, ratesData.BitRateIn);
 
-			var octetsOut = SafeConvert.ToUInt32(Convert.ToDouble(interfacesTableGetter.OctetsOut[getPosition]));
+			uint octetsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifTableGetter.OctetsOut[getPosition]));
 			bitRateOut = CalculateBitRate(key, octetsOut, snmpDeltaHelper, ratesData.BitRateOut);
 
-			var unicastIn = SafeConvert.ToUInt32(Convert.ToDouble(interfacesTableGetter.UnicastPacketsIn[getPosition]));
-			var unicastRateIn = CalculateRate(key, unicastIn, snmpDeltaHelper, ratesData.UnicastRateIn);
+			uint unicastIn = SafeConvert.ToUInt32(Convert.ToDouble(ifTableGetter.UnicastPacketsIn[getPosition]));
+			double unicastRateIn = CalculateRate(key, unicastIn, snmpDeltaHelper, ratesData.UnicastRateIn);
 
-			var unicastOut = SafeConvert.ToUInt32(Convert.ToDouble(interfacesTableGetter.UnicastPacketsOut[getPosition]));
-			var unicastRateOut = CalculateRate(key, unicastOut, snmpDeltaHelper, ratesData.UnicastRateOut);
+			uint unicastOut = SafeConvert.ToUInt32(Convert.ToDouble(ifTableGetter.UnicastPacketsOut[getPosition]));
+			double unicastRateOut = CalculateRate(key, unicastOut, snmpDeltaHelper, ratesData.UnicastRateOut);
 
-			var discardsIn = SafeConvert.ToUInt32(Convert.ToDouble(interfacesTableGetter.DiscardsIn[getPosition]));
-			var discardRateIn = CalculateRate(key, discardsIn, snmpDeltaHelper, ratesData.DiscardRateIn);
+			uint discardsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifTableGetter.DiscardsIn[getPosition]));
+			double discardRateIn = CalculateRate(key, discardsIn, snmpDeltaHelper, ratesData.DiscardRateIn);
 
-			var discardsOut = SafeConvert.ToUInt32(Convert.ToDouble(interfacesTableGetter.DiscardsOut[getPosition]));
-			var discardRateOut = CalculateRate(key, discardsOut, snmpDeltaHelper, ratesData.DiscardRateOut);
+			uint discardsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifTableGetter.DiscardsOut[getPosition]));
+			double discardRateOut = CalculateRate(key, discardsOut, snmpDeltaHelper, ratesData.DiscardRateOut);
 
-			var errorsIn = SafeConvert.ToUInt32(Convert.ToDouble(interfacesTableGetter.ErrorsIn[getPosition]));
-			var errorRateIn = CalculateRate(key, errorsIn, snmpDeltaHelper, ratesData.ErrorRateIn);
+			uint errorsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifTableGetter.ErrorsIn[getPosition]));
+			double errorRateIn = CalculateRate(key, errorsIn, snmpDeltaHelper, ratesData.ErrorRateIn);
 
-			var errorsOut = SafeConvert.ToUInt32(Convert.ToDouble(interfacesTableGetter.ErrorsOut[getPosition]));
-			var errorRateOut = CalculateRate(key, errorsOut, snmpDeltaHelper, ratesData.ErrorRateOut);
+			uint errorsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifTableGetter.ErrorsOut[getPosition]));
+			double errorRateOut = CalculateRate(key, errorsOut, snmpDeltaHelper, ratesData.ErrorRateOut);
 
-			var unknownProtocolsIn = SafeConvert.ToUInt32(Convert.ToDouble(interfacesTableGetter.UnknownIn[getPosition]));
-			var unknownProtocolRateIn = CalculateRate(key, unknownProtocolsIn, snmpDeltaHelper, ratesData.UnknownProtocolsRateIn);
+			uint unknownProtocolsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifTableGetter.UnknownIn[getPosition]));
+			double unknownProtocolRateIn = CalculateRate(key, unknownProtocolsIn, snmpDeltaHelper, ratesData.UnknownProtocolsRateIn);
 
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bitratein].Add(bitRateIn);
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bitrateout].Add(bitRateOut);
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bitratein].Add(bitRateIn);
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bitrateout].Add(bitRateOut);
 
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unicastratein].Add(unicastRateIn);
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unicastrateout].Add(unicastRateOut);
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unicastratein].Add(unicastRateIn);
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unicastrateout].Add(unicastRateOut);
 
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_discardratein].Add(discardRateIn);
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_discardrateout].Add(discardRateOut);
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_discardratein].Add(discardRateIn);
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_discardrateout].Add(discardRateOut);
 
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_errorratein].Add(errorRateIn);
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_errorrateout].Add(errorRateOut);
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_errorratein].Add(errorRateIn);
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_errorrateout].Add(errorRateOut);
 
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unknownprotocolratein].Add(unknownProtocolRateIn);
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_unknownprotocolratein].Add(unknownProtocolRateIn);
 
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_ratesdata].Add(ratesData.ToJsonString());
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_ratesdata].Add(ratesData.ToJsonString());
 		}
 
 		private void ProcessUtilization(Dictionary<string, DuplexStatus> duplexStatuses, int getPosition, string key, double bitrateIn, double bitrateOut)
 		{
-			var speedValue = GetSpeedValue(getPosition);
+			double speedValue = GetSpeedValue(getPosition);
 
 			var duplexStatus = duplexStatuses.TryGetValue(key, out var status)
 				? status
 				: DuplexStatus.NotInitialized;
 
-			var utilization = Interface.CalculateUtilization(bitrateIn, bitrateOut, speedValue, duplexStatus);
+			double utilization = Interface.CalculateUtilization(bitrateIn, bitrateOut, speedValue, duplexStatus);
 
-			interfacesTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bandwidthutilization].Add(utilization);
+			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bandwidthutilization].Add(utilization);
 		}
 
 		private double GetSpeedValue(int getPosition)
 		{
-			var speedTableValue = SafeConvert.ToUInt32(Convert.ToDouble(interfacesTableGetter.Speed[getPosition]));
+			uint speedTableValue = SafeConvert.ToUInt32(Convert.ToDouble(ifTableGetter.Speed[getPosition]));
 
 			return speedTableValue == uint.MaxValue
 				? -1.0
@@ -279,7 +283,7 @@
 			var duplexStatuses = new Dictionary<string, DuplexStatus>();
 			for (var i = 0; i < duplexGetter.Keys.Length; i++)
 			{
-				var key = Convert.ToString(duplexGetter.Keys[i]);
+				string key = Convert.ToString(duplexGetter.Keys[i]);
 				var duplexStatus = (DuplexStatus)Convert.ToInt32(duplexGetter.DuplexStatuses[i]);
 
 				duplexStatuses[key] = duplexStatus;
@@ -303,7 +307,11 @@
 
 			public void Load()
 			{
-				var columnsToGet = new uint[] { Parameter.Dot3stats.Idx.dot3stats_index, Parameter.Dot3stats.Idx.dot3stats_duplexstatus };
+				var columnsToGet = new uint[]
+				{
+					Parameter.Dot3stats.Idx.dot3stats_index,
+					Parameter.Dot3stats.Idx.dot3stats_duplexstatus,
+				};
 
 				var tableData = protocol.GetColumns(Parameter.Dot3stats.tablePid, columnsToGet);
 
@@ -393,15 +401,19 @@
 
 			private void LoadIfXTable()
 			{
-				var columnsToGet = new uint[] { Parameter.Ifxtable.Idx.ifxtable_ifindex, Parameter.Ifxtable.Idx.ifxtable_ifcounterdiscontinuitytime };
+				var columnsToGet = new uint[]
+				{
+					Parameter.Ifxtable.Idx.ifxtable_ifindex,
+					Parameter.Ifxtable.Idx.ifxtable_ifcounterdiscontinuitytime,
+				};
 
 				var interfacesExtendedColumns = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);
 				var interfacesExtendedKeys = (object[])interfacesExtendedColumns[0];
 				var interfacesExtendedDiscontinuities = (object[])interfacesExtendedColumns[1];
 
-				for (var i = 0; i < interfacesExtendedKeys.Length; i++)
+				for (int i = 0; i < interfacesExtendedKeys.Length; i++)
 				{
-					var position = Array.IndexOf(Keys, interfacesExtendedKeys[i]);
+					int position = Array.IndexOf(Keys, interfacesExtendedKeys[i]);
 					if (position > -1)
 					{
 						Discontinuity[position] = interfacesExtendedDiscontinuities[i];

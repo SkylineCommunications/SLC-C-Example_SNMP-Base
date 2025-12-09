@@ -4,9 +4,9 @@ using Skyline.DataMiner.Scripting;
 using Skyline.Protocol.IfxTable;
 
 /// <summary>
-/// Represents the ifxTable.
+/// Represents the ifXTable.
 /// </summary>
-public class IfxTable
+public class IfXTable
 {
 	/// <summary>
 	/// QAction entry point when table was successfully polled.
@@ -16,9 +16,9 @@ public class IfxTable
 	{
 		try
 		{
-			IfxTableProcessor interfacesExtTableProcessor = new IfxTableProcessor(protocol);
-			interfacesExtTableProcessor.ProcessData();
-			interfacesExtTableProcessor.UpdateProtocol();
+			var ifXTableProcessor = new IfXTableProcessor(protocol);
+			ifXTableProcessor.ProcessData();
+			ifXTableProcessor.UpdateProtocol();
 		}
 		catch (Exception ex)
 		{
@@ -35,9 +35,9 @@ public class IfxTable
 	{
 		try
 		{
-			IfxTableTimeoutProcessor interfacesExtTableProcessor = new IfxTableTimeoutProcessor(protocol);
-			interfacesExtTableProcessor.ProcessTimeout();
-			interfacesExtTableProcessor.UpdateProtocol();
+			var ifXTableTimeoutProcessor = new IfXTableTimeoutProcessor(protocol);
+			ifXTableTimeoutProcessor.ProcessTimeout();
+			ifXTableTimeoutProcessor.UpdateProtocol();
 		}
 		catch (Exception ex)
 		{
