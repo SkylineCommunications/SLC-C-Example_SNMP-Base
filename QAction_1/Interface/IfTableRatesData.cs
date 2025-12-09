@@ -6,7 +6,7 @@
 	using Skyline.DataMiner.Utils.Rates.Protocol;
 	using Skyline.DataMiner.Utils.SecureCoding.SecureSerialization.Json.Newtonsoft;
 
-	public class InterfaceRateData
+	public class IfTableRatesData
 	{
 		public SnmpRate32 BitRateIn { get; set; }
 
@@ -28,11 +28,11 @@
 
 		public string DiscontinuityTime { get; private set; }
 
-		public static InterfaceRateData FromJsonString(string serializedIfRateData, TimeSpan minDelta, TimeSpan maxDelta, RateBase rateBase = RateBase.Second)
+		public static IfTableRatesData FromJsonString(string ratesDataSerialized, TimeSpan minDelta, TimeSpan maxDelta, RateBase rateBase = RateBase.Second)
 		{
-			if (string.IsNullOrWhiteSpace(serializedIfRateData))
+			if (string.IsNullOrWhiteSpace(ratesDataSerialized))
 			{
-				return new InterfaceRateData
+				return new IfTableRatesData
 				{
 					BitRateIn = SnmpRate32.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
 					BitRateOut = SnmpRate32.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
@@ -47,7 +47,7 @@
 				};
 			}
 
-			return SecureNewtonsoftDeserialization.DeserializeObject<InterfaceRateData>(serializedIfRateData);
+			return SecureNewtonsoftDeserialization.DeserializeObject<IfTableRatesData>(ratesDataSerialized);
 		}
 
 		public string ToJsonString()

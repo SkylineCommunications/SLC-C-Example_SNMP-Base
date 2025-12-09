@@ -42,7 +42,7 @@
 				var key = Convert.ToString(interfacesTableGetter.Keys[i]);
 				var ratesDataSerialized = Convert.ToString(interfacesTableGetter.RatesData[i]);
 
-				var ratesData = InterfaceRateData.FromJsonString(ratesDataSerialized, MinDelta, MaxDelta);
+				var ratesData = IfTableRatesData.FromJsonString(ratesDataSerialized, MinDelta, MaxDelta);
 
 				ratesData.BitRateIn.BufferDelta(snmpDeltaHelper, key);
 				ratesData.BitRateOut.BufferDelta(snmpDeltaHelper, key);
@@ -190,7 +190,7 @@
 			var key = Convert.ToString(interfacesTableGetter.Keys[getPosition]);
 
 			var ratesDataSerialized = Convert.ToString(interfacesTableGetter.RatesData[getPosition]);
-			var ratesData = InterfaceRateData.FromJsonString(ratesDataSerialized, MinDelta, MaxDelta);
+			var ratesData = IfTableRatesData.FromJsonString(ratesDataSerialized, MinDelta, MaxDelta);
 
 			var discontinuityTime = Convert.ToString(interfacesTableGetter.Discontinuity[getPosition]);
 			var hasDiscontinuity = Interface.HasDiscontinuity(discontinuityTime, ratesData.DiscontinuityTime);

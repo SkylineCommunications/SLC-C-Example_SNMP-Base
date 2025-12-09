@@ -6431,7 +6431,7 @@ By default, this object should have the value 'Enabled' for interfaces which do 
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:2101|0-2102|1-2099|9-2103|2-2104|3-2105|4-2106|5-2107|6-2108|7-2109|8,width:0-0-200-115-115-115-115-115-115-153,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2101|0-2102|1-2099|9-2103|2-2104|3-2105|4-2106|5-2107|6-2108|7-2109|8,width:0-0-200-120-120-120-120-120-120-153,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="2101" trending="false">
@@ -6805,7 +6805,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:2201|0-2202|1-2199|8-2203|2-2204|3-2205|4-2206|5-2207|6-2208|7,width:0-0-200-115-115-115-115-115-115,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2201|0-2202|1-2199|8-2203|2-2204|3-2205|4-2206|5-2207|6-2208|7,width:0-0-200-120-120-120-120-120-120,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="2201" trending="false">
