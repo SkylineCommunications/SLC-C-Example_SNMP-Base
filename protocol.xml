@@ -4333,8 +4333,8 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="5" pid="2006" type="retrieved" options="" />
 				<ColumnOption idx="6" pid="2007" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="7" pid="2008" type="retrieved" options="" />
-				<ColumnOption idx="8" pid="2009" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="9" pid="2010" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="8" pid="2009" type="retrieved" options=";disableHeaderSum" />
+				<ColumnOption idx="9" pid="2010" type="retrieved" options=";disableHeaderSum" />
 				<ColumnOption idx="10" pid="2011" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="11" pid="2013" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="12" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
@@ -5902,7 +5902,7 @@ If the state change happened before the last re-initialization of the local mana
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2009" trending="true">
+		<Param id="2009" trending="false">
 			<Name>InterfacesRxOctets</Name>
 			<Description>Rx Octets (Interfaces)</Description>
 			<Information>
@@ -5925,7 +5925,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Interprete>
 			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<!-- /SuppressValidator 2.5.1 -->
 			<Display>
@@ -5939,7 +5939,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2010" trending="true">
+		<Param id="2010" trending="false">
 			<Name>InterfacesTxOctets</Name>
 			<Description>Tx Octets (Interfaces)</Description>
 			<Information>
@@ -5962,7 +5962,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Interprete>
 			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<!-- /SuppressValidator 2.5.1 -->
 			<Display>
