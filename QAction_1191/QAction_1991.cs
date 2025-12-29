@@ -73,9 +73,6 @@ public static class QAction
 				var interfacesDetailsTxRow = tablesRowData.InterfacesTxRow;
 
 				PopulateDataFromIfXTable(interfacesTableRow, interfacesDetailsRxRow, interfacesDetailsTxRow, ifXTableGetter, i);
-
-				interfacesDetailsRxRow.Interfacesdetailsrxrate = GetSummablePacketRates(interfacesDetailsRxRow).Sum();
-				interfacesDetailsTxRow.Interfacesdetailstxrate = GetSummablePacketRates(interfacesDetailsTxRow).Sum();
 			}
 
 			// Interfaces tables.
@@ -99,25 +96,6 @@ public static class QAction
 		{
 			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Run|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 		}
-	}
-
-	private static IEnumerable<double> GetSummablePacketRates(InterfacesdetailsrxQActionRow row)
-	{
-		yield return Convert.ToDouble(row.Interfacesdetailsrxunicastrate).ZeroIfException(-1);
-		yield return Convert.ToDouble(row.Interfacesdetailsrxbroadcastrate).ZeroIfException(-1);
-		yield return Convert.ToDouble(row.Interfacesdetailsrxmulticastrate).ZeroIfException(-1);
-		yield return Convert.ToDouble(row.Interfacesdetailsrxdiscardrate).ZeroIfException(-1);
-		yield return Convert.ToDouble(row.Interfacesdetailsrxerrorrate).ZeroIfException(-1);
-		yield return Convert.ToDouble(row.Interfacesdetailsrxunknownprotocolrate).ZeroIfException(-1);
-	}
-
-	private static IEnumerable<double> GetSummablePacketRates(InterfacesdetailstxQActionRow row)
-	{
-		yield return Convert.ToDouble(row.Interfacesdetailstxunicastrate).ZeroIfException(-1);
-		yield return Convert.ToDouble(row.Interfacesdetailstxbroadcastrate).ZeroIfException(-1);
-		yield return Convert.ToDouble(row.Interfacesdetailstxmulticastrate).ZeroIfException(-1);
-		yield return Convert.ToDouble(row.Interfacesdetailstxdiscardrate).ZeroIfException(-1);
-		yield return Convert.ToDouble(row.Interfacesdetailstxerrorrate).ZeroIfException(-1);
 	}
 
 	private static Dictionary<string, int> GetDuplexStatuses(SLProtocol protocol)

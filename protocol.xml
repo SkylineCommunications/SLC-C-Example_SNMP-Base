@@ -6421,8 +6421,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				<ColumnOption idx="5" pid="2106" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="6" pid="2107" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="7" pid="2108" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="8" pid="2109" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="9" pid="2099" type="displaykey" options="" />
+				<ColumnOption idx="8" pid="2099" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A collection of Rx interface-related statistics objects.</Subtext>
@@ -6438,7 +6437,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:2101|0-2102|1-2099|9-2103|2-2104|3-2105|4-2106|5-2107|6-2108|7-2109|8,width:0-0-200-120-120-120-120-120-120-153,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2101|0-2102|1-2099|8-2103|2-2104|3-2105|4-2106|5-2107|6-2108|7,width:0-0-200-120-120-120-120-120-153,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="2101" trending="false">
@@ -6480,43 +6479,6 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 			</Measurement>
 		</Param>
 		<Param id="2103" trending="true">
-			<Name>InterfacesDetailsRxRate</Name>
-			<Description>Packet Rate (Interfaces Details Rx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets received on the interface, including all unicast, multicast, broadcast, and bad packets etc.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Pps</Units>
-				<Decimals>3</Decimals>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2104" trending="true">
 			<Name>InterfacesDetailsRxUnicastRate</Name>
 			<Description>Unicast Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6554,7 +6516,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2105" trending="true">
+		<Param id="2104" trending="true">
 			<Name>InterfacesDetailsRxBroadcastRate</Name>
 			<Description>Broadcast Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6592,7 +6554,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2106" trending="true">
+		<Param id="2105" trending="true">
 			<Name>InterfacesDetailsRxMulticastRate</Name>
 			<Description>Multicast Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6631,7 +6593,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2107" trending="true">
+		<Param id="2106" trending="true">
 			<Name>InterfacesDetailsRxDiscardRate</Name>
 			<Description>Discard Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6673,7 +6635,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2108" trending="true">
+		<Param id="2107" trending="true">
 			<Name>InterfacesDetailsRxErrorRate</Name>
 			<Description>Error Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6717,7 +6679,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2109" trending="true">
+		<Param id="2108" trending="true">
 			<Name>InterfacesDetailsRxUnknownProtocolRate</Name>
 			<Description>Unknown Protocol Rate (Interfaces Details Rx)</Description>
 			<Information>
@@ -6795,8 +6757,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<ColumnOption idx="4" pid="2205" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="5" pid="2206" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="6" pid="2207" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="7" pid="2208" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="8" pid="2199" type="displaykey" options="" />
+				<ColumnOption idx="7" pid="2199" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A collection of Tx interface-related statistics objects.</Subtext>
@@ -6812,7 +6773,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:2201|0-2202|1-2199|8-2203|2-2204|3-2205|4-2206|5-2207|6-2208|7,width:0-0-200-120-120-120-120-120-120,sort:STRING-INT-STRING-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2201|0-2202|1-2199|7-2203|2-2204|3-2205|4-2206|5-2207|6,width:0-0-200-120-120-120-120-120,sort:STRING-INT-STRING-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="2201" trending="false">
@@ -6854,43 +6815,6 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2203" trending="true">
-			<Name>InterfacesDetailsTxRate</Name>
-			<Description>Packet Rate (Interfaces Details Tx)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of packets transmitted out of the interface, including all unicast, multicast, broadcast, and bad packets etc.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Pps</Units>
-				<Decimals>3</Decimals>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2204" trending="true">
 			<Name>InterfacesDetailsTxUnicastRate</Name>
 			<Description>Unicast Rate (Interfaces Details Tx)</Description>
 			<Information>
@@ -6928,7 +6852,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2205" trending="true">
+		<Param id="2204" trending="true">
 			<Name>InterfacesDetailsTxBroadcastRate</Name>
 			<Description>Broadcast Rate (Interfaces Details Tx)</Description>
 			<Information>
@@ -6966,7 +6890,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2206" trending="true">
+		<Param id="2205" trending="true">
 			<Name>InterfacesDetailsTxMulticastRate</Name>
 			<Description>Multicast Rate (Interfaces Details Tx)</Description>
 			<Information>
@@ -7005,7 +6929,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2207" trending="true">
+		<Param id="2206" trending="true">
 			<Name>InterfacesDetailsTxDiscardRate</Name>
 			<Description>Discard Rate (Interfaces Details Tx)</Description>
 			<Information>
@@ -7047,7 +6971,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2208" trending="true">
+		<Param id="2207" trending="true">
 			<Name>InterfacesDetailsTxErrorRate</Name>
 			<Description>Error Rate (Interfaces Details Tx)</Description>
 			<Information>
