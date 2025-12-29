@@ -7523,9 +7523,12 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 											<Company>Skyline Communications</Company>
 										</Provider>
 										<Changes>
-											<NewFeature>Add rates for all interface counters</NewFeature>
 											<Change>UI Improvement: split too wide &quot;Interfaces&quot; table into three more digestible ones (&quot;Interfaces&quot;, &quot;Interface Details Rx&quot; and &quot;Interface Details Tx&quot;)</Change>
+											<NewFeature>Add rates for all interface counters</NewFeature>
 										</Changes>
+										<References>
+											<TaskId>263786</TaskId>
+										</References>
 									</MinorVersion>
 								</MinorVersions>
 							</MajorVersion>
