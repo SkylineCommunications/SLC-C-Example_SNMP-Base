@@ -4,6 +4,7 @@ using System.Linq;
 
 using Skyline.DataMiner.Scripting;
 using Skyline.DataMiner.Utils.Protocol.Extension;
+using Skyline.Protocol.Interfaces;
 
 /// <summary>
 /// DataMiner QAction Class: Merge Interface Tables.
@@ -32,7 +33,7 @@ public static class QAction
 		try
 		{
 			var interfacesRowsPerKey = new Dictionary<string, InterfaceTablesRowData>();
-			var duplexStatusesPerKey = GetDuplexStatuses(protocol);
+			var duplexStatusesPerKey = DuplexGetter.GetDuplexStatusesByKey(protocol);
 
 			// ifTable.
 			var ifTableGetter = new IfTableGetter(protocol);
@@ -96,28 +97,6 @@ public static class QAction
 		{
 			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Run|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 		}
-	}
-
-	private static Dictionary<string, int> GetDuplexStatuses(SLProtocol protocol)
-	{
-		var duplexStatusesPerKey = new Dictionary<string, int>();
-
-		var columnsToGet = new uint[]
-		{
-			Parameter.Dot3stats.Idx.dot3stats_index,
-			Parameter.Dot3stats.Idx.dot3stats_duplexstatus,
-		};
-
-		var columns = protocol.GetColumns(Parameter.Dot3stats.tablePid, columnsToGet);
-		var keys = (object[])columns[0];
-		var duplexStatuses = (object[])columns[1];
-
-		for (var i = 0; i < keys.Length; i++)
-		{
-			duplexStatusesPerKey[Convert.ToString(keys[i])] = Convert.ToInt32(duplexStatuses[i]);
-		}
-
-		return duplexStatusesPerKey;
 	}
 
 	private static void PopulateDataFromIfTable(

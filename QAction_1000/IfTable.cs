@@ -292,34 +292,6 @@
 			return duplexStatuses;
 		}
 
-		private sealed class DuplexGetter
-		{
-			private readonly SLProtocol protocol;
-
-			public DuplexGetter(SLProtocol protocol)
-			{
-				this.protocol = protocol;
-			}
-
-			public object[] Keys { get; private set; }
-
-			public object[] DuplexStatuses { get; private set; }
-
-			public void Load()
-			{
-				var columnsToGet = new uint[]
-				{
-					Parameter.Dot3stats.Idx.dot3stats_index,
-					Parameter.Dot3stats.Idx.dot3stats_duplexstatus,
-				};
-
-				var tableData = protocol.GetColumns(Parameter.Dot3stats.tablePid, columnsToGet);
-
-				Keys = (object[])tableData[0];
-				DuplexStatuses = (object[])tableData[1];
-			}
-		}
-
 		private sealed class IfTableGetter
 		{
 			private readonly SLProtocol protocol;
