@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Skyline.DataMiner.Scripting;
-using Skyline.DataMiner.Utils.Protocol.Extension;
 using Skyline.Protocol.Interfaces;
 
 /// <summary>
@@ -11,9 +10,9 @@ using Skyline.Protocol.Interfaces;
 /// </summary>
 public static class QAction
 {
-	private const uint MaxReportableIfSpeed = uint.MaxValue;
+    private const uint MaxReportableIfSpeed = uint.MaxValue;
 
-	/* RFC 2863:
+    /* RFC 2863:
 	 * - For interfaces that operate at 20,000,000 (20 million) bits per second or less, 32-bit byte and packet counters MUST be supported.
 	 *
 	 * - For interfaces that operate faster than 20,000,000 bits/second, and slower than 650,000,000 bits/second, 32-bit packet counters MUST be
@@ -22,267 +21,270 @@ public static class QAction
 	 * - For interfaces that operate at 650,000,000 bits/second or faster, 64-bit packet counters AND 64-bit octet counters MUST be supported.
 	 * We choose to use 64-bit counters if the speed is higher than 20Mbps as this will result in fewer wraparounds.
 	 */
-	private const double SpeedLimitForCounters = 20000000;
+    private const double SpeedLimitForCounters = 20000000;
 
-	/// <summary>
-	/// The QAction entry point.
-	/// </summary>
-	/// <param name="protocol">Link with SLProtocol process.</param>
-	public static void Run(SLProtocolExt protocol)
-	{
-		try
-		{
-			var interfacesRowsPerKey = new Dictionary<string, InterfaceTablesRowData>();
-			var duplexStatusesPerKey = DuplexGetter.GetDuplexStatusesByKey(protocol);
+    /// <summary>
+    /// The QAction entry point.
+    /// </summary>
+    /// <param name="protocol">Link with SLProtocol process.</param>
+    public static void Run(SLProtocolExt protocol)
+    {
+        try
+        {
+            var interfacesRowsPerKey = new Dictionary<string, InterfaceTablesRowData>();
 
-			// ifTable.
-			var ifTableGetter = new IfTableGetter(protocol);
-			for (int i = 0; i < ifTableGetter.Keys.Length; i++)
-			{
-				var interfacesRow = new InterfacesQActionRow();
-				var interfacesDetailsRxRow = new InterfacesdetailsrxQActionRow();
-				var interfacesDetailsTxRow = new InterfacesdetailstxQActionRow();
+            var duplexGetter = new DuplexGetter(protocol);
+            duplexGetter.Load();
+            var duplexStatusesPerKey = duplexGetter.DuplexStatusesByKey;
 
-				PopulateDataFromIfTable(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow, ifTableGetter, i);
+            // ifTable.
+            var ifTableGetter = new IfTableGetter(protocol);
+            for (int i = 0; i < ifTableGetter.Keys.Length; i++)
+            {
+                var interfacesRow = new InterfacesQActionRow();
+                var interfacesDetailsRxRow = new InterfacesdetailsrxQActionRow();
+                var interfacesDetailsTxRow = new InterfacesdetailstxQActionRow();
 
-				string key = Convert.ToString(ifTableGetter.Keys[i]);
-				if (duplexStatusesPerKey.TryGetValue(key, out int duplexState))
-				{
-					interfacesRow.Interfacesduplexstatus = duplexState;
-				}
-				else
-				{
-					interfacesRow.Interfacesduplexstatus = -1; // N/A
-				}
+                PopulateDataFromIfTable(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow, ifTableGetter, i);
 
-				interfacesRowsPerKey.Add(key, new InterfaceTablesRowData(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow));
-			}
+                string key = Convert.ToString(ifTableGetter.Keys[i]);
+                if (duplexStatusesPerKey.TryGetValue(key, out var duplexState))
+                {
+                    interfacesRow.Interfacesduplexstatus = Convert.ToInt32(duplexState);
+                }
+                else
+                {
+                    interfacesRow.Interfacesduplexstatus = -1; // N/A
+                }
 
-			// ifXTable.
-			var ifXTableGetter = new IfXTableGetter(protocol);
-			for (int i = 0; i < ifXTableGetter.Keys.Length; i++)
-			{
-				string key = Convert.ToString(ifXTableGetter.Keys[i]);
+                interfacesRowsPerKey.Add(key, new InterfaceTablesRowData(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow));
+            }
 
-				if (!interfacesRowsPerKey.TryGetValue(key, out var tablesRowData))
-				{
-					continue;
-				}
+            // ifXTable.
+            var ifXTableGetter = new IfXTableGetter(protocol);
+            for (int i = 0; i < ifXTableGetter.Keys.Length; i++)
+            {
+                string key = Convert.ToString(ifXTableGetter.Keys[i]);
 
-				var interfacesTableRow = tablesRowData.InterfacesRow;
-				var interfacesDetailsRxRow = tablesRowData.InterfacesRxRow;
-				var interfacesDetailsTxRow = tablesRowData.InterfacesTxRow;
+                if (!interfacesRowsPerKey.TryGetValue(key, out var tablesRowData))
+                {
+                    continue;
+                }
 
-				PopulateDataFromIfXTable(interfacesTableRow, interfacesDetailsRxRow, interfacesDetailsTxRow, ifXTableGetter, i);
-			}
+                var interfacesTableRow = tablesRowData.InterfacesRow;
+                var interfacesDetailsRxRow = tablesRowData.InterfacesRxRow;
+                var interfacesDetailsTxRow = tablesRowData.InterfacesTxRow;
 
-			// Interfaces tables.
-			var rows = interfacesRowsPerKey.Values.ToArray();
-			var interfaceRows = new QActionTableRow[rows.Length];
-			var interfaceDetailsRxRows = new QActionTableRow[rows.Length];
-			var interfaceDetailsTxRows = new QActionTableRow[rows.Length];
+                PopulateDataFromIfXTable(interfacesTableRow, interfacesDetailsRxRow, interfacesDetailsTxRow, ifXTableGetter, i);
+            }
 
-			for (int i = 0; i < rows.Length; i++)
-			{
-				interfaceRows[i] = rows[i].InterfacesRow;
-				interfaceDetailsRxRows[i] = rows[i].InterfacesRxRow;
-				interfaceDetailsTxRows[i] = rows[i].InterfacesTxRow;
-			}
+            // Interfaces tables.
+            var rows = interfacesRowsPerKey.Values.ToArray();
+            var interfaceRows = new QActionTableRow[rows.Length];
+            var interfaceDetailsRxRows = new QActionTableRow[rows.Length];
+            var interfaceDetailsTxRows = new QActionTableRow[rows.Length];
 
-			protocol.interfaces.FillArray(interfaceRows);
-			protocol.interfacesdetailsrx.FillArray(interfaceDetailsRxRows);
-			protocol.interfacesdetailstx.FillArray(interfaceDetailsTxRows);
-		}
-		catch (Exception ex)
-		{
-			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Run|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
-		}
-	}
+            for (int i = 0; i < rows.Length; i++)
+            {
+                interfaceRows[i] = rows[i].InterfacesRow;
+                interfaceDetailsRxRows[i] = rows[i].InterfacesRxRow;
+                interfaceDetailsTxRows[i] = rows[i].InterfacesTxRow;
+            }
 
-	private static void PopulateDataFromIfTable(
-		InterfacesQActionRow interfacesRow,
-		InterfacesdetailsrxQActionRow interfacesRxRow,
-		InterfacesdetailstxQActionRow interfacesTxRow,
-		IfTableGetter ifTableGetter,
-		int getPosition)
-	{
-		// Keys
-		string key = Convert.ToString(ifTableGetter.Keys[getPosition]);
-		interfacesRow.Interfacesindex = key;
-		interfacesRxRow.Interfacesdetailsrxdindex = interfacesRxRow.Interfacesdetailsrxfktointerfaces = key;
-		interfacesTxRow.Interfacesdetailstxindex = interfacesTxRow.Interfacesdetailstxfktointerfaces = key;
+            protocol.interfaces.FillArray(interfaceRows);
+            protocol.interfacesdetailsrx.FillArray(interfaceDetailsRxRows);
+            protocol.interfacesdetailstx.FillArray(interfaceDetailsTxRows);
+        }
+        catch (Exception ex)
+        {
+            protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Run|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
+        }
+    }
 
-		// Interface Table
-		interfacesRow.Interfacestype = Convert.ToDouble(ifTableGetter.Types[getPosition]);
-		interfacesRow.Interfacesmtu = Convert.ToDouble(ifTableGetter.Mtu[getPosition]);
-		interfacesRow.Interfacesdescription = Convert.ToString(ifTableGetter.Descriptions[getPosition]);
-		interfacesRow.Interfacesadminstatus = Convert.ToDouble(ifTableGetter.AdminStatus[getPosition]);
-		interfacesRow.Interfacesoperstatus = Convert.ToDouble(ifTableGetter.OperStatus[getPosition]);
-		interfacesRow.Interfaceslastchange = Convert.ToDouble(ifTableGetter.LastChange[getPosition]);
+    private static void PopulateDataFromIfTable(
+        InterfacesQActionRow interfacesRow,
+        InterfacesdetailsrxQActionRow interfacesRxRow,
+        InterfacesdetailstxQActionRow interfacesTxRow,
+        IfTableGetter ifTableGetter,
+        int getPosition)
+    {
+        // Keys
+        string key = Convert.ToString(ifTableGetter.Keys[getPosition]);
+        interfacesRow.Interfacesindex = key;
+        interfacesRxRow.Interfacesdetailsrxdindex = interfacesRxRow.Interfacesdetailsrxfktointerfaces = key;
+        interfacesTxRow.Interfacesdetailstxindex = interfacesTxRow.Interfacesdetailstxfktointerfaces = key;
 
-		if (Convert.ToUInt32(ifTableGetter.Speeds[getPosition]) != MaxReportableIfSpeed)
-		{
-			// Speed in ifTable is expressed in bps, whereas speed in Interface Table is expressed in Mbps.
-			interfacesRow.Interfacesspeed = Convert.ToDouble(ifTableGetter.Speeds[getPosition]) / Math.Pow(10, 6);
-		}
+        // Interface Table
+        interfacesRow.Interfacestype = Convert.ToDouble(ifTableGetter.Types[getPosition]);
+        interfacesRow.Interfacesmtu = Convert.ToDouble(ifTableGetter.Mtu[getPosition]);
+        interfacesRow.Interfacesdescription = Convert.ToString(ifTableGetter.Descriptions[getPosition]);
+        interfacesRow.Interfacesadminstatus = Convert.ToDouble(ifTableGetter.AdminStatus[getPosition]);
+        interfacesRow.Interfacesoperstatus = Convert.ToDouble(ifTableGetter.OperStatus[getPosition]);
+        interfacesRow.Interfaceslastchange = Convert.ToDouble(ifTableGetter.LastChange[getPosition]);
 
-		// Discards, Errors, Unknown Protocols only have 32-bit counters.
-		interfacesRxRow.Interfacesdetailsrxdiscardrate = Convert.ToDouble(ifTableGetter.DiscardRateIn[getPosition]);
-		interfacesRxRow.Interfacesdetailsrxerrorrate = Convert.ToDouble(ifTableGetter.ErrorRateIn[getPosition]);
-		interfacesRxRow.Interfacesdetailsrxunknownprotocolrate = Convert.ToDouble(ifTableGetter.UnknownProtocolRateIn[getPosition]);
+        if (Convert.ToUInt32(ifTableGetter.Speeds[getPosition]) != MaxReportableIfSpeed)
+        {
+            // Speed in ifTable is expressed in bps, whereas speed in Interface Table is expressed in Mbps.
+            interfacesRow.Interfacesspeed = Convert.ToDouble(ifTableGetter.Speeds[getPosition]) / Math.Pow(10, 6);
+        }
 
-		interfacesTxRow.Interfacesdetailstxdiscardrate = Convert.ToDouble(ifTableGetter.DiscardRateOut[getPosition]);
-		interfacesTxRow.Interfacesdetailstxerrorrate = Convert.ToDouble(ifTableGetter.ErrorRateOut[getPosition]);
+        // Discards, Errors, Unknown Protocols only have 32-bit counters.
+        interfacesRxRow.Interfacesdetailsrxdiscardrate = Convert.ToDouble(ifTableGetter.DiscardRateIn[getPosition]);
+        interfacesRxRow.Interfacesdetailsrxerrorrate = Convert.ToDouble(ifTableGetter.ErrorRateIn[getPosition]);
+        interfacesRxRow.Interfacesdetailsrxunknownprotocolrate = Convert.ToDouble(ifTableGetter.UnknownProtocolRateIn[getPosition]);
 
-		bool useHighCapacityCounters = ShouldUseHighCapacityCounters(Convert.ToDouble(ifTableGetter.Speeds[getPosition]));
-		if (useHighCapacityCounters)
-		{
-			return;
-		}
+        interfacesTxRow.Interfacesdetailstxdiscardrate = Convert.ToDouble(ifTableGetter.DiscardRateOut[getPosition]);
+        interfacesTxRow.Interfacesdetailstxerrorrate = Convert.ToDouble(ifTableGetter.ErrorRateOut[getPosition]);
 
-		interfacesRow.Interfacesrxoctets = Convert.ToDouble(ifTableGetter.InOctets[getPosition]);
-		interfacesRow.Interfacestxoctets = Convert.ToDouble(ifTableGetter.OutOctets[getPosition]);
+        bool useHighCapacityCounters = ShouldUseHighCapacityCounters(Convert.ToDouble(ifTableGetter.Speeds[getPosition]));
+        if (useHighCapacityCounters)
+        {
+            return;
+        }
 
-		double dBitRateIn = Convert.ToDouble(ifTableGetter.BitRateIn[getPosition]);
-		interfacesRow.Interfacesrxbitrate = dBitRateIn >= 0 ? dBitRateIn / Math.Pow(10, 6) : -1; // bps -> Mbps
+        interfacesRow.Interfacesrxoctets = Convert.ToDouble(ifTableGetter.InOctets[getPosition]);
+        interfacesRow.Interfacestxoctets = Convert.ToDouble(ifTableGetter.OutOctets[getPosition]);
 
-		double dBitRateOut = Convert.ToDouble(ifTableGetter.BitRateOut[getPosition]);
-		interfacesRow.Interfacestxbitrate = dBitRateOut >= 0 ? dBitRateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
+        double dBitRateIn = Convert.ToDouble(ifTableGetter.BitRateIn[getPosition]);
+        interfacesRow.Interfacesrxbitrate = dBitRateIn >= 0 ? dBitRateIn / Math.Pow(10, 6) : -1; // bps -> Mbps
 
-		interfacesRow.Interfacesbandwidthutilization = Convert.ToDouble(ifTableGetter.BandwidthUtilization[getPosition]);
+        double dBitRateOut = Convert.ToDouble(ifTableGetter.BitRateOut[getPosition]);
+        interfacesRow.Interfacestxbitrate = dBitRateOut >= 0 ? dBitRateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
 
-		interfacesRxRow.Interfacesdetailsrxunicastrate = Convert.ToDouble(ifTableGetter.UnicastRateIn[getPosition]);
-		interfacesTxRow.Interfacesdetailstxunicastrate = Convert.ToDouble(ifTableGetter.UnicastRateOut[getPosition]);
-	}
+        interfacesRow.Interfacesbandwidthutilization = Convert.ToDouble(ifTableGetter.BandwidthUtilization[getPosition]);
 
-	private static bool ShouldUseHighCapacityCounters(double interfaceSpeed)
-	{
-		return interfaceSpeed > SpeedLimitForCounters;
-	}
+        interfacesRxRow.Interfacesdetailsrxunicastrate = Convert.ToDouble(ifTableGetter.UnicastRateIn[getPosition]);
+        interfacesTxRow.Interfacesdetailstxunicastrate = Convert.ToDouble(ifTableGetter.UnicastRateOut[getPosition]);
+    }
 
-	private static void PopulateDataFromIfXTable(
-		InterfacesQActionRow interfacesRow,
-		InterfacesdetailsrxQActionRow interfacesRxRow,
-		InterfacesdetailstxQActionRow interfacesTxRow,
-		IfXTableGetter ifXTableGetter,
-		int getPosition)
-	{
-		interfacesRow.Interfaceslogical = ifXTableGetter.ConnectorPresent[getPosition] == null
-			? -1
-			: Convert.ToDouble(ifXTableGetter.ConnectorPresent[getPosition]);
+    private static bool ShouldUseHighCapacityCounters(double interfaceSpeed)
+    {
+        return interfaceSpeed > SpeedLimitForCounters;
+    }
 
-		interfacesRow.Interfaceslastclear = ifXTableGetter.CounterDiscontinuityTime[getPosition] == null
-			? 0
-			: Convert.ToDouble(ifXTableGetter.CounterDiscontinuityTime[getPosition]) / 100;
+    private static void PopulateDataFromIfXTable(
+        InterfacesQActionRow interfacesRow,
+        InterfacesdetailsrxQActionRow interfacesRxRow,
+        InterfacesdetailstxQActionRow interfacesTxRow,
+        IfXTableGetter ifXTableGetter,
+        int getPosition)
+    {
+        interfacesRow.Interfaceslogical = ifXTableGetter.ConnectorPresent[getPosition] == null
+            ? -1
+            : Convert.ToDouble(ifXTableGetter.ConnectorPresent[getPosition]);
 
-		interfacesRow.Interfacesuserdescription = Convert.ToString(ifXTableGetter.Alias[getPosition]);
+        interfacesRow.Interfaceslastclear = ifXTableGetter.CounterDiscontinuityTime[getPosition] == null
+            ? 0
+            : Convert.ToDouble(ifXTableGetter.CounterDiscontinuityTime[getPosition]) / 100;
 
-		interfacesRow.Interfacespromiscuousmode = ifXTableGetter.PromiscuousMode[getPosition] == null
-			? -1
-			: Convert.ToDouble(ifXTableGetter.PromiscuousMode[getPosition]);
+        interfacesRow.Interfacesuserdescription = Convert.ToString(ifXTableGetter.Alias[getPosition]);
 
-		interfacesRow.Interfaceslinkupdowntrap = Convert.ToDouble(ifXTableGetter.LinkUpDownTrapEnable[getPosition]);
+        interfacesRow.Interfacespromiscuousmode = ifXTableGetter.PromiscuousMode[getPosition] == null
+            ? -1
+            : Convert.ToDouble(ifXTableGetter.PromiscuousMode[getPosition]);
 
-		if (ifXTableGetter.HighSpeed[getPosition] != null)
-		{
-			interfacesRow.Interfacesspeed = Convert.ToDouble(ifXTableGetter.HighSpeed[getPosition]);
-		}
+        interfacesRow.Interfaceslinkupdowntrap = Convert.ToDouble(ifXTableGetter.LinkUpDownTrapEnable[getPosition]);
 
-		bool isUsingHighCapacityCounters = interfacesRow.Interfacesrxoctets == null;
-		if (isUsingHighCapacityCounters)
-		{
-			PopulateHighCapacityDataFromIfXTable(interfacesRow, interfacesRxRow, interfacesTxRow, ifXTableGetter, getPosition);
-		}
-		else
-		{
-			PopulateLowCapacityDataFromIfXTable(interfacesRow, interfacesRxRow, interfacesTxRow, ifXTableGetter, getPosition);
-		}
-	}
+        if (ifXTableGetter.HighSpeed[getPosition] != null)
+        {
+            interfacesRow.Interfacesspeed = Convert.ToDouble(ifXTableGetter.HighSpeed[getPosition]);
+        }
 
-	private static void PopulateLowCapacityDataFromIfXTable(
-		InterfacesQActionRow interfacesRow,
-		InterfacesdetailsrxQActionRow interfacesRxRow,
-		InterfacesdetailstxQActionRow interfacesTxRow,
-		IfXTableGetter ifXTableGetter,
-		int getPosition)
-	{
-		// Interface Counters RX Table
-		interfacesRxRow.Interfacesdetailsrxbroadcastrate = ifXTableGetter.BroadcastRateIn[getPosition] == null
-			? -1
-			: Convert.ToDouble(ifXTableGetter.BroadcastRateIn[getPosition]);
+        bool isUsingHighCapacityCounters = interfacesRow.Interfacesrxoctets == null;
+        if (isUsingHighCapacityCounters)
+        {
+            PopulateHighCapacityDataFromIfXTable(interfacesRow, interfacesRxRow, interfacesTxRow, ifXTableGetter, getPosition);
+        }
+        else
+        {
+            PopulateLowCapacityDataFromIfXTable(interfacesRow, interfacesRxRow, interfacesTxRow, ifXTableGetter, getPosition);
+        }
+    }
 
-		interfacesRxRow.Interfacesdetailsrxmulticastrate = ifXTableGetter.MulticastRateIn[getPosition] == null
-			? -1
-			: Convert.ToDouble(ifXTableGetter.MulticastRateIn[getPosition]);
+    private static void PopulateLowCapacityDataFromIfXTable(
+        InterfacesQActionRow interfacesRow,
+        InterfacesdetailsrxQActionRow interfacesRxRow,
+        InterfacesdetailstxQActionRow interfacesTxRow,
+        IfXTableGetter ifXTableGetter,
+        int getPosition)
+    {
+        // Interface Counters RX Table
+        interfacesRxRow.Interfacesdetailsrxbroadcastrate = ifXTableGetter.BroadcastRateIn[getPosition] == null
+            ? -1
+            : Convert.ToDouble(ifXTableGetter.BroadcastRateIn[getPosition]);
 
-		// Interface Counters TX Table
-		interfacesTxRow.Interfacesdetailstxbroadcastrate = ifXTableGetter.BroadcastRateOut[getPosition] == null
-			? -1
-			: Convert.ToDouble(ifXTableGetter.BroadcastRateOut[getPosition]);
+        interfacesRxRow.Interfacesdetailsrxmulticastrate = ifXTableGetter.MulticastRateIn[getPosition] == null
+            ? -1
+            : Convert.ToDouble(ifXTableGetter.MulticastRateIn[getPosition]);
 
-		interfacesTxRow.Interfacesdetailstxmulticastrate = ifXTableGetter.MulticastRateOut[getPosition] == null
-			? -1
-			: Convert.ToDouble(ifXTableGetter.MulticastRateOut[getPosition]);
+        // Interface Counters TX Table
+        interfacesTxRow.Interfacesdetailstxbroadcastrate = ifXTableGetter.BroadcastRateOut[getPosition] == null
+            ? -1
+            : Convert.ToDouble(ifXTableGetter.BroadcastRateOut[getPosition]);
 
-		double bitrateIn = Convert.ToDouble(ifXTableGetter.HcBitRateIn[getPosition]);
-		if (bitrateIn < -1)
-		{
-			// Indication of discontinuity times, need to set values to N/A
-			interfacesRow.Interfacesrxbitrate = -1;
-			interfacesRow.Interfacestxbitrate = -1;
-			interfacesRow.Interfacesbandwidthutilization = -1;
-		}
-	}
+        interfacesTxRow.Interfacesdetailstxmulticastrate = ifXTableGetter.MulticastRateOut[getPosition] == null
+            ? -1
+            : Convert.ToDouble(ifXTableGetter.MulticastRateOut[getPosition]);
 
-	private static void PopulateHighCapacityDataFromIfXTable(
-		InterfacesQActionRow interfacesRow,
-		InterfacesdetailsrxQActionRow interfacesRxRow,
-		InterfacesdetailstxQActionRow interfacesTxRow,
-		IfXTableGetter ifXTableGetter,
-		int getPosition)
-	{
-		// Interface States Table
-		interfacesRow.Interfacesrxoctets =
-			ifXTableGetter.HcInOctets[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcInOctets[getPosition]);
+        double bitrateIn = Convert.ToDouble(ifXTableGetter.HcBitRateIn[getPosition]);
+        if (bitrateIn < -1)
+        {
+            // Indication of discontinuity times, need to set values to N/A
+            interfacesRow.Interfacesrxbitrate = -1;
+            interfacesRow.Interfacestxbitrate = -1;
+            interfacesRow.Interfacesbandwidthutilization = -1;
+        }
+    }
 
-		interfacesRow.Interfacestxoctets =
-			ifXTableGetter.HcOutOctets[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcOutOctets[getPosition]);
+    private static void PopulateHighCapacityDataFromIfXTable(
+        InterfacesQActionRow interfacesRow,
+        InterfacesdetailsrxQActionRow interfacesRxRow,
+        InterfacesdetailstxQActionRow interfacesTxRow,
+        IfXTableGetter ifXTableGetter,
+        int getPosition)
+    {
+        // Interface States Table
+        interfacesRow.Interfacesrxoctets =
+            ifXTableGetter.HcInOctets[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcInOctets[getPosition]);
 
-		interfacesRow.Interfacesbandwidthutilization = Convert.ToDouble(ifXTableGetter.BandwidthUtilization[getPosition]);
+        interfacesRow.Interfacestxoctets =
+            ifXTableGetter.HcOutOctets[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcOutOctets[getPosition]);
 
-		double bitrateIn = Convert.ToDouble(ifXTableGetter.HcBitRateIn[getPosition]);
-		interfacesRow.Interfacesrxbitrate = bitrateIn >= 0 ? bitrateIn / Math.Pow(10, 6) : -1; // bps -> Mbps
+        interfacesRow.Interfacesbandwidthutilization = Convert.ToDouble(ifXTableGetter.BandwidthUtilization[getPosition]);
 
-		double bitrateOut = Convert.ToDouble(ifXTableGetter.HcBitRateOut[getPosition]);
-		interfacesRow.Interfacestxbitrate = bitrateOut >= 0 ? bitrateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
+        double bitrateIn = Convert.ToDouble(ifXTableGetter.HcBitRateIn[getPosition]);
+        interfacesRow.Interfacesrxbitrate = bitrateIn >= 0 ? bitrateIn / Math.Pow(10, 6) : -1; // bps -> Mbps
 
-		// Interface Counters RX Table
-		interfacesRxRow.Interfacesdetailsrxunicastrate =
-			ifXTableGetter.HcUnicastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcUnicastRateIn[getPosition]);
+        double bitrateOut = Convert.ToDouble(ifXTableGetter.HcBitRateOut[getPosition]);
+        interfacesRow.Interfacestxbitrate = bitrateOut >= 0 ? bitrateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
 
-		interfacesRxRow.Interfacesdetailsrxbroadcastrate =
-			ifXTableGetter.HcBroadcastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcBroadcastRateIn[getPosition]);
+        // Interface Counters RX Table
+        interfacesRxRow.Interfacesdetailsrxunicastrate =
+            ifXTableGetter.HcUnicastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcUnicastRateIn[getPosition]);
 
-		interfacesRxRow.Interfacesdetailsrxmulticastrate =
-			ifXTableGetter.HcMulticastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcMulticastRateIn[getPosition]);
+        interfacesRxRow.Interfacesdetailsrxbroadcastrate =
+            ifXTableGetter.HcBroadcastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcBroadcastRateIn[getPosition]);
 
-		// Interface Counters TX Table
-		interfacesTxRow.Interfacesdetailstxunicastrate =
-			ifXTableGetter.HcUnicastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcUnicastRateOut[getPosition]);
+        interfacesRxRow.Interfacesdetailsrxmulticastrate =
+            ifXTableGetter.HcMulticastRateIn[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcMulticastRateIn[getPosition]);
 
-		interfacesTxRow.Interfacesdetailstxbroadcastrate =
-			ifXTableGetter.HcBroadcastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcBroadcastRateOut[getPosition]);
+        // Interface Counters TX Table
+        interfacesTxRow.Interfacesdetailstxunicastrate =
+            ifXTableGetter.HcUnicastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcUnicastRateOut[getPosition]);
 
-		interfacesTxRow.Interfacesdetailstxmulticastrate =
-			ifXTableGetter.HcMulticastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcMulticastRateOut[getPosition]);
-	}
+        interfacesTxRow.Interfacesdetailstxbroadcastrate =
+            ifXTableGetter.HcBroadcastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcBroadcastRateOut[getPosition]);
+
+        interfacesTxRow.Interfacesdetailstxmulticastrate =
+            ifXTableGetter.HcMulticastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcMulticastRateOut[getPosition]);
+    }
 }
 
 internal static class RateDoubleExtensions
 {
-	public static double ZeroIfException(this double value, double exception, double tolerance = 1e-6)
-	{
-		var isException = Math.Abs(value - exception) < tolerance;
-		return isException ? 0 : value;
-	}
+    public static double ZeroIfException(this double value, double exception, double tolerance = 1e-6)
+    {
+        var isException = Math.Abs(value - exception) < tolerance;
+        return isException ? 0 : value;
+    }
 }

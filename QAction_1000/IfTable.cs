@@ -147,7 +147,7 @@
 		{
 			var snmpDeltaHelper = new SnmpDeltaHelper(protocol, GroupId, Parameter.interfacesratescalculationsmethod);
 
-			var duplexStatuses = ConvertDuplexColumnToDictionary();
+			var duplexStatuses = duplexGetter.DuplexStatusesByKey;
 
 			for (int i = 0; i < ifTableGetter.Keys.Length; i++)
 			{
@@ -276,20 +276,6 @@
 			return speedTableValue == uint.MaxValue
 				? -1.0
 				: Convert.ToDouble(speedTableValue);
-		}
-
-		private Dictionary<string, DuplexStatus> ConvertDuplexColumnToDictionary()
-		{
-			var duplexStatuses = new Dictionary<string, DuplexStatus>();
-			for (int i = 0; i < duplexGetter.Keys.Length; i++)
-			{
-				string key = Convert.ToString(duplexGetter.Keys[i]);
-				var duplexStatus = (DuplexStatus)Convert.ToInt32(duplexGetter.DuplexStatuses[i]);
-
-				duplexStatuses[key] = duplexStatus;
-			}
-
-			return duplexStatuses;
 		}
 
 		private sealed class IfTableGetter
