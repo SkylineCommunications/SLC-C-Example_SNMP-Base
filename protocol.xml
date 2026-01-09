@@ -4342,8 +4342,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="14" pid="2015" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="15" pid="2016" type="retrieved" options="" />
 				<ColumnOption idx="16" pid="2017" type="retrieved" options="" />
-				<ColumnOption idx="17" pid="2018" type="retrieved" options="" />
-				<ColumnOption idx="18" pid="1999" type="displaykey" options="" />
+				<ColumnOption idx="17" pid="1999" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>Interfaces state table on change subscription.</Subtext>
@@ -4365,7 +4364,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			</Display>
 			<Measurement>
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-1999|18-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2015|14-2017|16-2016|15-2018|17,width:0-0-200-123-115-0-115-0-100-130-128-94-138-128-112-141-127-97-133,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-1999|17-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2015|14-2017|16-2016|15,width:0-0-200-123-115-0-115-0-100-130-128-94-138-128-112-141-127-97,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -6283,67 +6282,6 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2018" trending="false">
-			<Name>InterfacesLinkUpDownTrap</Name>
-			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
-			<Description>Link Up/Down Traps (Interfaces)</Description>
-			<!-- /SuppressValidator 2.14.7 -->
-			<Information>
-				<Subtext>
-					<![CDATA[Indicates whether linkUp/linkDown traps should be generated for this interface.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Enabled</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Disabled</Display>
-						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="2068">
-			<Name>InterfacesLinkUpDownTrap</Name>
-			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
-			<Description>Link Up/Down Traps (Interfaces)</Description>
-			<!-- /SuppressValidator 2.14.7 -->
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>togglebutton</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Enabled</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Disabled</Display>
-						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
 		
 		<Param id="2099" trending="false">
 			<Name>InterfacesDetailsRxDisplayKey</Name>
@@ -6987,7 +6925,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Condition>
 		</QAction>
 		<QAction id="1992" name="Interface Rate Calculations Method" encoding="csharp" triggers="1992" />
-		<QAction id="2000" name="Interface Table SNMP Sets" encoding="csharp" triggers="2055;2063;2067;2068" row="true" />
+		<QAction id="2000" name="Interface Table SNMP Sets" encoding="csharp" triggers="2055;2063;2067" row="true" />
 	</QActions>
 
 	<Groups>

@@ -179,8 +179,6 @@ public static class QAction
             ? -1
             : Convert.ToDouble(ifXTableGetter.PromiscuousMode[getPosition]);
 
-        interfacesRow.Interfaceslinkupdowntrap = Convert.ToDouble(ifXTableGetter.LinkUpDownTrapEnable[getPosition]);
-
         if (ifXTableGetter.HighSpeed[getPosition] != null)
         {
             interfacesRow.Interfacesspeed = Convert.ToDouble(ifXTableGetter.HighSpeed[getPosition]);

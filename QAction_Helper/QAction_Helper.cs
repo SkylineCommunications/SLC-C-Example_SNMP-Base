@@ -140,11 +140,6 @@ public static class Parameter
 		public const int interfacespromiscuousmode_2067 = 2067;
 		/// <summary>PID: 2067 | Type: write</summary>
 		public const int interfacespromiscuousmode = 2067;
-		/// <summary>PID: 2068 | Type: write</summary>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int interfaceslinkupdowntrap_2068 = 2068;
-		/// <summary>PID: 2068 | Type: write</summary>
-		public const int interfaceslinkupdowntrap = 2068;
 	}
 	public class Iftable
 	{
@@ -945,11 +940,6 @@ public static class Parameter
 			public const int interfacespromiscuousmode_2017 = 2017;
 			/// <summary>PID: 2017 | Type: read</summary>
 			public const int interfacespromiscuousmode = 2017;
-			/// <summary>PID: 2018 | Type: read</summary>
-			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfaceslinkupdowntrap_2018 = 2018;
-			/// <summary>PID: 2018 | Type: read</summary>
-			public const int interfaceslinkupdowntrap = 2018;
 			/// <summary>PID: 1999 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			public const int interfacesdisplaykey_1999 = 1999;
@@ -1048,14 +1038,9 @@ public static class Parameter
 			public const int interfacespromiscuousmode = 16;
 			/// <summary>IDX: 17 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfaceslinkupdowntrap_2018 = 17;
+			public const int interfacesdisplaykey_1999 = 17;
 			/// <summary>IDX: 17 | Type: read</summary>
-			public const int interfaceslinkupdowntrap = 17;
-			/// <summary>IDX: 18 | Type: read</summary>
-			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int interfacesdisplaykey_1999 = 18;
-			/// <summary>IDX: 18 | Type: read</summary>
-			public const int interfacesdisplaykey = 18;
+			public const int interfacesdisplaykey = 17;
 		}
 	}
 	public class Interfacesdetailsrx
@@ -1289,8 +1274,6 @@ public class WriteParameters
 	public System.Object Interfacesuserdescription {get { return Protocol.GetParameter(2063); }set { Protocol.SetParameter(2063, value); }}
 	/// <summary>PID: 2067  | Type: write | DISCREETS: True = 1, False = 2</summary>
 	public System.Object Interfacespromiscuousmode {get { return Protocol.GetParameter(2067); }set { Protocol.SetParameter(2067, value); }}
-	/// <summary>PID: 2068  | Type: write | DISCREETS: Enabled = 1, Disabled = 2</summary>
-	public System.Object Interfaceslinkupdowntrap {get { return Protocol.GetParameter(2068); }set { Protocol.SetParameter(2068, value); }}
 	public SLProtocolExt Protocol;
 	public WriteParameters(SLProtocolExt protocol)
 	{
@@ -1525,12 +1508,9 @@ public interface SLProtocolExt : SLProtocol
 	object Interfacesduplexstatus { get; set; }
 	object Interfacespromiscuousmode_2017 { get; set; }
 	object Interfacespromiscuousmode { get; set; }
-	object Interfaceslinkupdowntrap_2018 { get; set; }
-	object Interfaceslinkupdowntrap { get; set; }
 	object Interfacesadminstatus_2055 { get; set; }
 	object Interfacesuserdescription_2063 { get; set; }
 	object Interfacespromiscuousmode_2067 { get; set; }
-	object Interfaceslinkupdowntrap_2068 { get; set; }
 	object Interfacesdetailsrxdisplaykey_2099 { get; set; }
 	object Interfacesdetailsrxdisplaykey { get; set; }
 	object Interfacesdetailsrxdindex_2101 { get; set; }
@@ -2115,11 +2095,6 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Interfacespromiscuousmode_2017 {get { return GetParameter(2017); }set { SetParameter(2017, value); }}
 	/// <summary>PID: 2017  | Type: read | DISCREETS: Enabled = 1, Disabled = 2</summary>
 	public System.Object Interfacespromiscuousmode {get { return GetParameter(2017); }set { SetParameter(2017, value); }}
-	/// <summary>PID: 2018  | Type: read | DISCREETS: Enabled = 1, Disabled = 2</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfaceslinkupdowntrap_2018 {get { return GetParameter(2018); }set { SetParameter(2018, value); }}
-	/// <summary>PID: 2018  | Type: read | DISCREETS: Enabled = 1, Disabled = 2</summary>
-	public System.Object Interfaceslinkupdowntrap {get { return GetParameter(2018); }set { SetParameter(2018, value); }}
 	/// <summary>PID: 2055  | Type: write | DISCREETS: Up = 1, Down = 2</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacesadminstatus_2055 {get { return GetParameter(2055); }set { SetParameter(2055, value); }}
@@ -2129,9 +2104,6 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	/// <summary>PID: 2067  | Type: write | DISCREETS: True = 1, False = 2</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacespromiscuousmode_2067 {get { return GetParameter(2067); }set { SetParameter(2067, value); }}
-	/// <summary>PID: 2068  | Type: write | DISCREETS: Enabled = 1, Disabled = 2</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfaceslinkupdowntrap_2068 {get { return GetParameter(2068); }set { SetParameter(2068, value); }}
 	/// <summary>PID: 2099  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacesdetailsrxdisplaykey_2099 {get { return GetParameter(2099); }set { SetParameter(2099, value); }}
@@ -2708,18 +2680,13 @@ public class InterfacesQActionRow : QActionTableRow
 	public System.Object Interfacespromiscuousmode_2017 { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
 	/// <summary>PID: 2017 | Type: read</summary>
 	public System.Object Interfacespromiscuousmode { get { if (base.Columns.ContainsKey(16)) { return base.Columns[16]; } else { return null; } } set { if (base.Columns.ContainsKey(16)) { base.Columns[16] = value; } else { base.Columns.Add(16, value); } } }
-	/// <summary>PID: 2018 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfaceslinkupdowntrap_2018 { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
-	/// <summary>PID: 2018 | Type: read</summary>
-	public System.Object Interfaceslinkupdowntrap { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
 	/// <summary>PID: 1999 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Interfacesdisplaykey_1999 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	public System.Object Interfacesdisplaykey_1999 { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
 	/// <summary>PID: 1999 | Type: read</summary>
-	public System.Object Interfacesdisplaykey { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
-	public InterfacesQActionRow() : base(0, 19) { }
-	public InterfacesQActionRow(System.Object[] oRow) : base(0, 19, oRow) { }
+	public System.Object Interfacesdisplaykey { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
+	public InterfacesQActionRow() : base(0, 18) { }
+	public InterfacesQActionRow(System.Object[] oRow) : base(0, 18, oRow) { }
 	public static implicit operator InterfacesQActionRow(System.Object[] source) { return new InterfacesQActionRow(source); }
 	public static implicit operator System.Object[](InterfacesQActionRow source) { return source.ToObjectArray(); }
 	public System.String[] GetChildKeysInterfacesdetailsrxInterfacesdetailsrxfktointerfaces(SLProtocol protocol) { return (System.String[])protocol.NotifyProtocol(196, 2102, Key); }

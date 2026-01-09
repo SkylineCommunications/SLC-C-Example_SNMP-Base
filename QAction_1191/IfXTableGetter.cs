@@ -21,7 +21,7 @@ public class IfXTableGetter
 			Parameter.Ifxtable.Idx.ifxtable_ifhcucastpktsout_1110,
 			Parameter.Ifxtable.Idx.ifxtable_ifhcmulticastpktsout_1112,
 			Parameter.Ifxtable.Idx.ifxtable_ifhcbroadcastpktsout_1114,
-			Parameter.Ifxtable.Idx.ifxtable_iflinkupdowntrapenable_1115,
+			//Parameter.Ifxtable.Idx.ifxtable_iflinkupdowntrapenable_1115, // todo (cy): remove it from the snmp table
 			Parameter.Ifxtable.Idx.ifxtable_ifhighspeed_1116,
 			Parameter.Ifxtable.Idx.ifxtable_ifpromiscuousmode_1117,
 			//Parameter.Ifxtable.Idx.ifxtable_ifconnectorpresent_1118, // todo (cy): remove it from the snmp table
@@ -60,26 +60,26 @@ public class IfXTableGetter
 		HcOutUnicastPackets = (object[])columns[11];
 		HcOutMulticastPackets = (object[])columns[12];
 		HcOutBroadcastPackets = (object[])columns[13];
-		LinkUpDownTrapEnable = (object[])columns[14];
-		HighSpeed = (object[])columns[15];
-		PromiscuousMode = (object[])columns[16];
 
-		Alias = (object[])columns[17];
-		CounterDiscontinuityTime = (object[])columns[18];
-		HcBitRateIn = (object[])columns[19];
-		HcBitRateOut = (object[])columns[20];
-		BandwidthUtilization = (object[])columns[21];
-		RateData = (object[])columns[22];
-		MulticastRateIn = (object[])columns[23];
-		MulticastRateOut = (object[])columns[24];
-		BroadcastRateIn = (object[])columns[25];
-		BroadcastRateOut = (object[])columns[26];
-		HcUnicastRateIn = (object[])columns[27];
-		HcUnicastRateOut = (object[])columns[28];
-		HcMulticastRateIn = (object[])columns[29];
-		HcMulticastRateOut = (object[])columns[30];
-		HcBroadcastRateIn = (object[])columns[31];
-		HcBroadcastRateOut = (object[])columns[32];
+		HighSpeed = (object[])columns[14];
+		PromiscuousMode = (object[])columns[15];
+
+		Alias = (object[])columns[16];
+		CounterDiscontinuityTime = (object[])columns[17];
+		HcBitRateIn = (object[])columns[18];
+		HcBitRateOut = (object[])columns[19];
+		BandwidthUtilization = (object[])columns[20];
+		RateData = (object[])columns[21];
+		MulticastRateIn = (object[])columns[22];
+		MulticastRateOut = (object[])columns[23];
+		BroadcastRateIn = (object[])columns[24];
+		BroadcastRateOut = (object[])columns[25];
+		HcUnicastRateIn = (object[])columns[26];
+		HcUnicastRateOut = (object[])columns[27];
+		HcMulticastRateIn = (object[])columns[28];
+		HcMulticastRateOut = (object[])columns[29];
+		HcBroadcastRateIn = (object[])columns[30];
+		HcBroadcastRateOut = (object[])columns[31];
 	}
 
 	public object[] Keys { get; set; }
@@ -109,8 +109,6 @@ public class IfXTableGetter
 	public object[] HcOutMulticastPackets { get; set; }
 
 	public object[] HcOutBroadcastPackets { get; set; }
-
-	public object[] LinkUpDownTrapEnable { get; set; }
 
 	public object[] HighSpeed { get; set; }
 

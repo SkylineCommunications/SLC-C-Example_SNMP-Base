@@ -51,14 +51,6 @@ public class QAction
 					protocol.CheckTrigger(TriggerIfXTable);
 					break;
 
-				case Parameter.Write.interfaceslinkupdowntrap:
-					protocol.SetParameters(
-						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtable_iflinkupdowntrapenable },
-						new[] { rowKey, value });
-
-					protocol.CheckTrigger(TriggerIfXTable);
-					break;
-
 				default:
 					protocol.Log(
 						$"QA{protocol.QActionID}|Run|QAction triggered by unexpected param '{triggerPid}'",
