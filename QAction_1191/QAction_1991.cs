@@ -169,10 +169,6 @@ public static class QAction
         IfXTableGetter ifXTableGetter,
         int getPosition)
     {
-        interfacesRow.Interfaceslogical = ifXTableGetter.ConnectorPresent[getPosition] == null
-            ? -1
-            : Convert.ToDouble(ifXTableGetter.ConnectorPresent[getPosition]);
-
         interfacesRow.Interfaceslastclear = ifXTableGetter.CounterDiscontinuityTime[getPosition] == null
             ? 0
             : Convert.ToDouble(ifXTableGetter.CounterDiscontinuityTime[getPosition]) / 100;

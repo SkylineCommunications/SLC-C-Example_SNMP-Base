@@ -4324,7 +4324,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			<Description>Interfaces</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
+				<NamingFormat>,2001, - ,2004, - ,2013</NamingFormat>
 				<ColumnOption idx="0" pid="2001" type="retrieved" options="" />
 				<ColumnOption idx="1" pid="2002" type="retrieved" options="" />
 				<ColumnOption idx="2" pid="2003" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
@@ -4332,19 +4332,18 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="4" pid="2005" type="retrieved" options="" />
 				<ColumnOption idx="5" pid="2006" type="retrieved" options="" />
 				<ColumnOption idx="6" pid="2007" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="7" pid="2008" type="retrieved" options="" />
+				<ColumnOption idx="7" pid="2008" type="retrieved" options=";disableHeaderSum" />
 				<ColumnOption idx="8" pid="2009" type="retrieved" options=";disableHeaderSum" />
-				<ColumnOption idx="9" pid="2010" type="retrieved" options=";disableHeaderSum" />
-				<ColumnOption idx="10" pid="2011" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="11" pid="2013" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="12" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="13" pid="2015" type="retrieved" options="" />
-				<ColumnOption idx="14" pid="2016" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="15" pid="2017" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="16" pid="2018" type="retrieved" options="" />
-				<ColumnOption idx="17" pid="2019" type="retrieved" options="" />
-				<ColumnOption idx="18" pid="2020" type="retrieved" options="" />
-				<ColumnOption idx="19" pid="1999" type="displaykey" options="" />
+				<ColumnOption idx="9" pid="2010" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="10" pid="2011" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="11" pid="2012" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="12" pid="2013" type="retrieved" options="" />
+				<ColumnOption idx="13" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="14" pid="2015" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="15" pid="2016" type="retrieved" options="" />
+				<ColumnOption idx="16" pid="2017" type="retrieved" options="" />
+				<ColumnOption idx="17" pid="2018" type="retrieved" options="" />
+				<ColumnOption idx="18" pid="1999" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>Interfaces state table on change subscription.</Subtext>
@@ -4366,7 +4365,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			</Display>
 			<Measurement>
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-1999|19-2006|5-2013|11-2009|8-2014|12-2010|9-2003|2-2002|1-2007|6-2005|4-2008|7-2016|14-2011|10-2015|13-2017|15-2019|17-2018|16-2020|18,width:0-0-200-123-115-0-115-0-100-130-128-94-58-138-128-112-141-127-97-133,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-1999|18-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2015|14-2017|16-2016|15-2018|17,width:0-0-200-123-115-0-115-0-100-130-128-94-138-128-112-141-127-97-133,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -5861,49 +5860,7 @@ If the state change happened before the last re-initialization of the local mana
 				<Type options="time">number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2008" trending="true">
-			<Name>InterfacesLogical</Name>
-			<Description>Logical (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[When set to true, the interface is a logical interface which does not have an associated physical port or channel on the system.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>True</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>False</Display>
-						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="2009" trending="false">
+		<Param id="2008" trending="false">
 			<Name>InterfacesRxOctets</Name>
 			<Description>Rx Octets (Interfaces)</Description>
 			<Information>
@@ -5940,7 +5897,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2010" trending="false">
+		<Param id="2009" trending="false">
 			<Name>InterfacesTxOctets</Name>
 			<Description>Tx Octets (Interfaces)</Description>
 			<Information>
@@ -5977,7 +5934,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2011" trending="false">
+		<Param id="2010" trending="false">
 			<Name>InterfacesLastClear</Name>
 			<Description>Last Clear (Interfaces)</Description>
 			<Information>
@@ -6011,7 +5968,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type options="time">number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2013" trending="true">
+		<Param id="2011" trending="true">
 			<Name>InterfacesRxBitRate</Name>
 			<Description>Rx Bit Rate (Interfaces)</Description>
 			<Information>
@@ -6049,7 +6006,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2014" trending="true">
+		<Param id="2012" trending="true">
 			<Name>InterfacesTxBitRate</Name>
 			<Description>Tx Bit Rate (Interfaces)</Description>
 			<Information>
@@ -6087,7 +6044,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2015" trending="false">
+		<Param id="2013" trending="false">
 			<Name>InterfacesUserDescription</Name>
 			<Description>User Description (Interfaces)</Description>
 			<Type>read</Type>
@@ -6111,7 +6068,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2065" setter="true">
+		<Param id="2063" setter="true">
 			<Name>InterfacesUserDescription</Name>
 			<Description>User Description (Interfaces)</Description>
 			<Type>write</Type>
@@ -6127,7 +6084,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2016" trending="true">
+		<Param id="2014" trending="true">
 			<Name>InterfacesSpeed</Name>
 			<Description>Speed (Interfaces)</Description>
 			<Information>
@@ -6161,7 +6118,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2017" trending="true">
+		<Param id="2015" trending="true">
 			<Name>InterfacesBandwidthUtilization</Name>
 			<Description>Bandwidth Utilization (Interfaces)</Description>
 			<Information>
@@ -6203,7 +6160,7 @@ For half duplex interfaces, this is the sum of the input utilization and the out
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2018" trending="true">
+		<Param id="2016" trending="true">
 			<Name>InterfacesDuplexStatus</Name>
 			<Description>Duplex Status (Interfaces)</Description>
 			<Information>
@@ -6261,7 +6218,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2019" trending="false">
+		<Param id="2017" trending="false">
 			<Name>InterfacesPromiscuousMode</Name>
 			<Description>Promiscuous Mode (Interfaces)</Description>
 			<Information>
@@ -6300,7 +6257,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2069">
+		<Param id="2067">
 			<Name>InterfacesPromiscuousMode</Name>
 			<Description>Promiscuous Mode (Interfaces)</Description>
 			<Type>write</Type>
@@ -6326,7 +6283,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2020" trending="false">
+		<Param id="2018" trending="false">
 			<Name>InterfacesLinkUpDownTrap</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>Link Up/Down Traps (Interfaces)</Description>
@@ -6359,7 +6316,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2070">
+		<Param id="2068">
 			<Name>InterfacesLinkUpDownTrap</Name>
 			<!-- SuppressValidator 2.14.7 Keep spelling for emphasis -->
 			<Description>Link Up/Down Traps (Interfaces)</Description>
@@ -7030,7 +6987,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Condition>
 		</QAction>
 		<QAction id="1992" name="Interface Rate Calculations Method" encoding="csharp" triggers="1992" />
-		<QAction id="2000" name="Interface Table SNMP Sets" encoding="csharp" triggers="2055;2065;2069;2070" row="true" />
+		<QAction id="2000" name="Interface Table SNMP Sets" encoding="csharp" triggers="2055;2063;2067;2068" row="true" />
 	</QActions>
 
 	<Groups>
