@@ -43,7 +43,7 @@ public class QAction
 					protocol.CheckTrigger(TriggerIfXTable);
 					break;
 
-				case Parameter.Write.interfacesuserdescription:
+				case Parameter.Write.interfacesalias:
 					protocol.SetParameters(
 						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtable_ifalias },
 						new[] { rowKey, value });

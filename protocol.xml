@@ -4303,7 +4303,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			<Description>Display Key (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Readable description provided in the format of: {Index} - {Description} - {User Description}]]>
+					<![CDATA[Readable description provided in the format of: {Description} - {Alias} - {Custom Description}]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4324,7 +4324,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			<Description>Interfaces</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<NamingFormat>,2001, - ,2004, - ,2013</NamingFormat>
+				<NamingFormat>,2004, - ,2013, - ,2018</NamingFormat>
 				<ColumnOption idx="0" pid="2001" type="retrieved" options="" />
 				<ColumnOption idx="1" pid="2002" type="retrieved" options="" />
 				<ColumnOption idx="2" pid="2003" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
@@ -4342,7 +4342,8 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="14" pid="2015" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="15" pid="2016" type="retrieved" options="" />
 				<ColumnOption idx="16" pid="2017" type="retrieved" options="" />
-				<ColumnOption idx="17" pid="1999" type="displaykey" options="" />
+				<ColumnOption idx="17" pid="2018" type="retrieved" options=";save" />
+				<ColumnOption idx="18" pid="1999" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>Interfaces state table on change subscription.</Subtext>
@@ -4364,7 +4365,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			</Display>
 			<Measurement>
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-1999|17-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2015|14-2017|16-2016|15,width:0-0-200-123-115-0-115-0-100-130-128-94-138-128-112-141-127-97,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-1999|18-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2015|14-2017|16-2016|15-2018|17,width:0-0-200-123-115-0-115-0-100-130-128-94-138-128-112-141-127-97-115,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -6044,11 +6045,11 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2013" trending="false">
-			<Name>InterfacesUserDescription</Name>
-			<Description>User Description (Interfaces)</Description>
+			<Name>InterfacesAlias</Name>
+			<Description>Alias (Interfaces)</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>Custom description for the interface.</Subtext>
+				<Subtext>Alias for the interface. The data here comes from the data source.</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -6068,8 +6069,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="2063" setter="true">
-			<Name>InterfacesUserDescription</Name>
-			<Description>User Description (Interfaces)</Description>
+			<Name>InterfacesAlias</Name>
+			<Description>Alias (Interfaces)</Description>
 			<Type>write</Type>
 			<Interprete>
 				<RawType>other</RawType>
@@ -6278,6 +6279,56 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 					<Discreet>
 						<Display>False</Display>
 						<Value>2</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2018" trending="false">
+			<Name>InterfacesCustomDescription</Name>
+			<Description>Custom Description (Interfaces)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>
+					<![CDATA[Custom Description to add more context to the interface's display key.
+This is custom to DataMiner and does not come from the data source.]]>
+				</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>N/A</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2068" setter="true">
+			<Name>InterfacesCustomDescription</Name>
+			<Description>Custom Description (Interfaces)</Description>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+				<Discreets>
+					<Discreet>
+						<Display>N/A</Display>
+						<Value>-1</Value>
 					</Discreet>
 				</Discreets>
 			</Measurement>

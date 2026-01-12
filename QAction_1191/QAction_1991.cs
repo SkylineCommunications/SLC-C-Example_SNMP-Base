@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Skyline.DataMiner.Scripting;
+using Skyline.Protocol.Api;
 using Skyline.Protocol.Interfaces;
 
 /// <summary>
@@ -35,7 +36,8 @@ public static class QAction
 
             var duplexGetter = new DuplexGetter(protocol);
             duplexGetter.Load();
-            var duplexStatusesPerKey = duplexGetter.DuplexStatusesByKey;
+            var duplexStatusesByKey = duplexGetter.DuplexStatusesByKey;
+            var customDescriptionsByKey = InterfacesTable.CustomDescriptionColumn.GetValuesByKey(protocol);
 
             // ifTable.
             var ifTableGetter = new IfTableGetter(protocol);
@@ -48,14 +50,10 @@ public static class QAction
                 PopulateDataFromIfTable(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow, ifTableGetter, i);
 
                 string key = Convert.ToString(ifTableGetter.Keys[i]);
-                if (duplexStatusesPerKey.TryGetValue(key, out var duplexState))
-                {
-                    interfacesRow.Interfacesduplexstatus = Convert.ToInt32(duplexState);
-                }
-                else
-                {
-                    interfacesRow.Interfacesduplexstatus = -1; // N/A
-                }
+                interfacesRow.Interfacesduplexstatus = duplexStatusesByKey.TryGetValue(key, out var duplexState)
+                    ? Convert.ToInt32(duplexState) : -1; // N/A
+                interfacesRow.Interfacescustomdescription = customDescriptionsByKey.TryGetValue(key, out var customDescription)
+                    ? customDescription : InterfacesTable.CustomDescriptionColumn.Exception; // Exception will happen if it's a new row yet to be added to Interfaces table
 
                 interfacesRowsPerKey.Add(key, new InterfaceTablesRowData(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow));
             }
@@ -80,7 +78,7 @@ public static class QAction
 
             // Interfaces tables.
             var rows = interfacesRowsPerKey.Values.ToArray();
-            var interfaceRows = new QActionTableRow[rows.Length];
+            var interfaceRows = new InterfacesQActionRow[rows.Length];
             var interfaceDetailsRxRows = new QActionTableRow[rows.Length];
             var interfaceDetailsTxRows = new QActionTableRow[rows.Length];
 
@@ -91,7 +89,7 @@ public static class QAction
                 interfaceDetailsTxRows[i] = rows[i].InterfacesTxRow;
             }
 
-            protocol.interfaces.FillArray(interfaceRows);
+            InterfacesTable.FillArray(protocol, interfaceRows);
             protocol.interfacesdetailsrx.FillArray(interfaceDetailsRxRows);
             protocol.interfacesdetailstx.FillArray(interfaceDetailsTxRows);
         }
@@ -173,7 +171,7 @@ public static class QAction
             ? 0
             : Convert.ToDouble(ifXTableGetter.CounterDiscontinuityTime[getPosition]) / 100;
 
-        interfacesRow.Interfacesuserdescription = Convert.ToString(ifXTableGetter.Alias[getPosition]);
+        interfacesRow.Interfacesalias = Convert.ToString(ifXTableGetter.Alias[getPosition]);
 
         interfacesRow.Interfacespromiscuousmode = ifXTableGetter.PromiscuousMode[getPosition] == null
             ? -1

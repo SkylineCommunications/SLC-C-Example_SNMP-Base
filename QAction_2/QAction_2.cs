@@ -2,6 +2,7 @@ using System;
 
 using Skyline.DataMiner.Scripting;
 using Skyline.DataMiner.Utils.SNMP;
+using Skyline.Protocol.Api.Helpers;
 
 /// <summary>
 /// DataMiner QAction Class: After Startup.
@@ -25,6 +26,8 @@ public static class QAction
 					tablePids: new[] { Parameter.Iftable.tablePid, Parameter.Ifxtable.tablePid },
 					CalculationMethod.Accurate);
 			}
+
+			InterfacesTableHelper.InitialiseCustomDescriptionColumn(protocol);
 		}
 		catch (Exception ex)
 		{
