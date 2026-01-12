@@ -226,7 +226,7 @@ public static class QAction
             interfacesRow.Interfacesrxbitrate = -1;
             interfacesRow.Interfacestxbitrate = -1;
             interfacesRow.Interfacesrxbandwidthutilization = -1;
-            interfacesRow.Interfacestxbandwidthutilization_2020 = -1;
+            interfacesRow.Interfacestxbandwidthutilization = -1;
         }
     }
 

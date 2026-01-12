@@ -533,9 +533,9 @@ This value should include the full name and version identification of the system
 				<ColumnOption idx="24" pid="1025" type="retrieved" options="" />
 				<ColumnOption idx="25" pid="1026" type="retrieved" options="" />
 				<ColumnOption idx="26" pid="1027" type="retrieved" options="" />
-				<ColumnOption idx="27" pid="1029" type="retrieved" options="" />
-				<ColumnOption idx="28" pid="1030" type="retrieved" options="" />
-				<ColumnOption idx="29" pid="1031" type="retrieved" options="" />
+				<ColumnOption idx="27" pid="1028" type="retrieved" options="" />
+				<ColumnOption idx="28" pid="1029" type="retrieved" options="" />
+				<ColumnOption idx="29" pid="1030" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A list of interface entries.</Subtext>
@@ -544,6 +544,7 @@ This value should include the full name and version identification of the system
 				<Enabled>true</Enabled>
 				<OID type="complete" options="instance;multipleGetNext"></OID>
 			</SNMP>
+			<!--todo (cy): remove this commented code-->
 			<!--<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -2703,8 +2704,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<!--todo (cy): bring up the pids-->
-		<Param id="1029" trending="false">
+		<Param id="1028" trending="false">
 			<Name>ifTable_RatesData</Name>
 			<Description>Rates Data (If Table)</Description>
 			<Type>read</Type>
@@ -2723,7 +2723,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1030" trending="false">
+		<Param id="1029" trending="false">
 			<Name>ifTable_RxBandwidthUtilization</Name>
 			<Description>Rx Bandwidth Utilization (If Table)</Description>
 			<Information>
@@ -2756,7 +2756,7 @@ Formula: Rx Bit Rate / Interface Speed * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1031" trending="false">
+		<Param id="1030" trending="false">
 			<Name>ifTable_TxBandwidthUtilization</Name>
 			<Description>Tx Bandwidth Utilization (If Table)</Description>
 			<Information>
@@ -2892,19 +2892,19 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 				<ColumnOption idx="19" pid="1120" type="snmp" options="" />
 				<ColumnOption idx="20" pid="1121" type="retrieved" options="" />
 				<ColumnOption idx="21" pid="1122" type="retrieved" options="" />
-				<ColumnOption idx="22" pid="1124" type="retrieved" options="" />
-				<ColumnOption idx="23" pid="1125" type="retrieved" options="" />
-				<ColumnOption idx="24" pid="1126" type="retrieved" options="" />
-				<ColumnOption idx="25" pid="1127" type="retrieved" options="" />
-				<ColumnOption idx="26" pid="1128" type="retrieved" options="" />
-				<ColumnOption idx="27" pid="1129" type="retrieved" options="" />
-				<ColumnOption idx="28" pid="1130" type="retrieved" options="" />
-				<ColumnOption idx="29" pid="1131" type="retrieved" options="" />
-				<ColumnOption idx="30" pid="1132" type="retrieved" options="" />
-				<ColumnOption idx="31" pid="1133" type="retrieved" options="" />
-				<ColumnOption idx="32" pid="1134" type="retrieved" options="" />
-				<ColumnOption idx="33" pid="1135" type="retrieved" options="" />
-				<ColumnOption idx="34" pid="1136" type="retrieved" options="" />
+				<ColumnOption idx="22" pid="1123" type="retrieved" options="" />
+				<ColumnOption idx="23" pid="1124" type="retrieved" options="" />
+				<ColumnOption idx="24" pid="1125" type="retrieved" options="" />
+				<ColumnOption idx="25" pid="1126" type="retrieved" options="" />
+				<ColumnOption idx="26" pid="1127" type="retrieved" options="" />
+				<ColumnOption idx="27" pid="1128" type="retrieved" options="" />
+				<ColumnOption idx="28" pid="1129" type="retrieved" options="" />
+				<ColumnOption idx="29" pid="1130" type="retrieved" options="" />
+				<ColumnOption idx="30" pid="1131" type="retrieved" options="" />
+				<ColumnOption idx="31" pid="1132" type="retrieved" options="" />
+				<ColumnOption idx="32" pid="1133" type="retrieved" options="" />
+				<ColumnOption idx="33" pid="1134" type="retrieved" options="" />
+				<ColumnOption idx="34" pid="1135" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A list of interface entries. This table contains additional objects for the interface table.</Subtext>
@@ -3791,8 +3791,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<!--todo (cy): bring up the pids-->
-		<Param id="1124" trending="false">
+		<Param id="1123" trending="false">
 			<Name>ifXTable_RatesData</Name>
 			<Description>Rates Data (If X Table)</Description>
 			<Type>read</Type>
@@ -3811,7 +3810,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1125" trending="false">
+		<Param id="1124" trending="false">
 			<Name>ifXTable_MulticastRateIn</Name>
 			<Description>In Multicast Rate (If X Table)</Description>
 			<Information>
@@ -3840,7 +3839,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1126" trending="false">
+		<Param id="1125" trending="false">
 			<Name>ifXTable_MulticastRateOut</Name>
 			<Description>Out Multicast Rate (If X Table)</Description>
 			<Information>
@@ -3869,7 +3868,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1127" trending="false">
+		<Param id="1126" trending="false">
 			<Name>ifXTable_BroadcastRateIn</Name>
 			<Description>In Broadcast Rate (If X Table)</Description>
 			<Information>
@@ -3898,7 +3897,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1128" trending="false">
+		<Param id="1127" trending="false">
 			<Name>ifXTable_BroadcastRateOut</Name>
 			<Description>Out Broadcast Rate (If X Table)</Description>
 			<Information>
@@ -3927,7 +3926,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1129" trending="false">
+		<Param id="1128" trending="false">
 			<Name>ifXTable_HcUcastRateIn</Name>
 			<Description>In HC Unicast Rate (If X Table)</Description>
 			<Information>
@@ -3956,7 +3955,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1130" trending="false">
+		<Param id="1129" trending="false">
 			<Name>ifXTable_HcUcastRateOut</Name>
 			<Description>Out HC Unicast Rate (If X Table)</Description>
 			<Information>
@@ -3985,7 +3984,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1131" trending="false">
+		<Param id="1130" trending="false">
 			<Name>ifXTable_HcMulticastRateIn</Name>
 			<Description>In HC Multicast Rate (If X Table)</Description>
 			<Information>
@@ -4014,7 +4013,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1132" trending="false">
+		<Param id="1131" trending="false">
 			<Name>ifXTable_HcMulticastRateOut</Name>
 			<Description>Out HC Multicast Rate (If X Table)</Description>
 			<Information>
@@ -4043,7 +4042,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1133" trending="false">
+		<Param id="1132" trending="false">
 			<Name>ifXTable_HcBroadcastRateIn</Name>
 			<Description>In HC Broadcast Rate (If X Table)</Description>
 			<Information>
@@ -4072,7 +4071,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1134" trending="false">
+		<Param id="1133" trending="false">
 			<Name>ifXTable_HcBroadcastRateOut</Name>
 			<Description>Out HC Broadcast Rate (If X Table)</Description>
 			<Information>
@@ -4101,7 +4100,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1135" trending="false">
+		<Param id="1134" trending="false">
 			<Name>ifXTable_RxBandwidthUtilization</Name>
 			<Description>Rx Bandwidth Utilization (If X Table)</Description>
 			<Information>
@@ -4134,7 +4133,7 @@ Formula: Rx Bit Rate / Interface Speed * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1136" trending="false">
+		<Param id="1135" trending="false">
 			<Name>ifXTable_TxBandwidthUtilization</Name>
 			<Description>Tx Bandwidth Utilization (If X Table)</Description>
 			<Information>
@@ -4390,7 +4389,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			<Description>Interfaces</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<NamingFormat>,2004, - ,2013, - ,2018</NamingFormat>
+				<NamingFormat>,2004, - ,2013, - ,2017</NamingFormat>
 				<ColumnOption idx="0" pid="2001" type="retrieved" options="" />
 				<ColumnOption idx="1" pid="2002" type="retrieved" options="" />
 				<ColumnOption idx="2" pid="2003" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
@@ -4405,11 +4404,11 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="11" pid="2012" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="12" pid="2013" type="retrieved" options="" />
 				<ColumnOption idx="13" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="14" pid="2016" type="retrieved" options="" />
-				<ColumnOption idx="15" pid="2017" type="retrieved" options="" />
-				<ColumnOption idx="16" pid="2018" type="retrieved" options=";save" />
-				<ColumnOption idx="17" pid="2019" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="18" pid="2020" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="14" pid="2015" type="retrieved" options="" />
+				<ColumnOption idx="15" pid="2016" type="retrieved" options="" />
+				<ColumnOption idx="16" pid="2017" type="retrieved" options=";save" />
+				<ColumnOption idx="17" pid="2018" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="18" pid="2019" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="19" pid="1999" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
@@ -4432,7 +4431,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			</Display>
 			<Measurement>
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-1999|19-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2017|15-2016|14-2018|16-2019|17-2020|18,width:0-0-200-123-115-0-115-0-100-242-128-94-138-128-112-127-97-115-159-158,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-STRING-STRING-STRING-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-1999|19-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2016|15-2015|14-2017|16-2018|17-2019|18,width:0-0-200-123-115-0-115-0-100-242-128-94-138-128-112-127-97-115-159-158,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-STRING-STRING-STRING-INT-INT,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -6185,8 +6184,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<!--todo (cy): bring up the pids-->
-		<Param id="2016" trending="true">
+		<Param id="2015" trending="true">
 			<Name>InterfacesDuplexStatus</Name>
 			<Description>Duplex Status (Interfaces)</Description>
 			<Information>
@@ -6244,7 +6242,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2017" trending="false">
+		<Param id="2016" trending="false">
 			<Name>InterfacesPromiscuousMode</Name>
 			<Description>Promiscuous Mode (Interfaces)</Description>
 			<Information>
@@ -6283,7 +6281,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2067">
+		<Param id="2066">
 			<Name>InterfacesPromiscuousMode</Name>
 			<Description>Promiscuous Mode (Interfaces)</Description>
 			<Type>write</Type>
@@ -6309,7 +6307,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2018" trending="false">
+		<Param id="2017" trending="false">
 			<Name>InterfacesCustomDescription</Name>
 			<Description>Custom Description (Interfaces)</Description>
 			<Type>read</Type>
@@ -6337,7 +6335,7 @@ This is custom to DataMiner and does not come from the data source.]]>
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="2068" setter="true">
+		<Param id="2067" setter="true">
 			<Name>InterfacesCustomDescription</Name>
 			<Description>Custom Description (Interfaces)</Description>
 			<Type>write</Type>
@@ -6359,7 +6357,7 @@ This is custom to DataMiner and does not come from the data source.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2019" trending="true">
+		<Param id="2018" trending="true">
 			<Name>InterfacesRxBandwidthUtilization</Name>
 			<Description>Rx Bandwidth Utilization (Interfaces)</Description>
 			<Information>
@@ -6399,7 +6397,7 @@ Formula: Rx Bit Rate / Interface Speed * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2020" trending="true">
+		<Param id="2019" trending="true">
 			<Name>InterfacesTxBandwidthUtilization</Name>
 			<Description>Tx Bandwidth Utilization (Interfaces)</Description>
 			<Information>
@@ -7082,7 +7080,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Condition>
 		</QAction>
 		<QAction id="1992" name="Interface Rate Calculations Method" encoding="csharp" triggers="1992" />
-		<QAction id="2000" name="Interface Table SNMP Sets" encoding="csharp" triggers="2055;2063;2067" row="true" />
+		<QAction id="2000" name="Interface Table SNMP Sets" encoding="csharp" triggers="2055;2063;2066" row="true" />
 	</QActions>
 
 	<Groups>

@@ -28,20 +28,20 @@ public class IfXTableGetter
 
 			Parameter.Ifxtable.Idx.ifxtable_bitratein_1121,
 			Parameter.Ifxtable.Idx.ifxtable_bitrateout_1122,
-			Parameter.Ifxtable.Idx.ifxtable_ratesdata_1124,
-			Parameter.Ifxtable.Idx.ifxtable_multicastratein_1125,
-			Parameter.Ifxtable.Idx.ifxtable_multicastrateout_1126,
-			Parameter.Ifxtable.Idx.ifxtable_broadcastratein_1127,
-			Parameter.Ifxtable.Idx.ifxtable_broadcastrateout_1128,
-			Parameter.Ifxtable.Idx.ifxtable_hcucastratein_1129,
-			Parameter.Ifxtable.Idx.ifxtable_hcucastrateout_1130,
-			Parameter.Ifxtable.Idx.ifxtable_hcmulticastratein_1131,
-			Parameter.Ifxtable.Idx.ifxtable_hcmulticastrateout_1132,
-			Parameter.Ifxtable.Idx.ifxtable_hcbroadcastratein_1133,
-			Parameter.Ifxtable.Idx.ifxtable_hcbroadcastrateout_1134,
+			Parameter.Ifxtable.Idx.ifxtable_ratesdata_1123,
+			Parameter.Ifxtable.Idx.ifxtable_multicastratein_1124,
+			Parameter.Ifxtable.Idx.ifxtable_multicastrateout_1125,
+			Parameter.Ifxtable.Idx.ifxtable_broadcastratein_1126,
+			Parameter.Ifxtable.Idx.ifxtable_broadcastrateout_1127,
+			Parameter.Ifxtable.Idx.ifxtable_hcucastratein_1128,
+			Parameter.Ifxtable.Idx.ifxtable_hcucastrateout_1129,
+			Parameter.Ifxtable.Idx.ifxtable_hcmulticastratein_1130,
+			Parameter.Ifxtable.Idx.ifxtable_hcmulticastrateout_1131,
+			Parameter.Ifxtable.Idx.ifxtable_hcbroadcastratein_1132,
+			Parameter.Ifxtable.Idx.ifxtable_hcbroadcastrateout_1133,
 
-			Parameter.Ifxtable.Idx.ifxtable_rxbandwidthutilization_1135,
-			Parameter.Ifxtable.Idx.ifxtable_txbandwidthutilization_1136,
+			Parameter.Ifxtable.Idx.ifxtable_rxbandwidthutilization_1134,
+			Parameter.Ifxtable.Idx.ifxtable_txbandwidthutilization_1135,
 		};
 
 		var columns = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);

@@ -19,8 +19,8 @@
         {
             public static readonly string Exception = "-1";
 
-            private const int ColId = Parameter.Interfaces.Pid.interfacescustomdescription_2018;
-            private const int ColIdx = Parameter.Interfaces.Idx.interfacescustomdescription_2018;
+            private const int ColId = Parameter.Interfaces.Pid.interfacescustomdescription_2017;
+            private const int ColIdx = Parameter.Interfaces.Idx.interfacescustomdescription_2017;
 
             public static Dictionary<string, string> GetValuesByKey(SLProtocol protocol)
             {

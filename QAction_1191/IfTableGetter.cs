@@ -29,7 +29,7 @@ public class IfTableGetter
 
             Parameter.Iftable.Idx.iftable_bitratein_1019,
             Parameter.Iftable.Idx.iftable_bitrateout_1020,
-            Parameter.Iftable.Idx.iftable_ratesdata_1029,
+            Parameter.Iftable.Idx.iftable_ratesdata_1028,
             Parameter.Iftable.Idx.iftable_unicastratein_1021,
             Parameter.Iftable.Idx.iftable_unicastrateout_1022,
             Parameter.Iftable.Idx.iftable_discardratein_1023,
@@ -37,8 +37,8 @@ public class IfTableGetter
             Parameter.Iftable.Idx.iftable_errorratein_1025,
             Parameter.Iftable.Idx.iftable_errorrateout_1026,
             Parameter.Iftable.Idx.iftable_unknownprotocolratein_1027,
-            Parameter.Iftable.Idx.iftable_rxbandwidthutilization_1030,
-            Parameter.Iftable.Idx.iftable_txbandwidthutilization_1031,
+            Parameter.Iftable.Idx.iftable_rxbandwidthutilization_1029,
+            Parameter.Iftable.Idx.iftable_txbandwidthutilization_1030,
         };
 
         var columns = protocol.GetColumns(Parameter.Iftable.tablePid, columnsToGet);
