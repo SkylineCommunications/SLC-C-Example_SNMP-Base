@@ -21,10 +21,8 @@ public class IfXTableGetter
 			Parameter.Ifxtable.Idx.ifxtable_ifhcucastpktsout_1110,
 			Parameter.Ifxtable.Idx.ifxtable_ifhcmulticastpktsout_1112,
 			Parameter.Ifxtable.Idx.ifxtable_ifhcbroadcastpktsout_1114,
-			//Parameter.Ifxtable.Idx.ifxtable_iflinkupdowntrapenable_1115, // todo (cy): remove it from the snmp table
 			Parameter.Ifxtable.Idx.ifxtable_ifhighspeed_1116,
 			Parameter.Ifxtable.Idx.ifxtable_ifpromiscuousmode_1117,
-			//Parameter.Ifxtable.Idx.ifxtable_ifconnectorpresent_1118, // todo (cy): remove it from the snmp table
 			Parameter.Ifxtable.Idx.ifxtable_ifalias_1119,
 			Parameter.Ifxtable.Idx.ifxtable_ifcounterdiscontinuitytime_1120,
 
