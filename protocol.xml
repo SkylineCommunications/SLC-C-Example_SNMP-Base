@@ -5675,7 +5675,7 @@ The value for each interface sub-layer must remain constant at least from one re
 			<Description>MTU (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Set the max transmission unit size in octets for the physical interface.
+					<![CDATA[The max transmission unit size in octets for the physical interface.
 If this is not set, the MTU is set to the operational default -- e.g., 1514 bytes on an Ethernet interface.]]>
 				</Subtext>
 			</Information>
@@ -6175,21 +6175,13 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 			<Description>Duplex Status (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The current mode of operation of the MAC entity.
-'N/A' indicates the Duplex Status cannot be known.
-The Duplex Status can currently only be known on Ethernet interfaces.
+					<![CDATA[The current mode of operation of the interface.
 
-'unknown' indicates that the current duplex mode could not be determined by the SNMP Agent on the Ethernet inteface.
-
-Management control of the duplex mode of Ethernet interfaces is accomplished through the MAU MIB.
-When an interface does not support autonegotiation, or when autonegotiation is not enabled, the duplex mode is controlled using ifMauDefaultType.
-When autonegotiation is supported and enabled, duplex mode is controlled using ifMauAutoNegAdvertisedBits.
-In either case, the currently operating duplex mode is reflected both in this object and in ifMauType.
-
-Note that this object provides redundant information with ifMauType.
-Normally, redundant objects are discouraged.
-However, in this instance, it allows a management application to determine the duplex status of an interface without having to know every possible value of ifMauType.
-This was felt to be sufficiently valuable to justify the redundancy.]]>
+Possible values:
+'N/A': the Duplex Status cannot be known.
+'Unknown': current duplex mode could not be determined by the SNMP Agent on the Ethernet interface.
+'Half Duplex: Data flows in both directions, but not simulataneously.
+'Full Duplex: Data flows in both directions simulataneously.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -6428,7 +6420,9 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 			<Name>InterfacesDetailsRxDisplayKey</Name>
 			<Description>Display Key (Interfaces Details Rx)</Description>
 			<Information>
-				<Subtext>Index</Subtext>
+				<Subtext>
+					<![CDATA[Readable description provided in the format of: {Description} - {Alias} - {Custom Description}]]>
+				</Subtext>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
@@ -6765,7 +6759,9 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Name>InterfacesDetailsTxDisplayKey</Name>
 			<Description>Display Key (Interfaces Details Tx)</Description>
 			<Information>
-				<Subtext>Index</Subtext>
+				<Subtext>
+					<![CDATA[Readable description provided in the format of: {Description} - {Alias} - {Custom Description}]]>
+				</Subtext>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
