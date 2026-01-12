@@ -28,7 +28,6 @@ public class IfXTableGetter
 
 			Parameter.Ifxtable.Idx.ifxtable_bitratein_1121,
 			Parameter.Ifxtable.Idx.ifxtable_bitrateout_1122,
-			Parameter.Ifxtable.Idx.ifxtable_bandwidthutilization_1123,
 			Parameter.Ifxtable.Idx.ifxtable_ratesdata_1124,
 			Parameter.Ifxtable.Idx.ifxtable_multicastratein_1125,
 			Parameter.Ifxtable.Idx.ifxtable_multicastrateout_1126,
@@ -69,21 +68,21 @@ public class IfXTableGetter
 		CounterDiscontinuityTime = (object[])columns[17];
 		HcBitRateIn = (object[])columns[18];
 		HcBitRateOut = (object[])columns[19];
-		BandwidthUtilization = (object[])columns[20];
-		RateData = (object[])columns[21];
-		MulticastRateIn = (object[])columns[22];
-		MulticastRateOut = (object[])columns[23];
-		BroadcastRateIn = (object[])columns[24];
-		BroadcastRateOut = (object[])columns[25];
-		HcUnicastRateIn = (object[])columns[26];
-		HcUnicastRateOut = (object[])columns[27];
-		HcMulticastRateIn = (object[])columns[28];
-		HcMulticastRateOut = (object[])columns[29];
-		HcBroadcastRateIn = (object[])columns[30];
-		HcBroadcastRateOut = (object[])columns[31];
 
-		RxBandwidthUtilization = (object[])columns[32];
-		TxBandwidthUtilization = (object[])columns[33];
+		RateData = (object[])columns[20];
+		MulticastRateIn = (object[])columns[21];
+		MulticastRateOut = (object[])columns[22];
+		BroadcastRateIn = (object[])columns[23];
+		BroadcastRateOut = (object[])columns[24];
+		HcUnicastRateIn = (object[])columns[25];
+		HcUnicastRateOut = (object[])columns[26];
+		HcMulticastRateIn = (object[])columns[27];
+		HcMulticastRateOut = (object[])columns[28];
+		HcBroadcastRateIn = (object[])columns[29];
+		HcBroadcastRateOut = (object[])columns[30];
+
+		RxBandwidthUtilization = (object[])columns[31];
+		TxBandwidthUtilization = (object[])columns[32];
     }
 
 	public object[] Keys { get; set; }
@@ -125,8 +124,6 @@ public class IfXTableGetter
 	public object[] HcBitRateIn { get; set; }
 
 	public object[] HcBitRateOut { get; set; }
-
-	public object[] BandwidthUtilization { get; set; }
 
 	public object[] RateData { get; set; }
 

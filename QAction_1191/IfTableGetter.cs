@@ -29,7 +29,6 @@ public class IfTableGetter
 
             Parameter.Iftable.Idx.iftable_bitratein_1019,
             Parameter.Iftable.Idx.iftable_bitrateout_1020,
-            Parameter.Iftable.Idx.iftable_bandwidthutilization_1028,
             Parameter.Iftable.Idx.iftable_ratesdata_1029,
             Parameter.Iftable.Idx.iftable_unicastratein_1021,
             Parameter.Iftable.Idx.iftable_unicastrateout_1022,
@@ -64,17 +63,16 @@ public class IfTableGetter
         OutErrors = (object[])columns[17];
         BitRateIn = (object[])columns[18];
         BitRateOut = (object[])columns[19];
-        BandwidthUtilization = (object[])columns[20];
-        RateData = (object[])columns[21];
-        UnicastRateIn = (object[])columns[22];
-        UnicastRateOut = (object[])columns[23];
-        DiscardRateIn = (object[])columns[24];
-        DiscardRateOut = (object[])columns[25];
-        ErrorRateIn = (object[])columns[26];
-        ErrorRateOut = (object[])columns[27];
-        UnknownProtocolRateIn = (object[])columns[28];
-        RxBandwidthUtilization = (object[])columns[29];
-        TxBandwidthUtilization = (object[])columns[30];
+        RateData = (object[])columns[20];
+        UnicastRateIn = (object[])columns[21];
+        UnicastRateOut = (object[])columns[22];
+        DiscardRateIn = (object[])columns[23];
+        DiscardRateOut = (object[])columns[24];
+        ErrorRateIn = (object[])columns[25];
+        ErrorRateOut = (object[])columns[26];
+        UnknownProtocolRateIn = (object[])columns[27];
+        RxBandwidthUtilization = (object[])columns[28];
+        TxBandwidthUtilization = (object[])columns[29];
     }
 
     public object[] Keys { get; set; }
@@ -116,8 +114,6 @@ public class IfTableGetter
     public object[] BitRateIn { get; set; }
 
     public object[] BitRateOut { get; set; }
-
-    public object[] BandwidthUtilization { get; set; }
 
     public object[] RateData { get; set; }
 

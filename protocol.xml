@@ -533,10 +533,9 @@ This value should include the full name and version identification of the system
 				<ColumnOption idx="24" pid="1025" type="retrieved" options="" />
 				<ColumnOption idx="25" pid="1026" type="retrieved" options="" />
 				<ColumnOption idx="26" pid="1027" type="retrieved" options="" />
-				<ColumnOption idx="27" pid="1028" type="retrieved" options="" />
-				<ColumnOption idx="28" pid="1029" type="retrieved" options="" />
-				<ColumnOption idx="29" pid="1030" type="retrieved" options="" />
-				<ColumnOption idx="30" pid="1031" type="retrieved" options="" />
+				<ColumnOption idx="27" pid="1029" type="retrieved" options="" />
+				<ColumnOption idx="28" pid="1030" type="retrieved" options="" />
+				<ColumnOption idx="29" pid="1031" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A list of interface entries.</Subtext>
@@ -2704,41 +2703,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1028" trending="false">
-			<Name>ifTable_BandwidthUtilization</Name>
-			<Description>Bandwidth Utilization (If Table)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The bandwidth utilization.
-Currently only calculated for Ethernet interfaces.
-- for full duplex interfaces, this is the maximum of the input utilization and the output utilization.
-- for half duplex interfaces, this is the sum of the input utilization and the output utilization.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>%</Units>
-				<Range>
-					<Low>0</Low>
-					<High>100</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
+		<!--todo (cy): bring up the pids-->
 		<Param id="1029" trending="false">
 			<Name>ifTable_RatesData</Name>
 			<Description>Rates Data (If Table)</Description>
@@ -2927,20 +2892,19 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 				<ColumnOption idx="19" pid="1120" type="snmp" options="" />
 				<ColumnOption idx="20" pid="1121" type="retrieved" options="" />
 				<ColumnOption idx="21" pid="1122" type="retrieved" options="" />
-				<ColumnOption idx="22" pid="1123" type="retrieved" options="" />
-				<ColumnOption idx="23" pid="1124" type="retrieved" options="" />
-				<ColumnOption idx="24" pid="1125" type="retrieved" options="" />
-				<ColumnOption idx="25" pid="1126" type="retrieved" options="" />
-				<ColumnOption idx="26" pid="1127" type="retrieved" options="" />
-				<ColumnOption idx="27" pid="1128" type="retrieved" options="" />
-				<ColumnOption idx="28" pid="1129" type="retrieved" options="" />
-				<ColumnOption idx="29" pid="1130" type="retrieved" options="" />
-				<ColumnOption idx="30" pid="1131" type="retrieved" options="" />
-				<ColumnOption idx="31" pid="1132" type="retrieved" options="" />
-				<ColumnOption idx="32" pid="1133" type="retrieved" options="" />
-				<ColumnOption idx="33" pid="1134" type="retrieved" options="" />
-				<ColumnOption idx="34" pid="1135" type="retrieved" options="" />
-				<ColumnOption idx="35" pid="1136" type="retrieved" options="" />
+				<ColumnOption idx="22" pid="1124" type="retrieved" options="" />
+				<ColumnOption idx="23" pid="1125" type="retrieved" options="" />
+				<ColumnOption idx="24" pid="1126" type="retrieved" options="" />
+				<ColumnOption idx="25" pid="1127" type="retrieved" options="" />
+				<ColumnOption idx="26" pid="1128" type="retrieved" options="" />
+				<ColumnOption idx="27" pid="1129" type="retrieved" options="" />
+				<ColumnOption idx="28" pid="1130" type="retrieved" options="" />
+				<ColumnOption idx="29" pid="1131" type="retrieved" options="" />
+				<ColumnOption idx="30" pid="1132" type="retrieved" options="" />
+				<ColumnOption idx="31" pid="1133" type="retrieved" options="" />
+				<ColumnOption idx="32" pid="1134" type="retrieved" options="" />
+				<ColumnOption idx="33" pid="1135" type="retrieved" options="" />
+				<ColumnOption idx="34" pid="1136" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A list of interface entries. This table contains additional objects for the interface table.</Subtext>
@@ -3827,41 +3791,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1123" trending="false">
-			<Name>ifXTable_BandwidthUtilization</Name>
-			<Description>Bandwidth Utilization (If X Table)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The bandwidth utilization.
-Currently only calculated for Ethernet interfaces.
-- for full duplex interfaces, this is the maximum of the input utilization and the output utilization.
-- for half duplex interfaces, this is the sum of the input utilization and the output utilization.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-				<Units>%</Units>
-				<Range>
-					<Low>0</Low>
-					<High>100</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
+		<!--todo (cy): bring up the pids-->
 		<Param id="1124" trending="false">
 			<Name>ifXTable_RatesData</Name>
 			<Description>Rates Data (If X Table)</Description>
@@ -4475,13 +4405,12 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="11" pid="2012" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="12" pid="2013" type="retrieved" options="" />
 				<ColumnOption idx="13" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="14" pid="2015" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="15" pid="2016" type="retrieved" options="" />
-				<ColumnOption idx="16" pid="2017" type="retrieved" options="" />
-				<ColumnOption idx="17" pid="2018" type="retrieved" options=";save" />
-				<ColumnOption idx="18" pid="2019" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="19" pid="2020" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="20" pid="1999" type="displaykey" options="" />
+				<ColumnOption idx="14" pid="2016" type="retrieved" options="" />
+				<ColumnOption idx="15" pid="2017" type="retrieved" options="" />
+				<ColumnOption idx="16" pid="2018" type="retrieved" options=";save" />
+				<ColumnOption idx="17" pid="2019" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="18" pid="2020" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="19" pid="1999" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>Interfaces state table on change subscription.</Subtext>
@@ -4503,7 +4432,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			</Display>
 			<Measurement>
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-1999|20-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2015|14-2017|16-2016|15-2018|17-2019|18-2020|19,width:0-0-200-123-115-0-115-0-100-242-128-94-138-128-112-141-127-97-115-159-158,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-1999|19-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2017|15-2016|14-2018|16-2019|17-2020|18,width:0-0-200-123-115-0-115-0-100-242-128-94-138-128-112-127-97-115-159-158,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-STRING-STRING-STRING-INT-INT,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -6256,48 +6185,7 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2015" trending="true">
-			<Name>InterfacesBandwidthUtilization</Name>
-			<Description>Bandwidth Utilization (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The bandwidth utilization.
-
-For full duplex interfaces, this is the maximum of the input utilization and the output utilization.
-For half duplex interfaces, this is the sum of the input utilization and the output utilization.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<CL>0</CL>
-				<Normal>75</Normal>
-				<WaH>90</WaH>
-				<CH>95</CH>
-			</Alarm>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>%</Units>
-				<Range>
-					<Low>0</Low>
-					<High>100</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
+		<!--todo (cy): bring up the pids-->
 		<Param id="2016" trending="true">
 			<Name>InterfacesDuplexStatus</Name>
 			<Description>Duplex Status (Interfaces)</Description>
@@ -6576,7 +6464,7 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 			<Description>Interfaces Details Rx</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
+				<NamingFormat>,2004, - ,2013, - ,2018</NamingFormat>
 				<ColumnOption idx="0" pid="2101" type="retrieved" options=""/>
 				<ColumnOption idx="1" pid="2102" type="retrieved" options=";foreignKey=2000" />
 				<ColumnOption idx="2" pid="2103" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
@@ -6913,7 +6801,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Interfaces Details Tx</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<NamingFormat>,2001, - ,2004, - ,2015</NamingFormat>
+				<NamingFormat>,2004, - ,2013, - ,2018</NamingFormat>
 				<ColumnOption idx="0" pid="2201" type="retrieved" options=""/>
 				<ColumnOption idx="1" pid="2202" type="retrieved" options=";foreignKey=2000" />
 				<ColumnOption idx="2" pid="2203" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />

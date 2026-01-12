@@ -148,8 +148,6 @@
 		{
 			var snmpDeltaHelper = new SnmpDeltaHelper(protocol, GroupId, Parameter.interfacesratescalculationsmethod);
 
-			var duplexStatuses = duplexGetter.DuplexStatusesByKey;
-
 			for (int i = 0; i < ifTableGetter.Keys.Length; i++)
 			{
 				// Key
@@ -160,7 +158,7 @@
 				ProcessRates(snmpDeltaHelper, i, out double bitrateIn, out double bitrateOut);
 
 				// Utilization
-				ProcessUtilization(duplexStatuses, i, key, bitrateIn, bitrateOut);
+				ProcessUtilization(i, bitrateIn, bitrateOut);
 			}
 
 			if (ifTableGetter.IsSnmpAgentRestarted)
@@ -257,17 +255,9 @@
 			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_ratesdata].Add(ratesData.ToJsonString());
 		}
 
-		private void ProcessUtilization(Dictionary<string, DuplexStatus> duplexStatuses, int getPosition, string key, double bitrateIn, double bitrateOut)
+		private void ProcessUtilization(int getPosition, double bitrateIn, double bitrateOut)
 		{
 			double speedValue = GetSpeedValue(getPosition);
-
-			var duplexStatus = duplexStatuses.TryGetValue(key, out var status)
-				? status
-				: DuplexStatus.NotInitialized;
-
-			// todo (cy): Last left off
-			double utilization = Interface.CalculateUtilization(bitrateIn, bitrateOut, speedValue, duplexStatus);
-			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_bandwidthutilization].Add(utilization);
 
 			double rxUtilitzation = UtilizationCalculator.CalculateDirectionalUtilization(bitrateIn, speedValue);
 			double txUtilitzation = UtilizationCalculator.CalculateDirectionalUtilization(bitrateOut, speedValue);
@@ -400,7 +390,6 @@
 				{ Parameter.Iftable.tablePid, new List<object>() },
 				{ Parameter.Iftable.Pid.iftable_bitratein, new List<object>() },
 				{ Parameter.Iftable.Pid.iftable_bitrateout, new List<object>() },
-				{ Parameter.Iftable.Pid.iftable_bandwidthutilization, new List<object>() },
 				{ Parameter.Iftable.Pid.iftable_rxbandwidthutilization, new List<object>() },
 				{ Parameter.Iftable.Pid.iftable_txbandwidthutilization, new List<object>() },
 				{ Parameter.Iftable.Pid.iftable_ratesdata, new List<object>() },

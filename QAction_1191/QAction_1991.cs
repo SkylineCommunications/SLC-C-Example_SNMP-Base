@@ -149,8 +149,6 @@ public static class QAction
         double dBitRateOut = Convert.ToDouble(ifTableGetter.BitRateOut[getPosition]);
         interfacesRow.Interfacestxbitrate = dBitRateOut >= 0 ? dBitRateOut / Math.Pow(10, 6) : -1; // bps -> Mbps
 
-        // todo (cy): remove
-        interfacesRow.Interfacesbandwidthutilization = Convert.ToDouble(ifTableGetter.BandwidthUtilization[getPosition]);
         interfacesRow.Interfacesrxbandwidthutilization = Convert.ToDouble(ifTableGetter.RxBandwidthUtilization[getPosition]);
         interfacesRow.Interfacestxbandwidthutilization = Convert.ToDouble(ifTableGetter.TxBandwidthUtilization[getPosition]);
 
@@ -227,10 +225,6 @@ public static class QAction
             // Indication of discontinuity times, need to set values to N/A
             interfacesRow.Interfacesrxbitrate = -1;
             interfacesRow.Interfacestxbitrate = -1;
-
-            // todo (cy): remove
-            interfacesRow.Interfacesbandwidthutilization = -1;
-
             interfacesRow.Interfacesrxbandwidthutilization = -1;
             interfacesRow.Interfacestxbandwidthutilization_2020 = -1;
         }
@@ -249,9 +243,6 @@ public static class QAction
 
         interfacesRow.Interfacestxoctets =
             ifXTableGetter.HcOutOctets[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcOutOctets[getPosition]);
-
-        // todo (cy): remove
-        interfacesRow.Interfacesbandwidthutilization = Convert.ToDouble(ifXTableGetter.BandwidthUtilization[getPosition]);
 
         interfacesRow.Interfacesrxbandwidthutilization = Convert.ToDouble(ifXTableGetter.RxBandwidthUtilization[getPosition]);
         interfacesRow.Interfacestxbandwidthutilization = Convert.ToDouble(ifXTableGetter.TxBandwidthUtilization[getPosition]);

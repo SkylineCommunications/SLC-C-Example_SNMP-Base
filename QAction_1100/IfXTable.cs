@@ -150,8 +150,6 @@
 		{
 			var snmpDeltaHelper = new SnmpDeltaHelper(protocol, GroupId, Parameter.interfacesratescalculationsmethod);
 
-			var duplexStatuses = duplexGetter.DuplexStatusesByKey;
-
 			for (int i = 0; i < ifXTableGetter.Keys.Length; i++)
 			{
 				// Key
@@ -162,7 +160,7 @@
 				ProcessRates(snmpDeltaHelper, i, out double bitrateIn, out double bitrateOut);
 
 				// Utilization
-				ProcessUtilization(duplexStatuses, i, key, bitrateIn, bitrateOut);
+				ProcessUtilization(i, bitrateIn, bitrateOut);
 			}
 
 			if (ifXTableGetter.IsSnmpAgentRestarted)
@@ -275,17 +273,9 @@
 			ifXTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_ratesdata].Add(ratesData.ToJsonString());
 		}
 
-		private void ProcessUtilization(Dictionary<string, DuplexStatus> duplexStatuses, int getPosition, string key, double bitrateIn, double bitrateOut)
+		private void ProcessUtilization(int getPosition, double bitrateIn, double bitrateOut)
 		{
 			double speedValue = GetSpeedValue(getPosition);
-
-			var duplexStatus = duplexStatuses.ContainsKey(key)
-				? duplexStatuses[key]
-				: DuplexStatus.NotInitialized;
-
-			// todo (cy): last left off
-			double utilization = Interface.CalculateUtilization(bitrateIn, bitrateOut, speedValue, duplexStatus);
-			ifXTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_bandwidthutilization].Add(utilization);
 
 			double rxUtilitzation = UtilizationCalculator.CalculateDirectionalUtilization(bitrateIn, speedValue);
 			double txUtilitzation = UtilizationCalculator.CalculateDirectionalUtilization(bitrateOut, speedValue);
@@ -413,7 +403,6 @@
 				{ Parameter.Ifxtable.Pid.ifxtable_hcmulticastrateout, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtable_hcbroadcastratein, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtable_hcbroadcastrateout, new List<object>() },
-				{ Parameter.Ifxtable.Pid.ifxtable_bandwidthutilization, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtable_rxbandwidthutilization, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtable_txbandwidthutilization, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtable_ratesdata, new List<object>() },
