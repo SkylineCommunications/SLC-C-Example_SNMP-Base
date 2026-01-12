@@ -535,6 +535,8 @@ This value should include the full name and version identification of the system
 				<ColumnOption idx="26" pid="1027" type="retrieved" options="" />
 				<ColumnOption idx="27" pid="1028" type="retrieved" options="" />
 				<ColumnOption idx="28" pid="1029" type="retrieved" options="" />
+				<ColumnOption idx="29" pid="1030" type="retrieved" options="" />
+				<ColumnOption idx="30" pid="1031" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A list of interface entries.</Subtext>
@@ -2756,6 +2758,72 @@ Currently only calculated for Ethernet interfaces.
 				<Type>string</Type>
 			</Measurement>
 		</Param>
+		<Param id="1030" trending="false">
+			<Name>ifTable_RxBandwidthUtilization</Name>
+			<Description>Rx Bandwidth Utilization (If Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[Rx bandwidth utilization of the interface.
+Formula: Rx Bit Rate / Interface Speed * 100]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>%</Units>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1031" trending="false">
+			<Name>ifTable_TxBandwidthUtilization</Name>
+			<Description>Tx Bandwidth Utilization (If Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[Tx bandwidth utilization of the interface.
+Formula: Tx Bit Rate / Interface Speed * 100]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>%</Units>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
 		
 		<Param id="1091">
 			<Name>ifXTableTimeoutTrigger</Name>
@@ -2871,6 +2939,8 @@ Currently only calculated for Ethernet interfaces.
 				<ColumnOption idx="31" pid="1132" type="retrieved" options="" />
 				<ColumnOption idx="32" pid="1133" type="retrieved" options="" />
 				<ColumnOption idx="33" pid="1134" type="retrieved" options="" />
+				<ColumnOption idx="34" pid="1135" type="retrieved" options="" />
+				<ColumnOption idx="35" pid="1136" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>A list of interface entries. This table contains additional objects for the interface table.</Subtext>
@@ -4101,6 +4171,72 @@ Currently only calculated for Ethernet interfaces.
 				<Type>number</Type>
 			</Measurement>
 		</Param>
+		<Param id="1135" trending="false">
+			<Name>ifXTable_RxBandwidthUtilization</Name>
+			<Description>Rx Bandwidth Utilization (If X Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[Rx bandwidth utilization of the interface.
+Formula: Rx Bit Rate / Interface Speed * 100]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>%</Units>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1136" trending="false">
+			<Name>ifXTable_TxBandwidthUtilization</Name>
+			<Description>Tx Bandwidth Utilization (If X Table)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[Tx bandwidth utilization of the interface.
+Formula: Tx Bit Rate / Interface Speed * 100]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+				<Units>%</Units>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
 		
 		<Param id="1300">
 			<Name>dot3Stats</Name>
@@ -4343,7 +4479,9 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				<ColumnOption idx="15" pid="2016" type="retrieved" options="" />
 				<ColumnOption idx="16" pid="2017" type="retrieved" options="" />
 				<ColumnOption idx="17" pid="2018" type="retrieved" options=";save" />
-				<ColumnOption idx="18" pid="1999" type="displaykey" options="" />
+				<ColumnOption idx="18" pid="2019" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="19" pid="2020" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="20" pid="1999" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
 				<Subtext>Interfaces state table on change subscription.</Subtext>
@@ -4365,7 +4503,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			</Display>
 			<Measurement>
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-1999|18-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2015|14-2017|16-2016|15-2018|17,width:0-0-200-123-115-0-115-0-100-130-128-94-138-128-112-141-127-97-115,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-1999|20-2006|5-2011|10-2008|7-2012|11-2009|8-2003|2-2002|1-2007|6-2005|4-2014|13-2010|9-2013|12-2015|14-2017|16-2016|15-2018|17-2019|18-2020|19,width:0-0-200-123-115-0-115-0-100-242-128-94-138-128-112-141-127-97-115-159-158,sort:STRING-STRING-STRING-STRING-INT-INT-INT-INT-STRING-STRING-STRING-STRING-INT-INT-STRING-INT-STRING-STRING-STRING-INT-INT,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -6331,6 +6469,86 @@ This is custom to DataMiner and does not come from the data source.]]>
 						<Value>-1</Value>
 					</Discreet>
 				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2019" trending="true">
+			<Name>InterfacesRxBandwidthUtilization</Name>
+			<Description>Rx Bandwidth Utilization (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[Rx bandwidth utilization of the interface.
+Formula: Rx Bit Rate / Interface Speed * 100]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<CL>0</CL>
+				<Normal>75</Normal>
+				<WaH>90</WaH>
+				<CH>95</CH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>%</Units>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2020" trending="true">
+			<Name>InterfacesTxBandwidthUtilization</Name>
+			<Description>Tx Bandwidth Utilization (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[Tx bandwidth utilization of the interface.
+Formula: Tx Bit Rate / Interface Speed * 100]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<CL>0</CL>
+				<Normal>75</Normal>
+				<WaH>90</WaH>
+				<CH>95</CH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>%</Units>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
 			</Measurement>
 		</Param>
 		

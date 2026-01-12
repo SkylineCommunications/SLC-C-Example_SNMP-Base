@@ -40,6 +40,9 @@ public class IfXTableGetter
 			Parameter.Ifxtable.Idx.ifxtable_hcmulticastrateout_1132,
 			Parameter.Ifxtable.Idx.ifxtable_hcbroadcastratein_1133,
 			Parameter.Ifxtable.Idx.ifxtable_hcbroadcastrateout_1134,
+
+			Parameter.Ifxtable.Idx.ifxtable_rxbandwidthutilization_1135,
+			Parameter.Ifxtable.Idx.ifxtable_txbandwidthutilization_1136,
 		};
 
 		var columns = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);
@@ -78,7 +81,10 @@ public class IfXTableGetter
 		HcMulticastRateOut = (object[])columns[29];
 		HcBroadcastRateIn = (object[])columns[30];
 		HcBroadcastRateOut = (object[])columns[31];
-	}
+
+		RxBandwidthUtilization = (object[])columns[32];
+		TxBandwidthUtilization = (object[])columns[33];
+    }
 
 	public object[] Keys { get; set; }
 
@@ -143,4 +149,8 @@ public class IfXTableGetter
 	public object[] HcBroadcastRateIn { get; set; }
 
 	public object[] HcBroadcastRateOut { get; set; }
+
+	public object[] RxBandwidthUtilization { get; set; }
+
+	public object[] TxBandwidthUtilization { get; set; }
 }

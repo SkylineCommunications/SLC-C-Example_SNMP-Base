@@ -38,6 +38,8 @@ public class IfTableGetter
             Parameter.Iftable.Idx.iftable_errorratein_1025,
             Parameter.Iftable.Idx.iftable_errorrateout_1026,
             Parameter.Iftable.Idx.iftable_unknownprotocolratein_1027,
+            Parameter.Iftable.Idx.iftable_rxbandwidthutilization_1030,
+            Parameter.Iftable.Idx.iftable_txbandwidthutilization_1031,
         };
 
         var columns = protocol.GetColumns(Parameter.Iftable.tablePid, columnsToGet);
@@ -71,6 +73,8 @@ public class IfTableGetter
         ErrorRateIn = (object[])columns[26];
         ErrorRateOut = (object[])columns[27];
         UnknownProtocolRateIn = (object[])columns[28];
+        RxBandwidthUtilization = (object[])columns[29];
+        TxBandwidthUtilization = (object[])columns[30];
     }
 
     public object[] Keys { get; set; }
@@ -130,4 +134,8 @@ public class IfTableGetter
     public object[] ErrorRateOut { get; set; }
 
     public object[] UnknownProtocolRateIn { get; set; }
+
+    public object[] RxBandwidthUtilization { get; set; }
+
+    public object[] TxBandwidthUtilization { get; set; }
 }

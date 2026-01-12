@@ -9,9 +9,9 @@
 	using Skyline.DataMiner.Utils.Rates.Protocol;
 	using Skyline.DataMiner.Utils.SafeConverters;
 	using Skyline.DataMiner.Utils.SNMP;
-	using Skyline.Protocol.Interfaces;
-
-	public class IfXTableTimeoutProcessor
+    using Skyline.Protocol.Api.Helpers;
+    using Skyline.Protocol.Interfaces;
+    public class IfXTableTimeoutProcessor
 	{
 		private const int GroupId = 1100;
 		private static readonly TimeSpan MinDelta = new TimeSpan(0, 0, 5);
@@ -283,10 +283,15 @@
 				? duplexStatuses[key]
 				: DuplexStatus.NotInitialized;
 
+			// todo (cy): last left off
 			double utilization = Interface.CalculateUtilization(bitrateIn, bitrateOut, speedValue, duplexStatus);
-
 			ifXTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_bandwidthutilization].Add(utilization);
-		}
+
+			double rxUtilitzation = UtilizationCalculator.CalculateDirectionalUtilization(bitrateIn, speedValue);
+			double txUtilitzation = UtilizationCalculator.CalculateDirectionalUtilization(bitrateOut, speedValue);
+			ifXTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_rxbandwidthutilization].Add(rxUtilitzation);
+			ifXTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_txbandwidthutilization].Add(txUtilitzation);
+        }
 
 		private double GetSpeedValue(int getPosition)
 		{
@@ -409,6 +414,8 @@
 				{ Parameter.Ifxtable.Pid.ifxtable_hcbroadcastratein, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtable_hcbroadcastrateout, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtable_bandwidthutilization, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtable_rxbandwidthutilization, new List<object>() },
+				{ Parameter.Ifxtable.Pid.ifxtable_txbandwidthutilization, new List<object>() },
 				{ Parameter.Ifxtable.Pid.ifxtable_ratesdata, new List<object>() },
 			};
 
