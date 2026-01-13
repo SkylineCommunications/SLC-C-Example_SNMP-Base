@@ -2,19 +2,19 @@
 
 public class InterfaceTablesRowData
 {
-	public InterfaceTablesRowData(
-		InterfacesQActionRow interfacesStateTableRow,
-		InterfacesdetailsrxQActionRow interfaceDetailsRxRow,
-		InterfacesdetailstxQActionRow interfaceDetailsTxRow)
-	{
-		InterfacesRow = interfacesStateTableRow;
-		InterfacesRxRow = interfaceDetailsRxRow;
-		InterfacesTxRow = interfaceDetailsTxRow;
-	}
+    public InterfaceTablesRowData(
+        InterfacesQActionRow interfacesStateTableRow,
+        InterfacesdetailsrxQActionRow interfaceDetailsRxRow,
+        InterfacesdetailstxQActionRow interfaceDetailsTxRow)
+    {
+        InterfacesRow = interfacesStateTableRow;
+        InterfacesRxRow = interfaceDetailsRxRow;
+        InterfacesTxRow = interfaceDetailsTxRow;
+    }
 
-	public InterfacesQActionRow InterfacesRow { get; set; }
+    public InterfacesQActionRow InterfacesRow { get; set; }
 
-	public InterfacesdetailsrxQActionRow InterfacesRxRow { get; set; }
+    public InterfacesdetailsrxQActionRow InterfacesRxRow { get; set; }
 
-	public InterfacesdetailstxQActionRow InterfacesTxRow { get; set; }
+    public InterfacesdetailstxQActionRow InterfacesTxRow { get; set; }
 }
