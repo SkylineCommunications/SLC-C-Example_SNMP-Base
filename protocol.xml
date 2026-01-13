@@ -7547,6 +7547,38 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 								</MinorVersions>
 							</MajorVersion>
 							<MajorVersion id="1">
+								<Changes>
+									<Change>
+										<Impact>Removed parameters</Impact>
+										<ActionsToTake>
+											<ActionToTake>Existing filters, automation scripts, visio files etc will need to be reconfigured.</ActionToTake>
+										</ActionsToTake>
+									</Change>
+									<Change>
+										<Impact>Changed parameter descriptions</Impact>
+										<ActionsToTake>
+											<ActionToTake>Existing filters, automation scripts, visio files etc will need to be reconfigured.</ActionToTake>
+										</ActionsToTake>
+									</Change>
+									<Change>
+										<Impact>Changed parameter interpretes</Impact>
+										<ActionsToTake>
+											<ActionToTake>Due to possible changes to trending, a brand new element needs to be created.</ActionToTake>
+										</ActionsToTake>
+									</Change>
+									<Change>
+										<Impact>Changed parameter exceptions</Impact>
+										<ActionsToTake>
+											<ActionToTake>Automation scripts referencing this might need to be adapted as the displayed value can be used in automation scripts to perform sets. Filters might need to be reconfigured too.</ActionToTake>
+										</ActionsToTake>
+									</Change>
+									<Change>
+										<Impact>Changed parameter range</Impact>
+										<ActionsToTake>
+											<ActionToTake>Alarm templates will need to be reconfigured.</ActionToTake>
+										</ActionsToTake>
+									</Change>
+								</Changes>
 								<MinorVersions>
 									<MinorVersion id="1" basedOn="1.0.0.7">
 										<Date>2025-12-04</Date>
