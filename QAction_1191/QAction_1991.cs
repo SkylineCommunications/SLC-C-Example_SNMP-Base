@@ -5,6 +5,7 @@ using System.Linq;
 using Skyline.DataMiner.Scripting;
 using Skyline.Protocol.Api;
 using Skyline.Protocol.Interfaces;
+using SLNetMessages = Skyline.DataMiner.Net.Messages;
 
 /// <summary>
 /// DataMiner QAction Class: Merge Interface Tables.
@@ -37,7 +38,18 @@ public static class QAction
             var duplexGetter = new DuplexGetter(protocol);
             duplexGetter.Load();
             var duplexStatusesByKey = duplexGetter.DuplexStatusesByKey;
-            var customDescriptionsByKey = InterfacesTable.CustomDescriptionColumn.GetValuesByKey(protocol);
+
+            var columnIndexes = new[]
+            {
+                (uint)Parameter.Interfaces.indexColumn,
+                (uint)Parameter.Interfaces.Idx.interfacescustomdescription_2017,
+            };
+
+            var columns = (object[])protocol.NotifyProtocol((int)SLNetMessages.NotifyType.NT_GET_TABLE_COLUMNS, Parameter.Interfaces.tablePid, columnIndexes);
+            var primaryKeys = (object[])columns[0];
+            var values = (object[])columns[1];
+
+            var customDescriptionsByKey = primaryKeys.Zip(values, (primaryKey, value) => new { k = primaryKey, v = value }).ToDictionary(x => (string)x.k, x => Convert.ToString(x.v));
 
             // ifTable.
             var ifTableGetter = new IfTableGetter(protocol);
@@ -53,7 +65,7 @@ public static class QAction
                 interfacesRow.Interfacesduplexstatus = duplexStatusesByKey.TryGetValue(key, out var duplexState)
                     ? Convert.ToInt32(duplexState) : -1; // N/A
                 interfacesRow.Interfacescustomdescription = customDescriptionsByKey.TryGetValue(key, out var customDescription)
-                    ? customDescription : InterfacesTable.CustomDescriptionColumn.Exception; // Exception will happen if it's a new row yet to be added to Interfaces table
+                    ? customDescription : "-1"; // Exception will happen if it's a new row yet to be added to Interfaces table
 
                 interfacesRowsPerKey.Add(key, new InterfaceTablesRowData(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow));
             }
@@ -89,7 +101,7 @@ public static class QAction
                 interfaceDetailsTxRows[i] = rows[i].InterfacesTxRow;
             }
 
-            InterfacesTable.FillArray(protocol, interfaceRows);
+            protocol.interfaces.FillArray(interfaceRows);
             protocol.interfacesdetailsrx.FillArray(interfaceDetailsRxRows);
             protocol.interfacesdetailstx.FillArray(interfaceDetailsTxRows);
         }
