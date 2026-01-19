@@ -7581,7 +7581,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 								</Changes>
 								<MinorVersions>
 									<MinorVersion id="1" basedOn="1.0.0.7">
-										<Date>2025-12-04</Date>
+										<Date>2026-01-20</Date>
 										<Provider>
 											<Author>CYK</Author>
 											<Company>Skyline Communications</Company>
