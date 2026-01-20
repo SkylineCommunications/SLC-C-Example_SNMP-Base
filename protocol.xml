@@ -2433,6 +2433,25 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Measurement>
 		</Param>
 		<Param id="1019" trending="false">
+			<Name>ifTable_RatesData</Name>
+			<Description>Rates Data (If Table)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Used as a buffer parameter containing data necessary for all rate calculations based on delta time between SNMP group executions.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1020" trending="false">
 			<Name>ifTable_BitRateIn</Name>
 			<Description>In Bit Rate (If Table)</Description>
 			<Information>
@@ -2461,7 +2480,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1020" trending="false">
+		<Param id="1021" trending="false">
 			<Name>ifTable_BitRateOut</Name>
 			<Description>Out Bit Rate (If Table)</Description>
 			<Information>
@@ -2490,7 +2509,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1021" trending="false">
+		<Param id="1022" trending="false">
 			<Name>ifTable_UnicastRateIn</Name>
 			<Description>In Unicast Rate (If Table)</Description>
 			<Information>
@@ -2519,7 +2538,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1022" trending="false">
+		<Param id="1023" trending="false">
 			<Name>ifTable_UnicastRateOut</Name>
 			<Description>Out Unicast Rate (If Table)</Description>
 			<Information>
@@ -2548,7 +2567,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1023" trending="false">
+		<Param id="1024" trending="false">
 			<Name>ifTable_DiscardRateIn</Name>
 			<Description>In Discard Rate (If Table)</Description>
 			<Information>
@@ -2577,7 +2596,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1024" trending="false">
+		<Param id="1025" trending="false">
 			<Name>ifTable_DiscardRateOut</Name>
 			<Description>Out Discard Rate (If Table)</Description>
 			<Information>
@@ -2606,7 +2625,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1025" trending="false">
+		<Param id="1026" trending="false">
 			<Name>ifTable_ErrorRateIn</Name>
 			<Description>In Error Rate (If Table)</Description>
 			<Information>
@@ -2635,7 +2654,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1026" trending="false">
+		<Param id="1027" trending="false">
 			<Name>ifTable_ErrorRateOut</Name>
 			<Description>Out Error Rate (If Table)</Description>
 			<Information>
@@ -2664,7 +2683,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1027" trending="false">
+		<Param id="1028" trending="false">
 			<Name>ifTable_UnknownProtocolRateIn</Name>
 			<Description>In Unknown Protos Rate (If Table)</Description>
 			<Information>
@@ -2691,25 +2710,6 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Display>
 			<Measurement>
 				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1028" trending="false">
-			<Name>ifTable_RatesData</Name>
-			<Description>Rates Data (If Table)</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>Used as a buffer parameter containing data necessary for all rate calculations based on delta time between SNMP group executions.</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
 			</Measurement>
 		</Param>
 		<Param id="1029" trending="false">
@@ -2905,19 +2905,6 @@ Those calculated values are first buffered here as at the time of calculating th
 				<Enabled>true</Enabled>
 				<OID type="complete" options="instance;multipleGetNext"></OID>
 			</SNMP>
-			<!--<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Raw Tables</Page>
-						<Row>1</Row>
-						<Column>0</Column>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="tab=columns:1101|0-1102|1-1103|2-1104|3-1105|4-1106|5-1107|6-1108|7-1109|8-1110|9-1111|10-1112|11-1113|12-1114|13-1115|14-1116|15-1117|16-1118|17-1119|18-1120|19-1124|23-1121|20-1122|21-1123|22,width:65-200-131-134-141-144-192-202-213-216-192-212-223-226-156-116-112-122-100-173-100-100-100-141,sort:STRING-STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-STRING-INT-STRING-STRING-STRING-INT-INT-INT-INT-INT,lines:20,filter:true">table</Type>
-			</Measurement>-->
 			<Measurement>
 				<Type options="tab=lines:0,filter:true">table</Type>
 			</Measurement>
@@ -3726,6 +3713,25 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</Measurement>
 		</Param>
 		<Param id="1121" trending="false">
+			<Name>ifXTable_RatesData</Name>
+			<Description>Rates Data (If X Table)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Used as a buffer parameter containing data necessary for all rate calculations based on delta time between SNMP group executions.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1122" trending="false">
 			<Name>ifXTable_BitRateIn</Name>
 			<Description>In Bit Rate (If X Table)</Description>
 			<Information>
@@ -3754,7 +3760,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1122" trending="false">
+		<Param id="1123" trending="false">
 			<Name>ifXTable_BitRateOut</Name>
 			<Description>Out Bit Rate (If X Table)</Description>
 			<Information>
@@ -3781,25 +3787,6 @@ If no such discontinuities have occurred since the last re-initialization of the
 			</Display>
 			<Measurement>
 				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1123" trending="false">
-			<Name>ifXTable_RatesData</Name>
-			<Description>Rates Data (If X Table)</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>Used as a buffer parameter containing data necessary for all rate calculations based on delta time between SNMP group executions.</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
 			</Measurement>
 		</Param>
 		<Param id="1124" trending="false">
@@ -4177,19 +4164,6 @@ There will be one row in this table for each Ethernet-like interface in the syst
 				<Enabled>true</Enabled>
 				<OID type="complete" options="instance;multipleGetNext"></OID>
 			</SNMP>
-			<!--<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Raw Tables</Page>
-						<Column>0</Column>
-						<Row>2</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="tab=columns:1301|0-1302|1,width:65-100,sort:INT-STRING,lines:20,filter:true">table</Type>
-			</Measurement>-->
 			<Measurement>
 				<Type options="tab=lines:0,filter:true">table</Type>
 			</Measurement>
@@ -6108,10 +6082,11 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Type>read</Type>
 			<Information>
 				<Subtext>
-	<![CDATA[Allows you to define a custom description (on data-source) for the interface.
+					<![CDATA[Allows you to define a custom description (on data-source) for the interface.
 Note there are 2 columns allowing to do this:
 - Alias: the custom description configured on the data-source itself. To edit this, you will need to have the necessary permissions on the data-source.
-- Custom Description: the custom description configured on DataMiner independently of the data-source. This can be used if you need a different description than the one on the data-source and/or you do not have the necessary permissions to make such changes on the data-source directly.]]></Subtext>
+- Custom Description: the custom description configured on DataMiner independently of the data-source. This can be used if you need a different description than the one on the data-source and/or you do not have the necessary permissions to make such changes on the data-source directly.]]>
+				</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>

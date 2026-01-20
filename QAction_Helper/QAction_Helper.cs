@@ -248,54 +248,54 @@ public static class Parameter
 			public const int iftable_ifunknownprotosin = 1018;
 			/// <summary>PID: 1019 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_bitratein_1019 = 1019;
+			public const int iftable_ratesdata_1019 = 1019;
 			/// <summary>PID: 1019 | Type: read</summary>
-			public const int iftable_bitratein = 1019;
+			public const int iftable_ratesdata = 1019;
 			/// <summary>PID: 1020 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_bitrateout_1020 = 1020;
+			public const int iftable_bitratein_1020 = 1020;
 			/// <summary>PID: 1020 | Type: read</summary>
-			public const int iftable_bitrateout = 1020;
+			public const int iftable_bitratein = 1020;
 			/// <summary>PID: 1021 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_unicastratein_1021 = 1021;
+			public const int iftable_bitrateout_1021 = 1021;
 			/// <summary>PID: 1021 | Type: read</summary>
-			public const int iftable_unicastratein = 1021;
+			public const int iftable_bitrateout = 1021;
 			/// <summary>PID: 1022 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_unicastrateout_1022 = 1022;
+			public const int iftable_unicastratein_1022 = 1022;
 			/// <summary>PID: 1022 | Type: read</summary>
-			public const int iftable_unicastrateout = 1022;
+			public const int iftable_unicastratein = 1022;
 			/// <summary>PID: 1023 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_discardratein_1023 = 1023;
+			public const int iftable_unicastrateout_1023 = 1023;
 			/// <summary>PID: 1023 | Type: read</summary>
-			public const int iftable_discardratein = 1023;
+			public const int iftable_unicastrateout = 1023;
 			/// <summary>PID: 1024 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_discardrateout_1024 = 1024;
+			public const int iftable_discardratein_1024 = 1024;
 			/// <summary>PID: 1024 | Type: read</summary>
-			public const int iftable_discardrateout = 1024;
+			public const int iftable_discardratein = 1024;
 			/// <summary>PID: 1025 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_errorratein_1025 = 1025;
+			public const int iftable_discardrateout_1025 = 1025;
 			/// <summary>PID: 1025 | Type: read</summary>
-			public const int iftable_errorratein = 1025;
+			public const int iftable_discardrateout = 1025;
 			/// <summary>PID: 1026 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_errorrateout_1026 = 1026;
+			public const int iftable_errorratein_1026 = 1026;
 			/// <summary>PID: 1026 | Type: read</summary>
-			public const int iftable_errorrateout = 1026;
+			public const int iftable_errorratein = 1026;
 			/// <summary>PID: 1027 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_unknownprotocolratein_1027 = 1027;
+			public const int iftable_errorrateout_1027 = 1027;
 			/// <summary>PID: 1027 | Type: read</summary>
-			public const int iftable_unknownprotocolratein = 1027;
+			public const int iftable_errorrateout = 1027;
 			/// <summary>PID: 1028 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_ratesdata_1028 = 1028;
+			public const int iftable_unknownprotocolratein_1028 = 1028;
 			/// <summary>PID: 1028 | Type: read</summary>
-			public const int iftable_ratesdata = 1028;
+			public const int iftable_unknownprotocolratein = 1028;
 			/// <summary>PID: 1029 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			public const int iftable_rxbandwidthutilization_1029 = 1029;
@@ -404,54 +404,54 @@ public static class Parameter
 			public const int iftable_ifunknownprotosin = 17;
 			/// <summary>IDX: 18 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_bitratein_1019 = 18;
+			public const int iftable_ratesdata_1019 = 18;
 			/// <summary>IDX: 18 | Type: read</summary>
-			public const int iftable_bitratein = 18;
+			public const int iftable_ratesdata = 18;
 			/// <summary>IDX: 19 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_bitrateout_1020 = 19;
+			public const int iftable_bitratein_1020 = 19;
 			/// <summary>IDX: 19 | Type: read</summary>
-			public const int iftable_bitrateout = 19;
+			public const int iftable_bitratein = 19;
 			/// <summary>IDX: 20 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_unicastratein_1021 = 20;
+			public const int iftable_bitrateout_1021 = 20;
 			/// <summary>IDX: 20 | Type: read</summary>
-			public const int iftable_unicastratein = 20;
+			public const int iftable_bitrateout = 20;
 			/// <summary>IDX: 21 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_unicastrateout_1022 = 21;
+			public const int iftable_unicastratein_1022 = 21;
 			/// <summary>IDX: 21 | Type: read</summary>
-			public const int iftable_unicastrateout = 21;
+			public const int iftable_unicastratein = 21;
 			/// <summary>IDX: 22 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_discardratein_1023 = 22;
+			public const int iftable_unicastrateout_1023 = 22;
 			/// <summary>IDX: 22 | Type: read</summary>
-			public const int iftable_discardratein = 22;
+			public const int iftable_unicastrateout = 22;
 			/// <summary>IDX: 23 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_discardrateout_1024 = 23;
+			public const int iftable_discardratein_1024 = 23;
 			/// <summary>IDX: 23 | Type: read</summary>
-			public const int iftable_discardrateout = 23;
+			public const int iftable_discardratein = 23;
 			/// <summary>IDX: 24 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_errorratein_1025 = 24;
+			public const int iftable_discardrateout_1025 = 24;
 			/// <summary>IDX: 24 | Type: read</summary>
-			public const int iftable_errorratein = 24;
+			public const int iftable_discardrateout = 24;
 			/// <summary>IDX: 25 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_errorrateout_1026 = 25;
+			public const int iftable_errorratein_1026 = 25;
 			/// <summary>IDX: 25 | Type: read</summary>
-			public const int iftable_errorrateout = 25;
+			public const int iftable_errorratein = 25;
 			/// <summary>IDX: 26 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_unknownprotocolratein_1027 = 26;
+			public const int iftable_errorrateout_1027 = 26;
 			/// <summary>IDX: 26 | Type: read</summary>
-			public const int iftable_unknownprotocolratein = 26;
+			public const int iftable_errorrateout = 26;
 			/// <summary>IDX: 27 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int iftable_ratesdata_1028 = 27;
+			public const int iftable_unknownprotocolratein_1028 = 27;
 			/// <summary>IDX: 27 | Type: read</summary>
-			public const int iftable_ratesdata = 27;
+			public const int iftable_unknownprotocolratein = 27;
 			/// <summary>IDX: 28 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			public const int iftable_rxbandwidthutilization_1029 = 28;
@@ -576,19 +576,19 @@ public static class Parameter
 			public const int ifxtable_ifcounterdiscontinuitytime = 1120;
 			/// <summary>PID: 1121 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtable_bitratein_1121 = 1121;
+			public const int ifxtable_ratesdata_1121 = 1121;
 			/// <summary>PID: 1121 | Type: read</summary>
-			public const int ifxtable_bitratein = 1121;
+			public const int ifxtable_ratesdata = 1121;
 			/// <summary>PID: 1122 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtable_bitrateout_1122 = 1122;
+			public const int ifxtable_bitratein_1122 = 1122;
 			/// <summary>PID: 1122 | Type: read</summary>
-			public const int ifxtable_bitrateout = 1122;
+			public const int ifxtable_bitratein = 1122;
 			/// <summary>PID: 1123 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtable_ratesdata_1123 = 1123;
+			public const int ifxtable_bitrateout_1123 = 1123;
 			/// <summary>PID: 1123 | Type: read</summary>
-			public const int ifxtable_ratesdata = 1123;
+			public const int ifxtable_bitrateout = 1123;
 			/// <summary>PID: 1124 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			public const int ifxtable_multicastratein_1124 = 1124;
@@ -757,19 +757,19 @@ public static class Parameter
 			public const int ifxtable_ifcounterdiscontinuitytime = 19;
 			/// <summary>IDX: 20 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtable_bitratein_1121 = 20;
+			public const int ifxtable_ratesdata_1121 = 20;
 			/// <summary>IDX: 20 | Type: read</summary>
-			public const int ifxtable_bitratein = 20;
+			public const int ifxtable_ratesdata = 20;
 			/// <summary>IDX: 21 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtable_bitrateout_1122 = 21;
+			public const int ifxtable_bitratein_1122 = 21;
 			/// <summary>IDX: 21 | Type: read</summary>
-			public const int ifxtable_bitrateout = 21;
+			public const int ifxtable_bitratein = 21;
 			/// <summary>IDX: 22 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int ifxtable_ratesdata_1123 = 22;
+			public const int ifxtable_bitrateout_1123 = 22;
 			/// <summary>IDX: 22 | Type: read</summary>
-			public const int ifxtable_ratesdata = 22;
+			public const int ifxtable_bitrateout = 22;
 			/// <summary>IDX: 23 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			public const int ifxtable_multicastratein_1124 = 23;
@@ -1409,26 +1409,26 @@ public interface SLProtocolExt : SLProtocol
 	object Iftable_iferrorsout { get; set; }
 	object Iftable_ifunknownprotosin_1018 { get; set; }
 	object Iftable_ifunknownprotosin { get; set; }
-	object Iftable_bitratein_1019 { get; set; }
-	object Iftable_bitratein { get; set; }
-	object Iftable_bitrateout_1020 { get; set; }
-	object Iftable_bitrateout { get; set; }
-	object Iftable_unicastratein_1021 { get; set; }
-	object Iftable_unicastratein { get; set; }
-	object Iftable_unicastrateout_1022 { get; set; }
-	object Iftable_unicastrateout { get; set; }
-	object Iftable_discardratein_1023 { get; set; }
-	object Iftable_discardratein { get; set; }
-	object Iftable_discardrateout_1024 { get; set; }
-	object Iftable_discardrateout { get; set; }
-	object Iftable_errorratein_1025 { get; set; }
-	object Iftable_errorratein { get; set; }
-	object Iftable_errorrateout_1026 { get; set; }
-	object Iftable_errorrateout { get; set; }
-	object Iftable_unknownprotocolratein_1027 { get; set; }
-	object Iftable_unknownprotocolratein { get; set; }
-	object Iftable_ratesdata_1028 { get; set; }
+	object Iftable_ratesdata_1019 { get; set; }
 	object Iftable_ratesdata { get; set; }
+	object Iftable_bitratein_1020 { get; set; }
+	object Iftable_bitratein { get; set; }
+	object Iftable_bitrateout_1021 { get; set; }
+	object Iftable_bitrateout { get; set; }
+	object Iftable_unicastratein_1022 { get; set; }
+	object Iftable_unicastratein { get; set; }
+	object Iftable_unicastrateout_1023 { get; set; }
+	object Iftable_unicastrateout { get; set; }
+	object Iftable_discardratein_1024 { get; set; }
+	object Iftable_discardratein { get; set; }
+	object Iftable_discardrateout_1025 { get; set; }
+	object Iftable_discardrateout { get; set; }
+	object Iftable_errorratein_1026 { get; set; }
+	object Iftable_errorratein { get; set; }
+	object Iftable_errorrateout_1027 { get; set; }
+	object Iftable_errorrateout { get; set; }
+	object Iftable_unknownprotocolratein_1028 { get; set; }
+	object Iftable_unknownprotocolratein { get; set; }
 	object Iftable_rxbandwidthutilization_1029 { get; set; }
 	object Iftable_rxbandwidthutilization { get; set; }
 	object Iftable_txbandwidthutilization_1030 { get; set; }
@@ -1482,12 +1482,12 @@ public interface SLProtocolExt : SLProtocol
 	object Ifxtable_ifalias { get; set; }
 	object Ifxtable_ifcounterdiscontinuitytime_1120 { get; set; }
 	object Ifxtable_ifcounterdiscontinuitytime { get; set; }
-	object Ifxtable_bitratein_1121 { get; set; }
-	object Ifxtable_bitratein { get; set; }
-	object Ifxtable_bitrateout_1122 { get; set; }
-	object Ifxtable_bitrateout { get; set; }
-	object Ifxtable_ratesdata_1123 { get; set; }
+	object Ifxtable_ratesdata_1121 { get; set; }
 	object Ifxtable_ratesdata { get; set; }
+	object Ifxtable_bitratein_1122 { get; set; }
+	object Ifxtable_bitratein { get; set; }
+	object Ifxtable_bitrateout_1123 { get; set; }
+	object Ifxtable_bitrateout { get; set; }
 	object Ifxtable_multicastratein_1124 { get; set; }
 	object Ifxtable_multicastratein { get; set; }
 	object Ifxtable_multicastrateout_1125 { get; set; }
@@ -1785,56 +1785,56 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Iftable_ifunknownprotosin_1018 {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
 	/// <summary>PID: 1018  | Type: read</summary>
 	public System.Object Iftable_ifunknownprotosin {get { return GetParameter(1018); }set { SetParameter(1018, value); }}
-	/// <summary>PID: 1019  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	/// <summary>PID: 1019  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_bitratein_1019 {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
-	/// <summary>PID: 1019  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftable_bitratein {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
+	public System.Object Iftable_ratesdata_1019 {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
+	/// <summary>PID: 1019  | Type: read</summary>
+	public System.Object Iftable_ratesdata {get { return GetParameter(1019); }set { SetParameter(1019, value); }}
 	/// <summary>PID: 1020  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_bitrateout_1020 {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
+	public System.Object Iftable_bitratein_1020 {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
 	/// <summary>PID: 1020  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftable_bitrateout {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
+	public System.Object Iftable_bitratein {get { return GetParameter(1020); }set { SetParameter(1020, value); }}
 	/// <summary>PID: 1021  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_unicastratein_1021 {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
+	public System.Object Iftable_bitrateout_1021 {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
 	/// <summary>PID: 1021  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftable_unicastratein {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
+	public System.Object Iftable_bitrateout {get { return GetParameter(1021); }set { SetParameter(1021, value); }}
 	/// <summary>PID: 1022  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_unicastrateout_1022 {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
+	public System.Object Iftable_unicastratein_1022 {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
 	/// <summary>PID: 1022  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftable_unicastrateout {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
+	public System.Object Iftable_unicastratein {get { return GetParameter(1022); }set { SetParameter(1022, value); }}
 	/// <summary>PID: 1023  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_discardratein_1023 {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
+	public System.Object Iftable_unicastrateout_1023 {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
 	/// <summary>PID: 1023  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftable_discardratein {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
+	public System.Object Iftable_unicastrateout {get { return GetParameter(1023); }set { SetParameter(1023, value); }}
 	/// <summary>PID: 1024  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_discardrateout_1024 {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
+	public System.Object Iftable_discardratein_1024 {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
 	/// <summary>PID: 1024  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftable_discardrateout {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
+	public System.Object Iftable_discardratein {get { return GetParameter(1024); }set { SetParameter(1024, value); }}
 	/// <summary>PID: 1025  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_errorratein_1025 {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
+	public System.Object Iftable_discardrateout_1025 {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
 	/// <summary>PID: 1025  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftable_errorratein {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
+	public System.Object Iftable_discardrateout {get { return GetParameter(1025); }set { SetParameter(1025, value); }}
 	/// <summary>PID: 1026  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_errorrateout_1026 {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
+	public System.Object Iftable_errorratein_1026 {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
 	/// <summary>PID: 1026  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftable_errorrateout {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
+	public System.Object Iftable_errorratein {get { return GetParameter(1026); }set { SetParameter(1026, value); }}
 	/// <summary>PID: 1027  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_unknownprotocolratein_1027 {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
+	public System.Object Iftable_errorrateout_1027 {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
 	/// <summary>PID: 1027  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Iftable_unknownprotocolratein {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
-	/// <summary>PID: 1028  | Type: read</summary>
+	public System.Object Iftable_errorrateout {get { return GetParameter(1027); }set { SetParameter(1027, value); }}
+	/// <summary>PID: 1028  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_ratesdata_1028 {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
-	/// <summary>PID: 1028  | Type: read</summary>
-	public System.Object Iftable_ratesdata {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
+	public System.Object Iftable_unknownprotocolratein_1028 {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
+	/// <summary>PID: 1028  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Iftable_unknownprotocolratein {get { return GetParameter(1028); }set { SetParameter(1028, value); }}
 	/// <summary>PID: 1029  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Iftable_rxbandwidthutilization_1029 {get { return GetParameter(1029); }set { SetParameter(1029, value); }}
@@ -1967,21 +1967,21 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Ifxtable_ifcounterdiscontinuitytime_1120 {get { return GetParameter(1120); }set { SetParameter(1120, value); }}
 	/// <summary>PID: 1120  | Type: read | EXCEPTIONS: No Discontinuity = 0</summary>
 	public System.Object Ifxtable_ifcounterdiscontinuitytime {get { return GetParameter(1120); }set { SetParameter(1120, value); }}
-	/// <summary>PID: 1121  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	/// <summary>PID: 1121  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtable_bitratein_1121 {get { return GetParameter(1121); }set { SetParameter(1121, value); }}
-	/// <summary>PID: 1121  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtable_bitratein {get { return GetParameter(1121); }set { SetParameter(1121, value); }}
+	public System.Object Ifxtable_ratesdata_1121 {get { return GetParameter(1121); }set { SetParameter(1121, value); }}
+	/// <summary>PID: 1121  | Type: read</summary>
+	public System.Object Ifxtable_ratesdata {get { return GetParameter(1121); }set { SetParameter(1121, value); }}
 	/// <summary>PID: 1122  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtable_bitrateout_1122 {get { return GetParameter(1122); }set { SetParameter(1122, value); }}
+	public System.Object Ifxtable_bitratein_1122 {get { return GetParameter(1122); }set { SetParameter(1122, value); }}
 	/// <summary>PID: 1122  | Type: read | EXCEPTIONS: N/A = -1</summary>
-	public System.Object Ifxtable_bitrateout {get { return GetParameter(1122); }set { SetParameter(1122, value); }}
-	/// <summary>PID: 1123  | Type: read</summary>
+	public System.Object Ifxtable_bitratein {get { return GetParameter(1122); }set { SetParameter(1122, value); }}
+	/// <summary>PID: 1123  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtable_ratesdata_1123 {get { return GetParameter(1123); }set { SetParameter(1123, value); }}
-	/// <summary>PID: 1123  | Type: read</summary>
-	public System.Object Ifxtable_ratesdata {get { return GetParameter(1123); }set { SetParameter(1123, value); }}
+	public System.Object Ifxtable_bitrateout_1123 {get { return GetParameter(1123); }set { SetParameter(1123, value); }}
+	/// <summary>PID: 1123  | Type: read | EXCEPTIONS: N/A = -1</summary>
+	public System.Object Ifxtable_bitrateout {get { return GetParameter(1123); }set { SetParameter(1123, value); }}
 	/// <summary>PID: 1124  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Ifxtable_multicastratein_1124 {get { return GetParameter(1124); }set { SetParameter(1124, value); }}
@@ -2417,54 +2417,54 @@ public class IftableQActionRow : QActionTableRow
 	public System.Object Iftable_ifunknownprotosin { get { if (base.Columns.ContainsKey(17)) { return base.Columns[17]; } else { return null; } } set { if (base.Columns.ContainsKey(17)) { base.Columns[17] = value; } else { base.Columns.Add(17, value); } } }
 	/// <summary>PID: 1019 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_bitratein_1019 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	public System.Object Iftable_ratesdata_1019 { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
 	/// <summary>PID: 1019 | Type: read</summary>
-	public System.Object Iftable_bitratein { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
+	public System.Object Iftable_ratesdata { get { if (base.Columns.ContainsKey(18)) { return base.Columns[18]; } else { return null; } } set { if (base.Columns.ContainsKey(18)) { base.Columns[18] = value; } else { base.Columns.Add(18, value); } } }
 	/// <summary>PID: 1020 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_bitrateout_1020 { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
+	public System.Object Iftable_bitratein_1020 { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
 	/// <summary>PID: 1020 | Type: read</summary>
-	public System.Object Iftable_bitrateout { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
+	public System.Object Iftable_bitratein { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
 	/// <summary>PID: 1021 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_unicastratein_1021 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public System.Object Iftable_bitrateout_1021 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
 	/// <summary>PID: 1021 | Type: read</summary>
-	public System.Object Iftable_unicastratein { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public System.Object Iftable_bitrateout { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
 	/// <summary>PID: 1022 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_unicastrateout_1022 { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
+	public System.Object Iftable_unicastratein_1022 { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
 	/// <summary>PID: 1022 | Type: read</summary>
-	public System.Object Iftable_unicastrateout { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
+	public System.Object Iftable_unicastratein { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
 	/// <summary>PID: 1023 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_discardratein_1023 { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
+	public System.Object Iftable_unicastrateout_1023 { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
 	/// <summary>PID: 1023 | Type: read</summary>
-	public System.Object Iftable_discardratein { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
+	public System.Object Iftable_unicastrateout { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
 	/// <summary>PID: 1024 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_discardrateout_1024 { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
+	public System.Object Iftable_discardratein_1024 { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
 	/// <summary>PID: 1024 | Type: read</summary>
-	public System.Object Iftable_discardrateout { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
+	public System.Object Iftable_discardratein { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
 	/// <summary>PID: 1025 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_errorratein_1025 { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
+	public System.Object Iftable_discardrateout_1025 { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
 	/// <summary>PID: 1025 | Type: read</summary>
-	public System.Object Iftable_errorratein { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
+	public System.Object Iftable_discardrateout { get { if (base.Columns.ContainsKey(24)) { return base.Columns[24]; } else { return null; } } set { if (base.Columns.ContainsKey(24)) { base.Columns[24] = value; } else { base.Columns.Add(24, value); } } }
 	/// <summary>PID: 1026 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_errorrateout_1026 { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
+	public System.Object Iftable_errorratein_1026 { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
 	/// <summary>PID: 1026 | Type: read</summary>
-	public System.Object Iftable_errorrateout { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
+	public System.Object Iftable_errorratein { get { if (base.Columns.ContainsKey(25)) { return base.Columns[25]; } else { return null; } } set { if (base.Columns.ContainsKey(25)) { base.Columns[25] = value; } else { base.Columns.Add(25, value); } } }
 	/// <summary>PID: 1027 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_unknownprotocolratein_1027 { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
+	public System.Object Iftable_errorrateout_1027 { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
 	/// <summary>PID: 1027 | Type: read</summary>
-	public System.Object Iftable_unknownprotocolratein { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
+	public System.Object Iftable_errorrateout { get { if (base.Columns.ContainsKey(26)) { return base.Columns[26]; } else { return null; } } set { if (base.Columns.ContainsKey(26)) { base.Columns[26] = value; } else { base.Columns.Add(26, value); } } }
 	/// <summary>PID: 1028 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Iftable_ratesdata_1028 { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
+	public System.Object Iftable_unknownprotocolratein_1028 { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
 	/// <summary>PID: 1028 | Type: read</summary>
-	public System.Object Iftable_ratesdata { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
+	public System.Object Iftable_unknownprotocolratein { get { if (base.Columns.ContainsKey(27)) { return base.Columns[27]; } else { return null; } } set { if (base.Columns.ContainsKey(27)) { base.Columns[27] = value; } else { base.Columns.Add(27, value); } } }
 	/// <summary>PID: 1029 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Iftable_rxbandwidthutilization_1029 { get { if (base.Columns.ContainsKey(28)) { return base.Columns[28]; } else { return null; } } set { if (base.Columns.ContainsKey(28)) { base.Columns[28] = value; } else { base.Columns.Add(28, value); } } }
@@ -2585,19 +2585,19 @@ public class IfxtableQActionRow : QActionTableRow
 	public System.Object Ifxtable_ifcounterdiscontinuitytime { get { if (base.Columns.ContainsKey(19)) { return base.Columns[19]; } else { return null; } } set { if (base.Columns.ContainsKey(19)) { base.Columns[19] = value; } else { base.Columns.Add(19, value); } } }
 	/// <summary>PID: 1121 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtable_bitratein_1121 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public System.Object Ifxtable_ratesdata_1121 { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
 	/// <summary>PID: 1121 | Type: read</summary>
-	public System.Object Ifxtable_bitratein { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
+	public System.Object Ifxtable_ratesdata { get { if (base.Columns.ContainsKey(20)) { return base.Columns[20]; } else { return null; } } set { if (base.Columns.ContainsKey(20)) { base.Columns[20] = value; } else { base.Columns.Add(20, value); } } }
 	/// <summary>PID: 1122 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtable_bitrateout_1122 { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
+	public System.Object Ifxtable_bitratein_1122 { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
 	/// <summary>PID: 1122 | Type: read</summary>
-	public System.Object Ifxtable_bitrateout { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
+	public System.Object Ifxtable_bitratein { get { if (base.Columns.ContainsKey(21)) { return base.Columns[21]; } else { return null; } } set { if (base.Columns.ContainsKey(21)) { base.Columns[21] = value; } else { base.Columns.Add(21, value); } } }
 	/// <summary>PID: 1123 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ifxtable_ratesdata_1123 { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
+	public System.Object Ifxtable_bitrateout_1123 { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
 	/// <summary>PID: 1123 | Type: read</summary>
-	public System.Object Ifxtable_ratesdata { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
+	public System.Object Ifxtable_bitrateout { get { if (base.Columns.ContainsKey(22)) { return base.Columns[22]; } else { return null; } } set { if (base.Columns.ContainsKey(22)) { base.Columns[22] = value; } else { base.Columns.Add(22, value); } } }
 	/// <summary>PID: 1124 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Ifxtable_multicastratein_1124 { get { if (base.Columns.ContainsKey(23)) { return base.Columns[23]; } else { return null; } } set { if (base.Columns.ContainsKey(23)) { base.Columns[23] = value; } else { base.Columns.Add(23, value); } } }
