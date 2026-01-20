@@ -1,54 +1,55 @@
 ﻿namespace Skyline.Protocol.Interfaces
 {
-    using System;
-    using System.Collections.Generic;
-    using Skyline.DataMiner.Scripting;
-    using Skyline.DataMiner.Utils.Interfaces;
-    using Skyline.DataMiner.Utils.Protocol.Extension;
+	using System;
+	using System.Collections.Generic;
 
-    public sealed class DuplexGetter
-    {
-        private readonly SLProtocol protocol;
+	using Skyline.DataMiner.Scripting;
+	using Skyline.DataMiner.Utils.Interfaces;
+	using Skyline.DataMiner.Utils.Protocol.Extension;
 
-        public DuplexGetter(SLProtocol protocol)
-        {
-            this.protocol = protocol;
-        }
+	public sealed class DuplexGetter
+	{
+		private readonly SLProtocol protocol;
 
-        public object[] Keys { get; private set; }
+		public DuplexGetter(SLProtocol protocol)
+		{
+			this.protocol = protocol;
+		}
 
-        public object[] DuplexStatuses { get; private set; }
+		public object[] Keys { get; private set; }
 
-        public Dictionary<string, DuplexStatus> DuplexStatusesByKey { get; private set; }
+		public object[] DuplexStatuses { get; private set; }
 
-        public void Load()
-        {
-            var columnsToGet = new uint[]
-            {
-                    Parameter.Dot3stats.Idx.dot3stats_index,
-                    Parameter.Dot3stats.Idx.dot3stats_duplexstatus,
-            };
+		public Dictionary<string, DuplexStatus> DuplexStatusesByKey { get; private set; }
 
-            var tableData = protocol.GetColumns(Parameter.Dot3stats.tablePid, columnsToGet);
+		public void Load()
+		{
+			var columnsToGet = new uint[]
+			{
+					Parameter.Dot3stats.Idx.dot3stats_index,
+					Parameter.Dot3stats.Idx.dot3stats_duplexstatus,
+			};
 
-            Keys = (object[])tableData[0];
-            DuplexStatuses = (object[])tableData[1];
+			var tableData = protocol.GetColumns(Parameter.Dot3stats.tablePid, columnsToGet);
 
-            DuplexStatusesByKey = ConvertDuplexColumnToDictionary();
-        }
+			Keys = (object[])tableData[0];
+			DuplexStatuses = (object[])tableData[1];
 
-        private Dictionary<string, DuplexStatus> ConvertDuplexColumnToDictionary()
-        {
-            var duplexStatuses = new Dictionary<string, DuplexStatus>();
-            for (int i = 0; i < Keys.Length; i++)
-            {
-                string key = Convert.ToString(Keys[i]);
-                var duplexStatus = (DuplexStatus)Convert.ToInt32(DuplexStatuses[i]);
+			DuplexStatusesByKey = ConvertDuplexColumnToDictionary();
+		}
 
-                duplexStatuses[key] = duplexStatus;
-            }
+		private Dictionary<string, DuplexStatus> ConvertDuplexColumnToDictionary()
+		{
+			var duplexStatuses = new Dictionary<string, DuplexStatus>();
+			for (int i = 0; i < Keys.Length; i++)
+			{
+				string key = Convert.ToString(Keys[i]);
+				var duplexStatus = (DuplexStatus)Convert.ToInt32(DuplexStatuses[i]);
 
-            return duplexStatuses;
-        }
-    }
+				duplexStatuses[key] = duplexStatus;
+			}
+
+			return duplexStatuses;
+		}
+	}
 }
