@@ -2136,10 +2136,10 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Interfacestxbitrate_2012 {get { return GetParameter(2012); }set { SetParameter(2012, value); }}
 	/// <summary>PID: 2012  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	public System.Object Interfacestxbitrate {get { return GetParameter(2012); }set { SetParameter(2012, value); }}
-	/// <summary>PID: 2013  | Type: read</summary>
+	/// <summary>PID: 2013  | Type: read | EXCEPTIONS: N/A = N/A</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacesalias_2013 {get { return GetParameter(2013); }set { SetParameter(2013, value); }}
-	/// <summary>PID: 2013  | Type: read</summary>
+	/// <summary>PID: 2013  | Type: read | EXCEPTIONS: N/A = N/A</summary>
 	public System.Object Interfacesalias {get { return GetParameter(2013); }set { SetParameter(2013, value); }}
 	/// <summary>PID: 2014  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]

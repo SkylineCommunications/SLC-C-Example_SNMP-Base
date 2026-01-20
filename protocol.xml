@@ -35,7 +35,7 @@
 			<Description>After Startup</Description>
 			<Type>dummy</Type>
 		</Param>
-
+		
 		<Param id="10">
 			<Name>Fixed_0</Name>
 			<Description>Fixed 0</Description>
@@ -60,7 +60,7 @@
 				<Value>1</Value>
 			</Interprete>
 		</Param>
-
+		
 		<Param id="91">
 			<Name>sysUptimeTimeoutTrigger</Name>
 			<Type>dummy</Type>
@@ -425,7 +425,7 @@ This value should include the full name and version identification of the system
 				<Type lines="5">string</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="991">
 			<Name>ifTableTimeoutTrigger</Name>
 			<Description>Interface Table Timeout Trigger</Description>
@@ -538,7 +538,10 @@ This value should include the full name and version identification of the system
 				<ColumnOption idx="29" pid="1030" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
-				<Subtext>A list of interface entries.</Subtext>
+				<Subtext>
+					<![CDATA[The (hidden) SNMP table used to poll Interfaces basic table (ifTable) and store pre-calculated values such as rates, utilization, etc.
+Those calculated values are first buffered here as at the time of calculating them, we don't yet know if we want to use these values or the ones coming from the Interfaces Extended table (ifXTable)]]>
+				</Subtext>
 			</Information>
 			<SNMP>
 				<Enabled>true</Enabled>
@@ -2775,7 +2778,7 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="1091">
 			<Name>ifXTableTimeoutTrigger</Name>
 			<Description>InterfaceX Table Timeout Trigger</Description>
@@ -2893,7 +2896,10 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 				<ColumnOption idx="34" pid="1135" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
-				<Subtext>A list of interface entries. This table contains additional objects for the interface table.</Subtext>
+				<Subtext>
+					<![CDATA[The (hidden) SNMP table used to poll Interfaces Extrended table (ifXTable) and store pre-calculated values such as rates, utilization, etc.
+Those calculated values are first buffered here as at the time of calculating them, we don't yet know if we want to use these values or the ones coming from the Interfaces basic table (ifTable)]]>
+				</Subtext>
 			</Information>
 			<SNMP>
 				<Enabled>true</Enabled>
@@ -4152,7 +4158,7 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="1300">
 			<Name>dot3Stats</Name>
 			<Description>Ethernet Interfaces</Description>
@@ -4348,7 +4354,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="1999" trending="false">
 			<Name>InterfacesDisplayKey</Name>
 			<Description>Display Key (Interfaces)</Description>
@@ -4417,7 +4423,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			</Display>
 			<Measurement>
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-1999|19-2006|5-2005|4-2011|10-2018|17-2012|11-2019|18-2014|13-2002|1-2015|14-2003|2-2016|15-2007|6-2010|9-2013|12-2017|16,width:0-0-300-123-94-115-159-115-158-138-242-97-100-127-128-128-112-115,sort:STRING-STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2004|3-1999|19-2006|5-2005|4-2011|10-2018|17-2012|11-2019|18-2014|13-2002|1-2015|14-2003|2-2016|15-2007|6-2010|9-2013|12-2017|16,width:0-0-300-123-94-115-159-115-158-138-242-97-100-127-128-128-150-150,sort:STRING-STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -6101,12 +6107,22 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Alias (Interfaces)</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>Alias for the interface. The data here comes from the data source.</Subtext>
+				<Subtext>
+	<![CDATA[Allows you to define a custom description (on data-source) for the interface.
+Note there are 2 columns allowing to do this:
+- Alias: the custom description configured on the data-source itself. To edit this, you will need to have the necessary permissions on the data-source.
+- Custom Description: the custom description configured on DataMiner independently of the data-source. This can be used if you need a different description than the one on the data-source and/or you do not have the necessary permissions to make such changes on the data-source directly.]]></Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="">
+						<Display state="disabled">N/A</Display>
+						<Value>N/A</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
@@ -6291,8 +6307,10 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 			<Type>read</Type>
 			<Information>
 				<Subtext>
-					<![CDATA[Custom Description to add more context to the interface's display key.
-This is custom to DataMiner and does not come from the data source.]]>
+					<![CDATA[Allows you to define a custom description (on DataMiner) for the interface.
+Note there are 2 columns allowing to do this:
+- Alias: the custom description configured on the data-source itself. To edit this, you will need to have the necessary permissions on the data-source.
+- Custom Description: the custom description configured on DataMiner independently of the data-source. This can be used if you need a different description than the one on the data-source and/or you do not have the necessary permissions to make such changes on the data-source directly.]]>
 				</Subtext>
 			</Information>
 			<Interprete>
@@ -6415,7 +6433,7 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="2099" trending="false">
 			<Name>InterfacesDetailsRxDisplayKey</Name>
 			<Description>Display Key (Interfaces Details Rx)</Description>
@@ -6442,7 +6460,7 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 			<Description>Interfaces Details Rx</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<NamingFormat>,2004, - ,2013, - ,2018</NamingFormat>
+				<NamingFormat>,2004, - ,2013, - ,2017</NamingFormat>
 				<ColumnOption idx="0" pid="2101" type="retrieved" options=""/>
 				<ColumnOption idx="1" pid="2102" type="retrieved" options=";foreignKey=2000" />
 				<ColumnOption idx="2" pid="2103" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
@@ -6754,7 +6772,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="2199" trending="false">
 			<Name>InterfacesDetailsTxDisplayKey</Name>
 			<Description>Display Key (Interfaces Details Tx)</Description>
@@ -6781,7 +6799,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Interfaces Details Tx</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<NamingFormat>,2004, - ,2013, - ,2018</NamingFormat>
+				<NamingFormat>,2004, - ,2013, - ,2017</NamingFormat>
 				<ColumnOption idx="0" pid="2201" type="retrieved" options=""/>
 				<ColumnOption idx="1" pid="2202" type="retrieved" options=";foreignKey=2000" />
 				<ColumnOption idx="2" pid="2203" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
