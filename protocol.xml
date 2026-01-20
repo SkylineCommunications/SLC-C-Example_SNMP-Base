@@ -2718,7 +2718,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Information>
 				<Subtext>
 					<![CDATA[Rx bandwidth utilization of the interface.
-Formula: Rx Bit Rate / Interface Speed * 100]]>
+Formula: (Rx Bit Rate / Interface Speed) * 100]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -2751,7 +2751,7 @@ Formula: Rx Bit Rate / Interface Speed * 100]]>
 			<Information>
 				<Subtext>
 					<![CDATA[Tx bandwidth utilization of the interface.
-Formula: Tx Bit Rate / Interface Speed * 100]]>
+Formula: (Tx Bit Rate / Interface Speed) * 100]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4085,7 +4085,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			<Information>
 				<Subtext>
 					<![CDATA[Rx bandwidth utilization of the interface.
-Formula: Rx Bit Rate / Interface Speed * 100]]>
+Formula: (Rx Bit Rate / Interface Speed) * 100]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4118,7 +4118,7 @@ Formula: Rx Bit Rate / Interface Speed * 100]]>
 			<Information>
 				<Subtext>
 					<![CDATA[Tx bandwidth utilization of the interface.
-Formula: Tx Bit Rate / Interface Speed * 100]]>
+Formula: (Tx Bit Rate / Interface Speed) * 100]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -4334,7 +4334,8 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			<Description>Display Key (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Readable description provided in the format of: {Description} - {Alias} - {Custom Description}]]>
+					<![CDATA[A unique and user-friendly description used as identifier for the interface.
+Format: "{Description} - {Alias} - {Custom Description}".]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -6414,7 +6415,8 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 			<Description>Display Key (Interfaces Details Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Readable description provided in the format of: {Description} - {Alias} - {Custom Description}]]>
+					<![CDATA[A unique and user-friendly description used as identifier for the interface.
+Format: "{Description} - {Alias} - {Custom Description}".]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -6753,7 +6755,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Display Key (Interfaces Details Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Readable description provided in the format of: {Description} - {Alias} - {Custom Description}]]>
+					<![CDATA[A unique and user-friendly description used as identifier for the interface.
+Format: "{Description} - {Alias} - {Custom Description}".]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
