@@ -4084,7 +4084,7 @@ If no such discontinuities have occurred since the last re-initialization of the
 			<Description>Rx Bandwidth Utilization (If X Table)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Rx bandwidth utilization of the interface.
+					<![CDATA[The input bandwidth utilization of the interface.
 Formula: (Rx Bit Rate / Interface Speed) * 100]]>
 				</Subtext>
 			</Information>
@@ -4117,7 +4117,7 @@ Formula: (Rx Bit Rate / Interface Speed) * 100]]>
 			<Description>Tx Bandwidth Utilization (If X Table)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Tx bandwidth utilization of the interface.
+					<![CDATA[The output bandwidth utilization of the interface.
 Formula: (Tx Bit Rate / Interface Speed) * 100]]>
 				</Subtext>
 			</Information>
@@ -4364,8 +4364,8 @@ Format: "{Description} - {Alias} - {Custom Description}".]]>
 				<ColumnOption idx="4" pid="2005" type="retrieved" options="" />
 				<ColumnOption idx="5" pid="2006" type="retrieved" options="" />
 				<ColumnOption idx="6" pid="2007" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="7" pid="2008" type="retrieved" options=";disableHeaderSum" />
-				<ColumnOption idx="8" pid="2009" type="retrieved" options=";disableHeaderSum" />
+				<ColumnOption idx="7" pid="2008" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="8" pid="2009" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="9" pid="2010" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="10" pid="2011" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="11" pid="2012" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
@@ -5914,11 +5914,6 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
-			<Alarm>
-				<Monitored>false</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Units>Octets</Units>
@@ -5951,11 +5946,6 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 					</Exception>
 				</Exceptions>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
-			<Alarm>
-				<Monitored>false</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Units>Octets</Units>
@@ -6170,10 +6160,10 @@ For a sub-layer which has no concept of bandwidth, this object should be zero.]]
 					<![CDATA[The current mode of operation of the interface.
 
 Possible values:
-'N/A': the Duplex Status cannot be known.
-'Unknown': current duplex mode could not be determined by the SNMP Agent on the Ethernet interface.
-'Half Duplex: Data flows in both directions, but not simulataneously.
-'Full Duplex: Data flows in both directions simulataneously.]]>
+- 'N/A': we couldn't get the status from the data-source.
+- 'Unknown': data-source reported it as 'Unknown' meaning current duplex mode could not be determined by the SNMP Agent on the Ethernet interface.
+- 'Half Duplex: Data flows in both directions, but not simulataneously.
+- 'Full Duplex: Data flows in both directions simulataneously.]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -6334,7 +6324,7 @@ Note there are 2 columns allowing to do this:
 			<Description>Rx Bandwidth Utilization (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Rx bandwidth utilization of the interface.
+					<![CDATA[The input bandwidth utilization of the interface.
 Formula: Rx Bit Rate / Interface Speed * 100]]>
 				</Subtext>
 			</Information>
@@ -6374,7 +6364,7 @@ Formula: Rx Bit Rate / Interface Speed * 100]]>
 			<Description>Tx Bandwidth Utilization (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Tx bandwidth utilization of the interface.
+					<![CDATA[The output bandwidth utilization of the interface.
 Formula: Tx Bit Rate / Interface Speed * 100]]>
 				</Subtext>
 			</Information>
@@ -6449,7 +6439,7 @@ Format: "{Description} - {Alias} - {Custom Description}".]]>
 				<ColumnOption idx="8" pid="2099" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
-				<Subtext>A collection of Rx interface-related statistics objects.</Subtext>
+				<Subtext>A collection of input interface-related statistics objects.</Subtext>
 			</Information>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -6508,7 +6498,7 @@ Format: "{Description} - {Alias} - {Custom Description}".]]>
 			<Description>Unicast Rate (Interfaces Details Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer.
+					<![CDATA[The rate of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
 			</Information>
@@ -6546,7 +6536,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Broadcast Rate (Interfaces Details Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were addressed to a broadcast address at this sub-layer.
+					<![CDATA[The rate of packets, delivered by this sub-layer to a higher (sub-)layer, that were addressed to a broadcast address at this sub-layer.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
 			</Information>
@@ -6584,7 +6574,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Multicast Rate (Interfaces Details Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were addressed to a multicast address at this sub-layer.
+					<![CDATA[The rate of packets, delivered by this sub-layer to a higher (sub-)layer, that were addressed to a multicast address at this sub-layer.
 For a MAC-layer protocol, this includes both Group and Functional addresses.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
@@ -6623,7 +6613,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Discard Rate (Interfaces Details Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of inbound packets that were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol.
+					<![CDATA[The rate of inbound packets that were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol.
 One possible reason for discarding such a packet could be to free up buffer space.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
@@ -6665,8 +6655,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Error Rate (Interfaces Details Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of inbound packets that contained errors preventing them from being deliverable to a higher-layer protocol.
-For character-oriented or fixed-length interfaces, the number of inbound transmission units that contained errors preventing them from being deliverable to a higher-layer protocol.
+					<![CDATA[For packet-oriented interfaces, the rate of inbound packets that contained errors preventing them from being deliverable to a higher-layer protocol.
+For character-oriented or fixed-length interfaces, the rate of inbound transmission units that contained errors preventing them from being deliverable to a higher-layer protocol.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
 			</Information>
@@ -6709,8 +6699,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Unknown Protocol Rate (Interfaces Details Rx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of packets received via the interface that were discarded because of an unknown or unsupported protocol.
-For character-oriented or fixed-length interfaces that support protocol multiplexing, the number of transmission units received via the interface that were discarded because of an unknown or unsupported protocol.
+					<![CDATA[For packet-oriented interfaces, the rate of packets received via the interface that were discarded because of an unknown or unsupported protocol.
+For character-oriented or fixed-length interfaces that support protocol multiplexing, the rate of transmission units received via the interface that were discarded because of an unknown or unsupported protocol.
 For any interface that does not support protocol multiplexing, this counter is not present.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
@@ -6788,7 +6778,7 @@ Format: "{Description} - {Alias} - {Custom Description}".]]>
 				<ColumnOption idx="7" pid="2199" type="displaykey" options="" />
 			</ArrayOptions>
 			<Information>
-				<Subtext>A collection of Tx interface-related statistics objects.</Subtext>
+				<Subtext>A collection of output interface-related statistics objects.</Subtext>
 			</Information>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -6847,7 +6837,7 @@ Format: "{Description} - {Alias} - {Custom Description}".]]>
 			<Description>Unicast Rate (Interfaces Details Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer.
+					<![CDATA[The rate of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
 			</Information>
@@ -6885,7 +6875,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Broadcast Rate (Interfaces Details Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and that were addressed to a broadcast address at this sub-layer, including those that were discarded or not sent.
+					<![CDATA[The rate number of packets that higher-level protocols requested be transmitted, and that were addressed to a broadcast address at this sub-layer, including those that were discarded or not sent.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
 			</Information>
@@ -6923,7 +6913,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Multicast Rate (Interfaces Details Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The total number of packets that higher-level protocols requested be transmitted, and that were addressed to a multicast address at this sub-layer, including those that were discarded or not sent.
+					<![CDATA[The total rate of packets that higher-level protocols requested be transmitted, and that were addressed to a multicast address at this sub-layer, including those that were discarded or not sent.
 For a MAC-layer protocol, this includes both Group and Functional addresses.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
@@ -6962,7 +6952,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Discard Rate (Interfaces Details Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[The number of outbound packets that were chosen to be discarded even though no errors had been detected to prevent their being transmitted.
+					<![CDATA[The rate of outbound packets that were chosen to be discarded even though no errors had been detected to prevent their being transmitted.
 One possible reason for discarding such a packet could be to free up buffer space.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
@@ -7004,8 +6994,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Description>Error Rate (Interfaces Details Tx)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.
-For character-oriented or fixed-length interfaces, the number of outbound transmission units that could not be transmitted because of errors.
+					<![CDATA[For packet-oriented interfaces, the rate of outbound packets that could not be transmitted because of errors.
+For character-oriented or fixed-length interfaces, the rate of outbound transmission units that could not be transmitted because of errors.
 Discontinuities in the value of this counter can occur at re-initialization of the management system.]]>
 				</Subtext>
 			</Information>
@@ -7577,7 +7567,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 								</Changes>
 								<MinorVersions>
 									<MinorVersion id="1" basedOn="1.0.0.7">
-										<Date>2026-01-20</Date>
+										<Date>2026-01-21</Date>
 										<Provider>
 											<Author>CYK</Author>
 											<Company>Skyline Communications</Company>
