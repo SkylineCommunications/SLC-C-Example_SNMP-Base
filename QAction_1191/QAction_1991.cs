@@ -53,9 +53,9 @@ public static class QAction
 
 				string key = Convert.ToString(ifTableGetter.Keys[i]);
 				interfacesRow.Interfacesduplexstatus = duplexGetter.DuplexStatusesByKey.TryGetValue(key, out var duplexState)
-					? (int)duplexState : -1; // N/A
+					? (int)duplexState : -1;	// N/A for new rows
 				interfacesRow.Interfacescustomdescription = interfacesGetter.CustomDescriptionsByKey.TryGetValue(key, out var customDescription)
-					? customDescription : "-1"; // Exception will happen if it's a new row yet to be added to Interfaces table
+					? customDescription : "-1";	// N/A for new rows
 
 				interfacesTablesData.Add(key, new InterfaceCombinedData(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow));
 			}

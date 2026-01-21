@@ -26,8 +26,6 @@ public static class QAction
 					tablePids: new[] { Parameter.Iftable.tablePid, Parameter.Ifxtable.tablePid },
 					CalculationMethod.Accurate);
 			}
-
-			InterfacesTableHelper.InitialiseCustomDescriptionColumn(protocol);
 		}
 		catch (Exception ex)
 		{
