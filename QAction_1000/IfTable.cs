@@ -259,8 +259,9 @@
 			double speedValue = GetSpeedValue(getPosition);
 
 			double rxUtilitzation = BandwidthHelper.CalculateUtilization(bitrateIn, speedValue);
-			double txUtilitzation = BandwidthHelper.CalculateUtilization(bitrateOut, speedValue);
 			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_rxbandwidthutilization].Add(rxUtilitzation);
+
+			double txUtilitzation = BandwidthHelper.CalculateUtilization(bitrateOut, speedValue);
 			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_txbandwidthutilization].Add(txUtilitzation);
 		}
 
@@ -410,7 +411,7 @@
 
 			public void SetParams()
 			{
-				protocol.SetParameters(SetParamsData.Keys.ToArray(), SetParamsData.Values.ToArray());
+				protocol.SetParameters(SetParamsData);
 			}
 		}
 	}
