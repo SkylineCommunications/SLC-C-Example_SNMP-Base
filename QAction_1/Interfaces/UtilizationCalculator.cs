@@ -1,4 +1,4 @@
-﻿namespace Skyline.Protocol.Api.Helpers
+﻿namespace Skyline.Protocol.Interfaces
 {
 	public static class UtilizationCalculator
 	{
@@ -11,7 +11,9 @@
 		public static double CalculateDirectionalUtilization(double rate, double interfaceSpeed)
 		{
 			if (rate < 0.0 || interfaceSpeed <= 0.0)
+			{
 				return -1.0;
+			}
 
 			return rate * 100.0 / interfaceSpeed;
 		}

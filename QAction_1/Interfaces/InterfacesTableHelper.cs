@@ -1,12 +1,13 @@
-﻿namespace Skyline.Protocol.Api.Helpers
+﻿namespace Skyline.Protocol.Interfaces
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 
 	using Skyline.DataMiner.Scripting;
+	using Skyline.DataMiner.Utils.Protocol.Extension;
 
-	using SLNetMessages = Skyline.DataMiner.Net.Messages;
+	using SLNetMessages = DataMiner.Net.Messages;
 
 	public static class InterfacesTableHelper
 	{
@@ -29,16 +30,18 @@
 
 		private static Dictionary<string, string> BuildCustomDescriptionPairsToSetException(SLProtocol protocol)
 		{
-			var columnIndexes = new[]
+			var columnIndexes = new uint[]
 			{
-				(uint)Parameter.Interfaces.indexColumn,
-				(uint)Parameter.Interfaces.Idx.interfacescustomdescription_2017,
+				Parameter.Interfaces.Idx.interfacesindex_2001,
+				Parameter.Interfaces.Idx.interfacescustomdescription_2017,
 			};
-			var columns = (object[])protocol.NotifyProtocol((int)SLNetMessages.NotifyType.NT_GET_TABLE_COLUMNS, Parameter.Interfaces.tablePid, columnIndexes);
+			var columns = protocol.GetColumns(Parameter.Interfaces.tablePid, columnIndexes);
 			var primaryKeys = (object[])columns[0];
-			var values = (object[])columns[1];
+			var customDescriptions = (object[])columns[1];
 
-			var customDescriptionsByKey = primaryKeys.Zip(values, (primaryKey, value) => new { k = primaryKey, v = value }).ToDictionary(x => (string)x.k, x => Convert.ToString(x.v));
+			var customDescriptionsByKey = primaryKeys
+				.Zip(customDescriptions, (primaryKey, value) => new { k = primaryKey, v = value })
+				.ToDictionary(x => (string)x.k, x => (string)x.v);
 
 			return customDescriptionsByKey
 				.Where(pair => string.IsNullOrWhiteSpace(pair.Value))
