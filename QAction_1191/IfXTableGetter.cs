@@ -26,9 +26,9 @@ public class IfXTableGetter
 			Parameter.Ifxtable.Idx.ifxtable_ifalias_1119,
 			Parameter.Ifxtable.Idx.ifxtable_ifcounterdiscontinuitytime_1120,
 
-			Parameter.Ifxtable.Idx.ifxtable_bitratein_1121,
-			Parameter.Ifxtable.Idx.ifxtable_bitrateout_1122,
-			Parameter.Ifxtable.Idx.ifxtable_ratesdata_1123,
+			Parameter.Ifxtable.Idx.ifxtable_bitratein_1122,
+			Parameter.Ifxtable.Idx.ifxtable_bitrateout_1123,
+			Parameter.Ifxtable.Idx.ifxtable_ratesdata_1121,
 			Parameter.Ifxtable.Idx.ifxtable_multicastratein_1124,
 			Parameter.Ifxtable.Idx.ifxtable_multicastrateout_1125,
 			Parameter.Ifxtable.Idx.ifxtable_broadcastratein_1126,
