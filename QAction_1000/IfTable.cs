@@ -258,8 +258,8 @@
 		{
 			double speedValue = GetSpeedValue(getPosition);
 
-			double rxUtilitzation = UtilizationCalculator.CalculateDirectionalUtilization(bitrateIn, speedValue);
-			double txUtilitzation = UtilizationCalculator.CalculateDirectionalUtilization(bitrateOut, speedValue);
+			double rxUtilitzation = BandwidthHelper.CalculateUtilization(bitrateIn, speedValue);
+			double txUtilitzation = BandwidthHelper.CalculateUtilization(bitrateOut, speedValue);
 			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_rxbandwidthutilization].Add(rxUtilitzation);
 			ifTableSetter.SetColumnsData[Parameter.Iftable.Pid.iftable_txbandwidthutilization].Add(txUtilitzation);
 		}
