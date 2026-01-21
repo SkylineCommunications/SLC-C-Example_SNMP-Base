@@ -1,4 +1,4 @@
-﻿namespace Skyline.Protocol.Interfaces
+﻿namespace QAction_1100.IfxTable
 {
 	using System;
 

@@ -1,7 +1,8 @@
 using System;
 
+using QAction_1100.IfxTable;
+
 using Skyline.DataMiner.Scripting;
-using Skyline.Protocol.IfxTable;
 
 /// <summary>
 /// Represents the ifXTable.

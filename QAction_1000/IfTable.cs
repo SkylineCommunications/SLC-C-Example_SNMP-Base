@@ -1,4 +1,4 @@
-﻿namespace Skyline.Protocol.IfTable
+﻿namespace QAction_1000.IfTable
 {
 	using System;
 	using System.Collections.Generic;

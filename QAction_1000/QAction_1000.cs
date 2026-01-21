@@ -1,7 +1,8 @@
 using System;
 
+using QAction_1000.IfTable;
+
 using Skyline.DataMiner.Scripting;
-using Skyline.Protocol.IfTable;
 
 /// <summary>
 /// Represents the ifTable.
