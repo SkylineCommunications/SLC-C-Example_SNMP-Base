@@ -34,7 +34,7 @@ public static class QAction
 	{
 		try
 		{
-			var interfacesTablesData = new Dictionary<string, InterfaceTablesRowData>();
+			var interfacesTablesData = new Dictionary<string, InterfaceCombinedData>();
 
 			var duplexGetter = new DuplexGetter(protocol);
 			duplexGetter.Load();
@@ -54,11 +54,11 @@ public static class QAction
 
 				string key = Convert.ToString(ifTableGetter.Keys[i]);
 				interfacesRow.Interfacesduplexstatus = duplexGetter.DuplexStatusesByKey.TryGetValue(key, out var duplexState)
-					? Convert.ToInt32(duplexState) : -1; // N/A
+					? (int)duplexState : -1; // N/A
 				interfacesRow.Interfacescustomdescription = interfacesGetter.CustomDescriptionsByKey.TryGetValue(key, out var customDescription)
 					? customDescription : "-1"; // Exception will happen if it's a new row yet to be added to Interfaces table
 
-				interfacesTablesData.Add(key, new InterfaceTablesRowData(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow));
+				interfacesTablesData.Add(key, new InterfaceCombinedData(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow));
 			}
 
 			// ifXTable.

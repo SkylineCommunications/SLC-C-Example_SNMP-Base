@@ -1,8 +1,8 @@
 ﻿using Skyline.DataMiner.Scripting;
 
-public class InterfaceTablesRowData
+public class InterfaceCombinedData
 {
-	public InterfaceTablesRowData(
+	public InterfaceCombinedData(
 		InterfacesQActionRow interfacesStateTableRow,
 		InterfacesdetailsrxQActionRow interfaceDetailsRxRow,
 		InterfacesdetailstxQActionRow interfaceDetailsTxRow)
