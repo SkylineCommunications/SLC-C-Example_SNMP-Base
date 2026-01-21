@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using Skyline.DataMiner.Scripting;
-using Skyline.Protocol.Api;
-using Skyline.Protocol.Interfaces;
+using QAction_1991;
 
-using SLNetMessages = Skyline.DataMiner.Net.Messages;
+using Skyline.DataMiner.Scripting;
+using Skyline.DataMiner.Utils.Protocol.Extension;
+using Skyline.Protocol.Interfaces;
 
 /// <summary>
 /// DataMiner QAction Class: Merge Interface Tables.
@@ -34,23 +34,13 @@ public static class QAction
 	{
 		try
 		{
-			var interfacesRowsPerKey = new Dictionary<string, InterfaceTablesRowData>();
+			var interfacesTablesData = new Dictionary<string, InterfaceTablesRowData>();
 
 			var duplexGetter = new DuplexGetter(protocol);
 			duplexGetter.Load();
-			var duplexStatusesByKey = duplexGetter.DuplexStatusesByKey;
 
-			var columnIndexes = new[]
-			{
-				(uint)Parameter.Interfaces.indexColumn,
-				(uint)Parameter.Interfaces.Idx.interfacescustomdescription_2017,
-			};
-
-			var columns = (object[])protocol.NotifyProtocol((int)SLNetMessages.NotifyType.NT_GET_TABLE_COLUMNS, Parameter.Interfaces.tablePid, columnIndexes);
-			var primaryKeys = (object[])columns[0];
-			var values = (object[])columns[1];
-
-			var customDescriptionsByKey = primaryKeys.Zip(values, (primaryKey, value) => new { k = primaryKey, v = value }).ToDictionary(x => (string)x.k, x => Convert.ToString(x.v));
+			var interfacesGetter = new InterfacesTableGetter(protocol);
+			interfacesGetter.Load();
 
 			// ifTable.
 			var ifTableGetter = new IfTableGetter(protocol);
@@ -63,12 +53,12 @@ public static class QAction
 				PopulateDataFromIfTable(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow, ifTableGetter, i);
 
 				string key = Convert.ToString(ifTableGetter.Keys[i]);
-				interfacesRow.Interfacesduplexstatus = duplexStatusesByKey.TryGetValue(key, out var duplexState)
+				interfacesRow.Interfacesduplexstatus = duplexGetter.DuplexStatusesByKey.TryGetValue(key, out var duplexState)
 					? Convert.ToInt32(duplexState) : -1; // N/A
-				interfacesRow.Interfacescustomdescription = customDescriptionsByKey.TryGetValue(key, out var customDescription)
+				interfacesRow.Interfacescustomdescription = interfacesGetter.CustomDescriptionsByKey.TryGetValue(key, out var customDescription)
 					? customDescription : "-1"; // Exception will happen if it's a new row yet to be added to Interfaces table
 
-				interfacesRowsPerKey.Add(key, new InterfaceTablesRowData(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow));
+				interfacesTablesData.Add(key, new InterfaceTablesRowData(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow));
 			}
 
 			// ifXTable.
@@ -77,7 +67,7 @@ public static class QAction
 			{
 				string key = Convert.ToString(ifXTableGetter.Keys[i]);
 
-				if (!interfacesRowsPerKey.TryGetValue(key, out var tablesRowData))
+				if (!interfacesTablesData.TryGetValue(key, out var tablesRowData))
 				{
 					continue;
 				}
@@ -90,7 +80,7 @@ public static class QAction
 			}
 
 			// Interfaces tables.
-			var rows = interfacesRowsPerKey.Values.ToArray();
+			var rows = interfacesTablesData.Values.ToArray();
 			var interfaceRows = new InterfacesQActionRow[rows.Length];
 			var interfaceDetailsRxRows = new QActionTableRow[rows.Length];
 			var interfaceDetailsTxRows = new QActionTableRow[rows.Length];
@@ -285,14 +275,5 @@ public static class QAction
 
 		interfacesTxRow.Interfacesdetailstxmulticastrate =
 			ifXTableGetter.HcMulticastRateOut[getPosition] == null ? -1 : Convert.ToDouble(ifXTableGetter.HcMulticastRateOut[getPosition]);
-	}
-}
-
-internal static class RateDoubleExtensions
-{
-	public static double ZeroIfException(this double value, double exception, double tolerance = 1e-6)
-	{
-		var isException = Math.Abs(value - exception) < tolerance;
-		return isException ? 0 : value;
 	}
 }
