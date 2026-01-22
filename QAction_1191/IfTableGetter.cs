@@ -29,9 +29,9 @@
 				Parameter.Iftable.Idx.iftable_ifdiscardsout_1015,
 				Parameter.Iftable.Idx.iftable_iferrorsout_1017,
 
+				Parameter.Iftable.Idx.iftable_ratesdata_1019,
 				Parameter.Iftable.Idx.iftable_bitratein_1020,
 				Parameter.Iftable.Idx.iftable_bitrateout_1021,
-				Parameter.Iftable.Idx.iftable_ratesdata_1019,
 				Parameter.Iftable.Idx.iftable_unicastratein_1022,
 				Parameter.Iftable.Idx.iftable_unicastrateout_1023,
 				Parameter.Iftable.Idx.iftable_discardratein_1024,
@@ -44,37 +44,39 @@
 			};
 
 			var columns = protocol.GetColumns(Parameter.Iftable.tablePid, columnsToGet);
+			int columnPos = -1;
 
-			Keys = (object[])columns[0];
-			Descriptions = (object[])columns[1];
-			Types = (object[])columns[2];
-			Mtu = (object[])columns[3];
-			Speeds = (object[])columns[4];
-			PhysAddress = (object[])columns[5];
-			AdminStatus = (object[])columns[6];
-			OperStatus = (object[])columns[7];
-			LastChange = (object[])columns[8];
-			InOctets = (object[])columns[9];
-			InUnicastPackets = (object[])columns[10];
-			InDiscards = (object[])columns[11];
-			InErrors = (object[])columns[12];
-			InUnknownProtocols = (object[])columns[13];
-			OutOctets = (object[])columns[14];
-			OutUnicastPackets = (object[])columns[15];
-			OutDiscards = (object[])columns[16];
-			OutErrors = (object[])columns[17];
-			BitRateIn = (object[])columns[18];
-			BitRateOut = (object[])columns[19];
-			RateData = (object[])columns[20];
-			UnicastRateIn = (object[])columns[21];
-			UnicastRateOut = (object[])columns[22];
-			DiscardRateIn = (object[])columns[23];
-			DiscardRateOut = (object[])columns[24];
-			ErrorRateIn = (object[])columns[25];
-			ErrorRateOut = (object[])columns[26];
-			UnknownProtocolRateIn = (object[])columns[27];
-			RxBandwidthUtilization = (object[])columns[28];
-			TxBandwidthUtilization = (object[])columns[29];
+			Keys = (object[])columns[++columnPos];
+			Descriptions = (object[])columns[++columnPos];
+			Types = (object[])columns[++columnPos];
+			Mtu = (object[])columns[++columnPos];
+			Speeds = (object[])columns[++columnPos];
+			PhysAddress = (object[])columns[++columnPos];
+			AdminStatus = (object[])columns[++columnPos];
+			OperStatus = (object[])columns[++columnPos];
+			LastChange = (object[])columns[++columnPos];
+			InOctets = (object[])columns[++columnPos];
+			InUnicastPackets = (object[])columns[++columnPos];
+			InDiscards = (object[])columns[++columnPos];
+			InErrors = (object[])columns[++columnPos];
+			InUnknownProtocols = (object[])columns[++columnPos];
+			OutOctets = (object[])columns[++columnPos];
+			OutUnicastPackets = (object[])columns[++columnPos];
+			OutDiscards = (object[])columns[++columnPos];
+			OutErrors = (object[])columns[++columnPos];
+
+			RatesData = (object[])columns[++columnPos];
+			BitRateIn = (object[])columns[++columnPos];
+			BitRateOut = (object[])columns[++columnPos];
+			UnicastRateIn = (object[])columns[++columnPos];
+			UnicastRateOut = (object[])columns[++columnPos];
+			DiscardRateIn = (object[])columns[++columnPos];
+			DiscardRateOut = (object[])columns[++columnPos];
+			ErrorRateIn = (object[])columns[++columnPos];
+			ErrorRateOut = (object[])columns[++columnPos];
+			UnknownProtocolRateIn = (object[])columns[++columnPos];
+			RxBandwidthUtilization = (object[])columns[++columnPos];
+			TxBandwidthUtilization = (object[])columns[++columnPos];
 		}
 
 		public object[] Keys { get; set; }
@@ -113,11 +115,11 @@
 
 		public object[] OutErrors { get; set; }
 
+		public object[] RatesData { get; set; }
+
 		public object[] BitRateIn { get; set; }
 
 		public object[] BitRateOut { get; set; }
-
-		public object[] RateData { get; set; }
 
 		public object[] UnicastRateIn { get; set; }
 

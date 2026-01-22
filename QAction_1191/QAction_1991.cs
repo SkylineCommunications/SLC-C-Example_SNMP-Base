@@ -52,8 +52,10 @@ public static class QAction
 				PopulateDataFromIfTable(interfacesRow, interfacesDetailsRxRow, interfacesDetailsTxRow, ifTableGetter, i);
 
 				string key = Convert.ToString(ifTableGetter.Keys[i]);
+
 				interfacesRow.Interfacesduplexstatus = duplexGetter.DuplexStatusesByKey.TryGetValue(key, out var duplexState)
 					? (int)duplexState : -1;	// N/A for new rows
+
 				interfacesRow.Interfacescustomdescription = interfacesGetter.CustomDescriptionsByKey.TryGetValue(key, out var customDescription)
 					? customDescription : "-1";	// N/A for new rows
 

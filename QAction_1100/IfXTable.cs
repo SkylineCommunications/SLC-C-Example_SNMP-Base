@@ -278,8 +278,9 @@
 			double speedValue = GetSpeedValue(getPosition);
 
 			double rxUtilitzation = BandwidthHelper.CalculateUtilization(bitrateIn, speedValue);
-			double txUtilitzation = BandwidthHelper.CalculateUtilization(bitrateOut, speedValue);
 			ifXTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_rxbandwidthutilization].Add(rxUtilitzation);
+
+			double txUtilitzation = BandwidthHelper.CalculateUtilization(bitrateOut, speedValue);
 			ifXTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_txbandwidthutilization].Add(txUtilitzation);
 		}
 

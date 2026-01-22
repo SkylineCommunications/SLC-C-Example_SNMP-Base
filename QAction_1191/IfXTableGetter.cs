@@ -9,82 +9,81 @@
 		{
 			var columnsToGet = new uint[]
 			{
-			Parameter.Ifxtable.Idx.ifxtable_ifindex_1101,
-			Parameter.Ifxtable.Idx.ifxtable_ifname_1102,
-			Parameter.Ifxtable.Idx.ifxtable_ifmulticastpktsin_1103,
-			Parameter.Ifxtable.Idx.ifxtable_ifbroadcastpktsin_1105,
-			Parameter.Ifxtable.Idx.ifxtable_ifmulticastpktsout_1104,
-			Parameter.Ifxtable.Idx.ifxtable_ifbroadcastpktsout_1106,
-			Parameter.Ifxtable.Idx.ifxtable_ifhcoctetsin_1107,
-			Parameter.Ifxtable.Idx.ifxtable_ifhcucastpktsin_1109,
-			Parameter.Ifxtable.Idx.ifxtable_ifhcmulticastpktsin_1111,
-			Parameter.Ifxtable.Idx.ifxtable_ifhcbroadcastpktsin_1113,
-			Parameter.Ifxtable.Idx.ifxtable_ifhcoctetsout_1108,
-			Parameter.Ifxtable.Idx.ifxtable_ifhcucastpktsout_1110,
-			Parameter.Ifxtable.Idx.ifxtable_ifhcmulticastpktsout_1112,
-			Parameter.Ifxtable.Idx.ifxtable_ifhcbroadcastpktsout_1114,
-			Parameter.Ifxtable.Idx.ifxtable_ifhighspeed_1116,
-			Parameter.Ifxtable.Idx.ifxtable_ifpromiscuousmode_1117,
-			Parameter.Ifxtable.Idx.ifxtable_ifalias_1119,
-			Parameter.Ifxtable.Idx.ifxtable_ifcounterdiscontinuitytime_1120,
+				Parameter.Ifxtable.Idx.ifxtable_ifindex_1101,
+				Parameter.Ifxtable.Idx.ifxtable_ifname_1102,
+				Parameter.Ifxtable.Idx.ifxtable_ifmulticastpktsin_1103,
+				Parameter.Ifxtable.Idx.ifxtable_ifbroadcastpktsin_1105,
+				Parameter.Ifxtable.Idx.ifxtable_ifmulticastpktsout_1104,
+				Parameter.Ifxtable.Idx.ifxtable_ifbroadcastpktsout_1106,
+				Parameter.Ifxtable.Idx.ifxtable_ifhcoctetsin_1107,
+				Parameter.Ifxtable.Idx.ifxtable_ifhcucastpktsin_1109,
+				Parameter.Ifxtable.Idx.ifxtable_ifhcmulticastpktsin_1111,
+				Parameter.Ifxtable.Idx.ifxtable_ifhcbroadcastpktsin_1113,
+				Parameter.Ifxtable.Idx.ifxtable_ifhcoctetsout_1108,
+				Parameter.Ifxtable.Idx.ifxtable_ifhcucastpktsout_1110,
+				Parameter.Ifxtable.Idx.ifxtable_ifhcmulticastpktsout_1112,
+				Parameter.Ifxtable.Idx.ifxtable_ifhcbroadcastpktsout_1114,
+				Parameter.Ifxtable.Idx.ifxtable_ifhighspeed_1116,
+				Parameter.Ifxtable.Idx.ifxtable_ifpromiscuousmode_1117,
+				Parameter.Ifxtable.Idx.ifxtable_ifalias_1119,
+				Parameter.Ifxtable.Idx.ifxtable_ifcounterdiscontinuitytime_1120,
 
-			Parameter.Ifxtable.Idx.ifxtable_bitratein_1122,
-			Parameter.Ifxtable.Idx.ifxtable_bitrateout_1123,
-			Parameter.Ifxtable.Idx.ifxtable_ratesdata_1121,
-			Parameter.Ifxtable.Idx.ifxtable_multicastratein_1124,
-			Parameter.Ifxtable.Idx.ifxtable_multicastrateout_1125,
-			Parameter.Ifxtable.Idx.ifxtable_broadcastratein_1126,
-			Parameter.Ifxtable.Idx.ifxtable_broadcastrateout_1127,
-			Parameter.Ifxtable.Idx.ifxtable_hcucastratein_1128,
-			Parameter.Ifxtable.Idx.ifxtable_hcucastrateout_1129,
-			Parameter.Ifxtable.Idx.ifxtable_hcmulticastratein_1130,
-			Parameter.Ifxtable.Idx.ifxtable_hcmulticastrateout_1131,
-			Parameter.Ifxtable.Idx.ifxtable_hcbroadcastratein_1132,
-			Parameter.Ifxtable.Idx.ifxtable_hcbroadcastrateout_1133,
+				Parameter.Ifxtable.Idx.ifxtable_ratesdata_1121,
+				Parameter.Ifxtable.Idx.ifxtable_bitratein_1122,
+				Parameter.Ifxtable.Idx.ifxtable_bitrateout_1123,
+				Parameter.Ifxtable.Idx.ifxtable_multicastratein_1124,
+				Parameter.Ifxtable.Idx.ifxtable_multicastrateout_1125,
+				Parameter.Ifxtable.Idx.ifxtable_broadcastratein_1126,
+				Parameter.Ifxtable.Idx.ifxtable_broadcastrateout_1127,
+				Parameter.Ifxtable.Idx.ifxtable_hcucastratein_1128,
+				Parameter.Ifxtable.Idx.ifxtable_hcucastrateout_1129,
+				Parameter.Ifxtable.Idx.ifxtable_hcmulticastratein_1130,
+				Parameter.Ifxtable.Idx.ifxtable_hcmulticastrateout_1131,
+				Parameter.Ifxtable.Idx.ifxtable_hcbroadcastratein_1132,
+				Parameter.Ifxtable.Idx.ifxtable_hcbroadcastrateout_1133,
 
-			Parameter.Ifxtable.Idx.ifxtable_rxbandwidthutilization_1134,
-			Parameter.Ifxtable.Idx.ifxtable_txbandwidthutilization_1135,
+				Parameter.Ifxtable.Idx.ifxtable_rxbandwidthutilization_1134,
+				Parameter.Ifxtable.Idx.ifxtable_txbandwidthutilization_1135,
 			};
 
 			var columns = protocol.GetColumns(Parameter.Ifxtable.tablePid, columnsToGet);
+			int columnPos = -1;
 
-			Keys = (object[])columns[0];
-			Name = (object[])columns[1];
-			InMulticastPackets = (object[])columns[2];
-			InBroadcastPackets = (object[])columns[3];
-			OutMulticastPackets = (object[])columns[4];
-			OutBroadcastPackets = (object[])columns[5];
-			HcInOctets = (object[])columns[6];
-			HcInUnicastPackets = (object[])columns[7];
-			HcInMulticastPackets = (object[])columns[8];
-			HcInBroadcastPackets = (object[])columns[9];
-			HcOutOctets = (object[])columns[10];
-			HcOutUnicastPackets = (object[])columns[11];
-			HcOutMulticastPackets = (object[])columns[12];
-			HcOutBroadcastPackets = (object[])columns[13];
+			Keys = (object[])columns[++columnPos];
+			Name = (object[])columns[++columnPos];
+			InMulticastPackets = (object[])columns[++columnPos];
+			InBroadcastPackets = (object[])columns[++columnPos];
+			OutMulticastPackets = (object[])columns[++columnPos];
+			OutBroadcastPackets = (object[])columns[++columnPos];
+			HcInOctets = (object[])columns[++columnPos];
+			HcInUnicastPackets = (object[])columns[++columnPos];
+			HcInMulticastPackets = (object[])columns[++columnPos];
+			HcInBroadcastPackets = (object[])columns[++columnPos];
+			HcOutOctets = (object[])columns[++columnPos];
+			HcOutUnicastPackets = (object[])columns[++columnPos];
+			HcOutMulticastPackets = (object[])columns[++columnPos];
+			HcOutBroadcastPackets = (object[])columns[++columnPos];
+			HighSpeed = (object[])columns[++columnPos];
+			PromiscuousMode = (object[])columns[++columnPos];
+			Alias = (object[])columns[++columnPos];
+			CounterDiscontinuityTime = (object[])columns[++columnPos];
 
-			HighSpeed = (object[])columns[14];
-			PromiscuousMode = (object[])columns[15];
+			RatesData = (object[])columns[++columnPos];
+			HcBitRateIn = (object[])columns[++columnPos];
+			HcBitRateOut = (object[])columns[++columnPos];
+			MulticastRateIn = (object[])columns[++columnPos];
+			MulticastRateOut = (object[])columns[++columnPos];
+			BroadcastRateIn = (object[])columns[++columnPos];
+			BroadcastRateOut = (object[])columns[++columnPos];
+			HcUnicastRateIn = (object[])columns[++columnPos];
+			HcUnicastRateOut = (object[])columns[++columnPos];
+			HcMulticastRateIn = (object[])columns[++columnPos];
+			HcMulticastRateOut = (object[])columns[++columnPos];
+			HcBroadcastRateIn = (object[])columns[++columnPos];
+			HcBroadcastRateOut = (object[])columns[++columnPos];
 
-			Alias = (object[])columns[16];
-			CounterDiscontinuityTime = (object[])columns[17];
-			HcBitRateIn = (object[])columns[18];
-			HcBitRateOut = (object[])columns[19];
-
-			RateData = (object[])columns[20];
-			MulticastRateIn = (object[])columns[21];
-			MulticastRateOut = (object[])columns[22];
-			BroadcastRateIn = (object[])columns[23];
-			BroadcastRateOut = (object[])columns[24];
-			HcUnicastRateIn = (object[])columns[25];
-			HcUnicastRateOut = (object[])columns[26];
-			HcMulticastRateIn = (object[])columns[27];
-			HcMulticastRateOut = (object[])columns[28];
-			HcBroadcastRateIn = (object[])columns[29];
-			HcBroadcastRateOut = (object[])columns[30];
-
-			RxBandwidthUtilization = (object[])columns[31];
-			TxBandwidthUtilization = (object[])columns[32];
+			RxBandwidthUtilization = (object[])columns[++columnPos];
+			TxBandwidthUtilization = (object[])columns[++columnPos];
 		}
 
 		public object[] Keys { get; set; }
@@ -123,11 +122,11 @@
 
 		public object[] CounterDiscontinuityTime { get; set; }
 
+		public object[] RatesData { get; set; }
+
 		public object[] HcBitRateIn { get; set; }
 
 		public object[] HcBitRateOut { get; set; }
-
-		public object[] RateData { get; set; }
 
 		public object[] MulticastRateIn { get; set; }
 
