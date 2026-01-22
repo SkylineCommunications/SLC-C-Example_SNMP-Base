@@ -17,11 +17,11 @@ public static class QAction
 		try
 		{
 			CalculationMethod rateCalculationsMethod =
-				(CalculationMethod)Convert.ToInt32(protocol.GetParameter(Parameter.interfacesratecalculationsmethod));
+				(CalculationMethod)Convert.ToInt32(protocol.GetParameter(Parameter.interfacesratescalculationsmethod));
 
 			SnmpDeltaHelper.UpdateRateDeltaTracking(
 				protocol,
-				tablePids: new[] { 1000, 1100 },
+				tablePids: new[] { Parameter.Iftable.tablePid, Parameter.Ifxtable.tablePid },
 				rateCalculationsMethod);
 		}
 		catch (Exception ex)

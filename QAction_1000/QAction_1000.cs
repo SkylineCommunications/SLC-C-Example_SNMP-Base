@@ -1,7 +1,8 @@
 using System;
 
+using QAction_1000.IfTable;
+
 using Skyline.DataMiner.Scripting;
-using Skyline.Protocol.IfTable;
 
 /// <summary>
 /// Represents the ifTable.
@@ -16,13 +17,13 @@ public class IfTable
 	{
 		try
 		{
-			IfTableProcessor interfaceTableProcessor = new IfTableProcessor(protocol);
-			interfaceTableProcessor.ProcessData();
-			interfaceTableProcessor.UpdateProtocol();
+			var ifTableProcessor = new IfTableProcessor(protocol);
+			ifTableProcessor.ProcessData();
+			ifTableProcessor.UpdateProtocol();
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|ProcessSuccess|Error: {ex}", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|ProcessSuccess|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 			ProcessTimeout(protocol);
 		}
 	}
@@ -35,13 +36,13 @@ public class IfTable
 	{
 		try
 		{
-			IfTableTimeoutProcessor interfaceTableProcessor = new IfTableTimeoutProcessor(protocol);
-			interfaceTableProcessor.ProcessTimeout();
-			interfaceTableProcessor.UpdateProtocol();
+			var ifTableTimeoutProcessor = new IfTableTimeoutProcessor(protocol);
+			ifTableTimeoutProcessor.ProcessTimeout();
+			ifTableTimeoutProcessor.UpdateProtocol();
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|ProcessTimeout|Error: {ex}", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|ProcessTimeout|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 		}
 	}
 }

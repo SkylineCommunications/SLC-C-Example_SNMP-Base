@@ -6,18 +6,21 @@
     <Copyright>© Skyline Communications</Copyright>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <LangVersion>7.3</LangVersion>
+    <RootNamespace>Skyline.Protocol</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\QAction_Helper\QAction_Helper.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Skyline.DataMiner.Dev.Protocol" Version="10.2.0.25" />
+    <PackageReference Include="Skyline.DataMiner.Utils.Interfaces" Version="1.0.0.3" />
     <PackageReference Include="Skyline.DataMiner.Utils.Rates.Protocol" Version="1.0.0.4" />
+    <PackageReference Include="Skyline.DataMiner.Utils.Protocol.Extension" Version="1.0.0.4" />
+    <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding" Version="2.2.1" />
     <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.2.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Skyline.DataMiner.Utils.Protocol.Extension" Version="1.0.0.4" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>

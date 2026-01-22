@@ -1,12 +1,13 @@
 using System;
 
+using QAction_1100.IfxTable;
+
 using Skyline.DataMiner.Scripting;
-using Skyline.Protocol.IfxTable;
 
 /// <summary>
-/// Represents the ifxTable.
+/// Represents the ifXTable.
 /// </summary>
-public class IfxTable
+public class IfXTable
 {
 	/// <summary>
 	/// QAction entry point when table was successfully polled.
@@ -16,13 +17,13 @@ public class IfxTable
 	{
 		try
 		{
-			IfxTableProcessor interfacexTableProcessor = new IfxTableProcessor(protocol);
-			interfacexTableProcessor.ProcessData();
-			interfacexTableProcessor.UpdateProtocol();
+			var ifXTableProcessor = new IfXTableProcessor(protocol);
+			ifXTableProcessor.ProcessData();
+			ifXTableProcessor.UpdateProtocol();
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|ProcessSuccess|Error: {ex}", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|ProcessSuccess|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 			ProcessTimeout(protocol);
 		}
 	}
@@ -35,13 +36,13 @@ public class IfxTable
 	{
 		try
 		{
-			IfxTableTimeoutProcessor interfacexTableProcessor = new IfxTableTimeoutProcessor(protocol);
-			interfacexTableProcessor.ProcessTimeout();
-			interfacexTableProcessor.UpdateProtocol();
+			var ifXTableTimeoutProcessor = new IfXTableTimeoutProcessor(protocol);
+			ifXTableTimeoutProcessor.ProcessTimeout();
+			ifXTableTimeoutProcessor.UpdateProtocol();
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|ProcessTimeout|Error: {ex}", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|ProcessTimeout|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 		}
 	}
 }

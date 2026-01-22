@@ -17,12 +17,12 @@ public static class QAction
 		try
 		{
 			// Every restart of an element, the method is defaulted back to "Fast" by DataMiner so we only need to change it if we expect 'Accurate'
-			CalculationMethod rateCalculationsMethod = (CalculationMethod)Convert.ToInt32(protocol.GetParameter(Parameter.interfacesratecalculationsmethod));
+			CalculationMethod rateCalculationsMethod = (CalculationMethod)Convert.ToInt32(protocol.GetParameter(Parameter.interfacesratescalculationsmethod));
 			if (rateCalculationsMethod == CalculationMethod.Accurate)
 			{
 				SnmpDeltaHelper.UpdateRateDeltaTracking(
 					protocol,
-					tablePids: new[] { 1000, 1100 },
+					tablePids: new[] { Parameter.Iftable.tablePid, Parameter.Ifxtable.tablePid },
 					CalculationMethod.Accurate);
 			}
 		}

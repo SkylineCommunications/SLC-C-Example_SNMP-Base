@@ -9,7 +9,7 @@ public class QAction
 {
 	private const int TriggerIfTable = 1000;
 	private const int TriggerIfXTable = 1100;
-	private const int TriggerInterfaceMerge = 1191;
+	private const int TriggerInterfaceMerge = 1991;
 
 	/// <summary>
 	/// The QAction entry point.
@@ -27,17 +27,17 @@ public class QAction
 			{
 				case Parameter.Write.interfacesadminstatus:
 					protocol.SetParameters(
-						new[] { Parameter.iftablesetinstance, Parameter.Write.iftableifadminstatus },
+						new[] { Parameter.iftablesetinstance, Parameter.Write.interfacesadminstatus },
 						new[] { rowKey, value });
 
-					// Note: We poll the entire table so the bit rate calculation is triggered again using the correct values.
-					// Polling just the cell or row could lead to wrong calculations.
+					/* Note: We poll the entire table so the bit rate calculation is triggered again using the correct values.
+					 * Polling just the cell or row could lead to wrong calculations. */
 					protocol.CheckTrigger(TriggerIfTable);
 					break;
 
 				case Parameter.Write.interfacespromiscuousmode:
 					protocol.SetParameters(
-						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtableifpromiscuousmode },
+						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtable_ifpromiscuousmode },
 						new[] { rowKey, value });
 
 					protocol.CheckTrigger(TriggerIfXTable);
@@ -45,15 +45,7 @@ public class QAction
 
 				case Parameter.Write.interfacesalias:
 					protocol.SetParameters(
-						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtableifalias },
-						new[] { rowKey, value });
-
-					protocol.CheckTrigger(TriggerIfXTable);
-					break;
-
-				case Parameter.Write.interfaceslinkupdowntrapenable:
-					protocol.SetParameters(
-						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtableiflinkupdowntrapenable },
+						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtable_ifalias },
 						new[] { rowKey, value });
 
 					protocol.CheckTrigger(TriggerIfXTable);
@@ -71,7 +63,7 @@ public class QAction
 		}
 		catch (Exception ex)
 		{
-			protocol.Log($"QA{protocol.QActionID}|Run|Error: {ex}", LogType.Error, LogLevel.NoLogging);
+			protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Run|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
 		}
 	}
 }
