@@ -1,8 +1,8 @@
-# Example SNMP Base Connector
+# Skyline Example - SNMP Base Connector
 
 ## About
 
-This package contains an example of an SNMP base connector. This example can help you develop your own SNMP connectors.
+This package demonstrates how to implement basic and generic SNMP parameters (System parameters and Interface tables) within a connector. It is intended to serve as a base for any SNMP connector, helping you avoid reinventing the wheel and ensuring a solid starting point.
 
 ## Usage
 
