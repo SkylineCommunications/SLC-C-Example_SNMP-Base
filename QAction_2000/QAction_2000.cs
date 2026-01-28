@@ -31,7 +31,8 @@ public class QAction
 						new[] { rowKey, value });
 
 					/* Note: Since changing the admin status has impact on the whole row, we want to poll the whole row rather than just the cell.
-					 * However, if we poll the row via snmpSetAndGet option, counters will be updated but our buffered RatesData will not be updated which would lead to wrong calculations next polling cycle.
+					 * However, if we poll the row via snmpSetAndGet option,
+					 *	counters will be updated but our buffered RatesData will not be updated which would lead to wrong calculations next polling cycle.
 					 * So we keep the snmpSetAndGet only to get the cell for quick update, and we trigger a full table poll to update the RatesData correctly.
 					 */
 					protocol.CheckTrigger(TriggerIfTable);
@@ -42,7 +43,7 @@ public class QAction
 						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtable_ifpromiscuousmode },
 						new[] { rowKey, value });
 
-					protocol.CheckTrigger(TriggerIfXTable);
+					/* Updating the Promiscuous Mode won't have much impact on other interface values -> no need to poll the entire table. */
 					break;
 
 				case Parameter.Write.interfacesalias:
@@ -50,7 +51,7 @@ public class QAction
 						new[] { Parameter.ifxtablesetinstance, Parameter.Write.ifxtable_ifalias },
 						new[] { rowKey, value });
 
-					/* This is just an Alias, won't have impact on rates and counters -> no need to poll the entire table. */
+					/* Updating the Alias won't have impact on any other interface value -> no need to poll the entire table. */
 					break;
 
 				default:
