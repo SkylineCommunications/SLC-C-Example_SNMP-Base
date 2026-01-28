@@ -27,7 +27,7 @@ public class QAction
 			{
 				case Parameter.Write.interfacesadminstatus:
 					protocol.SetParameters(
-						new[] { Parameter.iftablesetinstance, Parameter.Write.interfacesadminstatus },
+						new[] { Parameter.iftablesetinstance, Parameter.Write.iftable_ifadminstatus },
 						new[] { rowKey, value });
 
 					/* Note: We poll the entire table so the bit rate calculation is triggered again using the correct values.
