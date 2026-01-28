@@ -7578,6 +7578,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 										</Provider>
 										<Changes>
 											<Fix>Admin Status sets were not working.</Fix>
+											<Fix>Added primary keys to display key to guarantee uniqueness.</Fix>
 											<NewFeature>Added possibility to alarm on data-source restarts via the System Uptime parameter.</NewFeature>
 											<Change>Removed unnecessary polling of full tables after sets on Alias and Promiscuous Mode.</Change>
 										</Changes>
