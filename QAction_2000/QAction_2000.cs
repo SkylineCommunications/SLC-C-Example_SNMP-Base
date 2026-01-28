@@ -1,9 +1,8 @@
 using System;
 
-using QAction_2000;
-
 using Skyline.DataMiner.Scripting;
 using Skyline.DataMiner.Utils.Protocol.Extension;
+using Skyline.Protocol.QActionHelpers;
 
 /// <summary>
 /// DataMiner QAction Class: Interface Table SNMP Sets.

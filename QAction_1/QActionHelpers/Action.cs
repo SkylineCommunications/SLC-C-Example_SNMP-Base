@@ -1,4 +1,4 @@
-﻿namespace QAction_2000
+﻿namespace Skyline.Protocol.QActionHelpers
 {
     public static class Actions
 	{

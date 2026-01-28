@@ -10,6 +10,7 @@
     <AssemblyName>QAction_2000</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\QAction_1\QAction_1.csproj" />
     <ProjectReference Include="..\QAction_Helper\QAction_Helper.csproj" />
   </ItemGroup>
   <ItemGroup>
