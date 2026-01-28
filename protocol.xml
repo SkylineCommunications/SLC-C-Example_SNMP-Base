@@ -7581,6 +7581,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 											<Fix>Added primary keys to display key to guarantee uniqueness.</Fix>
 											<NewFeature>Added possibility to alarm on data-source restarts via the System Uptime parameter.</NewFeature>
 											<Change>Removed unnecessary polling of full tables after sets on Alias and Promiscuous Mode.</Change>
+											<Change>Polling both ifTable and ifXTable after Admin Status set.</Change>
 										</Changes>
 										<References>
 											<TaskId>263786</TaskId>
