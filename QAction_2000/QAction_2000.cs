@@ -32,7 +32,7 @@ public class QAction
 					 * However, if we poll the row via snmpSetAndGet option,
 					 *	counters will be updated but our buffered RatesData will not be updated which would lead to wrong calculations next polling cycle.
 					 * So we keep the snmpSetAndGet only to get the cell for quick update, and we trigger a full table poll to update the RatesData correctly.
-					 * We poll both tables as we don't know if the 32bit or 64bit counters are used on that interface.
+					 * We need to poll both tables as they both contain data that could be impacted and we don't know if the 32bit or 64bit counters are used on that interface.
 					 */
 					protocol.RunAction(Actions.IfTable_ExecuteNext);
 					protocol.RunAction(Actions.IfXTable_ExecuteNext);

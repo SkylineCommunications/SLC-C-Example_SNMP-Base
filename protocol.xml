@@ -8,7 +8,7 @@
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>Skyline Example SNMP Base</Name>
 	<Description>Skyline Example - SNMP Base DataMiner connector</Description>
-	<Version>1.0.1.1</Version>
+	<Version>1.0.1.2</Version>
 	<IntegrationID>DMS-DRV-9041</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline Example</Vendor>
@@ -7565,6 +7565,21 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 										<Changes>
 											<Change>UI Improvement: split too wide &quot;Interfaces&quot; table into three more digestible ones (&quot;Interfaces&quot;, &quot;Interface Details Rx&quot; and &quot;Interface Details Tx&quot;)</Change>
 											<NewFeature>Add rates for all interface counters</NewFeature>
+										</Changes>
+										<References>
+											<TaskId>263786</TaskId>
+										</References>
+									</MinorVersion>
+									<MinorVersion id="2" basedOn="1.0.1.1">
+										<Date>2026-01-28</Date>
+										<Provider>
+											<Author>SVD</Author>
+											<Company>Skyline Communications</Company>
+										</Provider>
+										<Changes>
+											<Fix>Admin Status sets were not working.</Fix>
+											<NewFeature>Added possibility to alarm on data-source restarts via the System Uptime parameter.</NewFeature>
+											<Change>Removed unnecessary polling of full tables after sets on Alias and Promiscuous Mode.</Change>
 										</Changes>
 										<References>
 											<TaskId>263786</TaskId>
