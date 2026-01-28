@@ -35,7 +35,7 @@
 			<Description>After Startup</Description>
 			<Type>dummy</Type>
 		</Param>
-		
+
 		<Param id="10">
 			<Name>Fixed_0</Name>
 			<Description>Fixed 0</Description>
@@ -60,7 +60,7 @@
 				<Value>1</Value>
 			</Interprete>
 		</Param>
-		
+
 		<Param id="91">
 			<Name>sysUptimeTimeoutTrigger</Name>
 			<Type>dummy</Type>
@@ -432,7 +432,7 @@ This value should include the full name and version identification of the system
 				<Type lines="5">string</Type>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="991">
 			<Name>ifTableTimeoutTrigger</Name>
 			<Description>Interface Table Timeout Trigger</Description>
@@ -2785,7 +2785,7 @@ Formula: (Tx Bit Rate / Interface Speed) * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="1091">
 			<Name>ifXTableTimeoutTrigger</Name>
 			<Description>InterfaceX Table Timeout Trigger</Description>
@@ -4152,7 +4152,7 @@ Formula: (Tx Bit Rate / Interface Speed) * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="1300">
 			<Name>dot3Stats</Name>
 			<Description>Ethernet Interfaces</Description>
@@ -4335,7 +4335,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="1999" trending="false">
 			<Name>InterfacesDisplayKey</Name>
 			<Description>Display Key (Interfaces)</Description>
@@ -6409,7 +6409,7 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="2099" trending="false">
 			<Name>InterfacesDetailsRxDisplayKey</Name>
 			<Description>Display Key (Interfaces Details Rx)</Description>
@@ -6749,7 +6749,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		
+
 		<Param id="2199" trending="false">
 			<Name>InterfacesDetailsTxDisplayKey</Name>
 			<Description>Display Key (Interfaces Details Tx)</Description>
@@ -7233,13 +7233,6 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Id>993</Id>
 			</Content>
 		</Trigger>
-		<Trigger id="1000">
-			<Name>IfTableCheckTrigger</Name>
-			<Type>action</Type>
-			<Content>
-				<Id>1000</Id>
-			</Content>
-		</Trigger>
 
 		<Trigger id="1090">
 			<Name>IfXTableBeforeGroup</Name>
@@ -7280,113 +7273,100 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Id>1093</Id>
 			</Content>
 		</Trigger>
-		<Trigger id="1100">
-			<Name>IfXTableCheckTrigger</Name>
-			<Type>action</Type>
-			<Content>
-				<Id>1100</Id>
-			</Content>
-		</Trigger>
-
-		<Trigger id="1991">
-			<Name>InterfaceTableMergeCheckTrigger</Name>
-			<Type>action</Type>
-			<Content>
-				<Id>1990</Id>
-			</Content>
-		</Trigger>
 	</Triggers>
 
 	<Actions>
 		<Action id="1">
-			<Name>After Startup Group</Name>
+			<Name>After Startup - Group</Name>
 			<On id="2">group</On>
 			<Type>execute next</Type>
 		</Action>
 		<Action id="2">
-			<Name>After Startup QAction</Name>
+			<Name>After Startup - QAction</Name>
 			<On id="2">parameter</On>
 			<Type>run actions</Type>
 		</Action>
+
 		<Action id="90">
-			<Name>SysUptime Timeout After Retries Flag Reset</Name>
+			<Name>SysUptime - Timeout After Retries Flag Reset</Name>
 			<On id="92">parameter</On>
 			<Type id="10">copy</Type>
 		</Action>
 		<Action id="91">
-			<Name>SysUptime Timeout Run Action</Name>
+			<Name>SysUptime - Timeout Run Action</Name>
 			<On id="91">parameter</On>
 			<Type>run actions</Type>
 		</Action>
 		<Action id="92">
-			<Name>SysUptime Timeout After Retries Flag</Name>
+			<Name>SysUptime - Timeout After Retries Flag</Name>
 			<On id="92">parameter</On>
 			<Type id="11">copy</Type>
 		</Action>
 		<Action id="93">
-			<Name>SysUptime Calculate Bit Rates</Name>
+			<Name>SysUptime - Calculate Bit Rates</Name>
 			<On id="93">parameter</On>
 			<Type>run actions</Type>
 		</Action>
+
 		<Action id="990">
-			<Name>IfTable Timeout After Retries Flag Reset</Name>
+			<Name>IfTable - Timeout After Retries Flag Reset</Name>
 			<On id="992">parameter</On>
 			<Type id="10">copy</Type>
 		</Action>
 		<Action id="991">
-			<Name>IfTable Timeout Run Action</Name>
+			<Name>IfTable - Timeout Run Action</Name>
 			<On id="991">parameter</On>
 			<Type>run actions</Type>
 		</Action>
 		<Action id="992">
-			<Name>IfTable Timeout After Retries Flag</Name>
+			<Name>IfTable - Timeout After Retries Flag</Name>
 			<On id="992">parameter</On>
 			<Type id="11">copy</Type>
 		</Action>
 		<Action id="993">
-			<Name>IfTable Calculate Bit Rates</Name>
+			<Name>IfTable - Calculate Bit Rates</Name>
 			<On id="993">parameter</On>
 			<Type>run actions</Type>
 		</Action>
 		<Action id="1000">
-			<Name>IfTable Execute Next</Name>
+			<Name>IfTable - Execute Next</Name>
 			<On id="1000;1">group</On>
 			<Type>execute next</Type>
 		</Action>
 
 		<Action id="1090">
-			<Name>IfXTable Timeout After Retries Flag Reset</Name>
+			<Name>IfXTable - Timeout After Retries Flag Reset</Name>
 			<On id="1092">parameter</On>
 			<Type id="10">copy</Type>
 		</Action>
 		<Action id="1091">
-			<Name>IfXTable Timeout Run Action</Name>
+			<Name>IfXTable - Timeout Run Action</Name>
 			<On id="1091">parameter</On>
 			<Type>run actions</Type>
 		</Action>
 		<Action id="1092">
-			<Name>IfXTable Timeout After Retries Flag</Name>
+			<Name>IfXTable - Timeout After Retries Flag</Name>
 			<On id="1092">parameter</On>
 			<Type id="11">copy</Type>
 		</Action>
 		<Action id="1093">
-			<Name>IfXTable Calculate Bit Rates</Name>
+			<Name>IfXTable - Calculate Bit Rates</Name>
 			<On id="1093">parameter</On>
 			<Type>run actions</Type>
 		</Action>
 		<Action id="1100">
-			<Name>IfXTable Execute Next</Name>
+			<Name>IfXTable - Execute Next</Name>
 			<On id="1100;1">group</On>
 			<Type>execute next</Type>
 		</Action>
 
 		<Action id="1990">
-			<Name>Interface Table Merge Execute</Name>
+			<Name>Interfaces Table Merge - Execute</Name>
 			<On id="1991">group</On>
 			<Type>execute</Type>
 		</Action>
 		<Action id="1991">
-			<Name>Interface Table Merge</Name>
+			<Name>Interfaces Table Merge</Name>
 			<On id="1991">parameter</On>
 			<Type>run actions</Type>
 		</Action>
