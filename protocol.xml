@@ -8,7 +8,7 @@
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>Skyline Example SNMP Base</Name>
 	<Description>Skyline Example - SNMP Base DataMiner connector</Description>
-	<Version>1.0.1.2</Version>
+	<Version>1.0.2.1</Version>
 	<IntegrationID>DMS-DRV-9041</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline Example</Vendor>
@@ -7570,8 +7570,12 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 											<TaskId>263786</TaskId>
 										</References>
 									</MinorVersion>
-									<MinorVersion id="2" basedOn="1.0.1.1">
-										<Date>2026-01-28</Date>
+								</MinorVersions>
+							</MajorVersion>
+							<MajorVersion id="2">
+								<MinorVersions>
+									<MinorVersion id="1" basedOn="1.0.1.1">
+										<Date>2026-01-29</Date>
 										<Provider>
 											<Author>SVD</Author>
 											<Company>Skyline Communications</Company>
