@@ -35,7 +35,7 @@
 			<Description>After Startup</Description>
 			<Type>dummy</Type>
 		</Param>
-
+		
 		<Param id="10">
 			<Name>Fixed_0</Name>
 			<Description>Fixed 0</Description>
@@ -60,7 +60,7 @@
 				<Value>1</Value>
 			</Interprete>
 		</Param>
-
+		
 		<Param id="91">
 			<Name>sysUptimeTimeoutTrigger</Name>
 			<Type>dummy</Type>
@@ -432,7 +432,7 @@ This value should include the full name and version identification of the system
 				<Type lines="5">string</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="991">
 			<Name>ifTableTimeoutTrigger</Name>
 			<Description>Interface Table Timeout Trigger</Description>
@@ -2785,7 +2785,7 @@ Formula: (Tx Bit Rate / Interface Speed) * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="1091">
 			<Name>ifXTableTimeoutTrigger</Name>
 			<Description>InterfaceX Table Timeout Trigger</Description>
@@ -4152,7 +4152,7 @@ Formula: (Tx Bit Rate / Interface Speed) * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="1300">
 			<Name>dot3Stats</Name>
 			<Description>Ethernet Interfaces</Description>
@@ -4335,7 +4335,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="1999" trending="false">
 			<Name>InterfacesDisplayKey</Name>
 			<Description>Display Key (Interfaces)</Description>
@@ -6233,6 +6233,12 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -6409,7 +6415,7 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="2099" trending="false">
 			<Name>InterfacesDetailsRxDisplayKey</Name>
 			<Description>Display Key (Interfaces Details Rx)</Description>
@@ -6749,7 +6755,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="2199" trending="false">
 			<Name>InterfacesDetailsTxDisplayKey</Name>
 			<Description>Display Key (Interfaces Details Tx)</Description>

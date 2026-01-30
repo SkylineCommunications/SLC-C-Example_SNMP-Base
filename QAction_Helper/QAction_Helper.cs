@@ -2151,10 +2151,10 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Interfacesduplexstatus_2015 {get { return GetParameter(2015); }set { SetParameter(2015, value); }}
 	/// <summary>PID: 2015  | Type: read | DISCREETS: N/A = -1, Unknown = 1, Half Duplex = 2, Full Duplex = 3</summary>
 	public System.Object Interfacesduplexstatus {get { return GetParameter(2015); }set { SetParameter(2015, value); }}
-	/// <summary>PID: 2016  | Type: read | DISCREETS: Enabled = 1, Disabled = 2</summary>
+	/// <summary>PID: 2016  | Type: read | DISCREETS: Enabled = 1, Disabled = 2 | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacespromiscuousmode_2016 {get { return GetParameter(2016); }set { SetParameter(2016, value); }}
-	/// <summary>PID: 2016  | Type: read | DISCREETS: Enabled = 1, Disabled = 2</summary>
+	/// <summary>PID: 2016  | Type: read | DISCREETS: Enabled = 1, Disabled = 2 | EXCEPTIONS: N/A = -1</summary>
 	public System.Object Interfacespromiscuousmode {get { return GetParameter(2016); }set { SetParameter(2016, value); }}
 	/// <summary>PID: 2017  | Type: read | EXCEPTIONS: N/A = N/A</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]

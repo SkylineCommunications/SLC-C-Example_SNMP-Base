@@ -45,7 +45,7 @@ public static class QAction
 			var ifTableGetter = new IfTableGetter(protocol);
 			for (int i = 0; i < ifTableGetter.Keys.Length; i++)
 			{
-				var interfacesRow = new InterfacesQActionRow();
+				var interfacesRow = InitialiseInterfacesQActionRow();
 				var interfacesDetailsRxRow = new InterfacesdetailsrxQActionRow();
 				var interfacesDetailsTxRow = new InterfacesdetailstxQActionRow();
 
@@ -158,6 +158,20 @@ public static class QAction
 
 		interfacesRxRow.Interfacesdetailsrxunicastrate = Convert.ToDouble(ifTableGetter.UnicastRateIn[getPosition]);
 		interfacesTxRow.Interfacesdetailstxunicastrate = Convert.ToDouble(ifTableGetter.UnicastRateOut[getPosition]);
+	}
+
+	/// <summary>
+	/// Initialises the InterfacesQActionRow with ifXTable data in case the ifXTable does not contain a corresponding entry./>.
+	/// </summary>
+	/// <returns>An InterfacesQActionRow.</returns>
+	private static InterfacesQActionRow InitialiseInterfacesQActionRow()
+	{
+		return new InterfacesQActionRow
+		{
+			Interfaceslastclear = 0,
+			Interfacesalias = string.Empty,
+			Interfacespromiscuousmode = -1,
+		};
 	}
 
 	private static bool ShouldUseHighCapacityCounters(double interfaceSpeed)
