@@ -4342,7 +4342,7 @@ This was felt to be sufficiently valuable to justify the redundancy.]]>
 			<Information>
 				<Subtext>
 					<![CDATA[A unique and user-friendly description used as identifier for the interface.
-Format: "{Description} - {Alias} - {Custom Description}".]]>
+Format: "{Index} : {Description} - {Alias} - {Custom Description}".]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -6422,7 +6422,7 @@ Formula: Tx Bit Rate / Interface Speed * 100]]>
 			<Information>
 				<Subtext>
 					<![CDATA[A unique and user-friendly description used as identifier for the interface.
-Format: "{Description} - {Alias} - {Custom Description}".]]>
+Format: "{Index} : {Description} - {Alias} - {Custom Description}".]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
@@ -6762,7 +6762,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			<Information>
 				<Subtext>
 					<![CDATA[A unique and user-friendly description used as identifier for the interface.
-Format: "{Description} - {Alias} - {Custom Description}".]]>
+Format: "{Index} : {Description} - {Alias} - {Custom Description}".]]>
 				</Subtext>
 			</Information>
 			<Type>read</Type>
