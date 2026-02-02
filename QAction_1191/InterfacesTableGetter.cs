@@ -25,8 +25,8 @@
 		{
 			var columnIndexes = new uint[]
 			{
-				Parameter.Interfaces.Idx.interfacesindex_2001,
-				Parameter.Interfaces.Idx.interfacescustomdescription_2017,
+				Parameter.Interfaces.Idx.interfacesindex,
+				Parameter.Interfaces.Idx.interfacescustomdescription,
 			};
 
 			var columns = protocol.GetColumns(Parameter.Interfaces.tablePid, columnIndexes);

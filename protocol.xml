@@ -4363,24 +4363,24 @@ Format: "{Index} : {Description} - {Alias} - {Custom Description}".]]>
 			<Description>Interfaces</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<NamingFormat>,2001, : ,2004, - ,2013, - ,2017</NamingFormat>
+				<NamingFormat>,2001, : ,2002, - ,2003, - ,2004</NamingFormat>
 				<ColumnOption idx="0" pid="2001" type="retrieved" options="" />
 				<ColumnOption idx="1" pid="2002" type="retrieved" options="" />
-				<ColumnOption idx="2" pid="2003" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="3" pid="2004" type="retrieved" options="" />
+				<ColumnOption idx="2" pid="2003" type="retrieved" options="" />
+				<ColumnOption idx="3" pid="2004" type="retrieved" options=";save" />
 				<ColumnOption idx="4" pid="2005" type="retrieved" options="" />
 				<ColumnOption idx="5" pid="2006" type="retrieved" options="" />
-				<ColumnOption idx="6" pid="2007" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="6" pid="2007" type="retrieved" options="" />
 				<ColumnOption idx="7" pid="2008" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="8" pid="2009" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="9" pid="2010" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="10" pid="2011" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="11" pid="2012" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="12" pid="2013" type="retrieved" options="" />
-				<ColumnOption idx="13" pid="2014" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
-				<ColumnOption idx="14" pid="2015" type="retrieved" options="" />
-				<ColumnOption idx="15" pid="2016" type="retrieved" options="" />
-				<ColumnOption idx="16" pid="2017" type="retrieved" options=";save" />
+				<ColumnOption idx="8" pid="2009" type="retrieved" options="" />
+				<ColumnOption idx="9" pid="2010" type="retrieved" options="" />
+				<ColumnOption idx="10" pid="2011" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="11" pid="2012" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="12" pid="2013" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
+				<ColumnOption idx="13" pid="2014" type="retrieved" options=";disableHeaderSum" />
+				<ColumnOption idx="14" pid="2015" type="retrieved" options=";disableHeaderSum" />
+				<ColumnOption idx="15" pid="2016" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
+				<ColumnOption idx="16" pid="2017" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
 				<ColumnOption idx="17" pid="2018" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="18" pid="2019" type="retrieved" options=";disableHeaderSum;disableHistogram;disableHeatmap" />
 				<ColumnOption idx="19" pid="1999" type="displaykey" options="" />
@@ -4405,7 +4405,7 @@ Format: "{Index} : {Description} - {Alias} - {Custom Description}".]]>
 			</Display>
 			<Measurement>
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2004|3-1999|19-2006|5-2005|4-2011|10-2018|17-2012|11-2019|18-2014|13-2002|1-2015|14-2003|2-2016|15-2007|6-2010|9-2013|12-2017|16,width:0-0-300-123-94-115-159-115-158-138-242-97-100-127-128-128-150-150,sort:STRING-STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2002|1-1999|19-2006|5-2005|4-2016|15-2018|17-2017|16-2019|18-2013|12-2007|6-2009|8-2008|7-2010|9-2011|10-2012|11-2003|2-2004|3,width:0-0-300-123-94-115-159-115-158-138-242-97-100-127-128-128-150-150,sort:STRING-STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -4434,6 +4434,281 @@ The value for each interface sub-layer must remain constant at least from one re
 			</Measurement>
 		</Param>
 		<Param id="2002" trending="false">
+			<Name>InterfacesDescription</Name>
+			<Description>Description (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[A textual string containing information about the interface.
+This string should include the name of the manufacturer, the product name and the version of the interface hardware/software.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
+			<Alarm>
+				<Monitored>false</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2003" trending="false">
+			<Name>InterfacesAlias</Name>
+			<Description>Alias (Interfaces)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>
+					<![CDATA[Allows you to define a custom description (on data-source) for the interface.
+Note there are 2 columns allowing to do this:
+- Alias: the custom description configured on the data-source itself. To edit this, you will need to have the necessary permissions on the data-source.
+- Custom Description: the custom description configured on DataMiner independently of the data-source. This can be used if you need a different description than the one on the data-source and/or you do not have the necessary permissions to make such changes on the data-source directly.]]>
+				</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="">
+						<Display state="disabled">N/A</Display>
+						<Value>N/A</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Range>
+					<Low>0</Low>
+					<High>64</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2053" setter="true">
+			<Name>InterfacesAlias</Name>
+			<Description>Alias (Interfaces)</Description>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Range>
+					<Low>0</Low>
+					<High>64</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2004" trending="false">
+			<Name>InterfacesCustomDescription</Name>
+			<Description>Custom Description (Interfaces)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>
+					<![CDATA[Allows you to define a custom description (on DataMiner) for the interface.
+Note there are 2 columns allowing to do this:
+- Alias: the custom description configured on the data-source itself. To edit this, you will need to have the necessary permissions on the data-source.
+- Custom Description: the custom description configured on DataMiner independently of the data-source. This can be used if you need a different description than the one on the data-source and/or you do not have the necessary permissions to make such changes on the data-source directly.]]>
+				</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>N/A</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="2054" setter="true">
+			<Name>InterfacesCustomDescription</Name>
+			<Description>Custom Description (Interfaces)</Description>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+				<Discreets>
+					<Discreet>
+						<Display>N/A</Display>
+						<Value>-1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2005" trending="true">
+			<Name>InterfacesAdminStatus</Name>
+			<Description>Admin Status (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The desired state of the interface.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<LengthType>next param</LengthType>
+				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>1</Normal>
+				<WaH>3</WaH>
+				<CH>2</CH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Up</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Down</Display>
+						<Value>2</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Testing</Display>
+						<Value>3</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2055">
+			<Name>InterfacesAdminStatus</Name>
+			<Description>Admin Status (Interfaces)</Description>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<LengthType>next param</LengthType>
+				<Type>double</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>togglebutton</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Up</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Down</Display>
+						<Value>2</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2006" trending="true">
+			<Name>InterfacesOperStatus</Name>
+			<Description>Operational Status (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The current operational state of the interface.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<LengthType>next param</LengthType>
+				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>1;4</Normal>
+				<WaH>3;5;6;7</WaH>
+				<CH>2</CH>
+			</Alarm>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Up</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Down</Display>
+						<Value>2</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Testing</Display>
+						<Value>3</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Unknown</Display>
+						<Value>4</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Dormant</Display>
+						<Value>5</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Not Present</Display>
+						<Value>6</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Lower Layer Down</Display>
+						<Value>7</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="2007" trending="false">
 			<Name>InterfacesType</Name>
 			<Description>Type (Interfaces)</Description>
 			<Information>
@@ -5658,7 +5933,7 @@ The value for each interface sub-layer must remain constant at least from one re
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2003" trending="true">
+		<Param id="2008" trending="true">
 			<Name>InterfacesMtu</Name>
 			<Description>MTU (Interfaces)</Description>
 			<Information>
@@ -5696,473 +5971,7 @@ If this is not set, the MTU is set to the operational default -- e.g., 1514 byte
 			</Alarm>
 			<!-- /SuppressValidator 2.5.1 -->
 		</Param>
-		<Param id="2004" trending="false">
-			<Name>InterfacesDescription</Name>
-			<Description>Description (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[A textual string containing information about the interface.
-This string should include the name of the manufacturer, the product name and the version of the interface hardware/software.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<LengthType>next param</LengthType>
-				<Type>string</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
-			<Alarm>
-				<Monitored>false</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="2005" trending="true">
-			<Name>InterfacesAdminStatus</Name>
-			<Description>Admin Status (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The desired state of the interface.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>1</Normal>
-				<WaH>3</WaH>
-				<CH>2</CH>
-			</Alarm>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Up</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Down</Display>
-						<Value>2</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Testing</Display>
-						<Value>3</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="2055">
-			<Name>InterfacesAdminStatus</Name>
-			<Description>Admin Status (Interfaces)</Description>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>togglebutton</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Up</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Down</Display>
-						<Value>2</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="2006" trending="true">
-			<Name>InterfacesOperStatus</Name>
-			<Description>Operational Status (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The current operational state of the interface.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Alarm>
-				<Monitored>true</Monitored>
-				<Normal>1;4</Normal>
-				<WaH>3;5;6;7</WaH>
-				<CH>2</CH>
-			</Alarm>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Up</Display>
-						<Value>1</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Down</Display>
-						<Value>2</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Testing</Display>
-						<Value>3</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Unknown</Display>
-						<Value>4</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Dormant</Display>
-						<Value>5</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Not Present</Display>
-						<Value>6</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Lower Layer Down</Display>
-						<Value>7</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="2007" trending="false">
-			<Name>InterfacesLastChange</Name>
-			<Description>Last Change (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[Uptime value of the system when the interface entered its current operational state.
-If the state change happened before the last re-initialization of the local management subsystem, this will be N/A.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Decimals>8</Decimals>
-				<Exceptions>
-					<Exception id="1" value="0">
-						<Display state="disabled">N/A</Display>
-						<Value>0</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Decimals>8</Decimals>
-			</Display>
-			<Measurement>
-				<Type options="time">number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2008" trending="false">
-			<Name>InterfacesRxOctets</Name>
-			<Description>Rx Octets (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of octets received on the interface, including framing characters.
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'Last Clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Octets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2009" trending="false">
-			<Name>InterfacesTxOctets</Name>
-			<Description>Tx Octets (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The total number of octets transmitted out of the interface, including framing characters.
-Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'Last Clear'.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Octets</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2010" trending="false">
-			<Name>InterfacesLastClear</Name>
-			<Description>Last Clear (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[Timestamp of the last time the interface counters were cleared.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-				<Decimals>8</Decimals>
-				<Exceptions>
-					<Exception id="1" value="0">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Decimals>8</Decimals>
-			</Display>
-			<Measurement>
-				<Type options="time">number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2011" trending="true">
-			<Name>InterfacesRxBitRate</Name>
-			<Description>Rx Bit Rate (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The input bit rate of the interface.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Decimals>3</Decimals>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Decimals>3</Decimals>
-				<Units>Mbps</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2012" trending="true">
-			<Name>InterfacesTxBitRate</Name>
-			<Description>Tx Bit Rate (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[The output bit rate of the interface.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<LengthType>next param</LengthType>
-				<Type>double</Type>
-				<Decimals>3</Decimals>
-				<Exceptions>
-					<Exception id="1" value="-1">
-						<Display state="disabled">N/A</Display>
-						<Value>-1</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Decimals>3</Decimals>
-				<Units>Mbps</Units>
-				<Range>
-					<Low>0</Low>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2013" trending="false">
-			<Name>InterfacesAlias</Name>
-			<Description>Alias (Interfaces)</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>
-					<![CDATA[Allows you to define a custom description (on data-source) for the interface.
-Note there are 2 columns allowing to do this:
-- Alias: the custom description configured on the data-source itself. To edit this, you will need to have the necessary permissions on the data-source.
-- Custom Description: the custom description configured on DataMiner independently of the data-source. This can be used if you need a different description than the one on the data-source and/or you do not have the necessary permissions to make such changes on the data-source directly.]]>
-				</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-				<Exceptions>
-					<Exception id="1" value="">
-						<Display state="disabled">N/A</Display>
-						<Value>N/A</Value>
-					</Exception>
-				</Exceptions>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>64</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="2063" setter="true">
-			<Name>InterfacesAlias</Name>
-			<Description>Alias (Interfaces)</Description>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>64</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="2014" trending="true">
-			<Name>InterfacesSpeed</Name>
-			<Description>Speed (Interfaces)</Description>
-			<Information>
-				<Subtext>
-					<![CDATA[An estimate of the interface's current bandwidth.
-For interfaces which do not vary in bandwidth or for those where no accurate estimation can be made, this object should contain the nominal bandwidth.
-For a sub-layer which has no concept of bandwidth, this object should be zero.]]>
-				</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Units>Mbps</Units>
-				<Decimals>3</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>4294967295</High>
-				</Range>
-			</Display>
-			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="2015" trending="true">
+		<Param id="2009" trending="true">
 			<Name>InterfacesDuplexStatus</Name>
 			<Description>Duplex Status (Interfaces)</Description>
 			<Information>
@@ -6212,7 +6021,7 @@ Possible values:
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2016" trending="false">
+		<Param id="2010" trending="false">
 			<Name>InterfacesPromiscuousMode</Name>
 			<Description>Promiscuous Mode (Interfaces)</Description>
 			<Information>
@@ -6257,7 +6066,7 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2066">
+		<Param id="2060">
 			<Name>InterfacesPromiscuousMode</Name>
 			<Description>Promiscuous Mode (Interfaces)</Description>
 			<Type>write</Type>
@@ -6283,56 +6092,247 @@ The value of Promiscuous Mode does not affect the reception of broadcast and mul
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="2017" trending="false">
-			<Name>InterfacesCustomDescription</Name>
-			<Description>Custom Description (Interfaces)</Description>
-			<Type>read</Type>
+		<Param id="2011" trending="false">
+			<Name>InterfacesLastChange</Name>
+			<Description>Last Change (Interfaces)</Description>
 			<Information>
 				<Subtext>
-					<![CDATA[Allows you to define a custom description (on DataMiner) for the interface.
-Note there are 2 columns allowing to do this:
-- Alias: the custom description configured on the data-source itself. To edit this, you will need to have the necessary permissions on the data-source.
-- Custom Description: the custom description configured on DataMiner independently of the data-source. This can be used if you need a different description than the one on the data-source and/or you do not have the necessary permissions to make such changes on the data-source directly.]]>
+					<![CDATA[Uptime value of the system when the interface entered its current operational state.
+If the state change happened before the last re-initialization of the local management subsystem, this will be N/A.]]>
 				</Subtext>
 			</Information>
+			<Type>read</Type>
 			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Decimals>8</Decimals>
+				<Exceptions>
+					<Exception id="1" value="0">
+						<Display state="disabled">N/A</Display>
+						<Value>0</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>8</Decimals>
+			</Display>
+			<Measurement>
+				<Type options="time">number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2012" trending="false">
+			<Name>InterfacesLastClear</Name>
+			<Description>Last Clear (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[Timestamp of the last time the interface counters were cleared.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Decimals>8</Decimals>
+				<Exceptions>
+					<Exception id="1" value="0">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>8</Decimals>
+			</Display>
+			<Measurement>
+				<Type options="time">number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2013" trending="true">
+			<Name>InterfacesSpeed</Name>
+			<Description>Speed (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[An estimate of the interface's current bandwidth.
+For interfaces which do not vary in bandwidth or for those where no accurate estimation can be made, this object should contain the nominal bandwidth.
+For a sub-layer which has no concept of bandwidth, this object should be zero.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Units>Mbps</Units>
+				<Decimals>3</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>4294967295</High>
+				</Range>
+			</Display>
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depending on end-user and use-case -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2014" trending="false">
+			<Name>InterfacesRxOctets</Name>
+			<Description>Rx Octets (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The total number of octets received on the interface, including framing characters.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'Last Clear'.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<LengthType>next param</LengthType>
+				<Type>double</Type>
 				<Exceptions>
 					<Exception id="1" value="-1">
 						<Display state="disabled">N/A</Display>
-						<Value>N/A</Value>
+						<Value>-1</Value>
 					</Exception>
 				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
+				<Units>Octets</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
 			</Display>
 			<Measurement>
-				<Type>string</Type>
+				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="2067" setter="true">
-			<Name>InterfacesCustomDescription</Name>
-			<Description>Custom Description (Interfaces)</Description>
-			<Type>write</Type>
+		<Param id="2015" trending="false">
+			<Name>InterfacesTxOctets</Name>
+			<Description>Tx Octets (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The total number of octets transmitted out of the interface, including framing characters.
+Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of 'Last Clear'.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
 			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
+				<RawType>numeric text</RawType>
 				<LengthType>next param</LengthType>
+				<Type>double</Type>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
+				<Units>Octets</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
 			</Display>
 			<Measurement>
-				<Type>string</Type>
-				<Discreets>
-					<Discreet>
-						<Display>N/A</Display>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2016" trending="true">
+			<Name>InterfacesRxBitRate</Name>
+			<Description>Rx Bit Rate (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The input bit rate of the interface.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<LengthType>next param</LengthType>
+				<Type>double</Type>
+				<Decimals>3</Decimals>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
 						<Value>-1</Value>
-					</Discreet>
-				</Discreets>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>3</Decimals>
+				<Units>Mbps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="2017" trending="true">
+			<Name>InterfacesTxBitRate</Name>
+			<Description>Tx Bit Rate (Interfaces)</Description>
+			<Information>
+				<Subtext>
+					<![CDATA[The output bit rate of the interface.]]>
+				</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<LengthType>next param</LengthType>
+				<Type>double</Type>
+				<Decimals>3</Decimals>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>3</Decimals>
+				<Units>Mbps</Units>
+				<Range>
+					<Low>0</Low>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="2018" trending="true">
@@ -7064,7 +7064,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 			</Condition>
 		</QAction>
 		<QAction id="1992" name="Interface Rate Calculations Method" encoding="csharp" triggers="1992" />
-		<QAction id="2000" name="Interface Table SNMP Sets" encoding="csharp" triggers="2055;2063;2066" row="true" />
+		<QAction id="2000" name="Interface Table SNMP Sets" encoding="csharp" triggers="2053;2055;2060" row="true" />
 	</QActions>
 
 	<Groups>
