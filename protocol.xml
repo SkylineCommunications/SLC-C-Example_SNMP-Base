@@ -4405,7 +4405,7 @@ Format: "{Index} : {Description} - {Alias} - {Custom Description}".]]>
 			</Display>
 			<Measurement>
 				<!-- SuppressValidator 2.31.9 No need to sort on datetime -->
-				<Type options="tab=columns:2001|0-2002|1-1999|19-2006|5-2005|4-2016|15-2018|17-2017|16-2019|18-2013|12-2007|6-2009|8-2008|7-2010|9-2011|10-2012|11-2003|2-2004|3,width:0-0-300-123-94-115-159-115-158-138-242-97-100-127-128-128-150-150,sort:STRING-STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-STRING-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:2001|0-2002|1-1999|19-2006|5-2005|4-2016|15-2018|17-2017|16-2019|18-2013|12-2007|6-2009|8-2008|7-2010|9-2011|10-2012|11-2003|2-2004|3,width:0-0-300-123-94-115-159-115-158-138-200-97-100-127-128-128-150-150,sort:STRING-STRING-STRING-STRING-STRING-INT-INT-INT-INT-INT-STRING-STRING-STRING-STRING-STRING-INT-STRING-STRING,lines:25,filter:true">table</Type>
 				<!-- /SuppressValidator 2.31.9 -->
 			</Measurement>
 		</Param>
@@ -6443,7 +6443,7 @@ Format: "{Index} : {Description} - {Alias} - {Custom Description}".]]>
 			<Description>Interfaces Details Rx</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<NamingFormat>,2101, : ,2004, - ,2013, - ,2017</NamingFormat>
+				<NamingFormat>,2101, : ,2002, - ,2003, - ,2004</NamingFormat>
 				<ColumnOption idx="0" pid="2101" type="retrieved" options=""/>
 				<ColumnOption idx="1" pid="2102" type="retrieved" options=";foreignKey=2000" />
 				<ColumnOption idx="2" pid="2103" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
@@ -6783,7 +6783,7 @@ Format: "{Index} : {Description} - {Alias} - {Custom Description}".]]>
 			<Description>Interfaces Details Tx</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<NamingFormat>,2201, : ,2004, - ,2013, - ,2017</NamingFormat>
+				<NamingFormat>,2201, : ,2002, - ,2003, - ,2004</NamingFormat>
 				<ColumnOption idx="0" pid="2201" type="retrieved" options=""/>
 				<ColumnOption idx="1" pid="2202" type="retrieved" options=";foreignKey=2000" />
 				<ColumnOption idx="2" pid="2203" type="retrieved" options=";disableHeaderSum;disableHistogram;enableHeatmap" />
