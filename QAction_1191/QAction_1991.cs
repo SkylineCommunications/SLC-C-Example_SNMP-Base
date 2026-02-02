@@ -5,7 +5,6 @@ using System.Linq;
 using QAction_1991;
 
 using Skyline.DataMiner.Scripting;
-using Skyline.Protocol.Interfaces;
 
 /// <summary>
 /// DataMiner QAction Class: Merge Interface Tables.

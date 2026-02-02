@@ -1,4 +1,4 @@
-﻿namespace Skyline.Protocol.Interfaces
+﻿namespace QAction_1991
 {
 	using System;
 	using System.Collections.Generic;
