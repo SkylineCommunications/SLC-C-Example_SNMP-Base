@@ -1,18 +1,17 @@
 ﻿namespace QAction_1000.IfTable
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
 
-	using Skyline.DataMiner.Scripting;
-	using Skyline.DataMiner.Utils.Interfaces;
-	using Skyline.DataMiner.Utils.Protocol.Extension;
-	using Skyline.DataMiner.Utils.Rates.Protocol;
-	using Skyline.DataMiner.Utils.SafeConverters;
-	using Skyline.DataMiner.Utils.SNMP;
-	using Skyline.Protocol.Interfaces;
+    using Skyline.DataMiner.Scripting;
+    using Skyline.DataMiner.Utils.Interfaces;
+    using Skyline.DataMiner.Utils.Protocol.Extension;
+    using Skyline.DataMiner.Utils.Rates.Protocol;
+    using Skyline.DataMiner.Utils.SafeConverters;
+    using Skyline.DataMiner.Utils.SNMP;
+    using Skyline.Protocol.Interfaces;
 
-	public class IfTableTimeoutProcessor
+    public class IfTableTimeoutProcessor
 	{
 		private const int GroupId = 1000;
 		private static readonly TimeSpan MinDelta = new TimeSpan(0, 0, 5);
@@ -124,7 +123,6 @@
 		private static readonly TimeSpan MinDelta = new TimeSpan(0, 0, 5);
 		private static readonly TimeSpan MaxDelta = new TimeSpan(0, 10, 0);
 
-		private readonly DuplexGetter duplexGetter;
 		private readonly IfTableGetter ifTableGetter;
 		private readonly IfTableSetter ifTableSetter;
 
@@ -136,9 +134,6 @@
 
 			ifTableGetter = new IfTableGetter(protocol);
 			ifTableGetter.Load();
-
-			duplexGetter = new DuplexGetter(protocol);
-			duplexGetter.Load();
 
 			ifTableSetter = new IfTableSetter(protocol);
 		}

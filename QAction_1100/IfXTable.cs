@@ -126,7 +126,6 @@
 		private const int GroupId = 1100;
 		private static readonly TimeSpan MinDelta = new TimeSpan(0, 0, 5);
 		private static readonly TimeSpan MaxDelta = new TimeSpan(0, 10, 0);
-		private readonly DuplexGetter duplexGetter;
 
 		private readonly IfXTableGetter ifXTableGetter;
 		private readonly IfXTableSetter ifXTableSetter;
@@ -139,9 +138,6 @@
 
 			ifXTableGetter = new IfXTableGetter(protocol);
 			ifXTableGetter.Load();
-
-			duplexGetter = new DuplexGetter(protocol);
-			duplexGetter.Load();
 
 			ifXTableSetter = new IfXTableSetter(protocol);
 		}
