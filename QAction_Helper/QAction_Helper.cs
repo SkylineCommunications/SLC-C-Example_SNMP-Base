@@ -2116,10 +2116,10 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Interfacesmtu_2008 {get { return GetParameter(2008); }set { SetParameter(2008, value); }}
 	/// <summary>PID: 2008  | Type: read | EXCEPTIONS: N/A = -1</summary>
 	public System.Object Interfacesmtu {get { return GetParameter(2008); }set { SetParameter(2008, value); }}
-	/// <summary>PID: 2009  | Type: read | DISCREETS: N/A = -1, Unknown = 1, Half Duplex = 2, Full Duplex = 3</summary>
+	/// <summary>PID: 2009  | Type: read | DISCREETS: Unknown = 1, Half Duplex = 2, Full Duplex = 3 | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Interfacesduplexstatus_2009 {get { return GetParameter(2009); }set { SetParameter(2009, value); }}
-	/// <summary>PID: 2009  | Type: read | DISCREETS: N/A = -1, Unknown = 1, Half Duplex = 2, Full Duplex = 3</summary>
+	/// <summary>PID: 2009  | Type: read | DISCREETS: Unknown = 1, Half Duplex = 2, Full Duplex = 3 | EXCEPTIONS: N/A = -1</summary>
 	public System.Object Interfacesduplexstatus {get { return GetParameter(2009); }set { SetParameter(2009, value); }}
 	/// <summary>PID: 2010  | Type: read | DISCREETS: Enabled = 1, Disabled = 2 | EXCEPTIONS: N/A = -1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]

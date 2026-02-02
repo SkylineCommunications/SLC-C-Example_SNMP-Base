@@ -5990,6 +5990,12 @@ Possible values:
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
+				<Exceptions>
+					<Exception id="1" value="-1">
+						<Display state="disabled">N/A</Display>
+						<Value>-1</Value>
+					</Exception>
+				</Exceptions>
 			</Interprete>
 			<!-- SuppressValidator 2.5.1 Alarm thresholds fully depend on end-user and use-case. -->
 			<Alarm>
@@ -6002,10 +6008,6 @@ Possible values:
 			<Measurement>
 				<Type>discreet</Type>
 				<Discreets>
-					<Discreet>
-						<Display>N/A</Display>
-						<Value>-1</Value>
-					</Discreet>
 					<Discreet>
 						<Display>Unknown</Display>
 						<Value>1</Value>
