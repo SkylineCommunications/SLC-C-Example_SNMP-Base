@@ -7583,7 +7583,7 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 							<MajorVersion id="2">
 								<MinorVersions>
 									<MinorVersion id="1" basedOn="1.0.1.1">
-										<Date>2026-01-29</Date>
+										<Date>2026-02-03</Date>
 										<Provider>
 											<Author>SVD</Author>
 											<Company>Skyline Communications</Company>
