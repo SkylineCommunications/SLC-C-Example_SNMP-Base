@@ -7415,15 +7415,9 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 	</Timers>
 
 	<PortSettings name="SNMP Connection">
-		<PortTypeSerial>
+		<BusAddress>
 			<Disabled>true</Disabled>
-		</PortTypeSerial>
-		<PortTypeIP>
-			<Disabled>true</Disabled>
-		</PortTypeIP>
-		<IPport>
-			<DefaultValue>161</DefaultValue>
-		</IPport>
+		</BusAddress>
 	</PortSettings>
 
 	<VersionHistory>
