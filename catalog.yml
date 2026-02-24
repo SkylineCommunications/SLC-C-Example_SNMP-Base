@@ -44,3 +44,12 @@ title: Skyline Example - SNMP Base
 owners:
   - name: 'Simon Vandamme'
     email: 'simon.vandamme@skyline.be'
+
+# [Optional]
+# Tags that allow you to categorize your Catalog items.
+#   Max number of tags: 5
+#   Max length: 50 characters.
+#   Cannot contain newlines.
+#   Cannot contain leading or trailing whitespace characters.
+tags:
+  - connector
