@@ -19,4 +19,4 @@ start /min "" "C:\Skyline DataMiner\Tools\QADeviceSimulator\QADeviceSimulator.ex
 
 ## Technical Reference
 
-For more detailed instructions on how to run the simulation, or if you encounter any issues, refer to the [Skyline Device Simulator documentation](https://aka.dataminer.services/device-simulator-tool).
+For more detailed instructions on how to run the simulation, or if you encounter any issues, refer to the [Skyline Device Simulator documentation](aka.dataminer.services/qa-device-simulator).
