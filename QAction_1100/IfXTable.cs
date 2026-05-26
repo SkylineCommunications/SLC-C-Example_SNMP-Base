@@ -185,9 +185,9 @@
 			return rate;
 		}
 
-		private static double CalculateBitRate(string key, ulong octectCount, SnmpDeltaHelper snmpDeltaHelper, SnmpRate64 snmpRateHelper)
+		private static double CalculateBitRate(string key, ulong octetCount, SnmpDeltaHelper snmpDeltaHelper, SnmpRate64 snmpRateHelper)
 		{
-			double octetRate = CalculateRate(key, octectCount, snmpDeltaHelper, snmpRateHelper);
+			double octetRate = CalculateRate(key, octetCount, snmpDeltaHelper, snmpRateHelper);
 			double bitRate = octetRate > 0 ? octetRate * 8 : octetRate;
 
 			return bitRate;
