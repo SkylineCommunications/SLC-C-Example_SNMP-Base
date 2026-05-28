@@ -8,7 +8,7 @@
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>Skyline Example SNMP Base</Name>
 	<Description>Skyline Example - SNMP Base DataMiner connector</Description>
-	<Version>1.0.2.1</Version>
+	<Version>1.0.2.2</Version>
 	<IntegrationID>DMS-DRV-9041</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline Example</Vendor>
@@ -7591,6 +7591,19 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 										</Changes>
 										<References>
 											<TaskId>263786</TaskId>
+										</References>
+									</MinorVersion>
+									<MinorVersion id="2" basedOn="1.0.2.1">
+										<Date>2026-05-28</Date>
+										<Provider>
+											<Author>SVD</Author>
+											<Company>Skyline Communications</Company>
+										</Provider>
+										<Changes>
+											<Fix>Some of the High Capacity counters were wrongly converted to 32-bit integers instead of 64-bit integers which caused wrongly calculated rates in certain cases.</Fix>
+										</Changes>
+										<References>
+											<TaskId>198352</TaskId>
 										</References>
 									</MinorVersion>
 								</MinorVersions>
