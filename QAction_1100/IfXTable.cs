@@ -178,9 +178,16 @@
 			return rate;
 		}
 
-		private static double CalculateBitRate(string key, ulong octectCount, SnmpDeltaHelper snmpDeltaHelper, SnmpRate64 snmpRateHelper)
+		private static double CalculateRate(string key, uint count, SnmpDeltaHelper snmpDeltaHelper, SnmpRate32 snmpRateHelper)
 		{
-			double octetRate = CalculateRate(key, octectCount, snmpDeltaHelper, snmpRateHelper);
+			double rate = snmpRateHelper.Calculate(snmpDeltaHelper, count, key);
+
+			return rate;
+		}
+
+		private static double CalculateBitRate(string key, ulong octetCount, SnmpDeltaHelper snmpDeltaHelper, SnmpRate64 snmpRateHelper)
+		{
+			double octetRate = CalculateRate(key, octetCount, snmpDeltaHelper, snmpRateHelper);
 			double bitRate = octetRate > 0 ? octetRate * 8 : octetRate;
 
 			return bitRate;
@@ -198,10 +205,10 @@
 
 			if (ifXTableGetter.IsSnmpAgentRestarted || hasDiscontinuity)
 			{
-				ratesData.MulticastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				ratesData.MulticastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				ratesData.BroadcastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
-				ratesData.BroadcastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.MulticastRateIn = SnmpRate32.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.MulticastRateOut = SnmpRate32.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.BroadcastRateIn = SnmpRate32.FromJsonString(string.Empty, MinDelta, MaxDelta);
+				ratesData.BroadcastRateOut = SnmpRate32.FromJsonString(string.Empty, MinDelta, MaxDelta);
 				ratesData.HcBitRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
 				ratesData.HcBitRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
 				ratesData.HcUnicastRateIn = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
@@ -212,16 +219,16 @@
 				ratesData.HcBroadcastRateOut = SnmpRate64.FromJsonString(string.Empty, MinDelta, MaxDelta);
 			}
 
-			ulong multicastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.MulticastPktsIn[getPosition]));
+			uint multicastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.MulticastPktsIn[getPosition]));
 			double multicastRateIn = CalculateRate(key, multicastPktsIn, snmpDeltaHelper, ratesData.MulticastRateIn);
 
-			ulong multicastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.MulticastPktsOut[getPosition]));
+			uint multicastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.MulticastPktsOut[getPosition]));
 			double multicastRateOut = CalculateRate(key, multicastPktsOut, snmpDeltaHelper, ratesData.MulticastRateOut);
 
-			ulong broadcastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.BroadcastPktsIn[getPosition]));
+			uint broadcastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.BroadcastPktsIn[getPosition]));
 			double broadcastRateIn = CalculateRate(key, broadcastPktsIn, snmpDeltaHelper, ratesData.BroadcastRateIn);
 
-			ulong broadcastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.BroadcastPktsOut[getPosition]));
+			uint broadcastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.BroadcastPktsOut[getPosition]));
 			double broadcastRateOut = CalculateRate(key, broadcastPktsOut, snmpDeltaHelper, ratesData.BroadcastRateOut);
 
 			ulong octetsIn = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCOctetsIn[getPosition]));
@@ -230,22 +237,22 @@
 			ulong octetsOut = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCOctetsOut[getPosition]));
 			bitrateOut = CalculateBitRate(key, octetsOut, snmpDeltaHelper, ratesData.HcBitRateOut);
 
-			ulong hcUnicastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.HCUcastPktsIn[getPosition]));
+			ulong hcUnicastPktsIn = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCUcastPktsIn[getPosition]));
 			double hcUnicastRateIn = CalculateRate(key, hcUnicastPktsIn, snmpDeltaHelper, ratesData.HcUnicastRateIn);
 
-			ulong hcUnicastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.HCUcastPktsOut[getPosition]));
+			ulong hcUnicastPktsOut = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCUcastPktsOut[getPosition]));
 			double hcUnicastRateOut = CalculateRate(key, hcUnicastPktsOut, snmpDeltaHelper, ratesData.HcUnicastRateOut);
 
-			ulong hcMulticastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.HCMulticastPktsIn[getPosition]));
+			ulong hcMulticastPktsIn = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCMulticastPktsIn[getPosition]));
 			double hcMulticastRateIn = CalculateRate(key, hcMulticastPktsIn, snmpDeltaHelper, ratesData.HcMulticastRateIn);
 
-			ulong hcMulticastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.HCMulticastPktsOut[getPosition]));
+			ulong hcMulticastPktsOut = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCMulticastPktsOut[getPosition]));
 			double hcMulticastRateOut = CalculateRate(key, hcMulticastPktsOut, snmpDeltaHelper, ratesData.HcMulticastRateOut);
 
-			ulong hcBroadcastPktsIn = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.HCBroadcastPktsIn[getPosition]));
+			ulong hcBroadcastPktsIn = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCBroadcastPktsIn[getPosition]));
 			double hcBroadcastRateIn = CalculateRate(key, hcBroadcastPktsIn, snmpDeltaHelper, ratesData.HcBroadcastRateIn);
 
-			ulong hcBroadcastPktsOut = SafeConvert.ToUInt32(Convert.ToDouble(ifXTableGetter.HCBroadcastPktsOut[getPosition]));
+			ulong hcBroadcastPktsOut = SafeConvert.ToUInt64(Convert.ToDouble(ifXTableGetter.HCBroadcastPktsOut[getPosition]));
 			double hcBroadcastRateOut = CalculateRate(key, hcBroadcastPktsOut, snmpDeltaHelper, ratesData.HcBroadcastRateOut);
 
 			ifXTableSetter.SetColumnsData[Parameter.Ifxtable.Pid.ifxtable_multicastratein].Add(multicastRateIn);

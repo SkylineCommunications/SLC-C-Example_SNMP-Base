@@ -10,13 +10,13 @@
 
 	public class IfXTableRatesData
 	{
-		public SnmpRate64 MulticastRateIn { get; set; }
+		public SnmpRate32 MulticastRateIn { get; set; }
 
-		public SnmpRate64 MulticastRateOut { get; set; }
+		public SnmpRate32 MulticastRateOut { get; set; }
 
-		public SnmpRate64 BroadcastRateIn { get; set; }
+		public SnmpRate32 BroadcastRateIn { get; set; }
 
-		public SnmpRate64 BroadcastRateOut { get; set; }
+		public SnmpRate32 BroadcastRateOut { get; set; }
 
 		public SnmpRate64 HcBitRateIn { get; set; }
 
@@ -42,10 +42,10 @@
 			{
 				return new IfXTableRatesData
 				{
-					MulticastRateIn = SnmpRate64.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
-					MulticastRateOut = SnmpRate64.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
-					BroadcastRateIn = SnmpRate64.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
-					BroadcastRateOut = SnmpRate64.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
+					MulticastRateIn = SnmpRate32.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
+					MulticastRateOut = SnmpRate32.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
+					BroadcastRateIn = SnmpRate32.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
+					BroadcastRateOut = SnmpRate32.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
 					HcBitRateIn = SnmpRate64.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
 					HcBitRateOut = SnmpRate64.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
 					HcUnicastRateIn = SnmpRate64.FromJsonString(string.Empty, minDelta, maxDelta, rateBase),
