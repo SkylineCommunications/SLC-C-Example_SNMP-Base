@@ -69,6 +69,7 @@ documentation_url:
 owners:
   - email: simon.vandamme@skyline.be
     name: Simon Vandamme
+    role: Code Owner
     url: 
 
 # [Optional]
