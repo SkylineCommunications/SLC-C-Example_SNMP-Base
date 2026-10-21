@@ -44,6 +44,7 @@ title: Skyline Example - SNMP Base
 owners:
   - name: 'Simon Vandamme'
     email: 'simon.vandamme@skyline.be'
+    role: 'Code Owner'
 
 # [Optional]
 # Tags that allow you to categorize your Catalog items.
