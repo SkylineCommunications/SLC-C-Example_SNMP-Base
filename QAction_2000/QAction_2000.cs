@@ -55,7 +55,7 @@ public class QAction
 					break;
 
 				default:
-					throw new NotSupportedException($"{nameof(triggerPid)} '{triggerPid}' is unsupported.");
+					throw new NotSupportedException($"QAction triggered by unexpected param with ID '{triggerPid}'.");
 			}
 
 			protocol.RunAction(Actions.InterfacesTables_Merge);

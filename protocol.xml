@@ -7062,7 +7062,9 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 
 		<QAction id="1991" name="Interface Table Merge" encoding="csharp" triggers="1991">
 			<Condition>
-				<![CDATA[id:992 == 0 OR id:1092 == 0]]><!--This is kept intentionally as an OR as for some devices, ifXTable is not implemented and will never succeed.-->
+				<!--We use an OR because as soon as one of the tables is updated, 
+					we want to benefit those updates within the displayed table, even if the polling of some of the base tables fails.-->
+				<![CDATA[id:992 == 0 OR id:1092 == 0]]>
 			</Condition>
 		</QAction>
 		<QAction id="1992" name="Interface Rate Calculations Method" encoding="csharp" triggers="1992" />
