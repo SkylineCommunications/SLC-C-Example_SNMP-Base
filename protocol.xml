@@ -8,7 +8,7 @@
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>Skyline Example SNMP Base</Name>
 	<Description>Skyline Example - SNMP Base DataMiner connector</Description>
-	<Version>1.0.2.2</Version>
+	<Version>1.0.2.3</Version>
 	<IntegrationID>DMS-DRV-9041</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline Example</Vendor>
@@ -7062,6 +7062,8 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 
 		<QAction id="1991" name="Interface Table Merge" encoding="csharp" triggers="1991">
 			<Condition>
+				<!--We use an OR because as soon as one of the base/SNMP tables is updated, 
+					we want to benefit those updates within the displayed/merged table, even if the polling of some of the base/SNMP tables fails.-->
 				<![CDATA[id:992 == 0 OR id:1092 == 0]]>
 			</Condition>
 		</QAction>
@@ -7601,6 +7603,19 @@ Discontinuities in the value of this counter can occur at re-initialization of t
 										</Provider>
 										<Changes>
 											<Fix>Some of the High Capacity counters were wrongly converted to 32-bit integers instead of 64-bit integers which caused wrongly calculated rates in certain cases.</Fix>
+										</Changes>
+										<References>
+											<TaskId>198352</TaskId>
+										</References>
+									</MinorVersion>
+									<MinorVersion id="3" basedOn="1.0.2.2">
+										<Date>2026-11-05</Date>
+										<Provider>
+											<Author>CYK</Author>
+											<Company>Skyline Communications</Company>
+										</Provider>
+										<Changes>
+											<Fix>Fixed faulty logic where QAction 2000 does not return early for an unsupported trigger parameter.</Fix>
 										</Changes>
 										<References>
 											<TaskId>198352</TaskId>

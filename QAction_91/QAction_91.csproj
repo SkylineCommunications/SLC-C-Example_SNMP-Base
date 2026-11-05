@@ -14,7 +14,7 @@
     <PackageReference Include="Skyline.DataMiner.Dev.Protocol" Version="10.2.0.25" />
     <PackageReference Include="Skyline.DataMiner.Utils.SNMP" Version="1.0.0.2" />
     <PackageReference Include="Skyline.DataMiner.Utils.Protocol.Extension" Version="1.0.0.4" />
-    <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.2.3">
+    <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="3.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
