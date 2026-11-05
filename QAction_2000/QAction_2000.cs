@@ -55,11 +55,7 @@ public class QAction
 					break;
 
 				default:
-					protocol.Log(
-						$"QA{protocol.QActionID}|Run|QAction triggered by unexpected param '{triggerPid}'",
-						LogType.Error,
-						LogLevel.NoLogging);
-					break;
+					throw new NotSupportedException($"{nameof(triggerPid)} '{triggerPid}' is unsupported.");
 			}
 
 			protocol.RunAction(Actions.InterfacesTables_Merge);
