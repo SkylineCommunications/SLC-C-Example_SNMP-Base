@@ -8,7 +8,7 @@
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>Skyline Example SNMP Base</Name>
 	<Description>Skyline Example - SNMP Base DataMiner connector</Description>
-	<Version>1.0.2.3</Version>
+	<Version>1.0.3.1</Version>
 	<IntegrationID>DMS-DRV-9041</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline Example</Vendor>
@@ -28,6 +28,34 @@
 		<Relation name="Interfaces Details RX" path="2000;2100" />
 		<Relation name="Interfaces Details TX" path="2000;2200" />
 	</Relations>
+
+	<Settings>
+		<Setting id="IP" displayName="IP address">
+			<IPAddress/>
+		</Setting>
+		<Setting id="community" displayName="get community">
+			<SNMPCommunityCredential/>
+		</Setting>				 
+	</Settings>
+	<Edge>
+		<Scripts>
+			<Script id="MIB_II" displayName="MIB II" guid="f45c5b27-b99b-44ca-be92-0d86431692b8">
+				<Arguments>
+					<Argument name ="IP">
+						<SettingRef id="IP"/>
+					</Argument>
+					<Argument name ="community">
+						<SettingRef id="community"/>
+					</Argument>
+				</Arguments>
+				<Schedule>
+					<Default>
+						<Interval period="PT5M" />
+					</Default>
+				</Schedule>
+			</Script>
+		</Scripts>
+	</Edge>
 
 	<Params>
 		<Param id="2">

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "id": "f45c5b27-b99b-44ca-be92-0d86431692b8",
+    "name": "MIB_II",
+    "version": "1.0.0.0",
+    "description": "",
+    "author": "JK"
+  },
+  "runtime": {
+    "language": "python",
+    "supported_platforms": [
+      "x86_64-windows-msvc",
+      "x86_64-linux-gnu"
+    ],
+    "python": {
+      "version": ">=3.14;<3.15",
+      "entry_point": "run/main.py"
+    }
+  }
+}

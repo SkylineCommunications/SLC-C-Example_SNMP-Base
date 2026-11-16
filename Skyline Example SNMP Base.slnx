@@ -8,6 +8,11 @@
   <Folder Name="/Documentation/">
     <File Path="Documentation/ABOUT.md" />
   </Folder>
+  <Folder Name="/Connector Scripts/">
+    <Project Path="MIB_II/MIB_II.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52" Id="099d1d26-f826-40c7-9d30-29a4a2abdd5f">
+      <Build Project="false" />
+    </Project>
+  </Folder>
   <Folder Name="/Internal/">
     <File Path="Internal/.editorconfig" />
     <Project Path="QAction_Helper/QAction_Helper.csproj" />
